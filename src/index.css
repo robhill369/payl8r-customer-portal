@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: lato, sans-serif;
+    color: #414141;
+}
+
+.font-lato {
+    font-family: lato, sans-serif;
+}
+
+.font-montserrat {
+    font-family: montserrat, sans-serif;
+}
+
+h1 {
+    font-family: montserrat, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+}
+
+h2 {
+    font-family: montserrat, sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 25px;
+}
+h3 {
+    font-family: montserrat, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20px;
+}
+h4 {
+    font-family: montserrat, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 19px;
+}
+p {
+    font-family: montserrat, sans-serif;
+    font-size: 15px;
+}
+
+.text-nav {
+    font-family: montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+}
+.text-tab {
+    font-family: montserrat, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+}
+.text-button {
+    font-family: montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+}
+
+
+
