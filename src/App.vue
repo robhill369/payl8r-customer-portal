@@ -4,7 +4,12 @@
       <Navbar msg="test"/>
     </header>
     <main>
-      <OverviewPage/>
+      <div class="flex">
+        <div class="xs:hidden lg:flex w-96 2xl:w-14"/>
+        <div class="mx-5 sm:mx-0 sm:container pt-16 bg-red">
+          <OverviewPage/>
+        </div>
+      </div>
     </main>
   </AppLayout>
 </template>

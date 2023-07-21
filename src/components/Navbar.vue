@@ -1,22 +1,34 @@
 <template>
-  <div class="absolute text-nav h-full fixed w-80 flex-col bg-white drop-shadow-lg p-14">
-    <div class="flex flex-col space-y-9 justify-between">
-      <div>Logo</div>
+  <div class="xs:hidden lg:block fixed text-nav h-full fixed w-[315px] flex-col bg-white drop-shadow-lg p-14 z-in">
+    <div class="flex flex-col h-[489px] justify-between">
+      <div>
+        <Payl8rLogo/>
+      </div>
       <div>
         <NavbarItem>
-          Username
+          <font-awesome-icon icon="fa-solid fa-user-circle" size="xl"/>
+          <template v-slot:title>Username</template>
+        </NavbarItem>
+
+        <NavbarItem>
+          <font-awesome-icon icon="fa-solid fa-house" size="xl"/>
+          <template v-slot:title>Overview</template>
         </NavbarItem>
         <NavbarItem>
-          Overview
+          <font-awesome-icon icon="fa-solid fa-wallet" size="xl"/>
+          <template v-slot:title>My loans</template>
         </NavbarItem>
         <NavbarItem>
-          My loans
+          <font-awesome-icon icon="fa-solid fa-gear" size="xl"/>
+          <template v-slot:title>My account</template>
         </NavbarItem>
         <NavbarItem>
-          My account
+          <font-awesome-icon icon="fa-solid fa-headset" size="xl"/>
+          <template v-slot:title>Help centre</template>
         </NavbarItem>
       </div>
       <div>
+        <font-awesome-icon :icon="['fas', 'arrow-right-to-bracket']" />
         <button>Logout</button>
       </div>
     </div>
@@ -25,6 +37,7 @@
 
 <script setup>
 import NavbarItem from "@/components/NavbarItem.vue";
+import Payl8rLogo from "@/components/icons/Payl8rLogo.vue";
 
 defineProps({
   msg: {

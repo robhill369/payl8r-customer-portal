@@ -30,19 +30,32 @@ h2 {
 }
 h3 {
     font-family: montserrat, sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 23px;
+}
+h4 {
+    font-family: montserrat, sans-serif;
     font-size: 17px;
     font-weight: 700;
     line-height: 20px;
 }
-h4 {
+h5 {
     font-family: montserrat, sans-serif;
     font-size: 15px;
     font-weight: 700;
     line-height: 19px;
 }
 p {
-    font-family: montserrat, sans-serif;
+    font-family: lato, sans-serif;
     font-size: 15px;
+}
+
+.text-figure {
+    font-family: montserrat, sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 55px;
 }
 
 .text-nav {

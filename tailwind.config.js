@@ -1,23 +1,34 @@
 // const colors = require('tailwindcss/colors');
 let grayDarker = '#414141';
 let grayDark = '#EFEFEF';
-let pinkDark = '#BA84CC';
+let pinkDark = '#C481D1';
 
 module.exports = {
   mode: 'jit',
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      screens: {
-        xs: '320px',
-        sm: '576px',
-        md: '768px',
-        lg: '992px',
-        xl: '1200px',
-        '2xl': '1400px',
-        '3xl': '1920px',
+    screens: {
+      'xs': '320px',
+      'sm': '576px',
+      'md': '768px',
+      'lg': '992px',
+      'xl': '1200px',
+      '2xl': '1400px',
+      '3xl': '1920px',
+    },
+    container: {
+      center: true,
+      padding: {
+        xs: 0,
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '325px',
+        '3xl': '325px',
       },
+    },
+    extend: {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
@@ -37,8 +48,8 @@ module.exports = {
         'green-light': '#BFEACA',
         'pink': {
           dark: pinkDark,
-          DEFAULT: '#DED3FE',
-          light: '#F7E7FD',
+          DEFAULT: '#C788D3',
+          light: '#FBE6FF',
           lighter: '#FBF7FB',
         },
         'red': {
@@ -70,7 +81,6 @@ module.exports = {
       xs: ['13px','24px'],
       sm: ['14px','17px'],
       md: ['16px','19px'],
-      lg: ['19px','23px']
     }
   },
   variants: {
