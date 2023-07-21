@@ -5,8 +5,8 @@
     </header>
     <main>
       <div class="flex">
-        <div class="xs:hidden lg:flex w-96 2xl:w-14"/>
-        <div class="mx-5 sm:mx-0 sm:container pt-16 bg-red">
+        <div class="xs:hidden lg:flex bg-blue-400 w-96 2xl:w-16"/>
+        <div class="px-5 w-full sm:container pt-16 bg-red">
           <OverviewPage/>
         </div>
       </div>

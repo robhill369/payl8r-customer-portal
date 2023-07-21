@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-between space-y-14 ">
+  <div class="flex flex-col justify-between space-y-14">
     <div class="bg-blue-400 w-full">
       Intro
     </div>
