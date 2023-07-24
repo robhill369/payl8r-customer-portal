@@ -27,8 +27,12 @@
         </NavbarItem>
       </div>
       <div>
-        <font-awesome-icon :icon="['fas', 'arrow-right-to-bracket']" />
-        <button>Logout</button>
+        <button class="flex border-2 border-gray rounded-lg pr-2">
+          <div class="flex w-36 justify-evenly my-3.5">
+          <font-awesome-icon :icon="['fas', 'arrow-right-to-bracket']" size="xl"/>
+          Logout
+          </div>
+        </button>
       </div>
     </div>
   </div>
