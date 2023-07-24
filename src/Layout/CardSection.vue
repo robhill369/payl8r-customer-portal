@@ -1,15 +1,10 @@
 <template>
-  <div class="flex flex-col space-y-10 w-full">
-    <div>
-      <h4>My account</h4>
-    </div>
-    <div class="flex flex-col space-y-10">
-<!--      :class="Columns ? '' : 'flex-col'"-->
+    <div class="relative flex flex-col space-y-10">
+<!--      :class="HelpPage and simple card ? 'flex-col' : 'flex-row'"-->
       <slot/>
     </div>
-  </div>
 </template>
 
 <script setup>
-
+import CardSectionHeader from "@/Layout/CardSectionHeader.vue";
 </script>

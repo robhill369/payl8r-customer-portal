@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0 left-0 w-screen bg-gray-light">
+  <div class="flex bg-white w-full rounded-lg drop-shadow-md">
     <slot/>
   </div>
 </template>

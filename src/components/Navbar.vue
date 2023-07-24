@@ -1,5 +1,5 @@
 <template>
-  <div class="xs:hidden lg:block fixed text-nav h-full fixed w-[315px] flex-col bg-white drop-shadow-lg p-14 z-in">
+  <div class="xs:hidden lg:block fixed text-nav h-full fixed w-[315px] flex-col bg-white drop-shadow-lg p-14 z-in border-r-2 border-[#E0E0E0]">
     <div class="flex flex-col h-[489px] justify-between">
       <div>
         <Payl8rLogo/>
@@ -9,7 +9,6 @@
           <font-awesome-icon icon="fa-solid fa-user-circle" size="xl"/>
           <template v-slot:title>Username</template>
         </NavbarItem>
-
         <NavbarItem>
           <font-awesome-icon icon="fa-solid fa-house" size="xl"/>
           <template v-slot:title>Overview</template>
