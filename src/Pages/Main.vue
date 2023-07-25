@@ -37,7 +37,7 @@
       />
     </CardSection>
     <CardSection>
-      <CardSectionHeader title="My active loans">
+      <CardSectionHeader :title="isOverviewPage ? 'My active loans' : 'My loans'">
         <template v-slot:button v-if="isOverviewPage">
           <PrimaryButton
               name="View all loans"
@@ -48,9 +48,15 @@
         </template>
       </CardSectionHeader>
 <!--      v-for required for active loans-->
-        <LoanCard/>
-        <LoanCard/>
-        <LoanCard/>
+        <LoanCard
+          avatar-colors="bg-pink-light text-pink-dark"
+        />
+        <LoanCard
+          avatar-colors="bg-teal-light text-teal"
+        />
+        <LoanCard
+          avatar-colors="bg-red-light text-red-dark"
+        />
     </CardSection>
     <CardSection>
       <CardSectionHeader title="Keeping your account healthy">
@@ -89,7 +95,5 @@ import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCa
 import OrderHelpNotification from "@/components/Notifications/OrderHelp.vue";
 import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
 
-
-const isOverviewPage = true
-
+const isOverviewPage = false
 </script>

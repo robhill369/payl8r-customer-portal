@@ -1,6 +1,6 @@
 // const colors = require('tailwindcss/colors');
 let grayDarker = '#414141';
-let grayDark = '#EFEFEF';
+let grayDark = '#707070';
 let pinkDark = '#C481D1';
 
 module.exports = {
@@ -69,7 +69,7 @@ module.exports = {
         'button-primary': grayDarker,
         'button-primary-hover': '#6F6F6F',
         'button-primary-selected': pinkDark,
-        'button-secondary': grayDark,
+        'button-secondary': '#EFEFEF',
         'button-secondary-hover': '#D8D8D8',
         'button-secondary-selected': grayDarker,
       },

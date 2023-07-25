@@ -2,7 +2,9 @@
   <BaseCard class="relative flex-col-reverse lg:flex-col px-5 xl:px-9 py-7">
     <div class="flex flex-col space-y-6">
       <div class="flex flex-col lg:flex-row w-full lg:justify-between space-y-6 lg:space-y-0">
-        <LoanDescription/>
+        <LoanDescription
+        :avatar-colors=avatarColors
+        />
         <LoanFees class="pr-2"/>
       </div>
       <ProgressBar/>
@@ -30,4 +32,10 @@ import Tag from "@/components/Tag.vue";
 import LoanDescription from "@/components/Cards/LoanDescription.vue";
 import LoanFees from "@/components/Cards/LoanFees.vue";
 import BaseCard from "@/components/Cards/Base.vue";
+
+defineProps({
+  avatarColors: {
+    type: String,
+  }
+})
 </script>
