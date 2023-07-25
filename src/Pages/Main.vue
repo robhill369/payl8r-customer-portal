@@ -23,7 +23,7 @@
       <CardSectionHeader title="Account status">
         <template v-slot:icon>
           <Avatar
-            class="w-7 h-7 mr-4 bg-teal-light text-teal-dark"
+            class="w-7 h-7 mr-4 bg-teal text-white"
             icon="fa-solid fa-thumbs-up"
             size="md"
           />

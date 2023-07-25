@@ -1,9 +1,9 @@
 <template>
   <BaseCard class="px-9 py-7">
     <Avatar
-      class="bg-pink-light text-pink-dark"
+      :class=avatarColors
       :icon=icon
-      size="xl"
+      :size=iconSize
     />
     <TitledCopy class="pl-7"
       :title=title
@@ -26,6 +26,13 @@ const props = defineProps({
     required: true,
   },
   icon: {
+    type: String
+  },
+  iconSize: {
+    type: String,
+    default: 'xl'
+  },
+  avatarColors: {
     type: String
   }
 })

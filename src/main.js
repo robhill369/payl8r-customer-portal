@@ -25,6 +25,10 @@ import {
     faXmark,
     faArrowsRotate,
     faThumbsUp,
+    faComments,
+    faEnvelope,
+    faPhone,
+    faHand,
 
     // FA Pro - free alternatives
     faMessage,
@@ -47,7 +51,11 @@ library.add(
     faCircleInfo,
     faXmark,
     faArrowsRotate,
-    faThumbsUp
+    faThumbsUp,
+    faComments,
+    faEnvelope,
+    faPhone,
+    faHand,
 )
 
 createApp(App)
