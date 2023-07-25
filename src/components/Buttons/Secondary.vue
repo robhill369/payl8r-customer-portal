@@ -1,9 +1,22 @@
 <template>
   <ButtonBase class="bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white">
-    <slot/>
+    <font-awesome-icon :icon=props.icon size="md" class="pr-2"/>
+    <span>{{ props.name }}</span>
   </ButtonBase>
 </template>
 
 <script setup>
 import ButtonBase from "@/components/Buttons/Base.vue";
+
+const props = defineProps({
+  name: {
+    type: String,
+    required: true
+  },
+  icon: {
+    type: String
+  },
+})
+
+
 </script>

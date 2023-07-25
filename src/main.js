@@ -18,6 +18,13 @@ import {
     faUserCircle,
     faWallet,
     faArrowRightToBracket,
+    faBars,
+    faCircleExclamation,
+    faCircleCheck,
+    faCircleInfo,
+    faXmark,
+    faArrowsRotate,
+    faThumbsUp,
 
     // FA Pro - free alternatives
     faMessage,
@@ -25,7 +32,23 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faHouse, faHeadset, faGear, faUserCircle, faWallet, faArrowRightToBracket, faMessage, faCreditCard)
+library.add(
+    faHouse,
+    faHeadset,
+    faGear,
+    faUserCircle,
+    faWallet,
+    faArrowRightToBracket,
+    faMessage,
+    faCreditCard,
+    faBars,
+    faCircleExclamation,
+    faCircleCheck,
+    faCircleInfo,
+    faXmark,
+    faArrowsRotate,
+    faThumbsUp
+)
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)

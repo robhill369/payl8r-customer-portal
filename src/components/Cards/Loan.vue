@@ -6,18 +6,20 @@
         <LoanFees class="pr-2"/>
       </div>
       <ProgressBar/>
-      <div class="flex flex-col lg:flex-row space-y-3.5 lg:space-x-3 lg:space-y-0">
-        <ButtonSecondary>
-          <font-awesome-icon icon="fa-solid fa-credit-card" size="md"/>
-          <span class="pl-2">Pay instalment early</span>
-        </ButtonSecondary>
-        <ButtonSecondary>
-          <font-awesome-icon icon="fa-solid fa-credit-card" size="md"/>
-          <span class="pl-2">Pay instalment early</span>
-        </ButtonSecondary>
+      <div class="flex flex-col md:flex-row space-y-3.5 md:space-x-3 md:space-y-0">
+        <ButtonSecondary
+            name="Pay instalment early"
+            icon="fa-solid fa-credit-card"
+        />
+        <ButtonSecondary
+          name="Change payment date"
+          icon="fa-solid fa-arrows-rotate"
+        />
       </div>
     </div>
-    <Tag class="mb-6 lg:absolute lg:right-5 lg:bottom-1 xl:right-9">Ongoing</Tag>
+    <Tag class="mb-6 lg:absolute lg:right-5 lg:bottom-1 xl:right-9"
+      status="ongoing"
+    />
   </BaseCard>
 </template>
 <script setup>

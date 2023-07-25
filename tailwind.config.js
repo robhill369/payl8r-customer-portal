@@ -34,7 +34,7 @@ module.exports = {
         current: 'currentColor',
         'teal': {
           dark: '#53B8B7',
-          DEFAULT: '#AADCDB',
+          DEFAULT: '#AADCDC',
           light: '#CFF5F5',
         },
         'gray': {
@@ -44,8 +44,8 @@ module.exports = {
           light: '#F8F8F8',
           lighter: '#FCFCFC',
         },
-        'green-dark': '#4F9D79',
-        'green-light': '#BFEACA',
+        'green-dark': '#289F76',
+        'green-light': '#B4ECC7',
         'pink': {
           dark: pinkDark,
           DEFAULT: '#C788D3',
@@ -53,6 +53,7 @@ module.exports = {
           lighter: '#FBF7FB',
         },
         'red': {
+          darker: '#C71D1D',
           dark: '#DE5965',
           DEFAULT: '#E18683',
           light: '#F8D4D3',
