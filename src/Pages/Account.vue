@@ -4,7 +4,7 @@
         <h2 class="font-bold">My Account</h2>
       <UserCard
         :username=username
-        registrationDate="[USER REG DATE]"
+        :registrationDate=registrationDate
       />
       <BaseCard class="px-6 sm:px-9 py-12">
         <UpdatePaymentDetailsForm class="lg:pr-16"
@@ -32,6 +32,10 @@ import UpdateUserDetailsForm from "@/components/Forms/UpdateUserDetails.vue";
 
 defineProps ({
   username: {
+    type: String,
+    required: true,
+  },
+  registrationDate: {
     type: String,
     required: true,
   },

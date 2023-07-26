@@ -12,8 +12,9 @@
 <!--          <MainPage/>-->
 <!--          <HelpPage/>-->
           <AccountPage
-            username="Rob Hill"
-            current-last-four-digits=1838
+            username="USERNAME"
+            current-last-four-digits="FOUR"
+            registration-date="REG DATE"
           />
         </div>
       </div>
