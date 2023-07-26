@@ -1,12 +1,22 @@
 <template>
   <div class="w-full flex flex-col space-y-6">
     <BaseForm
-        class="lg:pr-28"
-        title="Change my password"
-        button-name="Change password">
-      <FormTextInput label="Enter your current password"/>
-      <FormTextInput label="Enter a new password"/>
-      <FormTextInput label="Repeat new password"/>
+      class="lg:pr-28"
+      title="Change my password"
+      button-name="Change password"
+    >
+      <FormTextInput
+        title="Enter your current password"
+        id="current-password"
+      />
+      <FormTextInput
+        title="Enter a new password"
+        id="new-password"
+      />
+      <FormTextInput
+        title="Repeat new password"
+        id="repeat-new-password"
+      />
     </BaseForm>
   </div>
 </template>

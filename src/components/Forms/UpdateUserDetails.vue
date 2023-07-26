@@ -7,10 +7,22 @@
       <template v-slot:helper >
         <UpdateDetailsHelp class="mt-8 lg:-mr-12"/>
       </template>
-      <FormTextInput label="Legal name"/>
-      <FormTextInput label="Email address"/>
-      <FormTextInput label="Home address"/>
-      <FormTextInput label="Primary phone number"/>
+      <FormTextInput
+        title="Legal name"
+        id="legal-name"
+      />
+      <FormTextInput
+        title="Email address"
+        id="email"
+      />
+      <FormTextInput
+          title="Home address"
+          id="home-address"
+      />
+      <FormTextInput
+          title="Primary phone number"
+          id="primary-phone"
+      />
     </BaseForm>
   </div>
 </template>

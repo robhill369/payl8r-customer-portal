@@ -12,8 +12,8 @@
 <!--          <MainPage/>-->
 <!--          <HelpPage/>-->
           <AccountPage
-            username="Test Tester"
-            current-last-four-digits=9999
+            username="Rob Hill"
+            current-last-four-digits=1838
           />
         </div>
       </div>
@@ -31,5 +31,7 @@ import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOver
 import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCardUpdated.vue";
 import HelpPage from "@/Pages/Help.vue";
 import AccountPage from "@/Pages/Account.vue";
+
+
 
 </script>

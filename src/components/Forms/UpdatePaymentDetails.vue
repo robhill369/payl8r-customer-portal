@@ -11,11 +11,21 @@
     <BaseForm
         class="lg:pr-12 pt-6"
         title="Update my payment card"
-        button-name="Submit card details">
-      <FormTextInput label="Card number"/>
+        button-name="Submit card details"
+    >
+      <FormTextInput
+          title="Card number"
+          id="card-number"
+      />
       <div class="flex flex-col lg:flex-row lg:space-x-8 space-y-7 lg:space-y-0 ">
-        <FormTextInput label="Expiry date (mm/yy)"/>
-        <FormTextInput label="CVV"/>
+        <FormTextInput
+            title="Expiry date (mm/yy)"
+            id="card-expiry-date"
+        />
+        <FormTextInput
+            title="CVV"
+            id="cvv"
+        />
       </div>
     </BaseForm>
   </div>

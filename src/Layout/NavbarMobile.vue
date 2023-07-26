@@ -5,7 +5,7 @@
     >
       <div class="flex flex-col pt-2 z-30">
         <div class="relative h-24 z-50">
-          <div class="absolute top-1/2 -translate-y-1/2 left-9" @click="NavOpened = !NavOpened" >
+          <div class="absolute top-1/2 -translate-y-1/2 left-9" @click="NavOpened = !NavOpened">
             <font-awesome-icon icon="fa-solid fa-xmark" size="2xl" v-if="NavOpened"/>
             <font-awesome-icon icon="fa-solid fa-bars" size="2xl" v-else/>
           </div>
