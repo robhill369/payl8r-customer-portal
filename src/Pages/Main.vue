@@ -64,11 +64,13 @@
       </CardSectionHeader>
       <div class="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10">
         <SimpleCard
+          avatar-colors="bg-pink-light text-pink"
           icon="fa-solid fa-credit-card"
           title="Changed your card?"
           body="Let us know now and avoid any repayment hiccups."
         />
         <SimpleCard
+          avatar-colors="bg-pink-light text-pink"
           icon="fa-solid fa-message"
           title="Here to help"
           body="Need to change something or update us? Right this way."
@@ -86,7 +88,7 @@ import SimpleCard from "@/components/Cards/Simple.vue";
 import PaymentsScheduleCard from "@/components/Cards/PaymentsSchedule.vue";
 import CardSectionHeader from "@/Layout/CardSectionHeader.vue";
 import PrimaryButton from "@/components/Buttons/Primary.vue";
-import Avatar from "@/components/icons/Avatar.vue";
+import Avatar from "@/components/Avatar.vue";
 import PageBase from "@/Pages/Base.vue";
 import Tabs from "@/components/Tabs.vue";
 import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
@@ -96,4 +98,5 @@ import OrderHelpNotification from "@/components/Notifications/OrderHelp.vue";
 import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
 
 const isOverviewPage = false
+
 </script>

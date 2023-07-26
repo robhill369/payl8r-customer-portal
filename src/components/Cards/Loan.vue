@@ -25,7 +25,7 @@
   </BaseCard>
 </template>
 <script setup>
-import Avatar from "@/components/icons/Avatar.vue";
+import Avatar from "@/components/Avatar.vue";
 import ProgressBar from "@/components/ProgressBar.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
 import Tag from "@/components/Tag.vue";

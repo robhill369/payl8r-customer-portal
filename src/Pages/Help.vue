@@ -4,7 +4,7 @@
         <h2 class="font-bold">Help centre</h2>
         <OrderHelpNotification/>
     </CardSection>
-    <CardSection v-if="isOverviewPage">
+    <CardSection>
       <CardSectionHeader title="Ways to get in touch with Payl8r">
       </CardSectionHeader>
       <SimpleCard
@@ -52,7 +52,7 @@ import SimpleCard from "@/components/Cards/Simple.vue";
 import PaymentsScheduleCard from "@/components/Cards/PaymentsSchedule.vue";
 import CardSectionHeader from "@/Layout/CardSectionHeader.vue";
 import PrimaryButton from "@/components/Buttons/Primary.vue";
-import Avatar from "@/components/icons/Avatar.vue";
+import Avatar from "@/components/Avatar.vue";
 import PageBase from "@/Pages/Base.vue";
 import Tabs from "@/components/Tabs.vue";
 import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
@@ -64,7 +64,5 @@ import OrderHelp from "@/components/Notifications/OrderHelp.vue";
 import PaymentCardUpdated from "@/components/Notifications/PaymentCardUpdated.vue";
 import Simple from "@/components/Cards/Simple.vue";
 
-
-const isOverviewPage = true
 
 </script>

@@ -28,11 +28,11 @@ import {
     faComments,
     faEnvelope,
     faPhone,
-    faHand,
 
     // FA Pro - free alternatives
     faMessage,
-    faCreditCard
+    faCreditCard,
+    faHand,
 } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */

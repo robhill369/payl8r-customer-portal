@@ -11,7 +11,8 @@ const props = defineProps({
     type: String
   },
   size: {
-    type: String
+    type: String,
+    default: 'xl'
   },
   avatarColors: {
     type: String

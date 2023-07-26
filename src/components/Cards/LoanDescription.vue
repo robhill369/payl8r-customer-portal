@@ -14,7 +14,7 @@
   </div>
 </template>
 <script setup>
-import Avatar from "@/components/icons/Avatar.vue";
+import Avatar from "@/components/Avatar.vue";
 
 defineProps({
   avatarColors: {
