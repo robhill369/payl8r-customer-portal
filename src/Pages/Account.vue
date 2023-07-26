@@ -22,7 +22,6 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
 import CardSection from "@/Layout/CardSection.vue";
 import PageBase from "@/Pages/Base.vue";
 import UserCard from "@/components/Cards/User.vue";
