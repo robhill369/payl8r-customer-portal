@@ -28,6 +28,7 @@ import {
     faComments,
     faEnvelope,
     faPhone,
+    faLock,
 
     // FA Pro - free alternatives
     faMessage,
@@ -56,6 +57,7 @@ library.add(
     faEnvelope,
     faPhone,
     faHand,
+    faLock,
 )
 
 createApp(App)

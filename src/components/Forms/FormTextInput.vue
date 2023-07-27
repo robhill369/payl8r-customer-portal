@@ -1,11 +1,20 @@
 <template>
-  <div class="w-full flex flex-col group">
+  <div class="relative w-full flex flex-col group">
     <label :for=id class="text-xs font-medium font-montserrat pb-3.5 group-focus-within:text-pink">{{ title }}</label>
-    <input :id=id type="text" class="bg-gray-light p-3 border-b border-gray-dark text-gray-darker w-full focus:bg-pink-lighter focus:border-pink"/>
+    <input
+      :id=id
+      :type=inputType
+      class="bg-gray-light px-5 py-3 border-b border-gray-dark text-gray-darker w-full focus:bg-pink-lighter focus:border-pink"
+      :disabled=disabled
+      :placeholder="disabled ? currentValue : ''"
+    />
+    <font-awesome-icon icon="fa-solid fa-lock" size="md" v-if="disabled" class="absolute right-5 top-14  text-gray"/>
   </div>
 </template>
 
 <script setup>
+
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 defineProps ({
   title: {
@@ -15,6 +24,17 @@ defineProps ({
   id: {
     type: String,
     required: true,
+  },
+  inputType: {
+    type: String,
+    default: 'text'
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  currentValue: {
+    type: String,
   }
 })
 </script>

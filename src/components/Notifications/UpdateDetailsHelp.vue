@@ -5,7 +5,7 @@
       title="Need to update your name or email?"
       is-helper="true"
   >
-    <p>Please email support@pay8r.com to change these details with our team.</p>
+    <p>Please email support@payl8r.com to change these details with our team.</p>
   </BaseNotification>
 </template>
 

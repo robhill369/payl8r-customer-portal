@@ -10,10 +10,14 @@
       <FormTextInput
         title="Legal name"
         id="legal-name"
+        disabled
+        :current-value=currentLegalName
       />
       <FormTextInput
         title="Email address"
         id="email"
+        disabled
+        :current-value=currentEmail
       />
       <FormTextInput
           title="Home address"
@@ -28,10 +32,18 @@
 </template>
 
 <script setup>
-
-import PaymentCardUpdated from "@/components/Notifications/PaymentCardUpdated.vue";
-import VisaLogo from "@/components/icons/VisaLogo.vue";
 import BaseForm from "@/components/Forms/Base.vue";
 import FormTextInput from "@/components/Forms/FormTextInput.vue";
 import UpdateDetailsHelp from "@/components/Notifications/UpdateDetailsHelp.vue";
+
+defineProps ({
+  currentLegalName: {
+    type: String,
+    required: true,
+  },
+  currentEmail: {
+    type: String,
+    required: true,
+  }
+})
 </script>

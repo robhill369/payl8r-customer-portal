@@ -8,14 +8,17 @@
       <FormTextInput
         title="Enter your current password"
         id="current-password"
+        input-type="password"
       />
       <FormTextInput
         title="Enter a new password"
         id="new-password"
+        input-type="password"
       />
       <FormTextInput
         title="Repeat new password"
         id="repeat-new-password"
+        input-type="password"
       />
     </BaseForm>
   </div>

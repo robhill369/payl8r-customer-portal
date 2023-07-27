@@ -15,6 +15,8 @@
             username="USERNAME"
             current-last-four-digits="FOUR"
             registration-date="REG DATE"
+            current-legal-name="CURRENT LEGAL NAME"
+            current-email="CURRENT EMAIL ADDRESS"
           />
         </div>
       </div>

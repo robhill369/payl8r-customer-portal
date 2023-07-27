@@ -15,7 +15,10 @@
         <UpdatePasswordForm/>
       </BaseCard>
       <BaseCard class="px-6 sm:px-9 py-12">
-        <UpdateUserDetailsForm/>
+        <UpdateUserDetailsForm
+          :current-legal-name=currentLegalName
+          :current-email=currentEmail
+        />
       </BaseCard>
     </CardSection>
   </PageBase>
@@ -42,6 +45,15 @@ defineProps ({
   currentLastFourDigits: {
     type: Number,
     required: true,
-  }
+  },
+  currentLegalName: {
+    type: String,
+    required: true,
+  },
+  currentEmail: {
+    type: String,
+    required: true,
+  },
+
 })
 </script>
