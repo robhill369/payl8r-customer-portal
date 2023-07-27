@@ -11,13 +11,13 @@
         title="Legal name"
         id="legal-name"
         disabled
-        :current-value=currentLegalName
+        :current-value-placeholder=currentLegalName
       />
       <FormTextInput
         title="Email address"
         id="email"
         disabled
-        :current-value=currentEmail
+        :current-value-placeholder=currentEmail
       />
       <FormTextInput
           title="Home address"

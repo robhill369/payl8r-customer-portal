@@ -6,7 +6,7 @@
       :type=inputType
       class="bg-gray-light px-5 py-3 border-b border-gray-dark text-gray-darker w-full focus:bg-pink-lighter focus:border-pink"
       :disabled=disabled
-      :placeholder="disabled ? currentValue : ''"
+      :placeholder="currentValuePlaceholder ? currentValuePlaceholder : placeholder"
     />
     <font-awesome-icon icon="fa-solid fa-lock" size="md" v-if="disabled" class="absolute right-5 top-14  text-gray"/>
   </div>
@@ -33,7 +33,10 @@ defineProps ({
     type: Boolean,
     default: false
   },
-  currentValue: {
+  currentValuePlaceholder: {
+    type: String,
+  },
+  placeholder: {
     type: String,
   }
 })
