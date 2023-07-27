@@ -15,10 +15,14 @@
 <!--        <UpdateDetailsHelpNotification/>-->
 <!--      </div>-->
     </div>
+
+<!--    My overview section-->
     <CardSection>
         <CardSectionHeader title="My overview"/>
         <PaymentsCard/>
     </CardSection>
+
+<!--    Account status section-->
     <CardSection v-if="isOverviewPage">
       <CardSectionHeader title="Account status">
         <template v-slot:icon>
@@ -29,13 +33,17 @@
           />
         </template>
       </CardSectionHeader>
-      <PaymentsScheduleCard
-        upcomingPayment=20.00
-        upcomingPaymentDate='5th Feb 2023'
-        previousPayment=20.00
-        previousPaymentDate='5th Feb 2023'
-      />
+      <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 lg:pr-20 space-y-7 lg:space-y-0 lg:space-x-24">
+        <PaymentsSchedule
+          upcomingPayment=20.00
+          upcomingPaymentDate='5th Feb 2023'
+          previousPayment=20.00
+          previousPaymentDate='5th Feb 2023'
+        />
+      </BaseCard>
     </CardSection>
+
+<!--    My (active) loans section-->
     <CardSection>
       <CardSectionHeader :title="isOverviewPage ? 'My active loans' : 'My loans'">
         <template v-slot:button v-if="isOverviewPage">
@@ -50,12 +58,11 @@
 <!--      v-for required for active loans-->
         <LoanCard
           avatar-colors="bg-pink-light text-pink-dark"
-        />
-        <LoanCard
-          avatar-colors="bg-teal-light text-teal"
-        />
-        <LoanCard
-          avatar-colors="bg-red-light text-red-dark"
+          upcomingPayment=20.00
+          upcomingPaymentDate='5th Feb 2023'
+          previousPayment=20.00
+          previousPaymentDate='5th Feb 2023'
+          retailer-name="RETAILER NAME"
         />
     </CardSection>
     <CardSection>
@@ -96,7 +103,9 @@ import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOver
 import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCardUpdated.vue";
 import OrderHelpNotification from "@/components/Notifications/OrderHelp.vue";
 import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
+import BaseCard from "@/components/Cards/Base.vue";
+import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 
-const isOverviewPage = false
+const isOverviewPage = true
 
 </script>

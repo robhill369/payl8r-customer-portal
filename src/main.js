@@ -29,6 +29,7 @@ import {
     faEnvelope,
     faPhone,
     faLock,
+    faFile,
 
     // FA Pro - free alternatives
     faMessage,
@@ -58,6 +59,7 @@ library.add(
     faPhone,
     faHand,
     faLock,
+    faFile,
 )
 
 createApp(App)

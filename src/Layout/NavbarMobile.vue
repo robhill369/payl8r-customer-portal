@@ -18,7 +18,12 @@
 <!--            <PaymentCardUpdatedNotification class="mb-4"/>-->
 <!--            <PaymentsOverdueNotification class="mb-4"/>-->
           </div>
-          <NavbarList v-else class="pl-5" :NavOpened="NavOpened" />
+          <NavbarList
+              v-else
+              class="pl-5"
+              :NavOpened="NavOpened"
+              :username=username
+          />
         </div>
       </div>
     </div>
@@ -34,6 +39,13 @@ import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCa
 import NavbarItem from "@/Layout/NavbarItem.vue";
 import NavbarList from "@/Layout/NavbarList.vue";
 import {ref} from "vue";
+
+defineProps ({
+  username: {
+    type: String,
+    required: true
+  }
+})
 
 const NavOpened = ref(false);
 

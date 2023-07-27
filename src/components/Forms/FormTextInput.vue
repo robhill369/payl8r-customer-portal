@@ -4,7 +4,7 @@
     <input
       :id=id
       :type=inputType
-      class="bg-gray-light px-5 py-3 border-b border-gray-dark text-gray-darker w-full focus:bg-pink-lighter focus:border-pink"
+      class="bg-gray-light px-3 sm:px-5 py-3 border-b border-gray-dark text-gray-darker w-full focus:bg-pink-lighter focus:border-pink"
       :disabled=disabled
       :placeholder="currentValuePlaceholder ? currentValuePlaceholder : placeholder"
     />

@@ -1,20 +1,26 @@
 <template>
-  <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 lg:pr-20 space-y-7 lg:space-y-0 lg:space-x-24">
-    <TitledCopy
-      title="Upcoming payment"
-      :body="'Your last payment of £' + upcomingPayment + ' will be taken on ' +upcomingPaymentDate"
-    />
-    <TitledCopy
-      title="Last payment"
-      :body="'Your last payment of £' + previousPayment + ' was taken successfully on ' +previousPaymentDate"
-    />
-  </BaseCard>
+  <div class="flex flex-col lg:flex-row w-full justify-between space-y-7 lg:space-y-0">
+    <div class="flex flex-col w-full lg:w-2/5 space-y-4">
+      <h5 class="text-gray">Upcoming payment</h5>
+      <div class="w-full">Your next payment of <span class="font-bold">{{upcomingPayment}}</span> will be taken on <span class="font-bold">{{upcomingPaymentDate}}</span></div>
+    </div>
+    <div class="flex flex-col lg:w-64 space-y-4"
+    :class="isLoanCard ? 'mr-12 xl:mr-24 2xl:mr-12' : ''"
+    >
+      <h5 class="text-gray">Last payment</h5>
+      <div class="w-full">Your last payment of <span class="font-bold">{{previousPayment}}</span> was taken successfully on <span class="font-bold">{{previousPaymentDate}}</span></div>
+    </div>
+  </div>
 </template>
 <script setup>
 import TitledCopy from "@/Layout/TitledCopy.vue";
 import BaseCard from "@/components/Cards/Base.vue";
 
 const props = defineProps({
+  isLoanCard: {
+    type: Boolean,
+    default: false
+  },
   upcomingPayment: {
     type: Number,
     required: true,

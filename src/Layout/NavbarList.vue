@@ -2,7 +2,7 @@
   <div class="flex flex-col-reverse lg:flex-col text-nav">
     <NavbarItem class="lg:text-gray lg:pointer-events-none">
       <font-awesome-icon icon="fa-solid fa-user-circle" size="xl" class="-mr-1.5 lg:mr-0"/>
-      <template v-slot:title>Username</template>
+      <template v-slot:title>{{ username }}</template>
     </NavbarItem>
     <div>
       <NavbarItem>
@@ -32,4 +32,10 @@
 </template>
 <script setup>
 import NavbarItem from "@/Layout/NavbarItem.vue";
+
+defineProps ({
+  username: {
+    type: String
+  }
+})
 </script>

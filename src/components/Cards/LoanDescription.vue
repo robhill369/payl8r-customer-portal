@@ -19,6 +19,6 @@ import Avatar from "@/components/Avatar.vue";
 defineProps({
   avatarColors: {
     type: String
-  }
+  },
 })
 </script>

@@ -1,23 +1,29 @@
 <template>
   <AppLayout>
     <header>
-      <Navbar class="xs:hidden lg:block"/>
-      <NavbarMobile class="relative lg:hidden"/>
+      <Navbar
+          class="xs:hidden lg:block"
+          username="USERNAME"
+      />
+      <NavbarMobile
+          class="relative lg:hidden"
+          username="USERNAME"
+      />
     </header>
     <main class="currentColor ">
       <div class="flex flex-col lg:flex-row currentColor">
 <!--        teleport height of mobile navbar -->
         <div class="h-20 lg:h-auto lg:flex w-full lg:w-96 2xl:w-16"/>
         <div class="px-5 w-full sm:container pt-16">
-<!--          <MainPage/>-->
+          <MainPage/>
 <!--          <HelpPage/>-->
-          <AccountPage
-            username="USERNAME"
-            current-last-four-digits="FOUR"
-            registration-date="REG DATE"
-            current-legal-name="CURRENT LEGAL NAME"
-            current-email="CURRENT EMAIL ADDRESS"
-          />
+<!--          <AccountPage-->
+<!--            username="USERNAME"-->
+<!--            current-last-four-digits="FOUR"-->
+<!--            registration-date="REG DATE"-->
+<!--            current-legal-name="CURRENT LEGAL NAME"-->
+<!--            current-email="CURRENT EMAIL ADDRESS"-->
+<!--          />-->
         </div>
       </div>
     </main>
