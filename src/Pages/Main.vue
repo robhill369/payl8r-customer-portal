@@ -71,6 +71,7 @@
           loan-previous-payment-date="LSTPAYDATE"
           interest-free-period="XX"
           current-last-four-digits="XXXX"
+          instalment-status="paid"
         />
     </CardSection>
     <CardSection>

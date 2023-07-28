@@ -6,9 +6,9 @@
         :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9'"
       >
         <div :class="loanDetails ? 'w-full flex justify-between' : 'lg:absolute bottom-7 right-5 xl:right-9'">
-          <Tag :status= loanStatus />
-          <ButtonPrimary
-            class="bg-gray-dark"
+          <Tag :name= loanStatus />
+          <ButtonSecondary
+            class="bg-gray-dark text-white hover:text-gray-darker"
             v-if="loanDetails"
             name="Close"
             icon="fa-solid fa-close"
@@ -118,71 +118,118 @@
 <!--      />-->
       <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y-12">
         <Tabs/>
-        <div>
-          <PaymentsSchedule
-            is-loan-card
-            :upcomingPayment=loanUpcomingPayment
-            :upcomingPaymentDate=loanUpcomingPaymentDate
-            :previousPayment=loanPreviousPayment
-            :previousPaymentDate=loanPreviousPaymentDate
-          />
-          <div class="flex flex-col lg:flex-row w-full pt-11 justify-between pb-8 lg:pb-0">
-            <hr class="block lg:hidden -mx-5 lg:-mx-9 pb-9"/>
-            <div class="flex flex-col w-full lg:w-2/5 space-y-5">
-              <h5 class="text-gray">Order Summary</h5>
-              <div class="grid grid-cols-5">
-                <p class="col-span-4 pt-2.5">Total inc. interest</p>
-                <p class="font-bold pt-2.5">£{{totalLoanValue}}</p>
-                <p class="col-span-4 pt-2.5">Order total</p>
-                <p class="font-bold pt-2.5">£{{totalOrderValue}}</p>
-                <p class="col-span-4 pt-2.5">Paid so far</p>
-                <p class="font-bold pt-2.5">£XX.XX</p>
-              </div>
-              <div class="h-3"/>
-            </div>
-            <div class="flex flex-col w-full lg:w-[304px] xl:w-[352px] 2xl:w-[304px] 3xl:w-[480px] space-y-5">
-              <h5 class="text-gray">Basket Summary</h5>
-              <div class="w-full">
-                <div class="grid grid-cols-5 text-xs text-gray">
-                  <div class="col-span-3">Product</div>
-                  <div>Qty.</div>
-                  <div>Price</div>
-                </div>
-                <div
-                    class="grid grid-cols-5 auto-rows-auto"
-                    v-for="item in items"
-                >
-                  <p class="col-span-3 pt-2.5 pr-2">{{item.name}}</p>
-                  <p class="font-bold pt-2.5 pr-2">{{ item.qnty }}</p>
-                  <p class="font-bold pt-2.5 pr-2">£{{ (item.price * item.qnty).toFixed(2) }}</p>
-                </div>
-              </div>
-            </div>
+        <div class="w-full">
+          <div class="grid grid-cols-8 text-xs text-gray font-semibold font-montserrat w-full">
+            <div class="border-b pb-4 ">No.</div>
+            <div class="col-span-2 pb-4 border-b">Date</div>
+            <div class="col-span-2 pb-4 border-b">Amount due</div>
+            <div class="col-span-2 pb-4 border-b">Amount paid</div>
+            <div class="border-b pb-4 flex justify-end">Status</div>
           </div>
-          <div class="flex flex-col space-y-5">
-            <h5 class="text-gray">Payment method</h5>
-            <div class="flex ">
-              <h2 class="pr-2">•••• •••• ••••</h2><h3>{{currentLastFourDigits}}</h3>
+          <div
+            class="grid grid-cols-8 w-full auto-rows-auto items-center"
+            v-for="instalment in instalments"
+          >
+            <p class="flex h-14 items-center border-b">{{instalment.number}}</p>
+            <p class="flex h-14 items-center border-b col-span-2">{{instalment.date}}</p>
+            <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountDue}}</p>
+            <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountPaid}}</p>
+            <div class="border-b w-full flex justify-end h-14 items-center">
+              <Tag
+                :name=instalment.status
+                class="px-[12px] py-[5px]"
+              />
             </div>
-            <ButtonSecondary
-              class="drop-shadow-lg bg-white border-none"
-              name="Change card"
-              icon="fa-solid fa-credit-card"
-            />
           </div>
         </div>
-        <hr class="-mx-5 xl:-mx-9"/>
-        <TitledCopy
-          title="Issues with this order?"
-          :body="retailerName + ' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"
-        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--        TAB 1 - LOAN SUMMARY-->
+<!--        <div>-->
+<!--          <PaymentsSchedule-->
+<!--              is-loan-card-->
+<!--              :upcomingPayment=loanUpcomingPayment-->
+<!--              :upcomingPaymentDate=loanUpcomingPaymentDate-->
+<!--              :previousPayment=loanPreviousPayment-->
+<!--              :previousPaymentDate=loanPreviousPaymentDate-->
+<!--          />-->
+<!--          <div class="flex flex-col lg:flex-row w-full pt-11 justify-between pb-8 lg:pb-0">-->
+<!--            <hr class="block lg:hidden -mx-5 lg:-mx-9 pb-9"/>-->
+<!--            <div class="flex flex-col w-full lg:w-2/5 space-y-5">-->
+<!--              <h5 class="text-gray">Order Summary</h5>-->
+<!--              <div class="grid grid-cols-5">-->
+<!--                <p class="col-span-4 pt-2.5">Total inc. interest</p>-->
+<!--                <p class="font-bold pt-2.5">£{{totalLoanValue}}</p>-->
+<!--                <p class="col-span-4 pt-2.5">Order total</p>-->
+<!--                <p class="font-bold pt-2.5">£{{totalOrderValue}}</p>-->
+<!--                <p class="col-span-4 pt-2.5">Paid so far</p>-->
+<!--                <p class="font-bold pt-2.5">£XX.XX</p>-->
+<!--              </div>-->
+<!--              <div class="h-3"/>-->
+<!--            </div>-->
+<!--            <div class="flex flex-col w-full lg:w-[304px] xl:w-[352px] 2xl:w-[304px] 3xl:w-[480px] space-y-5">-->
+<!--              <h5 class="text-gray">Basket Summary</h5>-->
+<!--              <div class="w-full">-->
+<!--                <div class="grid grid-cols-5 text-xs text-gray">-->
+<!--                  <div class="col-span-3">Product</div>-->
+<!--                  <div>Qty.</div>-->
+<!--                  <div>Price</div>-->
+<!--                </div>-->
+<!--                <div-->
+<!--                    class="grid grid-cols-5 auto-rows-auto"-->
+<!--                    v-for="item in items"-->
+<!--                >-->
+<!--                  <p class="col-span-3 pt-2.5 pr-2">{{item.name}}</p>-->
+<!--                  <p class="font-bold pt-2.5 pr-2">{{ item.qnty }}</p>-->
+<!--                  <p class="font-bold pt-2.5 pr-2">£{{ (item.price * item.qnty).toFixed(2) }}</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="flex flex-col space-y-5">-->
+<!--            <h5 class="text-gray">Payment method</h5>-->
+<!--            <div class="flex ">-->
+<!--              <h2 class="pr-2">•••• •••• ••••</h2><h3>{{currentLastFourDigits}}</h3>-->
+<!--            </div>-->
+<!--            <ButtonSecondary-->
+<!--                class="drop-shadow-lg bg-white border-none"-->
+<!--                name="Change card"-->
+<!--                icon="fa-solid fa-credit-card"-->
+<!--            />-->
+<!--          </div>-->
+<!--          <hr class="-mx-5 xl:-mx-9 my-10"/>-->
+<!--          <TitledCopy-->
+<!--              title="Issues with this order?"-->
+<!--              :body="retailerName + ' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"-->
+<!--          />-->
+<!--        </div>-->
       </div>
     </div>
   </BaseCard>
 </template>
+
+
 <script setup>
 import ProgressBar from "@/components/ProgressBar.vue";
-import ButtonPrimary from "@/components/Buttons/Primary.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
 import Tag from "@/components/Tag.vue";
 import BaseCard from "@/components/Cards/Base.vue";
@@ -267,6 +314,51 @@ const items = [
     name: 'product 3',
     qnty: 3,
     price: 20.00
+  },
+]
+
+const instalments = [
+  {
+    number: 1,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'paid'
+  },
+  {
+    number: 2,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'overdue'
+  },
+  {
+    number: 3,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 4,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 5,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 6,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
   },
 ]
 </script>

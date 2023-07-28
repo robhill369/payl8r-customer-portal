@@ -59,8 +59,13 @@ module.exports = {
           light: '#F8D4D3',
         },
         'white': '#FFFFFF',
-        'yellow-dark': '#F6C350',
-        'yellow-light': '#FEF9EB',
+
+        'yellow': {
+          darker: '#967E0C',
+          dark: '#F6C350',
+          DEFAULT: '#FFF7D2',
+          light: '#FEF9EB'
+        },
 
         //text colors
 
