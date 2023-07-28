@@ -33,7 +33,7 @@
           />
         </template>
       </CardSectionHeader>
-      <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 lg:pr-20 space-y-7 lg:space-y-0 lg:space-x-24">
+      <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 pr-14 sm:pr-40 lg:pr-20 space-y-7 lg:space-y-0 lg:space-x-24">
         <PaymentsSchedule
           upcomingPayment=20.00
           upcomingPaymentDate='5th Feb 2023'
@@ -58,11 +58,12 @@
 <!--      v-for required for active loans-->
         <LoanCard
           avatar-colors="bg-pink-light text-pink-dark"
-          upcomingPayment=20.00
-          upcomingPaymentDate='5th Feb 2023'
-          previousPayment=20.00
-          previousPaymentDate='5th Feb 2023'
+          loan-upcoming-payment=20.00
+          loan-upcoming-payment-date="2nd Feb 2023"
+          loan-previous-payment="40.00"
+          loan-previous-payment-date="2nd Feb 2023"
           retailer-name="RETAILER NAME"
+
         />
     </CardSection>
     <CardSection>
