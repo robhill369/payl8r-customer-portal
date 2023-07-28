@@ -57,13 +57,20 @@
       </CardSectionHeader>
 <!--      v-for required for active loans-->
         <LoanCard
-          avatar-colors="bg-pink-light text-pink-dark"
-          loan-upcoming-payment=20.00
-          loan-upcoming-payment-date="2nd Feb 2023"
-          loan-previous-payment="40.00"
-          loan-previous-payment-date="2nd Feb 2023"
           retailer-name="RETAILER NAME"
-
+          loan-start-date="STARTDATE"
+          avatar-colors="bg-pink-light text-pink-dark"
+          monthly-payback-value=XX.XX
+          loan-status="STATUS"
+          total-loan-value=XX.XX
+          total-order-value=XX.XX
+          value-left-to-pay=XX.XX
+          loan-upcoming-payment=XX.XX
+          loan-upcoming-payment-date="UPCOMINGPAYDATE"
+          loan-previous-payment="XX.XX"
+          loan-previous-payment-date="LSTPAYDATE"
+          interest-free-period="XX"
+          current-last-four-digits="XXXX"
         />
     </CardSection>
     <CardSection>
@@ -93,7 +100,6 @@ import PaymentsCard from "@/components/Cards/Payments.vue";
 import CardSection from "@/Layout/CardSection.vue";
 import LoanCard from "@/components/Cards/Loan.vue";
 import SimpleCard from "@/components/Cards/Simple.vue";
-import PaymentsScheduleCard from "@/components/Cards/PaymentsSchedule.vue";
 import CardSectionHeader from "@/Layout/CardSectionHeader.vue";
 import PrimaryButton from "@/components/Buttons/Primary.vue";
 import Avatar from "@/components/Avatar.vue";

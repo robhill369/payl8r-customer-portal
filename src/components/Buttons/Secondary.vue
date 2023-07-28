@@ -1,6 +1,6 @@
 <template>
   <ButtonBase class="bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white">
-    <font-awesome-icon :icon=props.icon size="md" class="pr-2"/>
+    <font-awesome-icon :icon=props.icon :size=size class="pr-2"/>
     <span>{{ props.name }}</span>
   </ButtonBase>
 </template>
@@ -16,6 +16,10 @@ const props = defineProps({
   icon: {
     type: String
   },
+  size: {
+    type: String,
+    default: 'lg'
+  }
 })
 
 
