@@ -178,33 +178,57 @@
 <!--              :body="retailerName + ' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"-->
 <!--          />-->
 <!--        </div>-->
+
 <!--          TAB 2 & 3 WRAPPER-->
           <div class="overflow-x-scroll"
           :class="!istab1 ? 'table-scroll pb-7 sm:pb-0' : ''"
           >
+
 <!--          TAB 2 - PAYMENT SCHEDULE-->
-            <div class="w-[190%] sm:w-full">
-              <div class="grid grid-cols-8 text-xs text-gray font-semibold font-montserrat w-full bg-white">
-                <div class="border-b pb-4 ">No.</div>
-                <div class="col-span-2 pb-4 border-b">Date</div>
-                <div class="col-span-2 pb-4 border-b">Amount due</div>
-                <div class="col-span-2 pb-4 border-b">Amount paid</div>
-                <div class="border-b pb-4 flex justify-end">Status</div>
+<!--            <div class="w-[190%] sm:w-full">-->
+<!--              <div class="grid grid-cols-8 text-xs text-gray font-semibold font-montserrat w-full bg-white">-->
+<!--                <div class="border-b pb-4 ">No.</div>-->
+<!--                <div class="col-span-2 pb-4 border-b">Date</div>-->
+<!--                <div class="col-span-2 pb-4 border-b">Amount due</div>-->
+<!--                <div class="col-span-2 pb-4 border-b">Amount paid</div>-->
+<!--                <div class="border-b pb-4 flex justify-end">Status</div>-->
+<!--              </div>-->
+<!--              <div-->
+<!--                class="grid grid-cols-8 w-full auto-rows-auto items-center h-14"-->
+<!--                v-for="instalment in instalments"-->
+<!--              >-->
+<!--                <p class="flex h-14 items-center border-b">{{instalment.number}}</p>-->
+<!--                <p class="flex h-14 items-center border-b col-span-2">{{instalment.date}}</p>-->
+<!--                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountDue}}</p>-->
+<!--                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountPaid}}</p>-->
+<!--                <div class="border-b w-full flex justify-end h-14 items-center">-->
+<!--                  <Tag-->
+<!--                    :name=instalment.status-->
+<!--                    class="px-[12px] py-[5px]"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            TAB 3 - STATEMENT-->
+
+            <div class="w-[175%] sm:w-full">
+              <div class="grid grid-cols-12 text-xs text-gray font-semibold font-montserrat w-full bg-white">
+                <div class="border-b col-span-3 pb-4 ">Date</div>
+                <div class="col-span-4 pb-4 border-b">Description</div>
+                <div class="col-span-2 pb-4 border-b">Debit</div>
+                <div class="col-span-2 pb-4 border-b">Credit</div>
+                <div class="border-b pb-4 flex justify-end">Balance</div>
               </div>
               <div
-                class="grid grid-cols-8 w-full auto-rows-auto items-center h-14"
-                v-for="instalment in instalments"
+                  class="grid grid-cols-12 w-full auto-rows-auto items-center h-14"
+                  v-for="value in Values"
               >
-                <p class="flex h-14 items-center border-b">{{instalment.number}}</p>
-                <p class="flex h-14 items-center border-b col-span-2">{{instalment.date}}</p>
-                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountDue}}</p>
-                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountPaid}}</p>
-                <div class="border-b w-full flex justify-end h-14 items-center">
-                  <Tag
-                    :name=instalment.status
-                    class="px-[12px] py-[5px]"
-                  />
-                </div>
+                <p class="flex h-14 items-center border-b col-span-3">{{value.date}}</p>
+                <p class="flex h-14 items-center border-b col-span-4 pr-3">{{value.description}}</p>
+                <p class="flex h-14 items-center border-b col-span-2">£{{value.debit}}</p>
+                <p class="flex h-14 items-center border-b col-span-2">£{{value.credit}}</p>
+                <p class="flex h-14 items-center border-b">£{{value.balance}}</p>
               </div>
             </div>
           </div>
@@ -301,6 +325,72 @@ const items = [
     name: 'product 3',
     qnty: 3,
     price: 20.00
+  },
+]
+
+const Values = [
+  {
+    date: 'date',
+    description: 'description',
+    debit: 160.00,
+    credit: null,
+    balance: 304.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 170.00,
+    credit: null,
+    balance: 307.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: null,
+    credit: 307.00,
+    balance: 377.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 160.00,
+    credit: null,
+    balance: 304.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 170.00,
+    credit: null,
+    balance: 307.00
+  },
+  {
+    date: 'date',
+    description: 'description shush jsia a a adid aid a d ad  diad ajd id ai',
+    debit: null,
+    credit: 307.00,
+    balance: 377.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 160.00,
+    credit: null,
+    balance: 304.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 170.00,
+    credit: null,
+    balance: 307.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: null,
+    credit: 307.00,
+    balance: 377.00
   },
 ]
 
