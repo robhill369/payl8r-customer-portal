@@ -7,6 +7,30 @@
     color: #414141;
 }
 
+
+@media (max-width: 576px) {
+
+    .table-scroll::-webkit-scrollbar {
+        /* Customize the scrollbar width */
+        background-color: #EFEFEF;
+        border-radius: 7px;
+        height: 14px;
+        width:0px;
+    }
+
+    .table-scroll::-webkit-scrollbar-track {
+        /* Customize the scrollbar track */
+    }
+
+    .table-scroll::-webkit-scrollbar-thumb {
+        /* Customize the scrollbar thumb */
+        background-color: #414141;
+        border-radius: 7px;
+    }
+
+}
+
+
 button:focus {
     outline: none;
 }

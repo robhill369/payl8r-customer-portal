@@ -1,5 +1,5 @@
 <template>
-  <BaseCard class="relative lg:flex-col px-5 xl:px-9 py-7">
+  <BaseCard class="relative lg:flex-col px-5 xl:px-9 pt-7 pb-2">
     <div class="flex flex-col w-full space-y-5">
       <div
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-6 lg:space-y-9"
@@ -111,59 +111,15 @@
           />
         </div>
       </div>
-<!--      <Tag-->
-<!--          class="mb-6 lg:absolute lg:right-5 lg:bottom-1 xl:right-9"-->
-<!--          :class="loanDetails ? 'lg:left-5 lg:top-10 xl:left-9' : ''"-->
-<!--          status="ongoing"-->
-<!--      />-->
-      <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y-12">
+
+
+
+
+
+
+      <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y-12 relative flex flex-col z-50">
         <Tabs/>
-        <div class="w-full">
-          <div class="grid grid-cols-8 text-xs text-gray font-semibold font-montserrat w-full">
-            <div class="border-b pb-4 ">No.</div>
-            <div class="col-span-2 pb-4 border-b">Date</div>
-            <div class="col-span-2 pb-4 border-b">Amount due</div>
-            <div class="col-span-2 pb-4 border-b">Amount paid</div>
-            <div class="border-b pb-4 flex justify-end">Status</div>
-          </div>
-          <div
-            class="grid grid-cols-8 w-full auto-rows-auto items-center"
-            v-for="instalment in instalments"
-          >
-            <p class="flex h-14 items-center border-b">{{instalment.number}}</p>
-            <p class="flex h-14 items-center border-b col-span-2">{{instalment.date}}</p>
-            <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountDue}}</p>
-            <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountPaid}}</p>
-            <div class="border-b w-full flex justify-end h-14 items-center">
-              <Tag
-                :name=instalment.status
-                class="px-[12px] py-[5px]"
-              />
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--        TAB 1 - LOAN SUMMARY-->
+        <!--        TAB 1 - LOAN SUMMARY-->
 <!--        <div>-->
 <!--          <PaymentsSchedule-->
 <!--              is-loan-card-->
@@ -222,6 +178,36 @@
 <!--              :body="retailerName + ' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"-->
 <!--          />-->
 <!--        </div>-->
+<!--          TAB 2 & 3 WRAPPER-->
+          <div class="overflow-x-scroll"
+          :class="!istab1 ? 'table-scroll pb-7 sm:pb-0' : ''"
+          >
+<!--          TAB 2 - PAYMENT SCHEDULE-->
+            <div class="w-[190%] sm:w-full">
+              <div class="grid grid-cols-8 text-xs text-gray font-semibold font-montserrat w-full bg-white">
+                <div class="border-b pb-4 ">No.</div>
+                <div class="col-span-2 pb-4 border-b">Date</div>
+                <div class="col-span-2 pb-4 border-b">Amount due</div>
+                <div class="col-span-2 pb-4 border-b">Amount paid</div>
+                <div class="border-b pb-4 flex justify-end">Status</div>
+              </div>
+              <div
+                class="grid grid-cols-8 w-full auto-rows-auto items-center h-14"
+                v-for="instalment in instalments"
+              >
+                <p class="flex h-14 items-center border-b">{{instalment.number}}</p>
+                <p class="flex h-14 items-center border-b col-span-2">{{instalment.date}}</p>
+                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountDue}}</p>
+                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountPaid}}</p>
+                <div class="border-b w-full flex justify-end h-14 items-center">
+                  <Tag
+                    :name=instalment.status
+                    class="px-[12px] py-[5px]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </BaseCard>
@@ -297,7 +283,8 @@ const props = defineProps({
 })
 
 const loanDetails = true
-const paymentOverdue = true
+const paymentOverdue = false
+const istab1 = false
 
 const items = [
   {
@@ -355,6 +342,132 @@ const instalments = [
   },
   {
     number: 6,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 7,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'paid'
+  },
+  {
+    number: 8,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'overdue'
+  },
+  {
+    number: 9,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 10,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 11,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 12,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 13,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'paid'
+  },
+  {
+    number: 14,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'overdue'
+  },
+  {
+    number: 15,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 16,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 17,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 18,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 19,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'paid'
+  },
+  {
+    number: 20,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'overdue'
+  },
+  {
+    number: 21,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 22,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 23,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 24,
     date: 'date',
     amountDue: 0,
     amountPaid: 0,
