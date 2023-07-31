@@ -8,7 +8,7 @@
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
 
     .table-scroll::-webkit-scrollbar {
         /* Customize the scrollbar width */
@@ -108,5 +108,20 @@ p {
     font-weight: 500;
     line-height: 14px;
 }
+
+.text-tab {
+    font-family: montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 8px;
+    lineheight: 10px;
+}
+
+@media (min-width: 576px) {
+    .text-tab {
+        font-size: 11px;
+        lineheight: 14px;
+    }
+}
+
 
 

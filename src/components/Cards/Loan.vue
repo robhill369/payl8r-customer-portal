@@ -181,7 +181,7 @@
 
 <!--          TAB 2 & 3 WRAPPER-->
           <div class="overflow-x-scroll"
-          :class="!istab1 ? 'table-scroll pb-7 sm:pb-0' : ''"
+          :class="!istab1 ? 'table-scroll pb-7 sm:pb-0 ' : ''"
           >
 
 <!--          TAB 2 - PAYMENT SCHEDULE-->
@@ -221,11 +221,11 @@
                 <div class="border-b pb-4 flex justify-end">Balance</div>
               </div>
               <div
-                  class="grid grid-cols-12 w-full auto-rows-auto items-center h-14"
+                  class="grid grid-cols-12 w-full auto-rows-auto items-center h-14 "
                   v-for="value in Values"
               >
                 <p class="flex h-14 items-center border-b col-span-3">{{value.date}}</p>
-                <p class="flex h-14 items-center border-b col-span-4 pr-3">{{value.description}}</p>
+                <p class="flex h-14 items-center border-b col-span-4 pr-3 ">{{value.description}}</p>
                 <p class="flex h-14 items-center border-b col-span-2">£{{value.debit}}</p>
                 <p class="flex h-14 items-center border-b col-span-2">£{{value.credit}}</p>
                 <p class="flex h-14 items-center border-b">£{{value.balance}}</p>
@@ -366,7 +366,7 @@ const Values = [
   },
   {
     date: 'date',
-    description: 'description shush jsia a a adid aid a d ad  diad ajd id ai',
+    description: 'Initial purchase amount',
     debit: null,
     credit: 307.00,
     balance: 377.00
