@@ -52,7 +52,12 @@
           />
         </template>
         <template v-slot:tabs v-else>
-          <Tabs/>
+          <Tabs
+              class="max-w-[390px]"
+              tab1="All loans"
+              tab2="Payl8r loans"
+              tab3="Upfront loans"
+          />
         </template>
       </CardSectionHeader>
 <!--      v-for required for active loans-->
