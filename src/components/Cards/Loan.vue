@@ -1,7 +1,7 @@
 <template>
   <BaseCard
     class="relative lg:flex-col px-5 xl:px-9 pt-7"
-    :class="loanDetails ? 'pb-2' : 'pb-7'"
+    :class="loanDetails ? 'pb-2' : 'relative pb-7 cursor-pointer'"
   >
     <div class="flex flex-col w-full space-y-5">
       <div
@@ -9,8 +9,9 @@
         :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9'"
       >
         <div :class="loanDetails ? 'w-full flex justify-between' : 'lg:absolute bottom-7 right-5 xl:right-9'">
-          <Tag :name= loanStatus />
+          <Tag :name="!paymentOverdue ? 'ongoing' : currentInstalmentStatus" />
           <ButtonSecondary
+            @click="$emit('closed')"
             class="bg-gray-dark text-white hover:text-gray-darker"
             v-if="loanDetails"
             name="Close"
@@ -186,43 +187,43 @@
           >
 
 <!--          TAB 2 - PAYMENT SCHEDULE-->
-<!--            <div class="w-[190%] sm:w-full">-->
-<!--              <div class="grid grid-cols-8 text-xs text-gray font-semibold font-montserrat w-full bg-white">-->
-<!--                <div class="border-b pb-4 ">No.</div>-->
-<!--                <div class="col-span-2 pb-4 border-b">Date</div>-->
-<!--                <div class="col-span-2 pb-4 border-b">Amount due</div>-->
-<!--                <div class="col-span-2 pb-4 border-b">Amount paid</div>-->
-<!--                <div class="border-b pb-4 flex justify-end">Status</div>-->
-<!--              </div>-->
-<!--              <div-->
-<!--                class="grid grid-cols-8 w-full auto-rows-auto items-center h-14"-->
-<!--                v-for="instalment in instalments"-->
-<!--              >-->
-<!--                <p class="flex h-14 items-center border-b">{{instalment.number}}</p>-->
-<!--                <p class="flex h-14 items-center border-b col-span-2">{{instalment.date}}</p>-->
-<!--                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountDue}}</p>-->
-<!--                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountPaid}}</p>-->
-<!--                <div class="border-b w-full flex justify-end h-14 items-center">-->
-<!--                  <Tag-->
-<!--                    :name=instalment.status-->
-<!--                    class="px-[12px] py-[5px]"-->
-<!--                  />-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
+            <div class="w-[190%] sm:w-full">
+              <div class="grid grid-cols-8 text-xs text-gray font-semibold font-montserrat w-full bg-white">
+                <div class="border-b pb-4 ">No.</div>
+                <div class="col-span-2 pb-4 border-b">Date</div>
+                <div class="col-span-2 pb-4 border-b">Amount due</div>
+                <div class="col-span-2 pb-4 border-b">Amount paid</div>
+                <div class="border-b pb-4 flex justify-end">Status</div>
+              </div>
+              <div
+                class="grid grid-cols-8 w-full auto-rows-auto items-center h-14"
+                v-for="instalment in instalments"
+              >
+                <p class="flex h-14 items-center border-b">{{instalment.number}}</p>
+                <p class="flex h-14 items-center border-b col-span-2">{{instalment.date}}</p>
+                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountDue}}</p>
+                <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountPaid}}</p>
+                <div class="border-b w-full flex justify-end h-14 items-center">
+                  <Tag
+                    payment-status
+                    :name=currentInstalmentStatus
+                    class="px-[12px] py-[5px]"
+                  />
+                </div>
+              </div>
+            </div>
 
 <!--            TAB 3 - STATEMENT-->
-
 <!--            <div class="w-[175%] sm:w-full">-->
 <!--              <div class="grid grid-cols-12 text-xs text-gray font-semibold font-montserrat w-full bg-white">-->
-<!--                <div class="border-b col-span-3 pb-4 ">Date</div>-->
-<!--                <div class="col-span-4 pb-4 border-b">Description</div>-->
-<!--                <div class="col-span-2 pb-4 border-b">Debit</div>-->
-<!--                <div class="col-span-2 pb-4 border-b">Credit</div>-->
-<!--                <div class="border-b pb-4 flex justify-end">Balance</div>-->
+<!--                <div class="border-b col-span-3 pb-4 bg-white">Date</div>-->
+<!--                <div class="col-span-4 pb-4 border-b bg-white">Description</div>-->
+<!--                <div class="col-span-2 pb-4 border-b bg-white">Debit</div>-->
+<!--                <div class="col-span-2 pb-4 border-b bg-white">Credit</div>-->
+<!--                <div class="border-b pb-4 flex justify-end bg-white">Balance</div>-->
 <!--              </div>-->
 <!--              <div-->
-<!--                  class="grid grid-cols-12 w-full auto-rows-auto items-center h-14 "-->
+<!--                  class="grid grid-cols-12 w-full auto-rows-auto items-center h-14"-->
 <!--                  v-for="value in Values"-->
 <!--              >-->
 <!--                <p class="flex h-14 items-center border-b col-span-3">{{value.date}}</p>-->
@@ -267,9 +268,10 @@ const props = defineProps({
     type: Number,
     required: true
   },
-  loanStatus: {
+  currentInstalmentStatus: {
     type: String,
-    required: true
+    required: true,
+    default: 'ongoing'
   },
   totalLoanValue: {
     type: Number,
@@ -304,12 +306,16 @@ const props = defineProps({
   currentLastFourDigits: {
     type: Number,
     required: true,
+  },
+  loanDetails: {
+    type: Boolean,
+    default: false
   }
 })
 
-const loanDetails = true
-const paymentOverdue = false
 const istab1 = false
+
+const paymentOverdue = props.currentInstalmentStatus === 'overdue'
 
 const items = [
   {
@@ -330,41 +336,90 @@ const items = [
 ]
 
 const Values = [
-  {
-    date: 'date',
-    description: 'description',
-    debit: 160.00,
-    credit: null,
-    balance: 304.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: 170.00,
-    credit: null,
-    balance: 307.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: null,
-    credit: 307.00,
-    balance: 377.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: 160.00,
-    credit: null,
-    balance: 304.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: 170.00,
-    credit: null,
-    balance: 307.00
-  },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: 160.00,
+  //   credit: null,
+  //   balance: 304.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: 170.00,
+  //   credit: null,
+  //   balance: 307.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: null,
+  //   credit: 307.00,
+  //   balance: 377.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: 160.00,
+  //   credit: null,
+  //   balance: 304.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: 170.00,
+  //   credit: null,
+  //   balance: 307.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'Initial purchase amount',
+  //   debit: null,
+  //   credit: 307.00,
+  //   balance: 377.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: 160.00,
+  //   credit: null,
+  //   balance: 304.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: 170.00,
+  //   credit: null,
+  //   balance: 307.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: null,
+  //   credit: 307.00,
+  //   balance: 377.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: null,
+  //   credit: 307.00,
+  //   balance: 377.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: 160.00,
+  //   credit: null,
+  //   balance: 304.00
+  // },
+  // {
+  //   date: 'date',
+  //   description: 'description',
+  //   debit: 170.00,
+  //   credit: null,
+  //   balance: 307.00
+  // },
   {
     date: 'date',
     description: 'Initial purchase amount',

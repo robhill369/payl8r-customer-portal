@@ -61,23 +61,45 @@
         </template>
       </CardSectionHeader>
 <!--      v-for required for active loans-->
+      <div>
         <LoanCard
+          @click="modalOpen = true"
           retailer-name="RETAILER NAME"
           loan-start-date="STARTDATE"
-          avatar-colors="bg-pink-light text-pink-dark"
-          monthly-payback-value=XX.XX
-          loan-status="STATUS"
-          total-loan-value=XX.XX
-          total-order-value=XX.XX
-          value-left-to-pay=XX.XX
-          loan-upcoming-payment=XX.XX
-          loan-upcoming-payment-date="UPCOMINGPAYDATE"
-          loan-previous-payment="XX.XX"
-          loan-previous-payment-date="LSTPAYDATE"
+          current-instalment-status="paid"
           interest-free-period="XX"
-          current-last-four-digits="XXXX"
-          instalment-status="paid"
+          total-loan-value="XX.XX"
+          value-left-to-pay="XX.XX"
         />
+        <!--        Loan Modal-->
+        <Teleport to="body">
+          <div
+              v-if="modalOpen"
+              class="bg-gray-light lg:bg-gray-dark lg:bg-opacity-40 h-screen w-screen fixed top-0 left-0 flex z-40 overflow-auto">
+            <div class=" lg:w-96 2xl:w-16"/>
+            <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 overflow-auto"
+            >
+              <LoanCard
+                  @closed="modalOpen = false"
+                  loan-details
+                  retailer-name="RETAILER NAME"
+                  loan-start-date="STARTDATE"
+                  monthly-payback-value=XX.XX
+                  current-instalment-status="paid"
+                  total-loan-value=XX.XX
+                  total-order-value=XX.XX
+                  value-left-to-pay=XX.XX
+                  loan-upcoming-payment=XX.XX
+                  loan-upcoming-payment-date="UPCOMINGPAYDATE"
+                  loan-previous-payment="XX.XX"
+                  loan-previous-payment-date="LSTPAYDATE"
+                  interest-free-period="XX"
+                  current-last-four-digits="XXXX"
+              />
+            </div>
+          </div>
+        </Teleport>
+      </div>
     </CardSection>
     <CardSection>
       <CardSectionHeader title="Keeping your account healthy">
@@ -102,6 +124,7 @@
 </template>
 
 <script setup>
+import {ref} from "vue";
 import PaymentsCard from "@/components/Cards/Payments.vue";
 import CardSection from "@/Layout/CardSection.vue";
 import LoanCard from "@/components/Cards/Loan.vue";
@@ -118,7 +141,9 @@ import OrderHelpNotification from "@/components/Notifications/OrderHelp.vue";
 import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
 import BaseCard from "@/components/Cards/Base.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
-
+import LoanModal from "@/components/Modals/Loan.vue";
 const isOverviewPage = true
+
+const modalOpen = ref(false)
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative currentColor ">
+  <div class="relative currentColor z-50">
     <div class="fixed z-50 w-full bg-gray-light drop-shadow-md"
          :class="NavOpened ? 'bg-teal' : 'bg-gray-light'"
     >
