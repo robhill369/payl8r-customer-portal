@@ -54,9 +54,7 @@
         <template v-slot:tabs v-else>
           <Tabs
               class="max-w-[390px]"
-              tab1="All loans"
-              tab2="Payl8r loans"
-              tab3="Upfront loans"
+              :tabs=loanTypes
           />
         </template>
       </CardSectionHeader>
@@ -119,6 +117,23 @@ import BaseCard from "@/components/Cards/Base.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import LoanModal from "@/components/Modals/Loan.vue";
 import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
-const isOverviewPage = true
+
+
+const isOverviewPage = false
+
+const loanTypes = [
+  {
+    name: 'All loans',
+  },
+  {
+    name: 'Payl8r loans',
+  },
+  {
+    name: 'Upfront loans',
+  },
+  {
+    name: 'Payl8r business',
+  },
+]
 
 </script>

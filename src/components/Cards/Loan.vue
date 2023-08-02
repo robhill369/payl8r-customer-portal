@@ -1,19 +1,20 @@
 <template>
   <BaseCard
     class="relative lg:flex-col px-5 xl:px-9 pt-7"
-    :class="loanDetails ? 'pb-2' : 'relative pb-7 cursor-pointer'"
+    :class="loanExpanded ? 'pb-2' : 'relative pb-7 cursor-pointer'"
   >
     <div class="flex flex-col w-full space-y-5">
       <div
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-6 lg:space-y-9"
-        :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9'"
+        :class="loanExpanded ? 'lg:flex-col' : 'lg:-mt-9'"
       >
-        <div :class="loanDetails ? 'w-full flex justify-between' : 'lg:absolute bottom-7 right-5 xl:right-9'">
-          <Tag :name="!paymentOverdue ? 'ongoing' : currentInstalmentStatus" />
+        <div :class="loanExpanded ? 'w-full flex justify-between' : 'lg:absolute bottom-7 right-5 xl:right-9'">
+          <Tag :name="!paymentOverdue ? 'Ongoing' : 'Payment overdue'"
+          />
           <ButtonSecondary
             @click="$emit('closed')"
             class="bg-gray-dark text-white hover:text-gray-darker"
-            v-if="loanDetails"
+            v-if="loanExpanded"
             name="Close"
             icon="fa-solid fa-close"
             size="xl"
@@ -34,7 +35,7 @@
             </div>
           </div>
           <ButtonBase
-            v-if="loanDetails"
+            v-if="loanExpanded"
             class="hidden sm:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
             <h4 class="font-[400]">£{{ monthlyPaybackValue }} p/m</h4>
@@ -42,11 +43,11 @@
         </div>
         <div
           class="flex w-full space-x-2 justify-between h-12 lg:h-auto"
-          :class="loanDetails ? '' : 'lg:max-w-[265px]'"
+          :class="loanExpanded ? '' : 'lg:max-w-[265px]'"
         >
           <div
             class="flex flex-col justify-between"
-            :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
+            :class="loanExpanded ? 'lg:flex-row lg:space-x-3' : ''"
           >
             <h3>£{{totalLoanValue}}</h3>
             <div class="flex text-gray">
@@ -54,7 +55,7 @@
             </div>
           </div>
           <div class="flex flex-col justify-between"
-               :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
+               :class="loanExpanded ? 'lg:flex-row lg:space-x-3' : ''"
           >
             <h3>£{{valueLeftToPay}}</h3>
             <div class="flex text-gray">
@@ -67,7 +68,7 @@
         :color="paymentOverdue ? 'red-light' : 'teal'"
       />
       <div>
-        <div v-if="loanDetails"
+        <div v-if="loanExpanded"
           class="flex flex-col -mx-5 xl:-mx-9 mt-2"
           :class="paymentOverdue ? 'bg-red-light' : 'border-b'"
         >
@@ -87,7 +88,7 @@
         </div>
         <div
           class="flex flex-col md:flex-row space-y-3.5 md:space-x-3 md:space-y-0"
-          :class="loanDetails ? 'py-7 border-b -mx-5 px-5 xl:-mx-9 xl:px-9' : ''"
+          :class="loanExpanded ? 'py-7 border-b -mx-5 px-5 xl:-mx-9 xl:px-9' : ''"
         >
           <ButtonSecondary
             v-if="paymentOverdue"
@@ -108,18 +109,18 @@
             icon="fa-solid fa-arrows-rotate"
           />
           <ButtonSecondary
-            v-if="loanDetails"
-            class="w-full sm:w-auto"
+            v-if="loanExpanded"
+            class="w-full sm:w-auto z-50"
             name="View loan agreement"
             icon="fa-solid fa-file"
+            href="https://staging.somo.co.uk/"
+            target="_blank"
           />
         </div>
       </div>
-      <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y-12 relative flex flex-col z-50">
+      <div v-if="loanExpanded" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y-12 relative flex flex-col z-50">
         <Tabs
-          tab1="Loan summary"
-          tab2="Payment schedule"
-          tab3="Statement"
+          :tabs=loanDetails
         />
         <!--        TAB 1 - LOAN SUMMARY-->
 <!--        <div>-->
@@ -247,7 +248,6 @@ import Tag from "@/components/Tag.vue";
 import BaseCard from "@/components/Cards/Base.vue";
 import ButtonBase from "@/components/Buttons/Base.vue";
 import Tabs from "@/components/Tabs.vue";
-import TitledCopy from "@/Layout/TitledCopy.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import Avatar from "@/components/Avatar.vue";
 
@@ -307,11 +307,23 @@ const props = defineProps({
     type: Number,
     required: true,
   },
-  loanDetails: {
+  loanExpanded: {
     type: Boolean,
     default: false
   }
 })
+
+const loanDetails = [
+  {
+    name: 'Loan summary',
+  },
+  {
+    name: 'Payment schedule',
+  },
+  {
+    name: 'Statement',
+  },
+]
 
 const istab1 = false
 
