@@ -1,30 +1,27 @@
 <template>
-<!--    <div class="grid gap-2 h-9 md:h-11 w-full w-full max-w-[535px] lg:max-w-[512px] bg-gray-dark rounded-full text-tab text-white p-1"-->
-<!--      :class="'grid-cols-'+tabs.length"-->
-<!--    >-->
-<!--      <div v-for="tab in tabs" :key="tab.name">-->
-<!--        <input type="radio" :name=tab.name :id=tab.name class="peer hidden" :value=tab.name />-->
-<!--        <label :for=tab.name class="block cursor-pointer select-none rounded-full text-center peer-checked:bg-white peer-checked:text-gray-darker h-7 md:h-9 pt-1.5 md:pt-2.5">{{tab.name}}</label>-->
-<!--      </div>-->
-<!--    </div>-->
-
-    <slot/>
-
+    <div class="grid gap-2 h-9 md:h-11 w-full w-full max-w-[535px] lg:max-w-[512px] bg-gray-dark rounded-full text-tab text-white p-1"
+      :class="'grid-cols-'+tabs.length"
+    >
+      <div v-for="tab in tabs" :key="tab.name">
+        <input type="radio" :name=tab.name :id=tab.name class="peer hidden" :value=tab.name />
+        <label :for=tab.name class="block cursor-pointer select-none rounded-full text-center peer-checked:bg-white peer-checked:text-gray-darker h-7 md:h-9 pt-1.5 md:pt-2.5">{{tab.name}}</label>
+      </div>
+    </div>
 </template>
 <script setup>
 import {ref} from "vue";
-// const props = defineProps({
-//   tabs: {
-//     type: Array,
-//     required: true
-//   }
-// })
 
+defineProps({
+  tabs: {
+    type: Array,
+    required: true
+  }
+})
 
-const tab = ref(1)
+const hello = ref(1)
 
 const currentTab = (tabNumber) => {
-  tab.value = tabNumber;
+  hello.value = tabNumber;
 }
 
 // const toKebabCase = (str) =>

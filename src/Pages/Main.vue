@@ -76,6 +76,24 @@
         :instalments=instalments
         :order-items=orderItems
       />
+      <LoanCardModalGroup
+          retailer-name="Sofa Club"
+          loan-start-date="STARTDATE"
+          monthly-payback-value=XX.XX
+          current-instalment-status="overdue"
+          total-loan-value=XX.XX
+          total-order-value=XX.XX
+          value-left-to-pay=XX.XX
+          loan-upcoming-payment=XX.XX
+          loan-upcoming-payment-date="UPCOMINGPAYDATE"
+          loan-previous-payment="XX.XX"
+          loan-previous-payment-date="LSTPAYDATE"
+          interest-free-period="XX"
+          current-last-four-digits="XXXX"
+          :transactions=transactions
+          :instalments=instalments
+          :order-items=orderItems
+      />
     </CardSection>
     <CardSection>
       <CardSectionHeader title="Keeping your account healthy">
@@ -119,6 +137,7 @@ import BaseCard from "@/components/Cards/Base.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import LoanModal from "@/components/Modals/Loan.vue";
 import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
+
 
 
 const isOverviewPage = false

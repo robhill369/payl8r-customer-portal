@@ -1,23 +1,23 @@
 <template>
   <div class="flex flex-col-reverse lg:flex-col text-nav">
-    <NavbarItem class="lg:text-gray lg:pointer-events-none">
+    <NavbarItem path="/my-account" class="lg:text-gray lg:pointer-events-none">
       <font-awesome-icon icon="fa-solid fa-user-circle" size="xl" class="-mr-1.5 lg:mr-0"/>
       <template v-slot:title>{{ username }}</template>
     </NavbarItem>
     <div>
-      <NavbarItem>
+      <NavbarItem path="/">
         <font-awesome-icon icon="fa-solid fa-house" size="xl"/>
         <template v-slot:title>Overview</template>
       </NavbarItem>
-      <NavbarItem>
+      <NavbarItem path="/my-loans">
         <font-awesome-icon icon="fa-solid fa-wallet" size="xl"/>
         <template v-slot:title>My loans</template>
       </NavbarItem>
-      <NavbarItem>
+      <NavbarItem path="/my-account">
         <font-awesome-icon icon="fa-solid fa-gear" size="xl"/>
         <template v-slot:title>My account</template>
       </NavbarItem>
-      <NavbarItem>
+      <NavbarItem path="help">
         <font-awesome-icon icon="fa-solid fa-headset" size="xl"/>
         <template v-slot:title>Help centre</template>
       </NavbarItem>
