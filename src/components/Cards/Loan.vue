@@ -119,32 +119,57 @@
           />
         </div>
       </div>
-      <div v-if="loanExpanded" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y-12 relative flex flex-col z-50">
-        <Tabs
-          class="md:max-w-[503px]"
-          :tabs=loanDetails
-        />
+      <div v-if="loanExpanded" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col z-50">
+
+        <ul class="grid grid-cols-3 gap-2 h-9 md:h-11 w-full w-full max-w-[535px] lg:max-w-[512px] bg-gray-dark rounded-full text-tab text-white p-1">
+          <li>
+            <button
+              @click="currentTab(1)"
+              class="w-full h-7 md:h-9 rounded-full"
+              :class="tab === 1 ? 'bg-white text-gray-darker' : ''"
+            >
+              Loan summary
+            </button>
+          </li>
+          <li>
+            <button
+              @click="currentTab(2)"
+              class="w-full h-7 md:h-9 rounded-full"
+              :class="tab === 2 ? 'bg-white text-gray-darker' : ''"
+            >
+              Payment schedule
+            </button>
+          </li>
+          <li>
+            <button
+              @click="currentTab(3)"
+              class="w-full h-7 md:h-9 rounded-full"
+              :class="tab === 3 ? 'bg-white text-gray-darker' : ''"
+            >
+              Statement
+            </button>
+          </li>
+        </ul>
         <LoanSummary
-          :retailer-name=retailerName
-          :total-loan-value=totalLoanValue
-          :total-order-value=totalOrderValue
-          :loan-upcoming-payment=loanUpcomingPayment
-          :loan-upcoming-payment-date=loanUpcomingPaymentDate
-          :loan-previous-payment=loanPreviousPayment
-          :loan-previous-payment-date=loanPreviousPayment
-          :current-last-four-digits=currentLastFourDigits
-          :order-items=orderItems
+            v-if="tab === 1"
+            :retailer-name=retailerName
+            :total-loan-value=totalLoanValue
+            :total-order-value=totalOrderValue
+            :loan-upcoming-payment=loanUpcomingPayment
+            :loan-upcoming-payment-date=loanUpcomingPaymentDate
+            :loan-previous-payment=loanPreviousPayment
+            :loan-previous-payment-date=loanPreviousPayment
+            :current-last-four-digits=currentLastFourDigits
+            :order-items=orderItems
         />
-        <div class="overflow-x-scroll"
-        :class="!istab1 ? 'table-scroll pb-7 sm:pb-0 ' : ''"
-        >
+        <div v-if="tab !== 1" class="overflow-x-scroll table-scroll pb-7 sm:pb-0">
           <LoanPaymentSchedule
-            class="hidden"
-            :instalments=instalments
+              v-if="tab === 2"
+              :instalments=instalments
           />
           <LoanStatement
-            class="hidden"
-            :transactions=transactions
+              v-if="tab === 3"
+              :transactions=transactions
           />
         </div>
       </div>
@@ -165,6 +190,7 @@ import Avatar from "@/components/Avatar.vue";
 import LoanSummary from "@/components/Cards/LoanSummary.vue";
 import LoanPaymentSchedule from "@/components/Cards/LoanPaymentSchedule.vue";
 import LoanStatement from "@/components/Cards/LoanStatement.vue";
+import {ref} from "vue";
 
 const props = defineProps({
   retailerName: {
@@ -252,7 +278,11 @@ const loanDetails = [
   },
 ]
 
-const istab1 = false
+const tab = ref(1)
+
+const currentTab = (tabNumber) => {
+  tab.value = tabNumber;
+}
 
 const paymentOverdue = props.currentInstalmentStatus === 'overdue'
 
