@@ -72,6 +72,9 @@
         loan-previous-payment-date="LSTPAYDATE"
         interest-free-period="XX"
         current-last-four-digits="XXXX"
+        :transactions=transactions
+        :instalments=instalments
+        :order-items=orderItems
       />
     </CardSection>
     <CardSection>
@@ -119,6 +122,288 @@ import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
 
 
 const isOverviewPage = false
+
+const instalments = [
+  {
+    number: 1,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'paid'
+  },
+  {
+    number: 2,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'overdue'
+  },
+  {
+    number: 3,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 4,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 5,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 6,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 7,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'paid'
+  },
+  {
+    number: 8,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'overdue'
+  },
+  {
+    number: 9,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 10,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 11,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 12,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 13,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'paid'
+  },
+  {
+    number: 14,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'overdue'
+  },
+  {
+    number: 15,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 16,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 17,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 18,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 19,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'paid'
+  },
+  {
+    number: 20,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'overdue'
+  },
+  {
+    number: 21,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 22,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 23,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+  {
+    number: 24,
+    date: 'date',
+    amountDue: 0,
+    amountPaid: 0,
+    status: 'upcoming'
+  },
+]
+const transactions = [
+  {
+    date: 'date',
+    description: 'description',
+    debit: 160.00,
+    credit: null,
+    balance: 304.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 170.00,
+    credit: null,
+    balance: 307.00
+  },
+  {
+    date: 'date',
+    description: 'Initial purchase amount',
+    debit: null,
+    credit: 307.00,
+    balance: 377.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 160.00,
+    credit: null,
+    balance: 304.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 170.00,
+    credit: null,
+    balance: 307.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: null,
+    credit: 307.00,
+    balance: 377.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: null,
+    credit: 307.00,
+    balance: 377.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 160.00,
+    credit: null,
+    balance: 304.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 170.00,
+    credit: null,
+    balance: 307.00
+  },
+  {
+    date: 'date',
+    description: 'Initial purchase amount',
+    debit: null,
+    credit: 307.00,
+    balance: 377.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 160.00,
+    credit: null,
+    balance: 304.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: 170.00,
+    credit: null,
+    balance: 307.00
+  },
+  {
+    date: 'date',
+    description: 'description',
+    debit: null,
+    credit: 307.00,
+    balance: 377.00
+  },
+]
+const orderItems = [
+  {
+    name: 'product 1',
+    qnty: 1,
+    price: 10.00
+  },
+  {
+    name: 'product 2',
+    qnty: 1,
+    price: 30.00
+  },
+  {
+    name: 'product 3',
+    qnty: 3,
+    price: 20.00
+  },
+]
+
 
 const loanTypes = [
   {

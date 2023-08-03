@@ -22,17 +22,20 @@
             loan-expanded
             :retailer-name=retailerName
             :loan-start-date=loanStartDate
+            :interest-free-period=interestFreePeriod
             :monthly-payback-value=monthlyPaybackValue
             :current-instalment-status=currentInstalmentStatus
             :total-loan-value=totalLoanValue
-            :total-order-value=totalOrderValue
             :value-left-to-pay=valueLeftToPay
+            :total-order-value=totalOrderValue
             :loan-upcoming-payment=loanUpcomingPayment
             :loan-upcoming-payment-date=loanUpcomingPaymentDate
             :loan-previous-payment=loanPreviousPayment
             :loan-previous-payment-date=loanPreviousPayment
-            :interest-free-period=interestFreePeriod
             :current-last-four-digits=currentLastFourDigits
+            :transactions=transactions
+            :instalments=instalments
+            :order-items=orderItems
           />
         </div>
       </div>
@@ -102,6 +105,18 @@ const props = defineProps({
   loanDetails: {
     type: Boolean,
     default: false
+  },
+  transactions: {
+    type: Array,
+    required: true
+  },
+  instalments: {
+    type: Array,
+    required: true
+  },
+  orderItems: {
+    type: Array,
+    required: true
   }
 })
 

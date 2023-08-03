@@ -1,0 +1,108 @@
+<template>
+  <div>
+    <PaymentsSchedule
+        is-loan-card
+        :upcomingPayment=loanUpcomingPayment
+        :upcomingPaymentDate=loanUpcomingPaymentDate
+        :previousPayment=loanPreviousPayment
+        :previousPaymentDate=loanPreviousPaymentDate
+    />
+    <div class="flex flex-col lg:flex-row w-full pt-11 justify-between pb-8 lg:pb-0">
+      <hr class="block lg:hidden -mx-5 lg:-mx-9 pb-9"/>
+      <div class="flex flex-col w-full lg:w-2/5 space-y-5">
+        <h5 class="text-gray">Order Summary</h5>
+        <div class="grid grid-cols-5">
+          <p class="col-span-4 pt-2.5">Total inc. interest</p>
+          <p class="font-bold pt-2.5">£{{totalLoanValue}}</p>
+          <p class="col-span-4 pt-2.5">Order total</p>
+          <p class="font-bold pt-2.5">£{{totalOrderValue}}</p>
+          <p class="col-span-4 pt-2.5">Paid so far</p>
+          <p class="font-bold pt-2.5">£XX.XX</p>
+        </div>
+        <div class="h-3"/>
+      </div>
+      <div class="flex flex-col w-full lg:w-[304px] xl:w-[352px] 2xl:w-[304px] 3xl:w-[480px] space-y-5">
+        <h5 class="text-gray">Basket Summary</h5>
+        <div class="w-full">
+          <div class="grid grid-cols-5 text-xs text-gray">
+            <div class="col-span-3">Product</div>
+            <div>Qty.</div>
+            <div>Price</div>
+          </div>
+          <div
+              class="grid grid-cols-5 auto-rows-auto"
+              v-for="item in orderItems"
+          >
+            <p class="col-span-3 pt-2.5 pr-2">{{item.name}}</p>
+            <p class="font-bold pt-2.5 pr-2">{{ item.qnty }}</p>
+            <p class="font-bold pt-2.5 pr-2">£{{ (item.price * item.qnty).toFixed(2) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col space-y-5">
+      <h5 class="text-gray">Payment method</h5>
+      <div class="flex ">
+        <h2 class="pr-2">•••• •••• ••••</h2><h3>{{currentLastFourDigits}}</h3>
+      </div>
+      <ButtonSecondary
+          class="drop-shadow-lg bg-white border-none"
+          name="Change card"
+          icon="fa-solid fa-credit-card"
+      />
+    </div>
+    <hr class="-mx-5 xl:-mx-9 my-10"/>
+    <TitledCopy
+        title="Issues with this order?"
+        :body="retailerName + ' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"
+    />
+  </div>
+</template>
+<script setup>
+import ButtonSecondary from "@/components/Buttons/Secondary.vue";
+import TitledCopy from "@/Layout/TitledCopy.vue";
+import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
+
+defineProps({
+  retailerName: {
+    type: String,
+    required: true,
+    default: 'The retailer'
+  },
+  totalLoanValue: {
+    type: Number,
+    required: true
+  },
+  totalOrderValue: {
+    type: Number,
+    required: true
+  },
+  loanUpcomingPayment: {
+    type: Number,
+    required: true,
+    default: 0
+  },
+  loanUpcomingPaymentDate: {
+    type: Date,
+    required: true,
+  },
+  loanPreviousPayment: {
+    type: Number,
+    required: true,
+    default: 0
+  },
+  loanPreviousPaymentDate: {
+    type: Date,
+    required: true,
+  },
+  currentLastFourDigits: {
+    type: Number,
+    required: true,
+  },
+  orderItems: {
+    type: Array,
+    required: true
+  }
+})
+
+</script>
