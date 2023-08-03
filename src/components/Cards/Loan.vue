@@ -24,7 +24,8 @@
           <div class="flex h-14 lg:h-fit pr-3">
             <Avatar
                 class="hidden lg:flex"
-                :avatar-colors= "paymentOverdue ? 'bg-red-light text-red' : 'bg-teal-light text-teal'"
+                :avatar-colors= "paymentOverdue ? 'bg-red-light text-red' : 'bg-teal-light text-teal-dark'"
+                :initial-title="retailerName"
             />
             <div class="flex flex-col justify-between lg:pl-4 w-72">
               <h3 class="font-semibold truncate">{{retailerName}}</h3>
@@ -97,7 +98,7 @@
             icon="fa-solid fa-exclamation-circle"
           />
           <ButtonSecondary
-            v-if="!paymentOverdue"
+            v-else
             class="w-full sm:w-auto"
             name="Pay instalment early"
             icon="fa-solid fa-credit-card"
@@ -113,13 +114,14 @@
             class="w-full sm:w-auto z-50"
             name="View loan agreement"
             icon="fa-solid fa-file"
-            href="https://staging.somo.co.uk/"
+            href="https://somo.co.uk/"
             target="_blank"
           />
         </div>
       </div>
       <div v-if="loanExpanded" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y-12 relative flex flex-col z-50">
         <Tabs
+          class="md:max-w-[503px]"
           :tabs=loanDetails
         />
         <!--        TAB 1 - LOAN SUMMARY-->
@@ -250,6 +252,7 @@ import ButtonBase from "@/components/Buttons/Base.vue";
 import Tabs from "@/components/Tabs.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import Avatar from "@/components/Avatar.vue";
+import TitledCopy from "@/Layout/TitledCopy.vue";
 
 const props = defineProps({
   retailerName: {

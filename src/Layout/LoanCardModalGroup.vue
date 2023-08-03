@@ -1,7 +1,7 @@
 <template>
   <div>
     <LoanCard
-      @click="modalOpen = true"
+      @click="loanModalOpen = true"
       :retailer-name=retailerName
       :loan-start-date=loanStartDate
       :current-instalment-status=currentInstalmentStatus
@@ -9,17 +9,16 @@
       :total-loan-value=totalLoanValue
       :value-left-to-pay=valueLeftToPay
     />
-    <!--        Loan Modal-->
+    <!-- Loan Modal -->
     <Teleport to="body">
       <div
-          v-if="modalOpen"
-          @click="modalOpen = false"
-          class="bg-gray-light lg:bg-gray-dark lg:bg-opacity-40 h-screen w-screen fixed top-0 left-0 flex z-40 overflow-auto">
+          v-if="loanModalOpen"
+          class="bg-gray-light lg:bg-gray-dark lg:bg-opacity-40 fixed h-screen w-screen top-0 left-0 flex z-40 overflow-auto">
         <div class=" lg:w-96 2xl:w-16"/>
-        <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 overflow-auto"
+        <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 h-full w-screen overflow-auto"
         >
           <LoanCard
-            @closed="modalOpen = false"
+            @closed="loanModalOpen = false"
             loan-expanded
             :retailer-name=retailerName
             :loan-start-date=loanStartDate
@@ -106,5 +105,5 @@ const props = defineProps({
   }
 })
 
-const modalOpen = ref(false)
+const loanModalOpen = ref(false)
 </script>

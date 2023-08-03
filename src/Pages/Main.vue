@@ -53,7 +53,6 @@
         </template>
         <template v-slot:tabs v-else>
           <Tabs
-              class="max-w-[390px]"
               :tabs=loanTypes
           />
         </template>

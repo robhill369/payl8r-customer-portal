@@ -1,5 +1,5 @@
 <template>
-    <div class="grid gap-2 h-9 md:h-11 w-full max-w-[503px] bg-gray-dark rounded-full text-tab text-white p-1"
+    <div class="grid gap-2 h-9 md:h-11 w-full w-full max-w-[535px] lg:max-w-[512px] bg-gray-dark rounded-full text-tab text-white p-1"
       :class="'grid-cols-'+tabs.length"
     >
       <div v-for="tab in tabs">
