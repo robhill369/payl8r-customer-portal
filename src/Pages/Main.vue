@@ -2,7 +2,7 @@
   <PageBase>
     <div>
       <div>
-        <h2>Hey, Username</h2>
+        <h2>Hey, USERNAME</h2>
         <div class="mt-4 text-md text-gray">This is your Payl8r dashboard</div>
       </div>
 <!--      v-if Notifications-->
@@ -23,7 +23,7 @@
     </CardSection>
 
 <!--    Account status section-->
-    <CardSection v-if="isOverviewPage">
+    <CardSection v-if="$route.path === '/'">
       <CardSectionHeader title="Account status">
         <template v-slot:icon>
           <Avatar
@@ -45,8 +45,8 @@
 
 <!--    My (active) loans section-->
     <CardSection>
-      <CardSectionHeader :title="isOverviewPage ? 'My active loans' : 'My loans'">
-        <template v-slot:button v-if="isOverviewPage">
+      <CardSectionHeader :title="$route.path === '/' ? 'My active loans' : 'My loans'">
+        <template v-slot:button v-if="$route.path === '/'">
           <PrimaryButton
               name="View all loans"
           />
@@ -130,7 +130,7 @@ import PageBase from "@/Pages/Base.vue";
 import Tabs from "@/components/Tabs.vue";
 import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
 import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
-import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCardUpdated.vue";
+import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCard.vue";
 import OrderHelpNotification from "@/components/Notifications/OrderHelp.vue";
 import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
 import BaseCard from "@/components/Cards/Base.vue";
@@ -140,7 +140,9 @@ import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
 
 
 
-const isOverviewPage = false
+// const isOverviewPage = () => {
+//   if($route)
+// }
 
 const instalments = [
   {

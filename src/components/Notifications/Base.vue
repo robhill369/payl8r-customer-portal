@@ -1,8 +1,8 @@
 <template>
-  <div class="rounded-lg flex flex-col space-y-2"
-       :class="isHelper ? 'p-9' : 'py-4 px-6 md:flex-row md:items-center md:space-x-3 md:space-y-0'"
+  <div class="rounded-lg flex space-y-2"
+       :class="isHelper ? 'p-6 md:p-9 flex-col' : 'py-4 px-6 sm:flex-row md:items-center md:space-x-3 md:space-y-0'"
   >
-    <div class="flex items-center space-x-3">
+    <div class="flex items-center space-x-2">
       <font-awesome-icon :icon="icon" size="xl"/>
       <h5 class="text-gray-darker">{{props.title}}</h5>
     </div>

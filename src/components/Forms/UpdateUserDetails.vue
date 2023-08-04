@@ -4,8 +4,10 @@
         class="lg:pr-28"
         title="Update my details"
         button-name="Submit new details">
-      <template v-slot:helper >
-        <UpdateDetailsHelp class="mt-8 lg:-mr-12"/>
+      <template v-slot:helper>
+        <div class="3xl:w-[500px]">
+          <UpdateDetailsHelpNotification class="mt-8 lg:-mr-12"/>
+        </div>
       </template>
       <FormTextInput
         title="Legal name"
@@ -34,7 +36,7 @@
 <script setup>
 import BaseForm from "@/components/Forms/Base.vue";
 import FormTextInput from "@/components/Forms/FormTextInput.vue";
-import UpdateDetailsHelp from "@/components/Notifications/UpdateDetailsHelp.vue";
+import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
 
 defineProps ({
   currentLegalName: {

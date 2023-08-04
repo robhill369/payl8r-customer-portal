@@ -3,12 +3,12 @@
     <CardSection class="space-y-14">
         <h2 class="font-bold">My Account</h2>
       <UserCard
-        :username=username
-        :registrationDate=registrationDate
+        username="USERNAME"
+        registrationDate="REG DATE"
       />
       <BaseCard class="px-6 sm:px-9 py-12">
-        <UpdatePaymentDetailsForm class="lg:pr-16"
-          :current-last-four-digits="currentLastFourDigits"
+        <UpdatePaymentDetailsForm
+          current-last-four-digits="FOUR"
         />
       </BaseCard>
       <BaseCard class="px-6 sm:px-9 py-12">
@@ -16,8 +16,8 @@
       </BaseCard>
       <BaseCard class="px-6 sm:px-9 py-12">
         <UpdateUserDetailsForm
-          :current-legal-name=currentLegalName
-          :current-email=currentEmail
+          current-legal-name="CURRENT LEGAL NAME"
+          current-email="CURRENT EMAIL ADDRESS"
         />
       </BaseCard>
     </CardSection>
@@ -32,28 +32,4 @@ import BaseCard from "@/components/Cards/Base.vue";
 import UpdatePaymentDetailsForm from "@/components/Forms/UpdatePaymentDetails.vue";
 import UpdatePasswordForm from "@/components/Forms/UpdatePassword.vue";
 import UpdateUserDetailsForm from "@/components/Forms/UpdateUserDetails.vue";
-
-defineProps ({
-  username: {
-    type: String,
-    required: true,
-  },
-  registrationDate: {
-    type: String,
-    required: true,
-  },
-  currentLastFourDigits: {
-    type: Number,
-    required: true,
-  },
-  currentLegalName: {
-    type: String,
-    required: true,
-  },
-  currentEmail: {
-    type: String,
-    required: true,
-  },
-
-})
 </script>

@@ -1,7 +1,7 @@
 <template>
-    <div class="relative flex flex-col space-y-10">
+    <section class="relative flex flex-col space-y-10">
       <slot/>
-    </div>
+    </section>
 </template>
 
 <script setup>

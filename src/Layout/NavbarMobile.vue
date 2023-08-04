@@ -9,7 +9,9 @@
             <font-awesome-icon icon="fa-solid fa-xmark" size="2xl" v-if="NavOpened"/>
             <font-awesome-icon icon="fa-solid fa-bars" size="2xl" v-else/>
           </div>
-          <Payl8rLogo class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-28"/>
+          <router-link to="/">
+            <Payl8rLogo class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-28"/>
+          </router-link>
         </div>
         <div class="px-7 w-full sm:container" :class="NavOpened ? 'pb-4' : ''">
           <div v-if="!NavOpened">
@@ -35,7 +37,7 @@
 import Payl8rLogo from "@/components/icons/Payl8rLogo.vue";
 import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
 import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
-import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCardUpdated.vue";
+import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCard.vue";
 import NavbarItem from "@/Layout/NavbarItem.vue";
 import NavbarList from "@/Layout/NavbarList.vue";
 import {ref} from "vue";

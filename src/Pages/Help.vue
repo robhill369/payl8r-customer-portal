@@ -57,11 +57,11 @@ import PageBase from "@/Pages/Base.vue";
 import Tabs from "@/components/Tabs.vue";
 import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
 import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
-import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCardUpdated.vue";
+import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCard.vue";
 import OrderHelpNotification from "@/components/Notifications/OrderHelp.vue";
 import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
 import OrderHelp from "@/components/Notifications/OrderHelp.vue";
-import PaymentCardUpdated from "@/components/Notifications/PaymentCardUpdated.vue";
+import PaymentCardUpdated from "@/components/Notifications/PaymentCard.vue";
 import Simple from "@/components/Cards/Simple.vue";
 
 

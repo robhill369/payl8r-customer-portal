@@ -25,9 +25,6 @@
 </template>
 
 <script setup>
-
-import PaymentCardUpdated from "@/components/Notifications/PaymentCardUpdated.vue";
-import VisaLogo from "@/components/icons/VisaLogo.vue";
 import BaseForm from "@/components/Forms/Base.vue";
 import FormTextInput from "@/components/Forms/FormTextInput.vue";
 </script>

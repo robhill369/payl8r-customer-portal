@@ -15,7 +15,7 @@
       <p class="flex h-14 items-center border-b col-span-4 pr-3 ">{{transaction.description}}</p>
       <p class="flex h-14 items-center border-b col-span-2">£{{transaction.debit}}</p>
       <p class="flex h-14 items-center border-b col-span-2">£{{transaction.credit}}</p>
-      <p class="flex h-14 items-center border-b">£{{transaction.balance}}</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£{{transaction.balance}}</p>
     </div>
   </div>
 </template>

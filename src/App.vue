@@ -12,20 +12,9 @@
     </header>
     <main class="currentColor ">
       <div class="flex flex-col lg:flex-row currentColor">
-<!--        teleport height of mobile navbar -->
         <div class="h-20 lg:h-auto lg:flex w-full lg:w-96 2xl:w-16"/>
         <div class="px-5 w-full sm:container pt-16">
-
           <router-view></router-view>
-<!--          <MainPage/>-->
-<!--          <HelpPage/>-->
-<!--          <AccountPage-->
-<!--            username="USERNAME"-->
-<!--            current-last-four-digits="FOUR"-->
-<!--            registration-date="REG DATE"-->
-<!--            current-legal-name="CURRENT LEGAL NAME"-->
-<!--            current-email="CURRENT EMAIL ADDRESS"-->
-<!--          />-->
         </div>
       </div>
     </main>
@@ -39,7 +28,7 @@ import MainPage from './Pages/Main.vue'
 import NavbarMobile from "@/Layout/NavbarMobile.vue";
 import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
 import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
-import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCardUpdated.vue";
+import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCard.vue";
 import HelpPage from "@/Pages/Help.vue";
 import AccountPage from "@/Pages/Account.vue";
 

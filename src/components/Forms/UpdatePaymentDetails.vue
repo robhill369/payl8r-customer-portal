@@ -7,9 +7,11 @@
         <h2 class="pr-2">•••• •••• ••••</h2><h3>{{currentLastFourDigits}}</h3>
       </div>
     </div>
-    <PaymentCardUpdated/>
+    <div class="lg:w-96 xl:w-[600px]">
+      <PaymentCardNotification/>
+    </div>
     <BaseForm
-        class="lg:pr-12 pt-6"
+        class="lg:pr-28 pt-6"
         title="Update my payment card"
         button-name="Submit card details"
     >
@@ -32,7 +34,7 @@
 </template>
 
 <script setup>
-import PaymentCardUpdated from "@/components/Notifications/PaymentCardUpdated.vue";
+import PaymentCardNotification from "@/components/Notifications/PaymentCard.vue";
 import VisaLogo from "@/components/icons/VisaLogo.vue";
 import BaseForm from "@/components/Forms/Base.vue";
 import FormTextInput from "@/components/Forms/FormTextInput.vue";
