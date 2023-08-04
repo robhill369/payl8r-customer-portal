@@ -1,12 +1,12 @@
 <template>
   <PageBase>
     <div>
-      <div>
+      <div v-if="$route.path === '/'">
         <h2>Hey, USERNAME</h2>
         <div class="mt-4 text-md text-gray">This is your Payl8r dashboard</div>
       </div>
 <!--      v-if Notifications-->
-<!--      <div>-->
+<!--      <div class="pt-12" >-->
 <!--                    v-for Notification in Notifications-->
 <!--        <PaymentSuccessfulNotification class="mb-4"/>-->
 <!--        <PaymentCardUpdatedNotification class="mb-4"/>-->
@@ -18,8 +18,12 @@
 
 <!--    My overview section-->
     <CardSection>
-        <CardSectionHeader title="My overview"/>
-        <PaymentsCard/>
+        <CardSectionHeader title="My overview" v-if="$route.path === '/'"/>
+        <PaymentsCard
+          total-left-to-pay=XX.XX
+          active-loans-count=X
+          repaid-loans-count=X
+        />
     </CardSection>
 
 <!--    Account status section-->
@@ -35,10 +39,10 @@
       </CardSectionHeader>
       <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 pr-14 sm:pr-40 lg:pr-20 space-y-7 lg:space-y-0 lg:space-x-24">
         <PaymentsSchedule
-          upcomingPayment=20.00
-          upcomingPaymentDate='5th Feb 2023'
-          previousPayment=20.00
-          previousPaymentDate='5th Feb 2023'
+          upcomingPayment=XX.XX
+          upcomingPaymentDate=UPCPAYDATE
+          previousPayment=XX.XX
+          previousPaymentDate=PRVPAYDATE
         />
       </BaseCard>
     </CardSection>
@@ -61,38 +65,20 @@
       <LoanCardModalGroup
         retailer-name="RETAILER NAME"
         loan-start-date="STARTDATE"
-        monthly-payback-value=XX.XX
+        monthly-payback-value=30.30
         current-instalment-status="paid"
-        total-loan-value=XX.XX
-        total-order-value=XX.XX
-        value-left-to-pay=XX.XX
-        loan-upcoming-payment=XX.XX
+        total-loan-value=260
+        total-order-value=20
+        value-left-to-pay=100
+        loan-upcoming-payment=30.30
         loan-upcoming-payment-date="UPCOMINGPAYDATE"
-        loan-previous-payment="XX.XX"
+        loan-previous-payment="50.50"
         loan-previous-payment-date="LSTPAYDATE"
-        interest-free-period="XX"
-        current-last-four-digits="XXXX"
+        interest-free-period="30"
+        current-last-four-digits="1234"
         :transactions=transactions
         :instalments=instalments
         :order-items=orderItems
-      />
-      <LoanCardModalGroup
-          retailer-name="Sofa Club"
-          loan-start-date="STARTDATE"
-          monthly-payback-value=XX.XX
-          current-instalment-status="overdue"
-          total-loan-value=XX.XX
-          total-order-value=XX.XX
-          value-left-to-pay=XX.XX
-          loan-upcoming-payment=XX.XX
-          loan-upcoming-payment-date="UPCOMINGPAYDATE"
-          loan-previous-payment="XX.XX"
-          loan-previous-payment-date="LSTPAYDATE"
-          interest-free-period="XX"
-          current-last-four-digits="XXXX"
-          :transactions=transactions
-          :instalments=instalments
-          :order-items=orderItems
       />
     </CardSection>
     <CardSection>

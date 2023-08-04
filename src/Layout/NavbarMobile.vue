@@ -25,6 +25,7 @@
               class="pl-5"
               :NavOpened="NavOpened"
               :username=username
+              @closeNav="NavOpened = false"
           />
         </div>
       </div>

@@ -5,23 +5,38 @@
       <template v-slot:title>{{ username }}</template>
     </NavbarItem>
     <div>
-      <NavbarItem path="/">
+      <NavbarItem
+        path="/"
+        @click="$emit('closeNav')"
+      >
         <font-awesome-icon icon="fa-solid fa-house" size="xl"/>
         <template v-slot:title>Overview</template>
       </NavbarItem>
-      <NavbarItem path="/my-loans">
+      <NavbarItem
+        path="/my-loans"
+        @click="$emit('closeNav')"
+      >
         <font-awesome-icon icon="fa-solid fa-wallet" size="xl"/>
         <template v-slot:title>My loans</template>
       </NavbarItem>
-      <NavbarItem path="/my-account">
+      <NavbarItem
+        path="/my-account"
+        @click="$emit('closeNav')"
+      >
         <font-awesome-icon icon="fa-solid fa-gear" size="xl"/>
         <template v-slot:title>My account</template>
       </NavbarItem>
-      <NavbarItem path="/help">
+      <NavbarItem
+        path="/help"
+        @click="$emit('closeNav')"
+      >
         <font-awesome-icon icon="fa-solid fa-headset" size="xl"/>
         <template v-slot:title>Help centre</template>
       </NavbarItem>
-      <button class="flex border rounded-md pr-2 text-xxs lg:text-sm border-gray-darker lg:border-gray mt-4 mb-3">
+      <button
+        class="flex border rounded-md pr-2 text-xxs lg:text-sm border-gray-darker lg:border-gray mt-4 mb-3"
+        @click="$emit('closeNav')"
+      >
         <div class="flex w-28 lg:w-32 justify-evenly my-2 lg:my-2.5 items-center">
           <font-awesome-icon :icon="['fas', 'arrow-right-to-bracket']" size="xl"/>
           Log out
