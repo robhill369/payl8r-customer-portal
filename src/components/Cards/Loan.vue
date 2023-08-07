@@ -175,10 +175,19 @@
       </div>
     </div>
   </BaseCard>
+<!--  <LoanActionModal-->
+<!--      title="This is the title"-->
+<!--      is-payment-->
+<!--  >-->
+<!--    <p>You will pay the instalment due <span class="font-bold">DATE</span> today.<br class="hidden sm:block">-->
+<!--      Your next instalment will then be collected on <span class="font-bold">DATE</span> .</p>-->
+<!--  </LoanActionModal>-->
 </template>
 
 
 <script setup>
+import {ref} from "vue";
+
 import ProgressBar from "@/components/ProgressBar.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
 import Tag from "@/components/Tag.vue";
@@ -190,7 +199,7 @@ import Avatar from "@/components/Avatar.vue";
 import LoanSummary from "@/components/Cards/LoanSummary.vue";
 import LoanPaymentSchedule from "@/components/Cards/LoanPaymentSchedule.vue";
 import LoanStatement from "@/components/Cards/LoanStatement.vue";
-import {ref} from "vue";
+import LoanActionModal from "@/components/Modals/LoanAction.vue";
 
 const props = defineProps({
   retailerName: {

@@ -121,7 +121,6 @@ import OrderHelpNotification from "@/components/Notifications/OrderHelp.vue";
 import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
 import BaseCard from "@/components/Cards/Base.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
-import LoanModal from "@/components/Modals/Loan.vue";
 import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
 
 

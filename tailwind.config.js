@@ -2,6 +2,7 @@
 let grayDarker = '#414141';
 let grayDark = '#707070';
 let pinkDark = '#C481D1';
+let greenLight = '#B4ECC7';
 
 module.exports = {
   mode: 'jit',
@@ -45,7 +46,7 @@ module.exports = {
           lighter: '#FCFCFC',
         },
         'green-dark': '#289F76',
-        'green-light': '#B4ECC7',
+        'green-light': greenLight,
         'pink': {
           dark: pinkDark,
           DEFAULT: '#C788D3',
@@ -77,6 +78,8 @@ module.exports = {
         'button-secondary': '#EFEFEF',
         'button-secondary-hover': '#D8D8D8',
         'button-secondary-selected': grayDarker,
+        'button-confirm': greenLight,
+        'button-confirm-hover': '#97E8AA',
       },
       fontFamily: {
         'lato': ['lato', 'sans-serif'],
