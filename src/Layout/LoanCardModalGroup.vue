@@ -1,7 +1,7 @@
 <template>
   <div>
     <LoanCard
-      @click="loanModalOpen = true"
+      @open="loanModalOpen = true"
       :retailer-name=retailerName
       :loan-start-date=loanStartDate
       :current-instalment-status=currentInstalmentStatus
@@ -18,8 +18,8 @@
         <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 h-full w-screen overflow-auto"
         >
           <LoanCard
-            @closed="loanModalOpen = false"
-            loan-expanded
+            @close="loanModalOpen = false"
+            loan-details
             :retailer-name=retailerName
             :loan-start-date=loanStartDate
             :interest-free-period=interestFreePeriod
@@ -101,10 +101,6 @@ const props = defineProps({
   currentLastFourDigits: {
     type: Number,
     required: true,
-  },
-  loanDetails: {
-    type: Boolean,
-    default: false
   },
   transactions: {
     type: Array,

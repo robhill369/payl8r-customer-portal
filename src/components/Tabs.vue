@@ -1,7 +1,5 @@
 <template>
-    <div class="grid gap-2 h-9 md:h-11 w-full w-full max-w-[535px] lg:max-w-[512px] bg-gray-dark rounded-full text-tab text-white p-1"
-      :class="'grid-cols-'+tabs.length"
-    >
+    <div class="grid gap-2 h-9 md:h-11 w-full max-w-[535px] lg:max-w-[512px] bg-gray-dark rounded-full text-tab text-white p-1 grid-cols-4">
       <div v-for="tab in tabs" :key="tab.name">
         <input type="radio" :name=tab.name :id=tab.name class="peer hidden" :value=tab.name />
         <label :for=tab.name class="block cursor-pointer select-none rounded-full text-center peer-checked:bg-white peer-checked:text-gray-darker h-7 md:h-9 pt-1.5 md:pt-2.5">{{tab.name}}</label>
@@ -9,7 +7,6 @@
     </div>
 </template>
 <script setup>
-import {ref} from "vue";
 
 defineProps({
   tabs: {
@@ -18,11 +15,11 @@ defineProps({
   }
 })
 
-const hello = ref(1)
-
-const currentTab = (tabNumber) => {
-  hello.value = tabNumber;
-}
+// const hello = ref(1)
+//
+// const currentTab = (tabNumber) => {
+//   hello.value = tabNumber;
+// }
 
 // const toKebabCase = (str) =>
 //     str &&

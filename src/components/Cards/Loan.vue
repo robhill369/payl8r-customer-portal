@@ -1,20 +1,22 @@
 <template>
+
   <BaseCard
     class="relative lg:flex-col px-5 xl:px-9 pt-7"
-    :class="loanExpanded ? 'pb-2' : 'relative pb-7 cursor-pointer'"
+    :class="loanDetails ? 'pb-2' : 'relative pb-7'"
   >
     <div class="flex flex-col w-full space-y-5">
       <div
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-6 lg:space-y-9"
-        :class="loanExpanded ? 'lg:flex-col' : 'lg:-mt-9'"
+        :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9 cursor-pointer'"
+        @click="$emit('open')"
       >
-        <div :class="loanExpanded ? 'w-full flex justify-between' : 'lg:absolute bottom-7 right-5 xl:right-9'">
+        <div :class="loanDetails ? 'w-full flex justify-between' : 'lg:absolute bottom-7 right-5 xl:right-9'">
           <Tag :name="!paymentOverdue ? 'Ongoing' : 'Payment overdue'"
           />
           <ButtonSecondary
-            @click="$emit('closed')"
+            @click="$emit('close')"
             class="bg-gray-dark text-white hover:text-gray-darker"
-            v-if="loanExpanded"
+            v-if="loanDetails"
             name="Close"
             icon="fa-solid fa-close"
             size="xl"
@@ -36,7 +38,7 @@
             </div>
           </div>
           <ButtonBase
-            v-if="loanExpanded"
+            v-if="loanDetails"
             class="hidden sm:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
             <h4 class="font-[400]">£{{ monthlyPaybackValue }} p/m</h4>
@@ -44,11 +46,11 @@
         </div>
         <div
           class="flex w-full space-x-2 justify-between h-12 lg:h-auto"
-          :class="loanExpanded ? '' : 'lg:max-w-[265px]'"
+          :class="loanDetails ? '' : 'lg:max-w-[265px]'"
         >
           <div
             class="flex flex-col justify-between"
-            :class="loanExpanded ? 'lg:flex-row lg:space-x-3' : ''"
+            :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
           >
             <h3>£{{totalLoanValue}}</h3>
             <div class="flex text-gray">
@@ -56,7 +58,7 @@
             </div>
           </div>
           <div class="flex flex-col justify-between"
-               :class="loanExpanded ? 'lg:flex-row lg:space-x-3' : ''"
+               :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
           >
             <h3>£{{valueLeftToPay}}</h3>
             <div class="flex text-gray">
@@ -67,9 +69,11 @@
       </div>
       <ProgressBar
         :color="paymentOverdue ? 'red-light' : 'teal'"
+        @click="$emit('open')"
+        :class="loanDetails ? '' : 'cursor-pointer'"
       />
       <div>
-        <div v-if="loanExpanded"
+        <div v-if="loanDetails"
           class="flex flex-col -mx-5 xl:-mx-9 mt-2"
           :class="paymentOverdue ? 'bg-red-light' : 'border-b'"
         >
@@ -89,38 +93,53 @@
         </div>
         <div
           class="flex flex-col md:flex-row space-y-3.5 md:space-x-3 md:space-y-0"
-          :class="loanExpanded ? 'py-7 border-b -mx-5 px-5 xl:-mx-9 xl:px-9' : ''"
+          :class="loanDetails ? 'py-7 border-b -mx-5 px-5 xl:-mx-9 xl:px-9' : ''"
         >
-          <ButtonSecondary
-            v-if="paymentOverdue"
-            class="w-full sm:w-auto"
-            name="Instalment overdue - make payment"
-            icon="fa-solid fa-exclamation-circle"
-          />
-          <ButtonSecondary
+          <LoanActionModalButtonGroup
+              v-if="paymentOverdue"
+              modal-title="Confirm instalment payment for:"
+              :retailer-name="retailerName"
+              button-name="Instalment overdue - make payment"
+              button-icon="fa-solid fa-credit-card"
+              is-payment
+          >
+            <p class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.
+            </p>
+          </LoanActionModalButtonGroup>
+          <LoanActionModalButtonGroup
             v-else
-            class="w-full sm:w-auto"
-            name="Pay instalment early"
-            icon="fa-solid fa-credit-card"
-          />
-          <ButtonSecondary
+            modal-title="Confirm early instalment payment for:"
+            :retailer-name="retailerName"
+            button-name="Pay instalment early"
+            button-icon="fa-solid fa-credit-card"
+            is-payment
+          >
+            <p>You will pay the instalment due <span class="font-bold">DATE</span> today.<br class="hidden sm:block">
+              Your next instalment will then be collected on <span class="font-bold">DATE</span>.
+            </p>
+          </LoanActionModalButtonGroup>
+          <LoanActionModalButtonGroup
             v-if="!paymentOverdue"
-            class="w-full sm:w-auto"
-            name="Change payment date"
-            icon="fa-solid fa-arrows-rotate"
-          />
-          <ButtonSecondary
-            v-if="loanExpanded"
-            class="w-full sm:w-auto z-50"
-            name="View loan agreement"
-            icon="fa-solid fa-file"
+            modal-title="Change payment date for:"
+            :retailer-name="retailerName"
+            button-name="Change payment date"
+            button-icon="fa-solid fa-arrows-rotate"
+          >
+            <p>All future repayments will be changed to the newly chosen<br class="hidden sm:block">
+              day of the month. Choose a new date below:
+            </p>
+          </LoanActionModalButtonGroup>
+          <a v-if="loanDetails"
             href="https://somo.co.uk/"
             target="_blank"
-          />
+            class="w-fit text-button py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white"
+          >
+            <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2"/>
+            View loan agreement
+          </a>
         </div>
       </div>
-      <div v-if="loanExpanded" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col z-50">
-
+      <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col">
         <ul class="grid grid-cols-3 gap-2 h-9 md:h-11 w-full w-full max-w-[535px] lg:max-w-[512px] bg-gray-dark rounded-full text-tab text-white p-1">
           <li>
             <button
@@ -175,13 +194,6 @@
       </div>
     </div>
   </BaseCard>
-<!--  <LoanActionModal-->
-<!--      title="This is the title"-->
-<!--      is-payment-->
-<!--  >-->
-<!--    <p>You will pay the instalment due <span class="font-bold">DATE</span> today.<br class="hidden sm:block">-->
-<!--      Your next instalment will then be collected on <span class="font-bold">DATE</span> .</p>-->
-<!--  </LoanActionModal>-->
 </template>
 
 
@@ -199,7 +211,7 @@ import Avatar from "@/components/Avatar.vue";
 import LoanSummary from "@/components/Cards/LoanSummary.vue";
 import LoanPaymentSchedule from "@/components/Cards/LoanPaymentSchedule.vue";
 import LoanStatement from "@/components/Cards/LoanStatement.vue";
-import LoanActionModal from "@/components/Modals/LoanAction.vue";
+import LoanActionModalButtonGroup from "@/Layout/LoanActionModalButtonGroup.vue";
 
 const props = defineProps({
   retailerName: {
@@ -257,7 +269,7 @@ const props = defineProps({
     type: Number,
     required: true,
   },
-  loanExpanded: {
+  loanDetails: {
     type: Boolean,
     default: false
   },
@@ -274,18 +286,6 @@ const props = defineProps({
     required: true
   }
 })
-
-const loanDetails = [
-  {
-    name: 'Loan summary',
-  },
-  {
-    name: 'Payment schedule',
-  },
-  {
-    name: 'Statement',
-  },
-]
 
 const tab = ref(1)
 

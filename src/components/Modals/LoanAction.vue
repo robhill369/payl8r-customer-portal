@@ -1,8 +1,9 @@
 <template>
-  <div class="bg-gray-light lg:bg-gray-dark lg:bg-opacity-40 fixed h-screen w-screen top-0 left-0 flex z-40 overflow-auto">
+  <div class="bg-gray-dark bg-opacity-40 fixed h-screen w-screen top-0 left-0 flex z-40 overflow-auto text-center">
     <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 h-full w-screen overflow-auto">
-      <BaseCard class="flex-col w-auto lg:absolute  lg:-translate-x-[calc(50%-132px)] 2xl:-translate-x-[calc(50%-32px)] lg:left-1/2 top-48 py-12 px-6 items-center space-y-8 sm:space-y-7">
+      <BaseCard class="flex-col w-auto lg:absolute lg:-translate-x-[calc(50%-140px)] 2xl:-translate-x-[calc(50%-28px)] lg:left-1/2 top-48 py-12 px-10 items-center space-y-8 sm:space-y-7">
         <h5 class="text-gray">{{ title }}</h5>
+        <h3 class="font-semibold">{{ retailerName }}</h3>
         <div class="text-center">
           <slot/>
         </div>
@@ -19,12 +20,15 @@
             <div class="flex text-nav pl-4 w-30">•••• •••• •••• 1234</div>
           </div>
         </div>
-        <div class="flex space-x-5">
+        <div class="flex space-x-2 sm:space-x-5">
           <ConfirmButton
               :name="isPayment ? 'Confirm payment' : 'Confirm date change'"
               :icon="isPayment ? 'fa-solid fa-credit-card' : ''"
           />
-          <CancelButton name="Cancel"/>
+          <CancelButton
+            name="Cancel"
+            @click="$emit('close')"
+          />
         </div>
       </BaseCard>
     </div>
@@ -45,6 +49,9 @@ defineProps({
   isPayment: {
     type: Boolean,
     default: false
+  },
+  retailerName: {
+    type: String,
   }
 })
 

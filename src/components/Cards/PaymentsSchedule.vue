@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col lg:flex-row w-full justify-between space-y-7 lg:space-y-0">
-    <div class="flex flex-col w-full lg:w-2/5 3xl:pr-56 space-y-4">
+    <div class="flex flex-col w-full lg:w-2/5 3xl:pr-48 space-y-4">
       <h5 class="text-gray">Upcoming payment</h5>
       <div class="w-full">Your next payment of <span class="font-bold">£{{upcomingPayment}}</span> will be taken on <span class="font-bold">{{upcomingPaymentDate}}</span></div>
     </div>

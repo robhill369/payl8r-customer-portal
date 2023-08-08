@@ -1,9 +1,7 @@
 <template>
   <ButtonBase class="bg-white border border-gray-darker hover:bg-button-secondary">
-    <a :href=href :target=target>
       <font-awesome-icon :icon=props.icon :size=size class="pr-2"/>
       <span>{{ name }}</span>
-    </a>
   </ButtonBase>
 </template>
 

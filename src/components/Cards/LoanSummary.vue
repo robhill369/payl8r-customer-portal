@@ -45,11 +45,13 @@
       <div class="flex ">
         <h2 class="pr-2">•••• •••• ••••</h2><h3>{{currentLastFourDigits}}</h3>
       </div>
-      <ButtonSecondary
-          class="drop-shadow-lg bg-white border-none"
-          name="Change card"
-          icon="fa-solid fa-credit-card"
-      />
+      <router-link to="/my-account">
+        <ButtonSecondary
+            class="drop-shadow-lg bg-white border-none"
+            name="Change card"
+            icon="fa-solid fa-credit-card"
+        />
+      </router-link>
     </div>
     <hr class="-mx-5 xl:-mx-9 my-10"/>
     <TitledCopy
