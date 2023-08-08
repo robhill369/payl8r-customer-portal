@@ -1,0 +1,41 @@
+[
+  {
+    "id":"1",
+    "retailerName":"Sofa Club",
+    "startDate":"01/02/23",
+    "plan":"30 days interest free",
+    "term":"12",
+    "provider":"payl8r",
+    "currentInstalmentStatus":"paid",
+    "totalOrderValue":"106.00",
+    "totalLoanValue":"110.12",
+    "depositValue":"30.00",
+    "totalRepaid": "50.60",
+    "loanUpcomingInstalmentValue":"7.00",
+    "loanUpcomingInstalmentDate":"10/11/23",
+    "loanPreviousInstalmentValue":"4.00",
+    "loanPreviousInstalmentDate":"10/10/23",
+    "payments": [
+      {
+        "id":"1",
+        "createdAt":"10/04/23",
+        "amount":"20.00"
+      },
+      {
+        "id":"2",
+        "createdAt":"10/05/23",
+        "amount":"20.00"
+      },
+      {
+        "id":"3",
+        "createdAt":"10/06/23",
+        "amount":"20.00"
+      },
+      {
+        "id":"4",
+        "createdAt":"10/07/23",
+        "amount":"20.00"
+      }
+    ]
+  },
+]

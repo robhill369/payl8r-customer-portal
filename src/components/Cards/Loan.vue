@@ -132,7 +132,7 @@
           <a v-if="loanDetails"
             href="https://somo.co.uk/"
             target="_blank"
-            class="w-fit text-button py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white"
+            class="w-fit text-button py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit"
           >
             <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2"/>
             View loan agreement
@@ -140,14 +140,16 @@
         </div>
       </div>
       <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col">
-        <ul class="grid grid-cols-3 gap-2 h-9 md:h-11 w-full w-full max-w-[535px] lg:max-w-[512px] bg-gray-dark rounded-full text-tab text-white p-1">
+        <ul class="grid gap-2 h-9 md:h-11 w-full bg-gray-dark rounded-full text-tab text-white p-1"
+          :class="hasLateFees ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
+        >
           <li>
             <button
               @click="currentTab(1)"
               class="w-full h-7 md:h-9 rounded-full"
               :class="tab === 1 ? 'bg-white text-gray-darker' : ''"
             >
-              Loan summary
+              Loan<br class="sm:hidden"> summary
             </button>
           </li>
           <li>
@@ -168,6 +170,15 @@
               Statement
             </button>
           </li>
+          <li v-if="hasLateFees">
+            <button
+                @click="currentTab(4)"
+                class="w-full h-7 md:h-9 rounded-full"
+                :class="tab === 4 ? 'bg-white text-gray-darker' : ''"
+            >
+              Late<br class="sm:hidden"> fees
+            </button>
+          </li>
         </ul>
         <LoanSummary
             v-if="tab === 1"
@@ -181,7 +192,7 @@
             :current-last-four-digits=currentLastFourDigits
             :order-items=orderItems
         />
-        <div v-if="tab !== 1" class="overflow-x-scroll table-scroll pb-7 sm:pb-0">
+        <div v-else class="overflow-x-scroll table-scroll pb-7 sm:pb-0">
           <LoanPaymentSchedule
               v-if="tab === 2"
               :instalments=instalments
@@ -189,6 +200,10 @@
           <LoanStatement
               v-if="tab === 3"
               :transactions=transactions
+          />
+          <LoanLateFees
+              v-if="hasLateFees && tab === 4"
+              :late-fees=lateFees
           />
         </div>
       </div>
@@ -212,6 +227,7 @@ import LoanSummary from "@/components/Cards/LoanSummary.vue";
 import LoanPaymentSchedule from "@/components/Cards/LoanPaymentSchedule.vue";
 import LoanStatement from "@/components/Cards/LoanStatement.vue";
 import LoanActionModalButtonGroup from "@/Layout/LoanActionModalButtonGroup.vue";
+import LoanLateFees from "@/components/Cards/LoanLateFees.vue";
 
 const props = defineProps({
   retailerName: {
@@ -281,6 +297,9 @@ const props = defineProps({
     type: Array,
     required: true
   },
+  lateFees: {
+    type: Array,
+  },
   orderItems: {
     type: Array,
     required: true
@@ -293,6 +312,7 @@ const currentTab = (tabNumber) => {
   tab.value = tabNumber;
 }
 
-const paymentOverdue = props.currentInstalmentStatus === 'overdue'
+const hasLateFees = ref(true)
 
+const paymentOverdue = props.currentInstalmentStatus === 'overdue'
 </script>

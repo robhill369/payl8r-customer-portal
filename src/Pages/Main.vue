@@ -66,7 +66,7 @@
         retailer-name="RETAILER NAME"
         loan-start-date="STARTDATE"
         monthly-payback-value=30.30
-        current-instalment-status="paid"
+        current-instalment-status="overdue"
         total-loan-value=260
         total-order-value=20
         value-left-to-pay=100
@@ -78,7 +78,46 @@
         current-last-four-digits="1234"
         :transactions=transactions
         :instalments=instalments
+        :late-fees=lateFees
         :order-items=orderItems
+      />
+      <LoanCardModalGroup
+          retailer-name="RETAILER NAME"
+          loan-start-date="STARTDATE"
+          monthly-payback-value=30.30
+          current-instalment-status="paid"
+          total-loan-value=260
+          total-order-value=20
+          value-left-to-pay=100
+          loan-upcoming-payment=30.30
+          loan-upcoming-payment-date="UPCOMINGPAYDATE"
+          loan-previous-payment="50.50"
+          loan-previous-payment-date="LSTPAYDATE"
+          interest-free-period="30"
+          current-last-four-digits="1234"
+          :transactions=transactions
+          :instalments=instalments
+          :late-fees=lateFees
+          :order-items=orderItems
+      />
+      <LoanCardModalGroup
+          retailer-name="RETAILER NAME"
+          loan-start-date="STARTDATE"
+          monthly-payback-value=30.30
+          current-instalment-status="paid"
+          total-loan-value=260
+          total-order-value=20
+          value-left-to-pay=100
+          loan-upcoming-payment=30.30
+          loan-upcoming-payment-date="UPCOMINGPAYDATE"
+          loan-previous-payment="50.50"
+          loan-previous-payment-date="LSTPAYDATE"
+          interest-free-period="30"
+          current-last-four-digits="1234"
+          :transactions=transactions
+          :instalments=instalments
+          :late-fees=lateFees
+          :order-items=orderItems
       />
     </CardSection>
     <CardSection>
@@ -167,132 +206,6 @@ const instalments = [
   },
   {
     number: 6,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 7,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'paid'
-  },
-  {
-    number: 8,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'overdue'
-  },
-  {
-    number: 9,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 10,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 11,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 12,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 13,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'paid'
-  },
-  {
-    number: 14,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'overdue'
-  },
-  {
-    number: 15,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 16,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 17,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 18,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 19,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'paid'
-  },
-  {
-    number: 20,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'overdue'
-  },
-  {
-    number: 21,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 22,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 23,
-    date: 'date',
-    amountDue: 0,
-    amountPaid: 0,
-    status: 'upcoming'
-  },
-  {
-    number: 24,
     date: 'date',
     amountDue: 0,
     amountPaid: 0,
@@ -392,6 +305,38 @@ const transactions = [
     balance: 377.00
   },
 ]
+
+const lateFees = [
+  {
+    dateDue: 'DATE DUE',
+    dateIncurred: 'DATE INCURRED',
+    instalment: 1,
+    amountDue: '00.00',
+    amountPaid: '00.00',
+    balance: '00.00',
+    status: 'paid'
+  },
+  {
+    dateDue: 'DATE DUE',
+    dateIncurred: 'DATE INCURRED',
+    instalment: 2,
+    amountDue: '00.00',
+    amountPaid: '00.00',
+    balance: '00.00',
+    status: 'waived'
+  },
+  {
+    dateDue: 'DATE DUE',
+    dateIncurred: 'DATE INCURRED',
+    instalment: 3,
+    amountDue: '00.00',
+    amountPaid: '00.00',
+    balance: '00.00',
+    status: 'expected'
+  },
+]
+
+
 const orderItems = [
   {
     name: 'product 1',
