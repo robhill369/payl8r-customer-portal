@@ -15,26 +15,30 @@
     "loanUpcomingInstalmentDate":"10/11/23",
     "loanPreviousInstalmentValue":"4.00",
     "loanPreviousInstalmentDate":"10/10/23",
-    "payments": [
+    "transactions": [
       {
         "id":"1",
         "createdAt":"10/04/23",
-        "amount":"20.00"
+        "amount":"20.00",
+        "type":"debit"
       },
       {
         "id":"2",
         "createdAt":"10/05/23",
-        "amount":"20.00"
+        "amount":"20.00",
+        "type":"credit"
       },
       {
         "id":"3",
         "createdAt":"10/06/23",
-        "amount":"20.00"
+        "amount":"20.00",
+        "type":"credit"
       },
       {
         "id":"4",
         "createdAt":"10/07/23",
-        "amount":"20.00"
+        "amount":"20.00",
+        "type":"credit"
       }
     ]
   },

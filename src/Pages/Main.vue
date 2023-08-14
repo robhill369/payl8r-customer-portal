@@ -66,14 +66,14 @@
         retailer-name="RETAILER NAME"
         loan-start-date="STARTDATE"
         monthly-payback-value=30.30
-        current-instalment-status="overdue"
-        total-loan-value=260
+        current-instalment-status="paid"
+        total-loan-value=260.00
         total-order-value=20
         value-left-to-pay=100
         loan-upcoming-payment=30.30
         loan-upcoming-payment-date="UPCOMINGPAYDATE"
         loan-previous-payment="50.50"
-        loan-previous-payment-date="LSTPAYDATE"
+        loan-previous-payment-date="PRVPAYDATE"
         interest-free-period="30"
         current-last-four-digits="1234"
         :transactions=transactions
@@ -86,13 +86,13 @@
           loan-start-date="STARTDATE"
           monthly-payback-value=30.30
           current-instalment-status="paid"
-          total-loan-value=260
+          total-loan-value=260.00
           total-order-value=20
           value-left-to-pay=100
           loan-upcoming-payment=30.30
           loan-upcoming-payment-date="UPCOMINGPAYDATE"
           loan-previous-payment="50.50"
-          loan-previous-payment-date="LSTPAYDATE"
+          loan-previous-payment-date="PRVPAYDATE"
           interest-free-period="30"
           current-last-four-digits="1234"
           :transactions=transactions
@@ -101,7 +101,7 @@
           :order-items=orderItems
       />
       <LoanCardModalGroup
-          retailer-name="RETAILER NAME"
+          retailer-name="COMPANY NAME"
           loan-start-date="STARTDATE"
           monthly-payback-value=30.30
           current-instalment-status="paid"
@@ -170,170 +170,126 @@ import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
 
 const instalments = [
   {
-    number: 1,
-    date: 'date',
+    id: 1,
+    date: '21st Jan 2023',
     amountDue: 0,
     amountPaid: 0,
-    status: 'paid'
+    status: 'paid',
+    lateFee: {
+      dateIncurred: '22nd Feb 2023',
+      amountDue: '0.00',
+      amountPaid: '0.00',
+      balance: '00.00',
+      status: 'paid'
+    }
   },
   {
-    number: 2,
-    date: 'date',
+    id: 2,
+    date: '21st Feb 2023',
     amountDue: 0,
     amountPaid: 0,
-    status: 'overdue'
+    status: 'paid',
+    lateFee: {
+      dateIncurred: '22nd Mar 2023',
+      amountDue: '0.00',
+      amountPaid: '0.00',
+      balance: '00.00',
+      status: 'waived'
+    }
   },
   {
-    number: 3,
-    date: 'date',
+    id: 3,
+    date: '21st Mar 2023',
     amountDue: 0,
     amountPaid: 0,
-    status: 'upcoming'
+    status: 'paid',
+    // lateFee: {
+    //   dateIncurred: '22nd Apr 2023',
+    //   amountDue: '0.00',
+    //   amountPaid: '0.00',
+    //   balance: '00.00',
+    //   status: 'paid'
+    // }
   },
   {
-    number: 4,
-    date: 'date',
+    id: 4,
+    date: '21st Apr 2023',
     amountDue: 0,
     amountPaid: 0,
-    status: 'upcoming'
+    status: 'overdue',
+    lateFee: {
+      dateIncurred: '22nd May 2023',
+      amountDue: '0.00',
+      amountPaid: '0.00',
+      balance: '00.00',
+      status: 'unpaid'
+    }
   },
   {
-    number: 5,
-    date: 'date',
+    id: 5,
+    date: '21st May 2023',
     amountDue: 0,
     amountPaid: 0,
-    status: 'upcoming'
+    status: 'upcoming',
+    // lateFee: {
+    //   dateIncurred: '22nd Jun 2023',
+    //   amountDue: '0.00',
+    //   amountPaid: '0.00',
+    //   balance: '00.00',
+    //   status: 'paid'
+    // }
   },
   {
-    number: 6,
-    date: 'date',
+    id: 6,
+    date: '21st Jun 2023',
     amountDue: 0,
     amountPaid: 0,
-    status: 'upcoming'
+    status: 'upcoming',
+    // lateFee: {
+    //   dateIncurred: '22nd Jul 2023',
+    //   amountDue: '0.00',
+    //   amountPaid: '0.00',
+    //   balance: '00.00',
+    //   status: 'paid'
+    // }
   },
 ]
 const transactions = [
   {
     date: 'date',
-    description: 'description',
+    description: 'Loan payment',
     debit: 160.00,
     credit: null,
     balance: 304.00
   },
   {
     date: 'date',
-    description: 'description',
-    debit: 170.00,
-    credit: null,
-    balance: 307.00
+    description: 'Refund payment',
+    debit: null,
+    credit: 20,
+    balance: null
   },
   {
     date: 'date',
-    description: 'Initial purchase amount',
+    description: 'Change of card (failed)',
     debit: null,
     credit: 307.00,
     balance: 377.00
   },
   {
     date: 'date',
-    description: 'description',
-    debit: 160.00,
-    credit: null,
-    balance: 304.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: 170.00,
-    credit: null,
-    balance: 307.00
-  },
-  {
-    date: 'date',
-    description: 'description',
+    description: 'Change of card',
     debit: null,
     credit: 307.00,
     balance: 377.00
   },
   {
     date: 'date',
-    description: 'description',
+    description: 'Change of card',
     debit: null,
     credit: 307.00,
     balance: 377.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: 160.00,
-    credit: null,
-    balance: 304.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: 170.00,
-    credit: null,
-    balance: 307.00
-  },
-  {
-    date: 'date',
-    description: 'Initial purchase amount',
-    debit: null,
-    credit: 307.00,
-    balance: 377.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: 160.00,
-    credit: null,
-    balance: 304.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: 170.00,
-    credit: null,
-    balance: 307.00
-  },
-  {
-    date: 'date',
-    description: 'description',
-    debit: null,
-    credit: 307.00,
-    balance: 377.00
-  },
-]
-
-const lateFees = [
-  {
-    dateDue: 'DATE DUE',
-    dateIncurred: 'DATE INCURRED',
-    instalment: 1,
-    amountDue: '00.00',
-    amountPaid: '00.00',
-    balance: '00.00',
-    status: 'paid'
-  },
-  {
-    dateDue: 'DATE DUE',
-    dateIncurred: 'DATE INCURRED',
-    instalment: 2,
-    amountDue: '00.00',
-    amountPaid: '00.00',
-    balance: '00.00',
-    status: 'waived'
-  },
-  {
-    dateDue: 'DATE DUE',
-    dateIncurred: 'DATE INCURRED',
-    instalment: 3,
-    amountDue: '00.00',
-    amountPaid: '00.00',
-    balance: '00.00',
-    status: 'expected'
-  },
+  }
 ]
 
 

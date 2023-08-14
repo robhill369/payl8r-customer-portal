@@ -31,7 +31,7 @@
             :loan-upcoming-payment=loanUpcomingPayment
             :loan-upcoming-payment-date=loanUpcomingPaymentDate
             :loan-previous-payment=loanPreviousPayment
-            :loan-previous-payment-date=loanPreviousPayment
+            :loan-previous-payment-date=loanPreviousPaymentDate
             :current-last-four-digits=currentLastFourDigits
             :transactions=transactions
             :instalments=instalments

@@ -8,14 +8,27 @@
       <div class="border-b pb-4 flex justify-end bg-white">Balance</div>
     </div>
     <div
-        class="grid grid-cols-12 w-full auto-rows-auto items-center h-14"
-        v-for="transaction in transactions"
+        class="grid grid-cols-12 w-full auto-rows-auto items-center"
     >
-      <p class="flex h-14 items-center border-b col-span-3">{{transaction.date}}</p>
-      <p class="flex h-14 items-center border-b col-span-4 pr-3 ">{{transaction.description}}</p>
-      <p class="flex h-14 items-center border-b col-span-2">£{{transaction.debit}}</p>
-      <p class="flex h-14 items-center border-b col-span-2">£{{transaction.credit}}</p>
-      <p class="flex h-14 items-center border-b flex justify-end">£{{transaction.balance}}</p>
+      <p class="flex h-14 items-center border-b col-span-3">date</p>
+      <p class="flex h-14 items-center border-b col-span-4 pr-3 ">Initial purchase amount</p>
+      <p class="flex h-14 items-center border-b col-span-4">£DEBIT</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£BALANCE</p>
+      <p class="flex h-14 items-center border-b col-span-3">date</p>
+      <p class="flex h-14 items-center border-b col-span-6 pr-3 ">Deposit payment</p>
+      <p class="flex h-14 items-center border-b col-span-2">£CREDIT</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£BALANCE</p>
+      <p class="flex h-14 items-center border-b col-span-3">date</p>
+      <p class="flex h-14 items-center border-b col-span-4 pr-3 ">Interest for entire term</p>
+      <p class="flex h-14 items-center border-b col-span-4">£DEBIT</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£BALANCE</p>
+      <template v-for="transaction in transactions">
+        <p class="flex h-14 items-center border-b col-span-3">{{transaction.date}}</p>
+        <p class="flex h-14 items-center border-b col-span-4 pr-3 ">{{transaction.description}}</p>
+        <p class="flex h-14 items-center border-b col-span-2">£{{transaction.debit}}</p>
+        <p class="flex h-14 items-center border-b col-span-2">£{{transaction.credit}}</p>
+        <p class="flex h-14 items-center border-b flex justify-end">£{{transaction.balance}}</p>
+      </template>
     </div>
   </div>
 </template>

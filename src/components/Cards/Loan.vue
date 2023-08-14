@@ -132,9 +132,9 @@
           <a v-if="loanDetails"
             href="https://somo.co.uk/"
             target="_blank"
-            class="w-fit text-button py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit"
+            class="text-button text-center py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit"
           >
-            <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2"/>
+            <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2 lg:hidden xl:block"/>
             View loan agreement
           </a>
         </div>
@@ -161,22 +161,22 @@
               Payment schedule
             </button>
           </li>
-          <li>
-            <button
-              @click="currentTab(3)"
-              class="w-full h-7 md:h-9 rounded-full"
-              :class="tab === 3 ? 'bg-white text-gray-darker' : ''"
-            >
-              Statement
-            </button>
-          </li>
           <li v-if="hasLateFees">
             <button
-                @click="currentTab(4)"
+                @click="currentTab(3)"
                 class="w-full h-7 md:h-9 rounded-full"
-                :class="tab === 4 ? 'bg-white text-gray-darker' : ''"
+                :class="tab === 3 ? 'bg-white text-gray-darker' : ''"
             >
               Late<br class="sm:hidden"> fees
+            </button>
+          </li>
+          <li>
+            <button
+              @click="currentTab(4)"
+              class="w-full h-7 md:h-9 rounded-full"
+              :class="tab === 4 ? 'bg-white text-gray-darker' : ''"
+            >
+              Statement
             </button>
           </li>
         </ul>
@@ -188,7 +188,7 @@
             :loan-upcoming-payment=loanUpcomingPayment
             :loan-upcoming-payment-date=loanUpcomingPaymentDate
             :loan-previous-payment=loanPreviousPayment
-            :loan-previous-payment-date=loanPreviousPayment
+            :loan-previous-payment-date=loanPreviousPaymentDate
             :current-last-four-digits=currentLastFourDigits
             :order-items=orderItems
         />
@@ -197,13 +197,14 @@
               v-if="tab === 2"
               :instalments=instalments
           />
-          <LoanStatement
-              v-if="tab === 3"
-              :transactions=transactions
-          />
           <LoanLateFees
-              v-if="hasLateFees && tab === 4"
+              v-if="hasLateFees && tab === 3"
               :late-fees=lateFees
+              :instalments=instalments
+          />
+          <LoanStatement
+              v-if="tab === 4"
+              :transactions=transactions
           />
         </div>
       </div>
@@ -220,8 +221,6 @@ import ButtonSecondary from "@/components/Buttons/Secondary.vue";
 import Tag from "@/components/Tag.vue";
 import BaseCard from "@/components/Cards/Base.vue";
 import ButtonBase from "@/components/Buttons/Base.vue";
-import Tabs from "@/components/Tabs.vue";
-import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import Avatar from "@/components/Avatar.vue";
 import LoanSummary from "@/components/Cards/LoanSummary.vue";
 import LoanPaymentSchedule from "@/components/Cards/LoanPaymentSchedule.vue";
