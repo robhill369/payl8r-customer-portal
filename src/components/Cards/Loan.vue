@@ -26,6 +26,7 @@
           <div class="flex h-14 lg:h-fit pr-3">
             <Avatar
                 class="hidden lg:flex"
+                :provider="provider"
                 :avatar-colors= "paymentOverdue ? 'bg-red-light text-red' : 'bg-teal-light text-teal-dark'"
                 :initial-title="retailerName"
             />
@@ -33,7 +34,7 @@
               <h3 class="font-semibold truncate">{{retailerName}}</h3>
               <div class="flex text-gray space-x-4">
                 <p class="font-bold">{{loanStartDate}}</p>
-                <p>{{interestFreePeriod}} days interest free</p>
+                <p>{{termLength}} month payment plan</p>
               </div>
             </div>
           </div>
@@ -68,7 +69,7 @@
         </div>
       </div>
       <ProgressBar
-        :color="paymentOverdue ? 'red-light' : 'teal'"
+        :payment-overdue=paymentOverdue
         @click="$emit('open')"
         :class="loanDetails ? '' : 'cursor-pointer'"
       />
@@ -185,6 +186,7 @@
             :retailer-name=retailerName
             :total-loan-value=totalLoanValue
             :total-order-value=totalOrderValue
+            :value-repaid=valueRepaid
             :loan-upcoming-payment=loanUpcomingPayment
             :loan-upcoming-payment-date=loanUpcomingPaymentDate
             :loan-previous-payment=loanPreviousPayment
@@ -233,11 +235,19 @@ const props = defineProps({
     type: String,
     required: true
   },
+  provider: {
+    type: String,
+    required: true
+  },
+  status: {
+    type: String,
+    required: true
+  },
   loanStartDate: {
     type: String,
     required: true
   },
-  interestFreePeriod: {
+  termLength: {
     type: Number,
     required: true
   },
@@ -259,6 +269,10 @@ const props = defineProps({
     required: true
   },
   totalOrderValue: {
+    type: Number,
+    required: true
+  },
+  valueRepaid: {
     type: Number,
     required: true
   },
@@ -313,5 +327,5 @@ const currentTab = (tabNumber) => {
 
 const hasLateFees = ref(true)
 
-const paymentOverdue = props.currentInstalmentStatus === 'overdue'
+const paymentOverdue = props.status === 'overdue'
 </script>

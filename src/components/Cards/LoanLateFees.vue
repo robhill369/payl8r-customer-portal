@@ -69,7 +69,7 @@
         <div class="border-b w-full flex justify-end h-14 items-center">
           <Tag
               payment-status
-              :name=instalment.lateFee.status
+              :name="instalment.lateFee.status ? instalment.lateFee.status : 'unpaid'"
               class="px-[12px] py-[5px]"
           />
         </div>

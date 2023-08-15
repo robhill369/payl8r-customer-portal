@@ -13,8 +13,6 @@
   </div>
 </template>
 <script setup>
-import TitledCopy from "@/Layout/TitledCopy.vue";
-import BaseCard from "@/components/Cards/Base.vue";
 
 const props = defineProps({
   isLoanCard: {

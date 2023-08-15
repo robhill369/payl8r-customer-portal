@@ -6,7 +6,10 @@ let greenLight = '#B4ECC7';
 
 module.exports = {
   mode: 'jit',
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  purge: [
+    './public/**/*.html',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
@@ -53,6 +56,7 @@ module.exports = {
           light: '#FBE6FF',
           lighter: '#FBF7FB',
         },
+        'purple': '#491457',
         'red': {
           darker: '#C71D1D',
           dark: '#DE5965',

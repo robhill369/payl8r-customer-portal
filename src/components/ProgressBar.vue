@@ -1,14 +1,20 @@
 <template>
-  <div class="flex h-3.5 w-full rounded-full" :class="'bg-'+color">
+  <div class="relative h-3.5 w-full rounded-full bg-button-secondary">
+    <div
+      style="width: 100%"
+      class="absolute h-full rounded-full"
+      :class="paymentOverdue ? 'bg-red-light' : 'bg-teal'"
+    />
   </div>
 </template>
 
 <script setup>
 
-defineProps({
-  color: {
-    type: String,
-    default: 'teal'
-  }
+const props = defineProps({
+  paymentOverdue: {
+    type: Boolean,
+    default: 'false'
+  },
 })
+
 </script>

@@ -17,7 +17,7 @@
           <p class="col-span-4 pt-2.5">Order total</p>
           <p class="font-bold pt-2.5">£{{totalOrderValue}}</p>
           <p class="col-span-4 pt-2.5">Paid so far</p>
-          <p class="font-bold pt-2.5">£XX.XX</p>
+          <p class="font-bold pt-2.5">£{{valueRepaid}}</p>
         </div>
         <div class="h-3"/>
       </div>
@@ -76,6 +76,10 @@ defineProps({
     required: true
   },
   totalOrderValue: {
+    type: Number,
+    required: true
+  },
+  valueRepaid: {
     type: Number,
     required: true
   },

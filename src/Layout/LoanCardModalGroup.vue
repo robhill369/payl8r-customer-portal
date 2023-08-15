@@ -3,9 +3,10 @@
     <LoanCard
       @open="loanModalOpen = true"
       :retailer-name=retailerName
+      :provider="provider"
+      :status=loanStatus
       :loan-start-date=loanStartDate
-      :current-instalment-status=currentInstalmentStatus
-      :interest-free-period=interestFreePeriod
+      :term-length=termLength
       :total-loan-value=totalLoanValue
       :value-left-to-pay=valueLeftToPay
     />
@@ -21,13 +22,15 @@
             @close="loanModalOpen = false"
             loan-details
             :retailer-name=retailerName
+            :provider="provider"
             :loan-start-date=loanStartDate
-            :interest-free-period=interestFreePeriod
+            :term-length=termLength
             :monthly-payback-value=monthlyPaybackValue
-            :current-instalment-status=currentInstalmentStatus
+            :status=loanStatus
             :total-loan-value=totalLoanValue
-            :value-left-to-pay=valueLeftToPay
             :total-order-value=totalOrderValue
+            :value-repaid="valueRepaid"
+            :value-left-to-pay=valueLeftToPay
             :loan-upcoming-payment=loanUpcomingPayment
             :loan-upcoming-payment-date=loanUpcomingPaymentDate
             :loan-previous-payment=loanPreviousPayment
@@ -44,20 +47,28 @@
   </div>
 </template>
 <script setup>
-import LoanCard from "@/components/Cards/Loan.vue";
 import {ref} from "vue";
+
+import LoanCard from "@/components/Cards/Loan.vue";
 
 const props = defineProps({
   retailerName: {
     type: String,
     required: true
   },
-  loanStartDate: {
+  provider: {
+    type: String,
+  },
+  loanStatus: {
     type: String,
     required: true
   },
-  interestFreePeriod: {
+  termLength: {
     type: Number,
+    required: true
+  },
+  loanStartDate: {
+    type: String,
     required: true
   },
   monthlyPaybackValue: {
@@ -74,6 +85,10 @@ const props = defineProps({
     required: true
   },
   totalOrderValue: {
+    type: Number,
+    required: true
+  },
+  valueRepaid: {
     type: Number,
     required: true
   },
@@ -116,7 +131,6 @@ const props = defineProps({
   },
   orderItems: {
     type: Array,
-    required: true
   }
 })
 

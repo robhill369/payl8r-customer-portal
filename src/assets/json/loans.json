@@ -1,45 +1,80 @@
 [
   {
-    "id":"1",
-    "retailerName":"Sofa Club",
-    "startDate":"01/02/23",
-    "plan":"30 days interest free",
-    "term":"12",
-    "provider":"payl8r",
-    "currentInstalmentStatus":"paid",
-    "totalOrderValue":"106.00",
-    "totalLoanValue":"110.12",
-    "depositValue":"30.00",
-    "totalRepaid": "50.60",
-    "loanUpcomingInstalmentValue":"7.00",
-    "loanUpcomingInstalmentDate":"10/11/23",
-    "loanPreviousInstalmentValue":"4.00",
-    "loanPreviousInstalmentDate":"10/10/23",
-    "transactions": [
+    "id": "1",
+    "retailerName": "Retailer 1",
+    "status": "paid",
+    "startDate": "2nd Feb 2023",
+    "termLength": 3,
+    "provider": "payl8r",
+    "totalOrderValue": 100,
+    "totalLoanValue": 120.56,
+    "depositValue": 30,
+    "valueRepaid": 70,
+    "upcomingInstalmentValue": "15.45",
+    "upcomingInstalmentDate": "2nd Apr 2023",
+    "previousInstalmentValue": "15.46",
+    "previousInstalmentDate": "2nd Mar 2023",
+    "orderItems":[
       {
-        "id":"1",
-        "createdAt":"10/04/23",
-        "amount":"20.00",
-        "type":"debit"
+        "name": "product 1",
+        "qnty": 1,
+        "price": 10.00
       },
       {
-        "id":"2",
-        "createdAt":"10/05/23",
-        "amount":"20.00",
-        "type":"credit"
+        "name": "product 2",
+        "qnty": 1,
+        "price": 30.00
       },
       {
-        "id":"3",
-        "createdAt":"10/06/23",
-        "amount":"20.00",
-        "type":"credit"
-      },
-      {
-        "id":"4",
-        "createdAt":"10/07/23",
-        "amount":"20.00",
-        "type":"credit"
+        "name": "product 3",
+        "qnty": 3,
+        "price": 20.00
       }
     ]
   },
+  {
+    "id": "2",
+    "retailerName": "Retailer 2",
+    "status": "paid",
+    "startDate": "24th Jun 2023",
+    "termLength": 18,
+    "provider": "payl8r",
+    "totalOrderValue": 1000,
+    "totalLoanValue": 1273.40,
+    "depositValue": 250,
+    "valueRepaid": 141.49,
+    "upcomingInstalmentValue": "15.45",
+    "upcomingInstalmentDate": "2nd Apr 2023",
+    "previousInstalmentValue": "15.46",
+    "previousInstalmentDate": "2nd Mar 2023",
+    "orderItems":[
+      {
+        "name": "product 1",
+        "qnty": 1,
+        "price": 200.00
+      },
+      {
+        "name": "product 1",
+        "qnty": 2,
+        "price": 400.00
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "retailerName": "",
+    "status": "overdue",
+    "startDate": "2nd Feb 2023",
+    "termLength": 9,
+    "provider": "upfront",
+    "totalOrderValue": 2000,
+    "totalLoanValue": 2546.80,
+    "depositValue": 400,
+    "valueRepaid": 707.44,
+    "upcomingInstalmentValue": "15.45",
+    "upcomingInstalmentDate": "2nd Apr 2023",
+    "previousInstalmentValue": "15.46",
+    "previousInstalmentDate": "2nd Mar 2023",
+    "orderItems":[]
+  }
 ]

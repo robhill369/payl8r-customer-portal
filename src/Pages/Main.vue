@@ -51,9 +51,11 @@
     <CardSection>
       <CardSectionHeader :title="$route.path === '/' ? 'My active loans' : 'My loans'">
         <template v-slot:button v-if="$route.path === '/'">
-          <PrimaryButton
-              name="View all loans"
-          />
+          <router-link to="/my-loans">
+            <PrimaryButton
+                name="View all loans"
+            />
+          </router-link>
         </template>
         <template v-slot:tabs v-else>
           <Tabs
@@ -62,63 +64,30 @@
         </template>
       </CardSectionHeader>
 <!--      v-for required for active loans-->
-      <LoanCardModalGroup
-        retailer-name="RETAILER NAME"
-        loan-start-date="STARTDATE"
-        monthly-payback-value=30.30
-        current-instalment-status="paid"
-        total-loan-value=260.00
-        total-order-value=20
-        value-left-to-pay=100
-        loan-upcoming-payment=30.30
-        loan-upcoming-payment-date="UPCOMINGPAYDATE"
-        loan-previous-payment="50.50"
-        loan-previous-payment-date="PRVPAYDATE"
-        interest-free-period="30"
-        current-last-four-digits="1234"
-        :transactions=transactions
-        :instalments=instalments
-        :late-fees=lateFees
-        :order-items=orderItems
-      />
-      <LoanCardModalGroup
-          retailer-name="RETAILER NAME"
-          loan-start-date="STARTDATE"
-          monthly-payback-value=30.30
-          current-instalment-status="paid"
-          total-loan-value=260.00
-          total-order-value=20
-          value-left-to-pay=100
-          loan-upcoming-payment=30.30
-          loan-upcoming-payment-date="UPCOMINGPAYDATE"
-          loan-previous-payment="50.50"
-          loan-previous-payment-date="PRVPAYDATE"
-          interest-free-period="30"
+      <div v-for="loan in loans" :key=loan.id>
+        <LoanCardModalGroup
+          :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
+          :loanStatus=loan.status
+          :provider=loan.provider
+          :loan-start-date=loan.startDate
+          :term-length=loan.termLength
+          :monthly-payback-value="(loan.totalLoanValue / loan.termLength).toFixed(2)"
+          :loan-status=loan.status
+          :total-loan-value=loan.totalLoanValue.toFixed(2)
+          :total-order-value=loan.totalOrderValue
+          :value-repaid="loan.valueRepaid"
+          :value-left-to-pay="(loan.totalLoanValue - loan.valueRepaid).toFixed(2)"
+          :loan-upcoming-payment=loan.upcomingInstalmentValue
+          :loan-upcoming-payment-date=loan.upcomingInstalmentDate
+          :loan-previous-payment=loan.previousInstalmentValue
+          :loan-previous-payment-date=loan.previousInstalmentDate
+          :order-items=loan.orderItems
           current-last-four-digits="1234"
-          :transactions=transactions
+          :transactions=loan.transactions
           :instalments=instalments
           :late-fees=lateFees
-          :order-items=orderItems
-      />
-      <LoanCardModalGroup
-          retailer-name="COMPANY NAME"
-          loan-start-date="STARTDATE"
-          monthly-payback-value=30.30
-          current-instalment-status="paid"
-          total-loan-value=260
-          total-order-value=20
-          value-left-to-pay=100
-          loan-upcoming-payment=30.30
-          loan-upcoming-payment-date="UPCOMINGPAYDATE"
-          loan-previous-payment="50.50"
-          loan-previous-payment-date="LSTPAYDATE"
-          interest-free-period="30"
-          current-last-four-digits="1234"
-          :transactions=transactions
-          :instalments=instalments
-          :late-fees=lateFees
-          :order-items=orderItems
-      />
+        />
+      </div>
     </CardSection>
     <CardSection>
       <CardSectionHeader title="Keeping your account healthy">
@@ -162,7 +131,10 @@ import BaseCard from "@/components/Cards/Base.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
 
+import loanData from '@/assets/json/loans.json';
 
+
+const loans = loanData
 
 // const isOverviewPage = () => {
 //   if($route)
@@ -290,25 +262,6 @@ const transactions = [
     credit: 307.00,
     balance: 377.00
   }
-]
-
-
-const orderItems = [
-  {
-    name: 'product 1',
-    qnty: 1,
-    price: 10.00
-  },
-  {
-    name: 'product 2',
-    qnty: 1,
-    price: 30.00
-  },
-  {
-    name: 'product 3',
-    qnty: 3,
-    price: 20.00
-  },
 ]
 
 

@@ -1,0 +1,44 @@
+[
+  {
+    "id":1,
+    "loanId": 2,
+    "createdAt":"10/04/23",
+    "amount":"20.00",
+    "type":"debit"
+  },
+  {
+    "id":2,
+    "loanId": 4,
+    "createdAt":"10/05/23",
+    "amount":"20.00",
+    "type":"credit"
+  },
+  {
+    "id":3,
+    "loanId": 2,
+    "createdAt":"10/06/23",
+    "amount":"20.00",
+    "type":"credit"
+  },
+  {
+    "id":4,
+    "loanId": 3,
+    "createdAt":"10/07/23",
+    "amount":"20.00",
+    "type":"credit"
+  },
+  {
+    "id":5,
+    "loanId": 1,
+    "createdAt":"10/07/23",
+    "amount":"20.00",
+    "type":"credit"
+  },
+  {
+    "id":6,
+    "loanId": 1,
+    "createdAt":"10/07/23",
+    "amount":"20.00",
+    "type":"credit"
+  }
+]
