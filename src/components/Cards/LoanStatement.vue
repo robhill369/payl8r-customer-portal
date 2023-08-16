@@ -10,18 +10,18 @@
     <div
         class="grid grid-cols-12 w-full auto-rows-auto items-center"
     >
-      <p class="flex h-14 items-center border-b col-span-3">date</p>
+      <p class="flex h-14 items-center border-b col-span-3">{{purchaseDate}}</p>
       <p class="flex h-14 items-center border-b col-span-4 pr-3 ">Initial purchase amount</p>
-      <p class="flex h-14 items-center border-b col-span-4">£DEBIT</p>
-      <p class="flex h-14 items-center border-b flex justify-end">£BALANCE</p>
-      <p class="flex h-14 items-center border-b col-span-3">date</p>
+      <p class="flex h-14 items-center border-b col-span-4">£{{totalOrderValue}}</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£{{totalOrderValue}}</p>
+      <p class="flex h-14 items-center border-b col-span-3">{{loanStartDate}}</p>
       <p class="flex h-14 items-center border-b col-span-6 pr-3 ">Deposit payment</p>
-      <p class="flex h-14 items-center border-b col-span-2">£CREDIT</p>
-      <p class="flex h-14 items-center border-b flex justify-end">£BALANCE</p>
-      <p class="flex h-14 items-center border-b col-span-3">date</p>
+      <p class="flex h-14 items-center border-b col-span-2">£{{depositValue}}</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£{{(totalOrderValue-depositValue).toFixed(2)}}</p>
+      <p class="flex h-14 items-center border-b col-span-3">{{loanStartDate}}</p>
       <p class="flex h-14 items-center border-b col-span-4 pr-3 ">Interest for entire term</p>
-      <p class="flex h-14 items-center border-b col-span-4">£DEBIT</p>
-      <p class="flex h-14 items-center border-b flex justify-end">£BALANCE</p>
+      <p class="flex h-14 items-center border-b col-span-4">£{{totalInterestValue}}</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£{{totalInterestValue+totalOrderValue-depositValue}}</p>
       <template v-for="transaction in transactions">
         <p class="flex h-14 items-center border-b col-span-3">{{transaction.date}}</p>
         <p class="flex h-14 items-center border-b col-span-4 pr-3 ">{{transaction.description}}</p>
@@ -35,11 +35,26 @@
 
 <script setup>
 
-defineProps({
+const props = defineProps({
+    loanStartDate: {
+      type: String,
+      required: true
+    },
+    purchaseDate: {
+      type: String
+    },
+    totalOrderValue: {
+      type: Number
+    },
+    totalInterestValue: {
+      type: Number
+    },
+    depositValue: {
+      type: Number
+    },
     transactions: {
       type: Array,
       required: true
     }
   })
-
 </script>

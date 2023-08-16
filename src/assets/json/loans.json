@@ -3,16 +3,17 @@
     "id": "1",
     "retailerName": "Retailer 1",
     "status": "paid",
+    "purchaseDate": "2nd Jan 2023",
     "startDate": "2nd Feb 2023",
     "termLength": 3,
     "provider": "payl8r",
     "totalOrderValue": 100,
-    "totalLoanValue": 120.56,
     "depositValue": 30,
-    "valueRepaid": 70,
-    "upcomingInstalmentValue": "15.45",
+    "totalInterestValue": 9.45,
+    "valueRepaid": 40.19,
+    "upcomingInstalmentValue": "40.19",
     "upcomingInstalmentDate": "2nd Apr 2023",
-    "previousInstalmentValue": "15.46",
+    "previousInstalmentValue": "40.19",
     "previousInstalmentDate": "2nd Mar 2023",
     "orderItems":[
       {
@@ -30,51 +31,204 @@
         "qnty": 3,
         "price": 20.00
       }
+    ],
+    "instalments": [
+      {
+        "id": 1,
+        "date": "2nd Mar 2023",
+        "amountDue": 40.19,
+        "amountPaid": 40.19,
+        "status": "paid",
+        "lateFee": {
+          "name": 1
+        }
+      },
+      {
+        "id": 2,
+        "date": "2nd Apr 2023",
+        "amountDue": 40.19,
+        "amountPaid": 0,
+        "status": "upcoming"
+      },
+      {
+        "id": 3,
+        "date": "2nd May 2023",
+        "amountDue": 40.18,
+        "amountPaid": 0,
+        "status": "upcoming"
+      }
+    ],
+    "transactions": [
+      {
+        "date": "2nd Mar 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 40.19,
+        "balance": 39.26
+      }
     ]
   },
   {
     "id": "2",
     "retailerName": "Retailer 2",
-    "status": "paid",
-    "startDate": "24th Jun 2023",
-    "termLength": 18,
+    "status": "overdue",
+    "purchaseDate": "2nd Dec 2022",
+    "startDate": "2nd Jan 2023",
+    "termLength": 3,
     "provider": "payl8r",
-    "totalOrderValue": 1000,
-    "totalLoanValue": 1273.40,
-    "depositValue": 250,
-    "valueRepaid": 141.49,
-    "upcomingInstalmentValue": "15.45",
-    "upcomingInstalmentDate": "2nd Apr 2023",
-    "previousInstalmentValue": "15.46",
-    "previousInstalmentDate": "2nd Mar 2023",
+    "totalOrderValue": 100,
+    "depositValue": 30,
+    "totalInterestValue": 9.45,
+    "valueRepaid": 40.19,
+    "upcomingInstalmentValue": "40.19",
+    "upcomingInstalmentDate": "2nd Mar 2023",
+    "previousInstalmentValue": "40.19",
+    "previousInstalmentDate": "2nd Feb 2023",
     "orderItems":[
       {
         "name": "product 1",
         "qnty": 1,
-        "price": 200.00
+        "price": 10.00
       },
       {
-        "name": "product 1",
-        "qnty": 2,
-        "price": 400.00
+        "name": "product 2",
+        "qnty": 1,
+        "price": 30.00
+      },
+      {
+        "name": "product 3",
+        "qnty": 3,
+        "price": 20.00
+      }
+    ],
+    "instalments": [
+      {
+        "id": 1,
+        "date": "2nd Feb 2023",
+        "amountDue": 40.19,
+        "amountPaid": 40.19,
+        "status": "paid"
+      },
+      {
+        "id": 2,
+        "date": "2nd Mar 2023",
+        "amountDue": 40.19,
+        "amountPaid": 0,
+        "status": "overdue",
+        "lateFee": {
+          "dateIncurred": "3rd Mar 2023",
+          "amountDue": 40.19,
+          "amountPaid": 0.00,
+          "status": "unpaid"
+        }
+      },
+      {
+        "id": 3,
+        "date": "2nd Apr 2023",
+        "amountDue": 40.18,
+        "amountPaid": 0,
+        "status": "upcoming"
+      }
+    ],
+    "transactions": [
+      {
+        "date": "2nd Feb 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 40.19,
+        "balance": 39.26
       }
     ]
   },
   {
     "id": "3",
-    "retailerName": "",
-    "status": "overdue",
-    "startDate": "2nd Feb 2023",
+    "retailerName":"",
+    "status": "paid",
+    "purchaseDate": "17th Aug 2022",
+    "startDate": "17th Sep 2023",
     "termLength": 9,
     "provider": "upfront",
-    "totalOrderValue": 2000,
-    "totalLoanValue": 2546.80,
-    "depositValue": 400,
-    "valueRepaid": 707.44,
-    "upcomingInstalmentValue": "15.45",
-    "upcomingInstalmentDate": "2nd Apr 2023",
-    "previousInstalmentValue": "15.46",
-    "previousInstalmentDate": "2nd Mar 2023",
-    "orderItems":[]
+    "totalOrderValue": 1200,
+    "depositValue": 0,
+    "totalInterestValue": 486,
+    "valueRepaid": 40.19,
+    "upcomingInstalmentValue": "40.19",
+    "upcomingInstalmentDate": "2nd Mar 2023",
+    "previousInstalmentValue": "40.19",
+    "previousInstalmentDate": "2nd Feb 2023",
+    "instalments": [
+      {
+        "id": 1,
+        "date": "17th Oct 2022",
+        "amountDue": 40.19,
+        "amountPaid": 40.19,
+        "status": "paid"
+      },
+      {
+        "id": 2,
+        "date": "17th Nov 2022",
+        "amountDue": 40.19,
+        "amountPaid": 0,
+        "status": "overdue"
+      },
+      {
+        "id": 3,
+        "date": "17th Dec 2022",
+        "amountDue": 40.18,
+        "amountPaid": 0,
+        "status": "upcoming"
+      },
+      {
+        "id": 4,
+        "date": "17th Jan 2023",
+        "amountDue": 40.19,
+        "amountPaid": 40.19,
+        "status": "paid"
+      },
+      {
+        "id": 5,
+        "date": "17th Feb 2023",
+        "amountDue": 40.19,
+        "amountPaid": 0,
+        "status": "overdue"
+      },
+      {
+        "id": 6,
+        "date": "17th Mar 2023",
+        "amountDue": 40.18,
+        "amountPaid": 0,
+        "status": "upcoming"
+      },
+      {
+        "id": 7,
+        "date": "17th Apr 2023",
+        "amountDue": 40.19,
+        "amountPaid": 40.19,
+        "status": "paid"
+      },
+      {
+        "id": 8,
+        "date": "17th May 2023",
+        "amountDue": 40.19,
+        "amountPaid": 0,
+        "status": "overdue"
+      },
+      {
+        "id": 9,
+        "date": "17th Jun 2023",
+        "amountDue": 40.18,
+        "amountPaid": 0,
+        "status": "upcoming"
+      }
+    ],
+    "transactions": [
+      {
+        "date": "17th Jul 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 40.19,
+        "balance": 39.26
+      }
+    ]
   }
 ]

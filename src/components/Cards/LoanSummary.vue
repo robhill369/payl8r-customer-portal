@@ -7,51 +7,59 @@
         :previousPayment=loanPreviousPayment
         :previousPaymentDate=loanPreviousPaymentDate
     />
-    <div class="flex flex-col lg:flex-row w-full pt-11 justify-between pb-8 lg:pb-0">
-      <hr class="block lg:hidden -mx-5 lg:-mx-9 pb-9"/>
-      <div class="flex flex-col w-full lg:w-2/5 space-y-5">
-        <h5 class="text-gray">Order Summary</h5>
-        <div class="grid grid-cols-5">
-          <p class="col-span-4 pt-2.5">Total inc. interest</p>
-          <p class="font-bold pt-2.5">£{{totalLoanValue}}</p>
-          <p class="col-span-4 pt-2.5">Order total</p>
-          <p class="font-bold pt-2.5">£{{totalOrderValue}}</p>
-          <p class="col-span-4 pt-2.5">Paid so far</p>
-          <p class="font-bold pt-2.5">£{{valueRepaid}}</p>
-        </div>
-        <div class="h-3"/>
-      </div>
-      <div class="flex flex-col w-full lg:w-[304px] xl:w-[352px] 2xl:w-[304px] 3xl:w-[480px] space-y-5">
-        <h5 class="text-gray">Basket Summary</h5>
-        <div class="w-full">
-          <div class="grid grid-cols-5 text-xs text-gray">
-            <div class="col-span-3">Product</div>
-            <div>Qty.</div>
-            <div>Price</div>
+    <div class="pt-11 w-full" :class="provider === 'upfront' ? 'lg:flex lg:justify-between' : ''">
+      <div class="flex flex-col lg:flex-row w-full justify-between pb-8 lg:pb-0">
+        <hr class="block lg:hidden -mx-5 lg:-mx-9 pb-9"/>
+        <div
+          class="flex flex-col w-72 md:w-2/5 space-y-5"
+          :class="provider === 'upfront' ? 'lg:w-3/5' : ''"
+        >
+          <h5 class="text-gray">{{provider === 'upfront' ? 'Loan' : 'Order'}} Summary</h5>
+          <div class="grid grid-cols-5">
+            <p class="col-span-4 pt-2.5">Total inc. interest</p>
+            <p class="font-bold pt-2.5">£{{totalLoanValue}}</p>
+            <p class="col-span-4 pt-2.5">{{provider === 'upfront' ? 'Amount Borrowed' : 'Order total'}}</p>
+            <p class="font-bold pt-2.5">£{{totalOrderValue}}</p>
+            <p class="col-span-4 pt-2.5">Paid so far</p>
+            <p class="font-bold pt-2.5">£{{valueRepaid}}</p>
           </div>
-          <div
-              class="grid grid-cols-5 auto-rows-auto"
-              v-for="item in orderItems"
-          >
-            <p class="col-span-3 pt-2.5 pr-2">{{item.name}}</p>
-            <p class="font-bold pt-2.5 pr-2">{{ item.qnty }}</p>
-            <p class="font-bold pt-2.5 pr-2">£{{ (item.price * item.qnty).toFixed(2) }}</p>
+          <div class="h-3"/>
+        </div>
+        <div
+          class="flex flex-col w-72 lg:w-[304px] xl:w-[352px] 2xl:w-[304px] 3xl:w-[480px] space-y-5"
+          :class="provider === 'upfront' ? 'hidden' : ''"
+        >
+          <h5 class="text-gray">Basket Summary</h5>
+          <div class="w-full">
+            <div class="grid grid-cols-5 text-xs text-gray">
+              <div class="col-span-3">Product</div>
+              <div>Qty.</div>
+              <div>Price</div>
+            </div>
+            <div
+                class="grid grid-cols-5 auto-rows-auto"
+                v-for="item in orderItems"
+            >
+              <p class="col-span-3 pt-2.5 pr-2">{{item.name}}</p>
+              <p class="font-bold pt-2.5 pr-2">{{ item.qnty }}</p>
+              <p class="font-bold pt-2.5 pr-2">£{{ (item.price * item.qnty).toFixed(2) }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="flex flex-col space-y-5">
-      <h5 class="text-gray">Payment method</h5>
-      <div class="flex ">
-        <h2 class="pr-2">•••• •••• ••••</h2><h3>{{currentLastFourDigits}}</h3>
+      <div class="flex flex-col space-y-5 flex-shrink-0 w-72 mr-4 xl:mr-16 2xl:mr-4">
+        <h5 class="text-gray">Payment method</h5>
+        <div class="flex ">
+          <h2 class="pr-2">•••• •••• ••••</h2><h3>{{currentLastFourDigits}}</h3>
+        </div>
+        <router-link to="/my-account">
+          <ButtonSecondary
+              class="drop-shadow-lg bg-white border-none"
+              name="Change card"
+              icon="fa-solid fa-credit-card"
+          />
+        </router-link>
       </div>
-      <router-link to="/my-account">
-        <ButtonSecondary
-            class="drop-shadow-lg bg-white border-none"
-            name="Change card"
-            icon="fa-solid fa-credit-card"
-        />
-      </router-link>
     </div>
     <hr class="-mx-5 xl:-mx-9 my-10"/>
     <TitledCopy
@@ -70,6 +78,9 @@ defineProps({
     type: String,
     required: true,
     default: 'The retailer'
+  },
+  provider: {
+    type: String
   },
   totalLoanValue: {
     type: Number,

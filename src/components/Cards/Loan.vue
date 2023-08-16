@@ -183,6 +183,7 @@
         </ul>
         <LoanSummary
             v-if="tab === 1"
+            :provider=provider
             :retailer-name=retailerName
             :total-loan-value=totalLoanValue
             :total-order-value=totalOrderValue
@@ -206,6 +207,11 @@
           />
           <LoanStatement
               v-if="tab === 4"
+              :purchase-date=purchaseDate
+              :loan-start-date=loanStartDate
+              :total-order-value=totalOrderValue
+              :total-interest-value="totalInterestValue"
+              :deposit-value=depositValue
               :transactions=transactions
           />
         </div>
@@ -243,6 +249,9 @@ const props = defineProps({
     type: String,
     required: true
   },
+  purchaseDate: {
+    type: String,
+  },
   loanStartDate: {
     type: String,
     required: true
@@ -260,11 +269,18 @@ const props = defineProps({
     required: true,
     default: 'ongoing'
   },
-  totalLoanValue: {
+  depositValue: {
+    type: Number,
+  },
+  totalInterestValue: {
     type: Number,
     required: true
   },
   valueLeftToPay: {
+    type: Number,
+    required: true
+  },
+  totalLoanValue: {
     type: Number,
     required: true
   },

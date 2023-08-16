@@ -23,12 +23,15 @@
             loan-details
             :retailer-name=retailerName
             :provider="provider"
+            :purchase-date=purchaseDate
             :loan-start-date=loanStartDate
             :term-length=termLength
             :monthly-payback-value=monthlyPaybackValue
             :status=loanStatus
-            :total-loan-value=totalLoanValue
+            :total-interest-value=totalInterestValue
             :total-order-value=totalOrderValue
+            :total-loan-value=totalLoanValue
+            :deposit-value=depositValue
             :value-repaid="valueRepaid"
             :value-left-to-pay=valueLeftToPay
             :loan-upcoming-payment=loanUpcomingPayment
@@ -59,6 +62,9 @@ const props = defineProps({
   provider: {
     type: String,
   },
+  purchaseDate: {
+    type: String
+  },
   loanStatus: {
     type: String,
     required: true
@@ -79,6 +85,14 @@ const props = defineProps({
     type: String,
     required: true,
     default: 'ongoing'
+  },
+  depositValue: {
+    type: Number,
+    required: true,
+    default: 0.00
+  },
+  totalInterestValue: {
+    type: Number,
   },
   totalLoanValue: {
     type: Number,
