@@ -41,7 +41,6 @@
             :current-last-four-digits=currentLastFourDigits
             :transactions=transactions
             :instalments=instalments
-            :late-fees=lateFees
             :order-items=orderItems
           />
         </div>
@@ -139,9 +138,6 @@ const props = defineProps({
   instalments: {
     type: Array,
     required: true
-  },
-  lateFees:{
-    type: Array,
   },
   orderItems: {
     type: Array,

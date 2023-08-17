@@ -197,22 +197,21 @@
         />
         <div v-else class="overflow-x-scroll table-scroll pb-7 sm:pb-0">
           <LoanPaymentSchedule
-              v-if="tab === 2"
-              :instalments=instalments
+            v-if="tab === 2"
+            :instalments=props.instalments
           />
           <LoanLateFees
-              v-if="hasLateFees && tab === 3"
-              :late-fees=lateFees
-              :instalments=instalments
+            v-if="hasLateFees && tab === 3"
+            :instalments=props.instalments
           />
           <LoanStatement
-              v-if="tab === 4"
-              :purchase-date=purchaseDate
-              :loan-start-date=loanStartDate
-              :total-order-value=totalOrderValue
-              :total-interest-value="totalInterestValue"
-              :deposit-value=depositValue
-              :transactions=transactions
+            v-if="tab === 4"
+            :purchase-date=purchaseDate
+            :loan-start-date=loanStartDate
+            :total-order-value=totalOrderValue
+            :total-interest-value="totalInterestValue"
+            :deposit-value=depositValue
+            :transactions=transactions
           />
         </div>
       </div>
@@ -222,7 +221,7 @@
 
 
 <script setup>
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 
 import ProgressBar from "@/components/ProgressBar.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
@@ -324,10 +323,7 @@ const props = defineProps({
   },
   instalments: {
     type: Array,
-    required: true
-  },
-  lateFees: {
-    type: Array,
+    default: []
   },
   orderItems: {
     type: Array,
@@ -335,13 +331,20 @@ const props = defineProps({
   }
 })
 
+const hasLateFees = ref(false)
+
+onMounted(() => {
+  props.instalments.forEach(instalment => {
+    if('lateFee' in instalment) {
+      hasLateFees.value = true
+    }
+  })
+})
+
 const tab = ref(1)
 
 const currentTab = (tabNumber) => {
   tab.value = tabNumber;
 }
-
-const hasLateFees = ref(true)
-
 const paymentOverdue = props.status === 'overdue'
 </script>

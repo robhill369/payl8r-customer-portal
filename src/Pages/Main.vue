@@ -46,7 +46,6 @@
         />
       </BaseCard>
     </CardSection>
-
 <!--    My (active) loans section-->
     <CardSection>
       <CardSectionHeader :title="$route.path === '/' ? 'My active loans' : 'My loans'">
@@ -134,49 +133,6 @@ import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
 
 import loanData from '@/assets/json/loans.json';
 const loans = loanData
-
-// const isOverviewPage = () => {
-//   if($route)
-// }
-
-const transactions = [
-  {
-    date: 'date',
-    description: 'Loan payment',
-    debit: 160.00,
-    credit: null,
-    balance: 304.00
-  },
-  {
-    date: 'date',
-    description: 'Refund payment',
-    debit: null,
-    credit: 20,
-    balance: null
-  },
-  {
-    date: 'date',
-    description: 'Change of card (failed)',
-    debit: null,
-    credit: 307.00,
-    balance: 377.00
-  },
-  {
-    date: 'date',
-    description: 'Change of card',
-    debit: null,
-    credit: 307.00,
-    balance: 377.00
-  },
-  {
-    date: 'date',
-    description: 'Change of card',
-    debit: null,
-    credit: 307.00,
-    balance: 377.00
-  }
-]
-
 
 const loanTypes = [
   {

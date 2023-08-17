@@ -25,8 +25,8 @@
       <template v-for="transaction in transactions">
         <p class="flex h-14 items-center border-b col-span-3">{{transaction.date}}</p>
         <p class="flex h-14 items-center border-b col-span-4 pr-3 ">{{transaction.description}}</p>
-        <p class="flex h-14 items-center border-b col-span-2">£{{transaction.debit}}</p>
-        <p class="flex h-14 items-center border-b col-span-2">£{{transaction.credit}}</p>
+        <p class="flex h-14 items-center border-b col-span-2">{{transaction.debit ? '£'+transaction.debit : ''}}</p>
+        <p class="flex h-14 items-center border-b col-span-2">{{transaction.credit ? '£'+transaction.credit : ''}}</p>
         <p class="flex h-14 items-center border-b flex justify-end">£{{transaction.balance}}</p>
       </template>
     </div>

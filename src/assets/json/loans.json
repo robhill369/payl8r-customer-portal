@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "retailerName": "Retailer 1",
     "status": "paid",
     "purchaseDate": "2nd Jan 2023",
@@ -11,9 +11,9 @@
     "depositValue": 30,
     "totalInterestValue": 9.45,
     "valueRepaid": 40.19,
-    "upcomingInstalmentValue": "40.19",
+    "upcomingInstalmentValue": 40.19,
     "upcomingInstalmentDate": "2nd Apr 2023",
-    "previousInstalmentValue": "40.19",
+    "previousInstalmentValue": 40.19,
     "previousInstalmentDate": "2nd Mar 2023",
     "orderItems":[
       {
@@ -38,10 +38,7 @@
         "date": "2nd Mar 2023",
         "amountDue": 40.19,
         "amountPaid": 40.19,
-        "status": "paid",
-        "lateFee": {
-          "name": 1
-        }
+        "status": "paid"
       },
       {
         "id": 2,
@@ -69,7 +66,7 @@
     ]
   },
   {
-    "id": "2",
+    "id": 2,
     "retailerName": "Retailer 2",
     "status": "overdue",
     "purchaseDate": "2nd Dec 2022",
@@ -80,9 +77,9 @@
     "depositValue": 30,
     "totalInterestValue": 9.45,
     "valueRepaid": 40.19,
-    "upcomingInstalmentValue": "40.19",
+    "upcomingInstalmentValue": 40.19,
     "upcomingInstalmentDate": "2nd Mar 2023",
-    "previousInstalmentValue": "40.19",
+    "previousInstalmentValue": 40.19,
     "previousInstalmentDate": "2nd Feb 2023",
     "orderItems":[
       {
@@ -141,7 +138,7 @@
     ]
   },
   {
-    "id": "3",
+    "id": 3,
     "retailerName":"",
     "status": "paid",
     "purchaseDate": "17th Aug 2022",
@@ -152,9 +149,9 @@
     "depositValue": 0,
     "totalInterestValue": 486,
     "valueRepaid": 40.19,
-    "upcomingInstalmentValue": "40.19",
+    "upcomingInstalmentValue": 40.19,
     "upcomingInstalmentDate": "2nd Mar 2023",
-    "previousInstalmentValue": "40.19",
+    "previousInstalmentValue": 40.19,
     "previousInstalmentDate": "2nd Feb 2023",
     "instalments": [
       {
