@@ -12,16 +12,16 @@
     >
       <p class="flex h-14 items-center border-b col-span-3">{{purchaseDate}}</p>
       <p class="flex h-14 items-center border-b col-span-4 pr-3 ">Initial purchase amount</p>
-      <p class="flex h-14 items-center border-b col-span-4">£{{totalOrderValue}}</p>
-      <p class="flex h-14 items-center border-b flex justify-end">£{{totalOrderValue}}</p>
+      <p class="flex h-14 items-center border-b col-span-4">£{{totalOrderValue.toFixed(2)}}</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£{{totalOrderValue.toFixed(2)}}</p>
       <p class="flex h-14 items-center border-b col-span-3">{{loanStartDate}}</p>
       <p class="flex h-14 items-center border-b col-span-6 pr-3 ">Deposit payment</p>
-      <p class="flex h-14 items-center border-b col-span-2">£{{depositValue}}</p>
+      <p class="flex h-14 items-center border-b col-span-2">£{{depositValue.toFixed(2)}}</p>
       <p class="flex h-14 items-center border-b flex justify-end">£{{(totalOrderValue-depositValue).toFixed(2)}}</p>
       <p class="flex h-14 items-center border-b col-span-3">{{loanStartDate}}</p>
       <p class="flex h-14 items-center border-b col-span-4 pr-3 ">Interest for entire term</p>
-      <p class="flex h-14 items-center border-b col-span-4">£{{totalInterestValue}}</p>
-      <p class="flex h-14 items-center border-b flex justify-end">£{{totalInterestValue+totalOrderValue-depositValue}}</p>
+      <p class="flex h-14 items-center border-b col-span-4">£{{totalInterestValue.toFixed(2)}}</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£{{(totalInterestValue+totalOrderValue-depositValue).toFixed(2)}}</p>
       <template v-for="transaction in transactions">
         <p class="flex h-14 items-center border-b col-span-3">{{transaction.date}}</p>
         <p class="flex h-14 items-center border-b col-span-4 pr-3 ">{{transaction.description}}</p>
