@@ -5,6 +5,7 @@
       :retailer-name=retailerName
       :provider="provider"
       :status=loanStatus
+      :value-repaid="valueRepaid"
       :loan-start-date=loanStartDate
       :term-length=termLength
       :total-loan-value=totalLoanValue

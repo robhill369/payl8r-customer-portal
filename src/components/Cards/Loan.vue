@@ -30,8 +30,16 @@
                 :avatar-colors= "paymentOverdue ? 'bg-red-light text-red' : 'bg-teal-light text-teal-dark'"
                 :initial-title="retailerName"
             />
-            <div class="flex flex-col justify-between lg:pl-4 w-72">
-              <h3 class="font-semibold truncate">{{retailerName}}</h3>
+            <div
+              class="flex flex-col justify-between lg:pl-4"
+              :class="!loanDetails ? 'w-80' : ''"
+            >
+              <h3
+                class="font-semibold"
+                :class="!loanDetails ? 'truncate' : ''"
+              >
+                {{retailerName}}
+              </h3>
               <div class="flex text-gray space-x-4">
                 <p class="font-bold">{{loanStartDate}}</p>
                 <p>{{termLength}} month payment plan</p>
@@ -72,6 +80,7 @@
         :payment-overdue=paymentOverdue
         @click="$emit('open')"
         :class="loanDetails ? '' : 'cursor-pointer'"
+        :progress="(valueRepaid/totalLoanValue)*100"
       />
       <div>
         <div v-if="loanDetails"
@@ -289,7 +298,8 @@ const props = defineProps({
   },
   valueRepaid: {
     type: Number,
-    required: true
+    required: true,
+    default: 0
   },
   loanUpcomingPayment: {
     type: Number,

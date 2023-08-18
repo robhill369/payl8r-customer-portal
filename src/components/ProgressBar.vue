@@ -1,7 +1,7 @@
 <template>
   <div class="relative h-3.5 w-full rounded-full bg-button-secondary">
     <div
-      style="width: 100%"
+      :style="'width:'+progress+'%'"
       class="absolute h-full rounded-full"
       :class="paymentOverdue ? 'bg-red-light' : 'bg-teal'"
     />
@@ -15,6 +15,9 @@ const props = defineProps({
     type: Boolean,
     default: 'false'
   },
+  progress: {
+    type: Number
+  }
 })
 
 </script>
