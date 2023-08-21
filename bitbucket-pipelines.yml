@@ -16,7 +16,7 @@ pipelines:
       - step:
           name: "Deploy to dev"
           trigger: manual
-          deployment: dev
+          deployment: customer-portal-dev
           script:
             - BRANCH_NAME_CLEAN=$(git rev-parse --abbrev-ref HEAD | sed -r 's/[\.]/-/g')
             - pipe: atlassian/aws-elasticbeanstalk-deploy:1.1.1
