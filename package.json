@@ -1,18 +1,9 @@
 {
-  "name": "bitbucket-node-sample-repo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "Elastic-Beanstalk-Sample-App",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
   "scripts": {
-    "test": "mocha ./index.test.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "mongodb": "^3.1.1",
-    "node": "^10.8.0"
-  },
-  "devDependencies": {
-    "mocha": "^5.2.0"
+    "start": "node app.js"
   }
 }
