@@ -7,9 +7,9 @@ pipelines:
             - node
           script: # Modify the commands below to build your repository.
             - npm install
-            - npm run dev
+            - npm run test
           services:
-            #- mongo
+            - mongo
             - docker
           artifacts:
             - '**/*' # This will persist all files and directories in the working directory to be used in the next step
@@ -33,7 +33,7 @@ pipelines:
                 WAIT_INTERVAL: '10'
                 WARMUP_INTERVAL: '0'
                 VERSION_LABEL: 'deploy-$BITBUCKET_BUILD_NUMBER-payl8r-customer-portal-env'
-#definitions:
-#  services:
-#    mongo:
-#      image: mongo 
+definitions:
+  services:
+    mongo:
+      image: mongo 
