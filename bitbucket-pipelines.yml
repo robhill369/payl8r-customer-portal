@@ -20,7 +20,7 @@ pipelines:
               # to the '/tmp/ebextensions' directory in the pipeline environment
               #- git clone -b ebextensions git@bitbucket.org:socialmoney/newco.git /tmp/ebextensions
                 # List all the files in the '/tmp/ebextensions' directory to check if files were cloned successfully
-              #- ls -lah /tmp/ebextensions
+              ##- ls -lah /tmp/ebextensions
                 # Get the name of the current git branch and store it in the 'BRANCH' variable
               #- BRANCH="$(git rev-parse --abbrev-ref HEAD)"
                 # Overwrite or add the branch-specific '.ebextensions' files from the cloned repository
