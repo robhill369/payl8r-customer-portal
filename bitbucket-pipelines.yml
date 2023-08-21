@@ -12,7 +12,8 @@ pipelines:
             - mongo
             - docker
           artifacts:
-            - '**/*' # This will persist all files and directories in the working directory to be used in the next step
+            - '**/*' 
+            - application.zip
       - step:
           name: "Deploy to dev"
           trigger: manual
