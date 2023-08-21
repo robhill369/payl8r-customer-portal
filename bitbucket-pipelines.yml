@@ -1,0 +1,39 @@
+image: atlassian/default-image:4
+pipelines:
+  branches:
+  dev:
+    - step:
+        caches:
+          - node
+        script: # Modify the commands below to build your repository.
+          - npm install
+          - npm test
+        services:
+          #- mongo
+          - docker
+        artifacts:
+          - '**/*' # This will persist all files and directories in the working directory to be used in the next step
+     - step:
+          name: "Deploy to dev"
+          trigger: manual
+          deployment: dev
+          script:
+            - BRANCH_NAME_CLEAN=$(git rev-parse --abbrev-ref HEAD | sed -r 's/[\.]/-/g')
+            - pipe: atlassian/aws-elasticbeanstalk-deploy:1.1.1
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: "eu-west-1"
+                APPLICATION_NAME: "payl8r-customer-portal"
+                ENVIRONMENT_NAME: "Payl8r-customer-portal-env-DEV
+                ZIP_FILE: "application.zip"
+                S3_BUCKET: "elasticbeanstalk-payl8r-bucket"
+                DEBUG: "false"
+                WAIT: "true"
+                WAIT_INTERVAL: '10'
+                WARMUP_INTERVAL: '0'
+                VERSION_LABEL: 'deploy-$BITBUCKET_BUILD_NUMBER-payl8r-customer-portal-env'
+#definitions:
+#  services:
+#    mongo:
+#      image: mongo 
