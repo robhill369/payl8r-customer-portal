@@ -25,7 +25,7 @@ pipelines:
                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
                 AWS_DEFAULT_REGION: "eu-west-1"
                 APPLICATION_NAME: "payl8r-customer-portal"
-                ENVIRONMENT_NAME: "Payl8r-customer-portal-env-DEV
+                ENVIRONMENT_NAME: "Payl8r-customer-portal-env-DEV"
                 ZIP_FILE: "application.zip"
                 S3_BUCKET: "elasticbeanstalk-payl8r-bucket"
                 DEBUG: "false"
