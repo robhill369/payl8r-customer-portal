@@ -27,7 +27,7 @@ pipelines:
               # to the '.ebextensions' directory in the current repository
               #- cp -af "/tmp/ebextensions/.ebextensions.$BRANCH/." .ebextensions/
               #  Create a zip file of the current repository, excluding specified directories
-              - zip -r -9 application.zip #. -x .git/**\* -x blog/**\* -x localhost.sql -x vendor/**\*
+              - zip -r -9 application.zip . -x .git/**\* -x blog/**\* -x localhost.sql -x vendor/**\*
                  #       Define the 'application.zip' file as an artifact that should be stored after the build
           artifacts:
             - application.zip
