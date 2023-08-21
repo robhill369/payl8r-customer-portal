@@ -1,19 +1,19 @@
 image: atlassian/default-image:4
 pipelines:
   branches:
-  '{dev}':
-    - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          - npm test
-        services:
-          #- mongo
-          - docker
-        artifacts:
-          - '**/*' # This will persist all files and directories in the working directory to be used in the next step
-     - step:
+    '{dev}':
+      - step:
+          caches:
+            - node
+          script: # Modify the commands below to build your repository.
+            - npm install
+            - npm run dev
+          services:
+            #- mongo
+            - docker
+          artifacts:
+            - '**/*' # This will persist all files and directories in the working directory to be used in the next step
+      - step:
           name: "Deploy to dev"
           trigger: manual
           deployment: dev
