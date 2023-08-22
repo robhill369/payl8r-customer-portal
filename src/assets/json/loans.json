@@ -2,6 +2,7 @@
   {
     "id": 1,
     "retailerName": "1. Arranged, no payments due yet",
+    "isActive":true,
     "status": "paid",
     "purchaseDate": "28th Aug 2023",
     "startDate": "28th Sep 2023",
@@ -59,6 +60,7 @@
   {
     "id": 2,
     "retailerName": "",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "28th Sep 2023",
     "startDate": "28th Sep 2023",
@@ -99,6 +101,7 @@
   {
     "id": 3,
     "retailerName": "1. Arranged, no payments due yet",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "28th Aug 2023",
     "startDate": "28th Sep 2023",
@@ -155,7 +158,8 @@
   },
   {
     "id": 4,
-    "retailerName": "2. Ongoing, no overdue payments",
+    "retailerName": "2. In term, no overdue payments",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "5th July 2023",
     "startDate": "5th Aug 2023",
@@ -225,6 +229,7 @@
   {
     "id": 5,
     "retailerName": "",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "5th July 2023",
     "startDate": "5th Aug 2023",
@@ -281,7 +286,8 @@
   },
   {
     "id": 6,
-    "retailerName": "2. Ongoing, no overdue payments",
+    "retailerName": "2. In term, no overdue payments",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "5th July 2023",
     "startDate": "5th Aug 2023",
@@ -350,7 +356,8 @@
   },
   {
     "id": 7,
-    "retailerName": "3. Ongoing, with latest payment overdue",
+    "retailerName": "3. In term, with latest payment overdue",
+    "isActive": true,
     "status": "overdue",
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
@@ -517,6 +524,7 @@
   {
     "id": 8,
     "retailerName": "",
+    "isActive": true,
     "status": "overdue",
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
@@ -675,7 +683,8 @@
   },
   {
     "id": 9,
-    "retailerName": "3. Ongoing, with latest payment overdue",
+    "retailerName": "3. In term, with latest payment overdue",
+    "isActive": true,
     "status": "overdue",
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
@@ -841,7 +850,8 @@
   },
   {
     "id": 10,
-    "retailerName": "4. Ongoing, with previous payment(s) overdue but paid. Late fees unpaid",
+    "retailerName": "4. In term, with previous payment(s) overdue but paid. Late fees unpaid",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -999,6 +1009,7 @@
   {
     "id": 11,
     "retailerName": "",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -1148,7 +1159,8 @@
   },
   {
     "id": 12,
-    "retailerName": "4. Ongoing, with previous payment(s) overdue but paid. Late fees unpaid",
+    "retailerName": "4. In term, with previous payment(s) overdue but paid. Late fees unpaid",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -1305,7 +1317,8 @@
   },
   {
     "id": 13,
-    "retailerName": "5. Ongoing, with previous payment(s) overdue but paid. Late fees waived",
+    "retailerName": "5. In term, with previous payment(s) overdue but paid. Late fees waived",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -1463,6 +1476,7 @@
   {
     "id": 14,
     "retailerName": "",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -1612,7 +1626,8 @@
   },
   {
     "id": 15,
-    "retailerName": "5. Ongoing, with previous payment(s) overdue but paid. Late fees waived",
+    "retailerName": "5. In term, with previous payment(s) overdue but paid. Late fees waived",
+    "isActive": true,
     "status": "paid",
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -1769,7 +1784,8 @@
   },
   {
     "id": 16,
-    "retailerName": "6. Ongoing, with previous payment(s) overdue and unpaid",
+    "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
+    "isActive": true,
     "status": "overdue",
     "purchaseDate": "23rd May 2023",
     "startDate": "23rd Jun 2023",
@@ -1850,6 +1866,7 @@
   {
     "id": 17,
     "retailerName": "",
+    "isActive": true,
     "status": "overdue",
     "purchaseDate": "23rd May 2023",
     "startDate": "23rd Jun 2023",
@@ -1922,7 +1939,8 @@
   },
   {
     "id": 18,
-    "retailerName": "6. Ongoing, with previous payment(s) overdue and unpaid",
+    "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
+    "isActive": true,
     "status": "overdue",
     "purchaseDate": "23rd May 2023",
     "startDate": "23rd Jun 2023",
@@ -2002,7 +2020,8 @@
   },
   {
     "id": 19,
-    "retailerName": "7. Completed, with no late payments",
+    "retailerName": "7. Out of term, with no late payments",
+    "isActive": false,
     "status": "paid",
     "purchaseDate": "9th Jan 2021",
     "startDate": "9th Feb 2021",
@@ -2171,119 +2190,119 @@
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 1264.99
       },
       {
         "date": "9th Apr 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 1190.58
       },
       {
         "date": "9th May 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 1116.17
       },
       {
         "date": "9th Jun 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 1041.76
       },
       {
         "date": "9th Jul 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 967.35
       },
       {
         "date": "9th Aug 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 892.94
       },
       {
         "date": "9th Sep 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 818.53
       },
       {
         "date": "9th Oct 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 744.12
       },
       {
         "date": "9th Nov 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 669.71
       },
       {
         "date": "9th Dec 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 595.30
       },
       {
         "date": "9th Jan 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 520.89
       },
       {
         "date": "9th Feb 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 446.48
       },
       {
         "date": "9th Mar 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 372.07
       },
       {
         "date": "9th Apr 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 297.66
       },
       {
         "date": "9th May 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 223.25
       },
       {
         "date": "9th Jun 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 148.84
       },
       {
         "date": "9th Jul 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 74.43
       },
       {
         "date": "9th Aug 2022",
@@ -2297,6 +2316,7 @@
   {
     "id": 20,
     "retailerName": "",
+    "isActive": false,
     "status": "paid",
     "purchaseDate": "9th Jan 2021",
     "startDate": "9th Feb 2021",
@@ -2309,28 +2329,6 @@
     "upcomingInstalmentDate": null,
     "previousInstalmentValue": 94.97,
     "previousInstalmentDate": "5th Sep  2023",
-    "orderItems":[
-      {
-        "name": "product 1",
-        "qnty": 1,
-        "price": 250.00
-      },
-      {
-        "name": "product 2",
-        "qnty": 3,
-        "price": 100.00
-      },
-      {
-        "name": "product 3",
-        "qnty": 1,
-        "price": 145.00
-      },
-      {
-        "name": "product 4",
-        "qnty": 1,
-        "price": 145.00
-      }
-    ],
     "instalments": [
       {
         "id": 1,
@@ -2506,7 +2504,8 @@
   },
   {
     "id": 21,
-    "retailerName": "7. Completed, with no late payments",
+    "retailerName": "7. Out of term, with no late payments",
+    "isActive": false,
     "status": "paid",
     "purchaseDate": "9th Jan 2021",
     "startDate": "9th Feb 2021",
@@ -2675,119 +2674,119 @@
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 1264.99
       },
       {
         "date": "9th Apr 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 1190.58
       },
       {
         "date": "9th May 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 1116.17
       },
       {
         "date": "9th Jun 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 1041.76
       },
       {
         "date": "9th Jul 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 967.35
       },
       {
         "date": "9th Aug 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 892.94
       },
       {
         "date": "9th Sep 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 818.53
       },
       {
         "date": "9th Oct 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 744.12
       },
       {
         "date": "9th Nov 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 669.71
       },
       {
         "date": "9th Dec 2021",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 595.30
       },
       {
         "date": "9th Jan 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 520.89
       },
       {
         "date": "9th Feb 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 446.48
       },
       {
         "date": "9th Mar 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 372.07
       },
       {
         "date": "9th Apr 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 297.66
       },
       {
         "date": "9th May 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 981.76
+        "balance": 223.25
       },
       {
         "date": "9th Jun 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1199.92
+        "balance": 148.84
       },
       {
         "date": "9th Jul 2022",
         "description": "Loan payment",
         "debit": null,
         "credit": 74.41,
-        "balance": 1090.84
+        "balance": 74.43
       },
       {
         "date": "9th Aug 2022",
@@ -2800,7 +2799,8 @@
   },
   {
     "id": 22,
-    "retailerName": "8. Completed, with instalments paid late",
+    "retailerName": "8. Out of term, with instalments paid late. Late fees unpaid",
+    "isActive": false,
     "status": "paid",
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -2935,6 +2935,7 @@
   },
   {
     "id": 23,
+    "isActive": false,
     "status": "paid",
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -3062,7 +3063,8 @@
   },
   {
     "id": 24,
-    "retailerName": "8. Completed, with instalments paid late",
+    "retailerName": "8. Out of term, with instalments paid late. Late fees unpaid",
+    "isActive": false,
     "status": "paid",
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -3197,7 +3199,8 @@
   },
   {
     "id": 25,
-    "retailerName": "9. Completed, with instalments paid late. Late fees waived",
+    "retailerName": "9. Out of term, with instalments paid late. Late fees waived",
+    "isActive": false,
     "status": "paid",
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -3332,6 +3335,7 @@
   },
   {
     "id": 26,
+    "isActive": false,
     "status": "paid",
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -3459,7 +3463,8 @@
   },
   {
     "id": 27,
-    "retailerName": "9. Completed, with instalments paid late. Late fees waived",
+    "retailerName": "9. Out of term, with instalments paid late. Late fees waived",
+    "isActive": false,
     "status": "paid",
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
@@ -3594,7 +3599,8 @@
   },
   {
     "id": 28,
-    "retailerName": "10. Ongoing, with latest payment overdue",
+    "retailerName": "10. Out of term, with instalment payments overdue",
+    "isActive": true,
     "status": "overdue",
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
@@ -3701,6 +3707,7 @@
   },
   {
     "id": 29,
+    "isActive": true,
     "status": "overdue",
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
@@ -3807,7 +3814,8 @@
   },
   {
     "id": 30,
-    "retailerName": "10. Ongoing, with latest payment overdue",
+    "retailerName": "10. Out of term, with instalment payments overdue",
+    "isActive": true,
     "status": "overdue",
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
