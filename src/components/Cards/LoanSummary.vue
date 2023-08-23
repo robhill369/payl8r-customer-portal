@@ -47,7 +47,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col space-y-5 flex-shrink-0 w-72 mr-4 xl:mr-16 2xl:mr-4">
+      <div class="flex flex-col space-y-5 flex-shrink-0 w-72 mr-4 xl:mr-16 2xl:mr-4 3xl:mr-48">
         <h5 class="text-gray">Payment method</h5>
         <div class="flex ">
           <h2 class="pr-2">•••• •••• ••••</h2><h3>{{currentLastFourDigits}}</h3>

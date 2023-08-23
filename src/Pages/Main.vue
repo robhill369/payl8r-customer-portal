@@ -58,7 +58,7 @@
         </template>
         <template v-slot:tabs v-else>
           <Tabs
-              :tabs=loanTypes
+            :tabs=loanTypes
           />
         </template>
       </CardSectionHeader>
