@@ -8,6 +8,7 @@
       :value-repaid="valueRepaid"
       :loan-start-date=loanStartDate
       :term-length=termLength
+      :deposit-value=depositValue
       :total-loan-value=totalLoanValue
       :value-left-to-pay=valueLeftToPay
     />

@@ -61,7 +61,7 @@
             class="flex flex-col justify-between"
             :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
           >
-            <h3>£{{totalLoanValue}}</h3>
+            <h3>£{{(totalLoanValue-depositValue).toFixed(2)}}</h3>
             <div class="flex text-gray">
               <p class="font-bold">Total inc. interest</p>
             </div>
@@ -80,7 +80,7 @@
         :payment-overdue=paymentOverdue
         @click="$emit('open')"
         :class="loanDetails ? '' : 'cursor-pointer'"
-        :progress="(valueRepaid/totalLoanValue)*100"
+        :progress="(valueRepaid/(totalLoanValue-depositValue))*100"
       />
       <div>
         <div v-if="loanDetails"

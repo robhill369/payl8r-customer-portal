@@ -75,7 +75,7 @@
           :deposit-value=loan.depositValue
           :total-order-value=loan.totalOrderValue
           :total-interest-value=loan.totalInterestValue
-          :total-loan-value=Number(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue).toFixed(2)
+          :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)
           :monthly-payback-value=((loan.totalOrderValue-loan.depositValue+loan.totalInterestValue)/loan.termLength).toFixed(2)
           :value-repaid=valueRepaid(loan.transactions).toFixed(2)
           :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.transactions)).toFixed(2)
@@ -129,11 +129,18 @@ import loanData from '@/assets/json/loans.json';
 const loans = loanData
 
 function valueRepaid(arr) {
-  const sum = arr.reduce((acc, transaction) => {
+
+  const repaymentsOnly = arr.filter(function(el)
+    {
+      return el.description === 'Loan payment'
+    }
+  )
+
+  const sum = repaymentsOnly.reduce((acc, transaction) => {
     return acc + (transaction.credit)
   }, 0);
 
-  return sum
+  return sum;
 }
 
 // const activeLoans = loans.filter(findActiveLoans)

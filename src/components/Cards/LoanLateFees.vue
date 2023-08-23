@@ -13,7 +13,7 @@
         v-if="instalment.lateFee"
         class="grid grid-cols-8 w-full auto-rows-auto items-center h-14"
       >
-        <p class="flex h-14 items-center border-b">{{instalment.id}}</p>
+        <p class="flex h-14 items-center border-b pl-1.5">{{instalment.id}}</p>
         <p class="flex h-14 items-center col-span-2 border-b">{{instalment.lateFee.dateIncurred}}</p>
         <p class="flex h-14 items-center col-span-2 border-b">Failed payment</p>
         <p class="flex h-14 items-center border-b">£{{instalment.lateFee.amountDue}}</p>
