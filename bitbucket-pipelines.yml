@@ -26,7 +26,7 @@ pipelines:
           script:
               # Clone the 'ebextensions' branch from the main repository
               # to the '/tmp/ebextensions' directory in the pipeline environment
-              #- git clone -b ebextensions git@bitbucket.org:socialmoney/newco.git /tmp/ebextensions
+              #- git clone -b ebextensions git@bitbucket.org:socialmoney/payl8r-customer-portal.git /tmp/ebextensions
                 # List all the files in the '/tmp/ebextensions' directory to check if files were cloned successfully
               ##- ls -lah /tmp/ebextensions
                 # Get the name of the current git branch and store it in the 'BRANCH' variable
