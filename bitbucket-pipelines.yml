@@ -10,6 +10,7 @@ pipelines:
             - echo "This is the ebextensions branch"
     '{dev}':
       - step:
+          name: "Install npm dependencies and build assets"
           caches:
             - node
           script: # Modify the commands below to build your repository.
