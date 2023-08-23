@@ -63,8 +63,9 @@
     </div>
     <hr class="-mx-5 xl:-mx-9 my-10"/>
     <TitledCopy
-        title="Issues with this order?"
-        :body="retailerName + ' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"
+        :title="provider === 'upfront' ? 'Issues with this loan?' : 'Issues with this order?'"
+        :body="provider === 'upfront' ? 'Upfront loan copy for support channels required here' :
+          retailerName+' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"
     />
   </div>
 </template>
