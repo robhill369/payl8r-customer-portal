@@ -75,10 +75,10 @@
           :deposit-value=loan.depositValue
           :total-order-value=loan.totalOrderValue
           :total-interest-value=loan.totalInterestValue
-          :total-loan-value=loan.totalOrderValue-loan.depositValue+loan.totalInterestValue
+          :total-loan-value=Number(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue).toFixed(2)
           :monthly-payback-value=((loan.totalOrderValue-loan.depositValue+loan.totalInterestValue)/loan.termLength).toFixed(2)
-          :value-repaid=loan.valueRepaid
-          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-loan.valueRepaid).toFixed(2)
+          :value-repaid=valueRepaid(loan.transactions).toFixed(2)
+          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.transactions)).toFixed(2)
           :loan-upcoming-payment=loan.upcomingInstalmentValue
           :loan-upcoming-payment-date=loan.upcomingInstalmentDate
           :loan-previous-payment=loan.previousInstalmentValue
@@ -113,7 +113,6 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
 import PaymentsCard from "@/components/Cards/Payments.vue";
 import CardSection from "@/Layout/CardSection.vue";
 import SimpleCard from "@/components/Cards/Simple.vue";
@@ -122,17 +121,29 @@ import PrimaryButton from "@/components/Buttons/Primary.vue";
 import Avatar from "@/components/Avatar.vue";
 import PageBase from "@/Pages/Base.vue";
 import Tabs from "@/components/Tabs.vue";
-import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
-import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
-import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCard.vue";
-import OrderHelpNotification from "@/components/Notifications/OrderHelp.vue";
-import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
 import BaseCard from "@/components/Cards/Base.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
 
 import loanData from '@/assets/json/loans.json';
 const loans = loanData
+
+function valueRepaid(arr) {
+  const sum = arr.reduce((acc, transaction) => {
+    return acc + (transaction.credit)
+  }, 0);
+
+  return sum
+}
+
+// const activeLoans = loans.filter(findActiveLoans)
+
+// function filteredLoans(loan) {
+//   if(router.currentRoute === '/') {
+//     return activeLoans
+//   }
+//   else loans
+// }
 
 const loanTypes = [
   {

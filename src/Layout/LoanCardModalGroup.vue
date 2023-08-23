@@ -60,7 +60,7 @@ const props = defineProps({
     required: true
   },
   provider: {
-    type: String,
+    type: String
   },
   purchaseDate: {
     type: String

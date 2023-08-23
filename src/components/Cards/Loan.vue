@@ -32,7 +32,7 @@
             />
             <div
               class="flex flex-col justify-between lg:pl-4"
-              :class="!loanDetails ? 'w-80' : ''"
+              :class="!loanDetails ? 'w-[80vw] lg:w-72 xl:w-80 3xl:w-auto' : ''"
             >
               <h3
                 class="font-semibold"
