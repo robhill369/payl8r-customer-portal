@@ -1,6 +1,13 @@
 image: atlassian/default-image:4
 pipelines:
   branches:
+    #for ebextensions branch  just echo  
+    '{ebextensions}':
+      - step:
+          name: "Echo for ebextensions branch"
+          script:
+            # Simple echo for this branch 
+            - echo "This is the ebextensions branch"
     '{dev}':
       - step:
           caches:
