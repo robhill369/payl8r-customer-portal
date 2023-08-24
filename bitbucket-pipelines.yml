@@ -33,7 +33,7 @@ pipelines:
               - BRANCH="$(git rev-parse --abbrev-ref HEAD)"
                 # Overwrite or add the branch-specific '.platform' files from the cloned repository
                 # to the '.platform' directory in the current repository
-              - cp -af "/tmp/ebextensions/.platform.$BRANCH/." .platform/
+              #- cp -af "/tmp/ebextensions/.platform.$BRANCH/." .platform/
                 # Overwrite or add the branch-specific '.ebextensions' files from the cloned repository
               # to the '.ebextensions' directory in the current repository
               - cp -af "/tmp/ebextensions/.ebextensions.$BRANCH/." .ebextensions/
