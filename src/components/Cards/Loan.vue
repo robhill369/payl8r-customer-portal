@@ -32,7 +32,7 @@
             />
             <div
               class="flex flex-col justify-between lg:pl-4"
-              :class="!loanDetails ? 'w-[80vw] lg:w-72 xl:w-80 3xl:w-auto' : ''"
+              :class="!loanDetails ? 'w-[80vw] sm:w-[470px] md:w-[650px] lg:w-[28vw] xl:w-[35vw] 2xl:w-80 3xl:w-auto' : ''"
             >
               <h3
                 class="font-semibold"
@@ -63,7 +63,7 @@
           >
             <h3>£{{(totalLoanValue-depositValue).toFixed(2)}}</h3>
             <div class="flex text-gray">
-              <p class="font-bold">Total inc. interest</p>
+              <p class="font-bold">Total repayable</p>
             </div>
           </div>
           <div class="flex flex-col justify-between"
