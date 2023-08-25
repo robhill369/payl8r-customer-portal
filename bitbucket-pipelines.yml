@@ -15,6 +15,7 @@ pipelines:
             - node
           script: # Modify the commands below to build your repository.
             - npm install
+            - npm run build  # if you need to build for production
             #- npm run test
           services:
             #- mongo
