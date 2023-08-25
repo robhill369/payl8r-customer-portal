@@ -76,7 +76,7 @@
           :total-order-value=loan.totalOrderValue
           :total-interest-value=loan.totalInterestValue
           :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)
-          :monthly-payback-value=((loan.totalOrderValue-loan.depositValue+loan.totalInterestValue)/loan.termLength).toFixed(2)
+          monthly-payback-value="XXX.XX"
           :value-repaid=valueRepaid(loan.transactions).toFixed(2)
           :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.transactions)).toFixed(2)
           :loan-upcoming-payment=loan.upcomingInstalmentValue

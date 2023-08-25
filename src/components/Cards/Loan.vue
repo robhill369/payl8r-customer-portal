@@ -32,7 +32,7 @@
             />
             <div
               class="flex flex-col justify-between lg:pl-4"
-              :class="!loanDetails ? 'w-[80vw] sm:w-[470px] md:w-[650px] lg:w-[28vw] xl:w-[35vw] 2xl:w-80 3xl:w-auto' : ''"
+              :class="!loanDetails ? 'w-[80vw] sm:w-[470px] md:w-[650px] lg:w-[30vw] xl:w-[35vw] 2xl:w-80 3xl:w-auto' : ''"
             >
               <h3
                 class="font-semibold"
@@ -48,14 +48,14 @@
           </div>
           <ButtonBase
             v-if="loanDetails"
-            class="hidden sm:block bg-white border border-gray-darker pointer-events-none h-fit"
+            class="hidden md:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
-            <h4 class="font-[400]">£{{ monthlyPaybackValue }} p/m</h4>
+            <h4 class="font-[400] whitespace-nowrap">£{{ monthlyPaybackValue }} p/m</h4>
           </ButtonBase>
         </div>
         <div
           class="flex w-full space-x-2 justify-between h-12 lg:h-auto"
-          :class="loanDetails ? '' : 'lg:max-w-[265px]'"
+          :class="loanDetails ? '' : 'lg:max-w-[220px] xl:max-w-[265px]'"
         >
           <div
             class="flex flex-col justify-between"
@@ -270,7 +270,7 @@ const props = defineProps({
   },
   monthlyPaybackValue: {
     type: Number,
-    required: true
+    default: 0
   },
   currentInstalmentStatus: {
     type: String,
