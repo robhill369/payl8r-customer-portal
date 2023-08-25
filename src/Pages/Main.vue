@@ -21,8 +21,8 @@
         <CardSectionHeader title="My overview" v-if="$route.path === '/'"/>
         <PaymentsCard
           total-left-to-pay=XX.XX
-          active-loans-count=X
-          repaid-loans-count=X
+          :active-loans-count="activeLoans(loans).length"
+          :repaid-loans-count="loans.length - activeLoans(loans).length"
         />
     </CardSection>
 
@@ -62,8 +62,33 @@
           />
         </template>
       </CardSectionHeader>
-<!--      v-for required for active loans-->
-      <div v-for="loan in loans" :key=loan.id>
+      <div v-if="$route.path === '/'" v-for="loan in activeLoans(loans)" :key=loan.id>
+        <LoanCardModalGroup
+          :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
+          :loanStatus=loan.status
+          :provider=loan.provider
+          :purchase-date=loan.purchaseDate
+          :loan-start-date=loan.startDate
+          :term-length=loan.termLength
+          :loan-status=loan.status
+          :deposit-value=loan.depositValue
+          :total-order-value=loan.totalOrderValue
+          :total-interest-value=loan.totalInterestValue
+          :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)
+          monthly-payback-value="XXX.XX"
+          :value-repaid=valueRepaid(loan.transactions).toFixed(2)
+          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.transactions)).toFixed(2)
+          :loan-upcoming-payment=loan.upcomingInstalmentValue
+          :loan-upcoming-payment-date=loan.upcomingInstalmentDate
+          :loan-previous-payment=loan.previousInstalmentValue
+          :loan-previous-payment-date=loan.previousInstalmentDate
+          :order-items=loan.orderItems
+          current-last-four-digits="1234"
+          :transactions=loan.transactions
+          :instalments=loan.instalments
+        />
+      </div>
+      <div v-else v-for="loan in loans" :key=loan.id>
         <LoanCardModalGroup
           :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
           :loanStatus=loan.status
@@ -142,6 +167,26 @@ function valueRepaid(arr) {
 
   return sum;
 }
+
+function activeLoans(arr) {
+  const isRepaidOnly = arr.filter(function(el) {
+      return el.isRepaid === false
+    }
+  )
+  return isRepaidOnly
+}
+
+// function nextInstalment(arr) {
+//   const unpaidInstalments = arr.filter(function(el)
+//       {
+//         return el.status !== 'paid'
+//       }
+//   )
+//
+//   const nextAmountDue = unpaidInstalments[0]
+//
+//   return nextAmountDue
+// }
 
 // const activeLoans = loans.filter(findActiveLoans)
 

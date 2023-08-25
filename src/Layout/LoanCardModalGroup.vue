@@ -1,6 +1,7 @@
 <template>
   <div>
     <LoanCard
+      v-if="!loanModalOpen"
       @open="loanModalOpen = true"
       :retailer-name=retailerName
       :provider="provider"
@@ -13,10 +14,9 @@
       :value-left-to-pay=valueLeftToPay
     />
     <!-- Loan Modal -->
-    <Teleport to="body">
+    <Teleport to="body" v-else>
       <div
-          v-if="loanModalOpen"
-          class="bg-gray-light lg:bg-gray-dark lg:bg-opacity-40 fixed h-screen w-screen top-0 left-0 flex z-40 overflow-auto">
+        class="bg-gray-light lg:bg-gray-dark lg:bg-opacity-40 fixed h-screen w-screen top-0 left-0 flex z-40 overflow-auto">
         <div class=" lg:w-96 2xl:w-16"/>
         <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 h-full w-screen overflow-auto"
         >
