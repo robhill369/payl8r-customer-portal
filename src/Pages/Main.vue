@@ -37,7 +37,7 @@
           />
         </template>
       </CardSectionHeader>
-      <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 pr-14 sm:pr-40 lg:pr-20 space-y-7 lg:space-y-0 lg:space-x-24">
+      <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 pr-14 sm:pr-40 lg:pr-9 xl:pr-28 3xl:pr-72 space-y-7 lg:space-y-0 lg:space-x-24">
         <PaymentsSchedule
           upcomingPayment=XX.XX
           upcomingPaymentDate=UPCPAYDATE
@@ -86,6 +86,7 @@
           current-last-four-digits="1234"
           :transactions=loan.transactions
           :instalments=loan.instalments
+          :is-repaid=loan.isRepaid
         />
       </div>
       <div v-else v-for="loan in loans" :key=loan.id>
@@ -112,6 +113,7 @@
           current-last-four-digits="1234"
           :transactions=loan.transactions
           :instalments=loan.instalments
+          :is-repaid=loan.isRepaid
         />
       </div>
     </CardSection>

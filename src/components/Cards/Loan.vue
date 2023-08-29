@@ -203,7 +203,22 @@
             :loan-previous-payment-date=loanPreviousPaymentDate
             :current-last-four-digits=currentLastFourDigits
             :order-items=orderItems
-        />
+            :is-repaid=isRepaid
+        >
+          <h5 class="text-gray">Payment Overdue</h5>
+          <div class="w-full">Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
+          <LoanActionModalButtonGroup
+              v-if="paymentOverdue"
+              modal-title="Confirm instalment payment for:"
+              :retailer-name="retailerName"
+              button-name="Instalment overdue - make payment"
+              button-icon="fa-solid fa-credit-card"
+              is-payment
+          >
+            <p class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.
+            </p>
+          </LoanActionModalButtonGroup>
+        </LoanSummary>
         <div v-else class="overflow-x-scroll table-scroll pb-7 sm:pb-0">
           <LoanPaymentSchedule
             v-if="tab === 2"
@@ -338,6 +353,9 @@ const props = defineProps({
   orderItems: {
     type: Array,
     required: true
+  },
+  isRepaid: {
+    type: Boolean
   }
 })
 

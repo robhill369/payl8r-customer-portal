@@ -2,11 +2,13 @@
   <div>
     <PaymentsSchedule
         is-loan-card
-        :upcomingPayment=loanUpcomingPayment
-        :upcomingPaymentDate=loanUpcomingPaymentDate
-        :previousPayment=loanPreviousPayment
-        :previousPaymentDate=loanPreviousPaymentDate
-    />
+        :upcoming-payment=loanUpcomingPayment
+        :upcoming-payment-date=loanUpcomingPaymentDate
+        :previous-payment=loanPreviousPayment
+        :previous-payment-date=loanPreviousPaymentDate
+    >
+      <slot/>
+    </PaymentsSchedule>
     <div class="pt-11 w-full" :class="provider === 'upfront' ? 'lg:flex lg:justify-between' : ''">
       <div class="flex flex-col lg:flex-row w-full justify-between pb-8 lg:pb-0">
         <hr class="block lg:hidden -mx-5 lg:-mx-9 pb-9"/>
@@ -26,7 +28,7 @@
           <div class="h-3"/>
         </div>
         <div
-          class="flex flex-col w-72 lg:w-[304px] xl:w-[352px] 2xl:w-[304px] 3xl:w-[480px] space-y-5"
+          class="flex flex-col w-72 lg:w-72 xl:w-80 2xl:w-80 3xl:w-[480px] space-y-5"
           :class="provider === 'upfront' ? 'hidden' : ''"
         >
           <h5 class="text-gray">Basket Summary</h5>
@@ -47,7 +49,10 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col space-y-5 flex-shrink-0 w-72 mr-4 xl:mr-16 2xl:mr-4 3xl:mr-48">
+      <div
+        class="flex flex-col space-y-5 flex-shrink-0 w-72 xl:w-80 3xl:w-[480px]"
+        v-if="!isRepaid"
+      >
         <h5 class="text-gray">Payment method</h5>
         <div class="flex ">
           <h2 class="pr-2">•••• •••• ••••</h2><h3>{{currentLastFourDigits}}</h3>
@@ -112,6 +117,10 @@ defineProps({
   loanPreviousPaymentDate: {
     type: Date,
     required: true,
+  },
+  isRepaid: {
+    type: Boolean,
+    default: false
   },
   currentLastFourDigits: {
     type: Number,

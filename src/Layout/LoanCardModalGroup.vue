@@ -1,20 +1,7 @@
 <template>
   <div>
-    <LoanCard
-      v-if="!loanModalOpen"
-      @open="loanModalOpen = true"
-      :retailer-name=retailerName
-      :provider="provider"
-      :status=loanStatus
-      :value-repaid="valueRepaid"
-      :loan-start-date=loanStartDate
-      :term-length=termLength
-      :deposit-value=depositValue
-      :total-loan-value=totalLoanValue
-      :value-left-to-pay=valueLeftToPay
-    />
     <!-- Loan Modal -->
-    <Teleport to="body" v-else>
+    <Teleport to="body" v-if="loanModalOpen">
       <div
         class="bg-gray-light lg:bg-gray-dark lg:bg-opacity-40 fixed h-screen w-screen top-0 left-0 flex z-40 overflow-auto">
         <div class=" lg:w-96 2xl:w-16"/>
@@ -44,10 +31,24 @@
             :transactions=transactions
             :instalments=instalments
             :order-items=orderItems
+            :is-repaid=isRepaid
           />
         </div>
       </div>
     </Teleport>
+    <LoanCard
+      v-else
+      @open="loanModalOpen = true"
+      :retailer-name=retailerName
+      :provider="provider"
+      :status=loanStatus
+      :value-repaid="valueRepaid"
+      :loan-start-date=loanStartDate
+      :term-length=termLength
+      :deposit-value=depositValue
+      :total-loan-value=totalLoanValue
+      :value-left-to-pay=valueLeftToPay
+    />
   </div>
 </template>
 <script setup>
@@ -143,6 +144,10 @@ const props = defineProps({
   },
   orderItems: {
     type: Array,
+  },
+  isRepaid: {
+    type: Boolean,
+    default: false
   }
 })
 
