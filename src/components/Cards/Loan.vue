@@ -14,7 +14,7 @@
 
           <div class="relative flex items-center gap-3" :class="!loanDetails ? 'flex-row-reverse justify-between md:justify-normal' : ''">
             <Tag :name="!paymentOverdue  ? 'Ongoing' : 'Payment overdue'"/>
-            <Tag v-if="asUnpaidLateFees " :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-2.5 h-6 py-0"/>
+            <Tag v-if="hasUnpaidLateFees " :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-2.5 h-6 py-0"/>
           </div>
 
           <ButtonSecondary
@@ -71,7 +71,7 @@
             </div>
           </div>
           <div class="flex flex-col justify-between"
-               :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
+             :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
           >
             <h3>£{{valueLeftToPay}}</h3>
             <div class="flex text-gray">
@@ -85,7 +85,13 @@
         @click="$emit('open')"
         :class="loanDetails ? '' : 'cursor-pointer'"
         :progress="(valueRepaid/(totalLoanValue-depositValue))*100"
-      />
+      >
+        <div
+          v-if="hasUnpaidLateFees"
+          class="absolute bg-red-dark h-3.5 w-3.5 top-0 rounded-full"
+          :class="valueLeftToPay - (totalLoanValue-depositValue) === 0 ? 'left-0' : 'right-0'"
+        />
+      </ProgressBar>
       <div>
         <div v-if="loanDetails"
           class="flex flex-col -mx-5 xl:-mx-9 mt-2"
@@ -93,10 +99,10 @@
         >
           <div v-if="paymentOverdue" class="flex items-center mx-5 xl:mx-6 3xl:mx-9 py-5">
             <Avatar
-                class="w-8 h-8"
-                avatar-colors="bg-red text-red-light"
-                icon="fa-solid fa-circle-exclamation"
-                size="lg"
+              class="w-8 h-8"
+              avatar-colors="bg-red text-red-light"
+              icon="fa-solid fa-circle-exclamation"
+              size="lg"
             />
             <div class="text-sm space-y-2 pl-3">
               <div>We have been unable to take payment for this loan automatically and it is now overdue.</div>
@@ -110,12 +116,12 @@
           :class="loanDetails ? 'py-7 border-b -mx-5 px-5 xl:-mx-9 xl:px-9' : ''"
         >
           <LoanActionModalButtonGroup
-              v-if="paymentOverdue"
-              modal-title="Confirm instalment payment for:"
-              :retailer-name="retailerName"
-              button-name="Instalment overdue - make payment"
-              button-icon="fa-solid fa-credit-card"
-              is-payment
+            v-if="paymentOverdue"
+            modal-title="Confirm instalment payment for:"
+            :retailer-name="retailerName"
+            button-name="Instalment overdue - make payment"
+            button-icon="fa-solid fa-credit-card"
+            is-payment
           >
             <p class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.
             </p>
@@ -177,9 +183,9 @@
           </li>
           <li v-if="hasLateFees">
             <button
-                @click="currentTab(3)"
-                class="w-full h-7 md:h-9 rounded-full"
-                :class="tab === 3 ? 'bg-white text-gray-darker' : ''"
+              @click="currentTab(3)"
+              class="w-full h-7 md:h-9 rounded-full"
+              :class="tab === 3 ? 'bg-white text-gray-darker' : ''"
             >
               Late<br class="sm:hidden"> fees
             </button>
@@ -195,29 +201,29 @@
           </li>
         </ul>
         <LoanSummary
-            v-if="tab === 1"
-            :provider=provider
-            :retailer-name=retailerName
-            :total-loan-value=totalLoanValue
-            :total-order-value=totalOrderValue
-            :value-repaid=valueRepaid
-            :loan-upcoming-payment=loanUpcomingPayment
-            :loan-upcoming-payment-date=loanUpcomingPaymentDate
-            :loan-previous-payment=loanPreviousPayment
-            :loan-previous-payment-date=loanPreviousPaymentDate
-            :current-last-four-digits=currentLastFourDigits
-            :order-items=orderItems
-            :is-repaid=isRepaid
+          v-if="tab === 1"
+          :provider=provider
+          :retailer-name=retailerName
+          :total-loan-value=totalLoanValue
+          :total-order-value=totalOrderValue
+          :value-repaid=valueRepaid
+          :loan-upcoming-payment=loanUpcomingPayment
+          :loan-upcoming-payment-date=loanUpcomingPaymentDate
+          :loan-previous-payment=loanPreviousPayment
+          :loan-previous-payment-date=loanPreviousPaymentDate
+          :current-last-four-digits=currentLastFourDigits
+          :order-items=orderItems
+          :is-repaid=isRepaid
         >
           <h5 class="text-gray">Payment Overdue</h5>
           <div class="w-full">Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
           <LoanActionModalButtonGroup
-              v-if="paymentOverdue"
-              modal-title="Confirm instalment payment for:"
-              :retailer-name="retailerName"
-              button-name="Make payment now"
-              button-icon="fa-solid fa-credit-card"
-              is-payment
+            v-if="paymentOverdue"
+            modal-title="Confirm instalment payment for:"
+            :retailer-name="retailerName"
+            button-name="Make payment now"
+            button-icon="fa-solid fa-credit-card"
+            is-payment
           >
             <p class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.
             </p>
@@ -376,6 +382,16 @@ onMounted(() => {
     }
   })
 })
+
+// function lateFeeCount(arr) {
+//   const lateFees = props.instalments.filter(function (el) {
+//         return el.isRepaid.status === 'unpaid'
+//       }
+//   )
+//
+//   console.log(lateFees.length)
+//   return lateFees.length
+// }
 
 const tab = ref(1)
 

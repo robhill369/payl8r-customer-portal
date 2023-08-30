@@ -4,7 +4,9 @@
       :style="'width:'+progress+'%'"
       class="absolute h-full rounded-full"
       :class="paymentOverdue ? 'bg-red-light' : 'bg-teal'"
-    />
+    >
+      <slot/>
+    </div>
   </div>
 </template>
 
