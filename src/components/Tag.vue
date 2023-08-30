@@ -1,14 +1,15 @@
 <template>
   <ButtonBase
-    class="border border-gray-darker pointer-events-none capitalize "
-    :class="name === 'paid'  && paymentStatus ? 'bg-green-light text-green-dark border-none' : '',
-            name === 'overdue' && paymentStatus ? 'bg-red-light text-red-darker border-none' : '',
-            name === 'unpaid' && paymentStatus ? 'bg-red-light text-red-darker border-none' : '',
-            name === 'upcoming' && paymentStatus ? 'bg-yellow text-yellow-darker border-none' : '',
-            name === 'waived' && paymentStatus ? 'bg-yellow text-yellow-darker border-none' : '',
-            name === 'ongoing' && paymentStatus? 'bg-white border border-gray-darker border-none' : ''"
+    class="border border-gray-darker pointer-events-none capitalize"
+    :class="name === 'paid' ? 'bg-green-light text-green-dark border-none' : '',
+            name === 'overdue' ? 'bg-red-light text-red-darker border-none' : '',
+            name === 'unpaid' ? 'bg-red-light text-red-darker border-none' : '',
+            name === 'upcoming' ? 'bg-yellow text-yellow-darker border-none' : '',
+            name === 'waived' ? 'bg-yellow text-yellow-darker border-none' : '',
+            name === 'ongoing' ? 'bg-white border border-gray-darker border-none' : '',
+            name.match('Late fee') ? 'border-2 border-red-dark text-red-darker' : ''"
   >
-    {{name}}
+    {{name}}<span :class="name === 'Late fee' ? 'lg:hidden' : 'hidden'"> To Pay</span>
   </ButtonBase>
 </template>
 
@@ -19,10 +20,6 @@ defineProps({
   name: {
     type: String,
     required: true
-  },
-  paymentStatus: {
-    type: Boolean,
-    default: false
   }
 })
 

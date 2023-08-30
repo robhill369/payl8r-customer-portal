@@ -11,12 +11,16 @@
         @click="$emit('open')"
       >
         <div :class="loanDetails ? 'w-full flex justify-between' : 'lg:absolute bottom-7 right-5 xl:right-9'">
-          <Tag :name="!paymentOverdue ? 'Ongoing' : 'Payment overdue'"
-          />
+
+          <div class="relative flex items-center gap-3" :class="!loanDetails ? 'flex-row-reverse justify-between md:justify-normal' : ''">
+            <Tag :name="!paymentOverdue  ? 'Ongoing' : 'Payment overdue'"/>
+            <Tag v-if="asUnpaidLateFees " :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-2.5 h-6 py-0"/>
+          </div>
+
           <ButtonSecondary
+            v-if="loanDetails"
             @click="$emit('close')"
             class="bg-gray-dark text-white hover:text-gray-darker"
-            v-if="loanDetails"
             name="Close"
             icon="fa-solid fa-close"
             size="xl"
@@ -211,7 +215,7 @@
               v-if="paymentOverdue"
               modal-title="Confirm instalment payment for:"
               :retailer-name="retailerName"
-              button-name="Instalment overdue - make payment"
+              button-name="Make payment now"
               button-icon="fa-solid fa-credit-card"
               is-payment
           >
@@ -360,11 +364,15 @@ const props = defineProps({
 })
 
 const hasLateFees = ref(false)
+const hasUnpaidLateFees = ref(false)
 
 onMounted(() => {
   props.instalments.forEach(instalment => {
     if('lateFee' in instalment) {
       hasLateFees.value = true
+      if(instalment.lateFee.status === 'unpaid') {
+        hasUnpaidLateFees.value = true
+      }
     }
   })
 })

@@ -48,6 +48,7 @@
       :deposit-value=depositValue
       :total-loan-value=totalLoanValue
       :value-left-to-pay=valueLeftToPay
+      :instalments=instalments
     />
   </div>
 </template>

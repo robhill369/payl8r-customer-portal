@@ -1,6 +1,6 @@
 <template>
   <ButtonSecondary
-    class="w-full sm:w-auto flex justify-center"
+    class="md:w-fit w-full flex justify-center"
     :name=buttonName
     :icon=buttonIcon
     @click="modalOpen = true"
