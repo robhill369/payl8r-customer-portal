@@ -14,7 +14,7 @@
 
           <div class="relative flex items-center gap-3" :class="!loanDetails ? 'flex-row-reverse justify-between md:justify-normal' : ''">
             <Tag :name="!paymentOverdue  ? 'Ongoing' : 'Payment overdue'"/>
-            <Tag v-if="hasUnpaidLateFees " :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-2.5 h-6 py-0"/>
+            <Tag v-if="(instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-2.5 h-6 py-0"/>
           </div>
 
           <ButtonSecondary
@@ -87,7 +87,7 @@
         :progress="(valueRepaid/(totalLoanValue-depositValue))*100"
       >
         <div
-          v-if="hasUnpaidLateFees"
+          v-if="(instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)"
           class="absolute bg-red-dark h-3.5 w-3.5 top-0 rounded-full"
           :class="valueLeftToPay - (totalLoanValue-depositValue) === 0 ? 'left-0' : 'right-0'"
         />
@@ -161,7 +161,7 @@
       </div>
       <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col">
         <ul class="grid gap-2 h-9 md:h-11 w-full bg-gray-dark rounded-full text-tab text-white p-1"
-          :class="hasLateFees ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
+          :class="instalmentsWithConfirmedLateFees ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
         >
           <li>
             <button
@@ -181,7 +181,7 @@
               Payment schedule
             </button>
           </li>
-          <li v-if="hasLateFees">
+          <li v-if="instalmentsWithConfirmedLateFees">
             <button
               @click="currentTab(3)"
               class="w-full h-7 md:h-9 rounded-full"
@@ -235,7 +235,7 @@
             :instalments=props.instalments
           />
           <LoanLateFees
-            v-if="hasLateFees && tab === 3"
+            v-if="instalmentsWithConfirmedLateFees && tab === 3"
             :instalments=props.instalments
           />
           <LoanStatement
@@ -369,31 +369,16 @@ const props = defineProps({
   }
 })
 
-const hasLateFees = ref(false)
 const hasUnpaidLateFees = ref(false)
-
-onMounted(() => {
-  props.instalments.forEach(instalment => {
-    if('lateFee' in instalment) {
-      hasLateFees.value = true
-      if(instalment.lateFee.status === 'unpaid') {
-        hasUnpaidLateFees.value = true
-      }
-    }
-  })
-})
-
-// function lateFeeCount(arr) {
-//   const lateFees = props.instalments.filter(function (el) {
-//         return el.isRepaid.status === 'unpaid'
-//       }
-//   )
-//
-//   console.log(lateFees.length)
-//   return lateFees.length
-// }
-
+const lateFeeCount = ref(0)
 const tab = ref(1)
+
+const overdueInstalments = props.instalments.filter(function (el) {
+      return el.status === 'overdue'
+    }
+)
+
+const instalmentsWithConfirmedLateFees = props.instalments.filter(item => item.lateFee && item.lateFee.status === 'unpaid');
 
 const currentTab = (tabNumber) => {
   tab.value = tabNumber;
