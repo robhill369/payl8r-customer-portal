@@ -8,13 +8,14 @@
       <div
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-6 lg:space-y-9"
         :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9 cursor-pointer'"
-        @click="$emit('open')"
       >
         <div :class="loanDetails ? 'w-full flex justify-between' : 'lg:absolute bottom-7 right-5 xl:right-9'">
 
           <div class="relative flex items-center gap-3" :class="!loanDetails ? 'flex-row-reverse justify-between md:justify-normal' : ''">
-            <Tag :name="!paymentOverdue  ? 'Ongoing' : 'Payment overdue'"/>
-            <Tag v-if="(instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-2.5 h-6 py-0"/>
+            <Tag :name="!paymentOverdue  ? 'Ongoing' : 'Payment overdue'"
+                 @click="$emit('open')"
+            />
+            <Tag v-if="(instalmentsWithLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="loanDetails ? 'Late fee' : 'Late fee'" class="px-2.5 h-6 py-0"/>
           </div>
 
           <ButtonSecondary
@@ -26,7 +27,10 @@
             size="xl"
           />
         </div>
-        <div class="flex justify-between">
+        <div
+          class="flex justify-between"
+          @click="$emit('open')"
+        >
           <div class="flex h-14 lg:h-fit pr-3">
             <Avatar
                 class="hidden lg:flex"
@@ -54,12 +58,13 @@
             v-if="loanDetails"
             class="hidden md:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
-            <h4 class="font-[400] whitespace-nowrap">£{{ monthlyPaybackValue }} p/m</h4>
+            <h4 class="font-[400] whitespace-nowrap">£{{monthlyPaybackValue}} p/m</h4>
           </ButtonBase>
         </div>
         <div
           class="flex w-full space-x-2 justify-between h-12 lg:h-auto"
           :class="loanDetails ? '' : 'lg:max-w-[220px] xl:max-w-[265px]'"
+          @click="$emit('open')"
         >
           <div
             class="flex flex-col justify-between"
@@ -87,7 +92,7 @@
         :progress="(valueRepaid/(totalLoanValue-depositValue))*100"
       >
         <div
-          v-if="(instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)"
+          v-if="(instalmentsWithLateFees.length - (status === 'overdue' ? 1 : 0) > 0)"
           class="absolute bg-red-dark h-3.5 w-3.5 top-0 rounded-full"
           :class="valueLeftToPay - (totalLoanValue-depositValue) === 0 ? 'left-0' : 'right-0'"
         />
@@ -161,7 +166,7 @@
       </div>
       <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col">
         <ul class="grid gap-2 h-9 md:h-11 w-full bg-gray-dark rounded-full text-tab text-white p-1"
-          :class="instalmentsWithConfirmedLateFees ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
+          :class="instalmentsWithLateFees ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
         >
           <li>
             <button
@@ -181,7 +186,7 @@
               Payment schedule
             </button>
           </li>
-          <li v-if="instalmentsWithConfirmedLateFees">
+          <li v-if="instalmentsWithLateFees">
             <button
               @click="currentTab(3)"
               class="w-full h-7 md:h-9 rounded-full"
@@ -235,7 +240,7 @@
             :instalments=props.instalments
           />
           <LoanLateFees
-            v-if="instalmentsWithConfirmedLateFees && tab === 3"
+            v-if="instalmentsWithLateFees && tab === 3"
             :instalments=props.instalments
           />
           <LoanStatement
@@ -378,7 +383,7 @@ const overdueInstalments = props.instalments.filter(function (el) {
     }
 )
 
-const instalmentsWithConfirmedLateFees = props.instalments.filter(item => item.lateFee && item.lateFee.status === 'unpaid');
+const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee && item.lateFee.status === 'unpaid');
 
 const currentTab = (tabNumber) => {
   tab.value = tabNumber;
