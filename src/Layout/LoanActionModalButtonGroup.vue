@@ -11,6 +11,8 @@
       :title=modalTitle
       :is-payment=isPayment
       @close="modalOpen = false"
+      :quantity=quantity
+      :value=value
     >
       <slot/>
     </LoanActionModal>
@@ -39,6 +41,12 @@ defineProps({
   modalTitle: {
     type: String,
     required: true
+  },
+  quantity: {
+    type: Number
+  },
+  value: {
+    type: Number
   }
 })
 

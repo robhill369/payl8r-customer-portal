@@ -72,17 +72,17 @@
           >
             <h3>£{{(totalLoanValue-depositValue).toFixed(2)}}</h3>
             <div class="flex text-gray">
-              <p class="font-bold">Total re{{valueRepaid  == totalLoanValue-depositValue ? 'paid' : 'payable'}}</p>
+              <p class="font-bold">Total re{{loanRepaid ? 'paid' : 'payable'}}</p>
             </div>
           </div>
           <div class="flex flex-col justify-between text-end"
              :class="loanDetails ? 'lg:flex-row lg:space-x-3 ' : ''"
           >
             <h3
-              :class="valueRepaid  == totalLoanValue-depositValue && instalmentsWithLateFees.length > 0 ? 'text-red-darker' : ''"
-            >£{{valueRepaid  == totalLoanValue-depositValue && instalmentsWithLateFees.length > 0 ? instalmentsWithLateFees.length*lateFeeValue : valueLeftToPay}}</h3>
+              :class="loanRepaid && haslateFees ? 'text-red-darker' : ''"
+            >£{{loanRepaid && haslateFees ? instalmentsWithLateFees.length*lateFeeValue : valueLeftToPay}}</h3>
             <div class="flex text-gray">
-              <p class="font-bold">{{valueRepaid  == totalLoanValue-depositValue && instalmentsWithLateFees.length > 0 ? '..of late fees to pay' : 'Left to pay'}}</p>
+              <p class="font-bold">{{loanRepaid && haslateFees ? '..late fee to pay' : 'Left to pay'}}</p>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@
           :class="loanDetails ? 'py-7 border-b -mx-5 px-5 xl:-mx-9 xl:px-9' : ''"
         >
           <LoanActionModalButtonGroup
-            v-if="paymentOverdue"
+            v-if="paymentOverdue && !loanRepaid"
             modal-title="Confirm instalment payment for:"
             :retailer-name="retailerName"
             button-name="Instalment overdue - make payment"
@@ -134,19 +134,32 @@
             </p>
           </LoanActionModalButtonGroup>
           <LoanActionModalButtonGroup
-            v-else
+              v-if="!paymentOverdue && !loanRepaid"
             modal-title="Confirm early instalment payment for:"
             :retailer-name="retailerName"
             button-name="Pay instalment early"
             button-icon="fa-solid fa-credit-card"
             is-payment
+            value= 123
           >
             <p>You will pay the instalment due <span class="font-bold">DATE</span> today.<br class="hidden sm:block">
               Your next instalment will then be collected on <span class="font-bold">DATE</span>.
             </p>
           </LoanActionModalButtonGroup>
           <LoanActionModalButtonGroup
-            v-if="!paymentOverdue"
+              v-if="loanRepaid && haslateFees"
+              modal-title="Confirm late fee payment for:"
+              :retailer-name="retailerName"
+              button-name="Pay late fee"
+              button-icon="fa-solid fa-credit-card"
+              is-payment
+              :quantity=instalmentsWithLateFees.length
+              :value=lateFeeValue
+          >
+            <p>You currently have <span class="font-bold">{{instalmentsWithLateFees.length}}</span> late fee<span v-if="instalmentsWithLateFees.length !== 1">s</span> of <span class="font-bold">£{{lateFeeValue}}</span><span v-if="instalmentsWithLateFees.length !== 1"> each. <br class="hidden sm:block">Choose how many to pay below</span>.</p>
+          </LoanActionModalButtonGroup>
+          <LoanActionModalButtonGroup
+            v-if="!paymentOverdue && !loanRepaid"
             modal-title="Change payment date for:"
             :retailer-name="retailerName"
             button-name="Change payment date"
@@ -156,7 +169,7 @@
               day of the month. Choose a new date below:
             </p>
           </LoanActionModalButtonGroup>
-          <a v-if="loanDetails"
+          <a v-if="loanDetails || (loanRepaid && !haslateFees)"
             href="https://somo.co.uk/"
             target="_blank"
             class="text-button text-center py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit"
@@ -168,7 +181,7 @@
       </div>
       <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col">
         <ul class="grid gap-2 h-9 md:h-11 w-full bg-gray-dark rounded-full text-tab text-white p-1"
-          :class="instalmentsWithLateFees ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
+          :class="instalmentsWithLateFees.length ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
         >
           <li>
             <button
@@ -188,7 +201,7 @@
               Payment schedule
             </button>
           </li>
-          <li v-if="instalmentsWithLateFees">
+          <li v-if="instalmentsWithLateFees.length">
             <button
               @click="currentTab(3)"
               class="w-full h-7 md:h-9 rounded-full"
@@ -220,7 +233,7 @@
           :loan-previous-payment-date=loanPreviousPaymentDate
           :current-last-four-digits=currentLastFourDigits
           :order-items=orderItems
-          :is-repaid=isRepaid
+          :is-repaid=loanRepaid
         >
           <h5 class="text-gray">Payment Overdue</h5>
           <div class="w-full">Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
@@ -378,8 +391,8 @@ const props = defineProps({
 
 const lateFeeValue = 30
 
-const hasUnpaidLateFees = ref(false)
-const lateFeeCount = ref(0)
+const loanRepaid = props.valueRepaid  == props.totalLoanValue-props.depositValue
+
 const tab = ref(1)
 
 const overdueInstalments = props.instalments.filter(function (el) {
@@ -388,7 +401,7 @@ const overdueInstalments = props.instalments.filter(function (el) {
 )
 
 const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee && item.lateFee.status === 'unpaid');
-
+const haslateFees = instalmentsWithLateFees.length > 0
 const currentTab = (tabNumber) => {
   tab.value = tabNumber;
 }
