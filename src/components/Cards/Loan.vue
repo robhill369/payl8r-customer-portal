@@ -15,7 +15,7 @@
             <Tag :name="!paymentOverdue  ? 'Ongoing' : 'Payment overdue'"
                  @click="$emit('open')"
             />
-            <Tag v-if="(instalmentsWithLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="loanDetails ? 'Late fee' : 'Late fee'" class="px-2.5 h-6 py-0"/>
+            <Tag v-if="(instalmentsWithLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-2.5 h-6 py-0"/>
           </div>
 
           <ButtonSecondary
@@ -72,15 +72,17 @@
           >
             <h3>£{{(totalLoanValue-depositValue).toFixed(2)}}</h3>
             <div class="flex text-gray">
-              <p class="font-bold">Total repayable</p>
+              <p class="font-bold">Total re{{valueRepaid  == totalLoanValue-depositValue ? 'paid' : 'payable'}}</p>
             </div>
           </div>
-          <div class="flex flex-col justify-between"
-             :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
+          <div class="flex flex-col justify-between text-end"
+             :class="loanDetails ? 'lg:flex-row lg:space-x-3 ' : ''"
           >
-            <h3>£{{valueLeftToPay}}</h3>
+            <h3
+              :class="valueRepaid  == totalLoanValue-depositValue && instalmentsWithLateFees.length > 0 ? 'text-red-darker' : ''"
+            >£{{valueRepaid  == totalLoanValue-depositValue && instalmentsWithLateFees.length > 0 ? instalmentsWithLateFees.length*lateFeeValue : valueLeftToPay}}</h3>
             <div class="flex text-gray">
-              <p class="font-bold">Left to pay</p>
+              <p class="font-bold">{{valueRepaid  == totalLoanValue-depositValue && instalmentsWithLateFees.length > 0 ? '..of late fees to pay' : 'Left to pay'}}</p>
             </div>
           </div>
         </div>
@@ -373,6 +375,8 @@ const props = defineProps({
     type: Boolean
   }
 })
+
+const lateFeeValue = 30
 
 const hasUnpaidLateFees = ref(false)
 const lateFeeCount = ref(0)
