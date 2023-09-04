@@ -3,7 +3,7 @@
     <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 h-screen w-screen overflow-auto">
       <BaseCard class="flex-col w-auto sm:h-auto lg:absolute lg:-translate-x-[calc(50%-140px)] 2xl:-translate-x-[calc(50%-28px)] lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 py-10 px-10 items-center justify-between h-full sm:h-auto sm:space-y-7">
         <h5 class="text-gray">{{ title }}</h5>
-        <h3 class="font-semibold">{{ retailerName }}</h3>
+        <h3 class="font-semibold lg:w-72">{{ retailerName }}</h3>
         <div class="text-center">
           <slot/>
         </div>
