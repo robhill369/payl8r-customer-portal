@@ -12,7 +12,7 @@ pipelines:
 
 
 
-    '{dev}'
+    '{dev}':
       - step:
           name: Deploy to development server
           caches:
