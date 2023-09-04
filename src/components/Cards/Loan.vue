@@ -126,12 +126,13 @@
             v-if="paymentOverdue && !loanRepaid"
             modal-title="Confirm instalment payment for:"
             :retailer-name="retailerName"
-            button-name="Instalment overdue - make payment"
+            :button-name="lateInstalments.length !== 1 ? 'Instalments overdue - make payment' : 'Instalment overdue - make payment'"
             button-icon="fa-solid fa-credit-card"
+            :payment-type="lateInstalments.length ? 'instalment' : 'OOT interest charge'"
             is-payment
+            :quantity="lateInstalments.length"
           >
-            <p class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.
-            </p>
+            <p class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
           </LoanActionModalButtonGroup>
           <LoanActionModalButtonGroup
               v-if="!paymentOverdue && !loanRepaid"
@@ -402,6 +403,9 @@ const overdueInstalments = props.instalments.filter(function (el) {
 
 const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee && item.lateFee.status === 'unpaid');
 const haslateFees = instalmentsWithLateFees.length > 0
+
+const lateInstalments = props.instalments.filter(item => item.status === 'overdue');
+
 const currentTab = (tabNumber) => {
   tab.value = tabNumber;
 }

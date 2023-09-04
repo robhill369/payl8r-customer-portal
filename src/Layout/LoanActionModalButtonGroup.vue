@@ -11,6 +11,7 @@
       :title=modalTitle
       :is-payment=isPayment
       @close="modalOpen = false"
+      :payment-type=paymentType
       :quantity=quantity
       :value=value
     >
@@ -41,6 +42,9 @@ defineProps({
   modalTitle: {
     type: String,
     required: true
+  },
+  paymentType: {
+    type: String
   },
   quantity: {
     type: Number

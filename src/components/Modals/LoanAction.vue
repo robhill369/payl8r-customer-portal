@@ -31,7 +31,8 @@
                 <font-awesome-icon icon="fa-solid fa-chevron-right" size="2xl"/>
               </button>
             </div>
-            <p class="font-bold">late fee<span v-if="quantity !== 1">s</span>, amounting to</p>
+
+            <p class="font-bold">{{paymentType}}<span v-if="quantity !== 1">s</span>, amounting to</p>
             <h1>£{{quantity*value}}</h1>
             <div
                 class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 items-center sm:space-x-3"
@@ -89,6 +90,10 @@ const props = defineProps({
   },
   retailerName: {
     type: String,
+  },
+  paymentType: {
+    type: String,
+    default: 'late fee'
   },
   quantity: {
     type: Number

@@ -1354,7 +1354,7 @@
         "date": "23rd Jul 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "unpaid",
+        "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Jul 2023",
           "amountDue": 30,
@@ -1367,7 +1367,7 @@
         "date": "23rd Aug 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "unpaid",
+        "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Aug 2023",
           "amountDue": 30,
@@ -1443,7 +1443,7 @@
         "date": "23rd Jul 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "unpaid",
+        "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Jul 2023",
           "amountDue": 30,
@@ -1456,7 +1456,7 @@
         "date": "23rd Aug 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "unpaid",
+        "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Aug 2023",
           "amountDue": 30,
@@ -2145,7 +2145,7 @@
           "dateIncurred": "10th May 2023",
           "amountDue": 30,
           "amountPaid": 0.00,
-          "status": "waived"
+          "status": "unpaid"
         }
       },
       {
@@ -2218,13 +2218,6 @@
         "debit": null,
         "credit": 55.03,
         "balance": 200.08
-      },
-      {
-        "date": "17th May 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 170.08
       },
       {
         "date": "10th Jun 2023",
