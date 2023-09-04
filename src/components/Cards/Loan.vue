@@ -128,9 +128,9 @@
             :retailer-name="retailerName"
             :button-name="lateInstalments.length !== 1 ? 'Instalments overdue - make payment' : 'Instalment overdue - make payment'"
             button-icon="fa-solid fa-credit-card"
-            :payment-type="lateInstalments.length ? 'instalment' : 'OOT interest charge'"
+            :payment-type="lateInstalments.length ? 'late instalment' : 'OOT interest charge'"
             is-payment
-            :quantity="lateInstalments.length"
+            :array="lateInstalments.map(({ amountDue }) => amountDue)"
           >
             <p class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
           </LoanActionModalButtonGroup>
@@ -141,7 +141,7 @@
             button-name="Pay instalment early"
             button-icon="fa-solid fa-credit-card"
             is-payment
-            value= 123
+            :array=Array(1).fill(123)
           >
             <p>You will pay the instalment due <span class="font-bold">DATE</span> today.<br class="hidden sm:block">
               Your next instalment will then be collected on <span class="font-bold">DATE</span>.
@@ -154,8 +154,7 @@
               button-name="Pay late fee"
               button-icon="fa-solid fa-credit-card"
               is-payment
-              :quantity=instalmentsWithLateFees.length
-              :value=lateFeeValue
+              :array=Array(instalmentsWithLateFees.length).fill(lateFeeValue)
           >
             <p>You currently have <span class="font-bold">{{instalmentsWithLateFees.length}}</span> late fee<span v-if="instalmentsWithLateFees.length !== 1">s</span> of <span class="font-bold">£{{lateFeeValue}}</span><span v-if="instalmentsWithLateFees.length !== 1"> each. <br class="hidden sm:block">Choose how many to pay below</span>.</p>
           </LoanActionModalButtonGroup>
@@ -182,7 +181,7 @@
       </div>
       <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col">
         <ul class="grid gap-2 h-9 md:h-11 w-full bg-gray-dark rounded-full text-tab text-white p-1"
-          :class="instalmentsWithLateFees.length ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
+          :class="haslateFees ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
         >
           <li>
             <button
@@ -202,7 +201,7 @@
               Payment schedule
             </button>
           </li>
-          <li v-if="instalmentsWithLateFees.length">
+          <li v-if="haslateFees">
             <button
               @click="currentTab(3)"
               class="w-full h-7 md:h-9 rounded-full"
@@ -395,11 +394,6 @@ const lateFeeValue = 30
 const loanRepaid = props.valueRepaid  == props.totalLoanValue-props.depositValue
 
 const tab = ref(1)
-
-const overdueInstalments = props.instalments.filter(function (el) {
-      return el.status === 'overdue'
-    }
-)
 
 const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee && item.lateFee.status === 'unpaid');
 const haslateFees = instalmentsWithLateFees.length > 0

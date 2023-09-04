@@ -33,7 +33,7 @@
             </div>
 
             <p class="font-bold">{{paymentType}}<span v-if="quantity !== 1">s</span>, amounting to</p>
-            <h1>£{{quantity*value}}</h1>
+            <h1>£{{props.array.slice(0, quantity).reduce((a, b) => a + b, 0)}}</h1>
             <div
                 class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 items-center sm:space-x-3"
             >
@@ -45,7 +45,7 @@
             </div>
           </div>
           <div v-else class="flex flex-col sm:flex-row justify-between align-middle items-center space-y-3 sm:space-y-0 sm:space-x-2 ">
-            <div class="flex bg-gray-light rounded-lg p-2 text-nav h-10 items-center"><span>£</span>{{ quantity ? quantity*value : value }}</div>
+            <div class="flex bg-gray-light rounded-lg p-2 text-nav h-10 items-center"><span>£</span>{{array[0]}}</div>
             <div class="text-xs font-normal">will be charged to</div>
             <div class="flex bg-gray-light rounded-lg py-2 px-4 items-center text-gray-darker justify-between h-10">
               <VisaLogo class="w-6"/>
@@ -95,21 +95,17 @@ const props = defineProps({
     type: String,
     default: 'late fee'
   },
-  quantity: {
-    type: Number
-  },
-  value: {
-    type: Number
+  array: {
+    type: Array,
+    default: []
   }
 })
 
-const quantity = ref(props.quantity)
-const initialQuantity = props.quantity
-
+const quantity = ref(props.array.length)
+const initialQuantity = props.array.length
 const handleIncrement = () => {
   quantity.value += 1
 }
-
 const handleDecrement = () => {
   quantity.value -= 1
 }

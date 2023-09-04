@@ -12,8 +12,7 @@
       :is-payment=isPayment
       @close="modalOpen = false"
       :payment-type=paymentType
-      :quantity=quantity
-      :value=value
+      :array=array
     >
       <slot/>
     </LoanActionModal>
@@ -46,11 +45,8 @@ defineProps({
   paymentType: {
     type: String
   },
-  quantity: {
-    type: Number
-  },
-  value: {
-    type: Number
+  array: {
+    type: Array,
   }
 })
 
