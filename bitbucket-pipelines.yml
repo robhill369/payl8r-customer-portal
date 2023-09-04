@@ -17,7 +17,7 @@ pipelines:
           name: Deploy to development server
           caches:
             - node
-        script:
+          script:
             - echo $SSH_TO_SERVER > my_ssh_key.pem  # $SSH_TO_SERVER is an environment variable storing your private SSH key
             - chmod 600 my_ssh_key.pem  # Set correct permissions for the key
             - npm install  # Install dependencies
