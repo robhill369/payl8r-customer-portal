@@ -7,9 +7,9 @@
             name === 'upcoming' ? 'bg-yellow text-yellow-darker border-none' : '',
             name === 'waived' ? 'bg-yellow text-yellow-darker border-none' : '',
             name === 'ongoing' ? 'bg-white border border-gray-darker border-none' : '',
-            name.startsWith('Late fee') ? 'border-2 border-red-dark text-red-darker' : ''"
+            name.match('Late fee') ? 'border-2 border-red-dark text-red-darker normal-case' : ''"
   >
-    {{name}}<span :class="name === 'Late fee' ? 'lg:hidden' : 'hidden'"> To Pay</span>
+    {{name}}
   </ButtonBase>
 </template>
 

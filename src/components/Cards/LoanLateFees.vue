@@ -15,7 +15,7 @@
         <p class="flex h-14 items-center border-b pl-1.5">{{instalment.id}}</p>
         <p class="flex h-14 items-center col-span-2 border-b">{{instalment.lateFee.dateIncurred}}</p>
         <p class="flex h-14 items-center col-span-2 border-b">£{{instalment.lateFee.amountDue}}</p>
-        <p class="flex h-14 items-center col-span-2 border-b">{{instalment.lateFee.cardExpired ? 'Card expired' : 'Failed payment'}}</p>
+        <p class="flex h-14 items-center col-span-2 border-b">{{instalment.lateFee.cardExpired ? 'Failed payment (card expired)' : 'Failed payment'}}</p>
         <div class="border-b w-full flex justify-end h-14 items-center">
           <Tag
             payment-status

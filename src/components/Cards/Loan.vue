@@ -9,19 +9,20 @@
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-6 lg:space-y-9"
         :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9 cursor-pointer'"
       >
-        <div :class="loanDetails ? 'w-full flex justify-between' : 'lg:absolute bottom-7 right-5 xl:right-9'">
+        <div :class="loanDetails ? 'w-full flex justify-between items-center' : 'lg:absolute bottom-7 right-5 xl:right-9'">
 
           <div class="relative flex items-center gap-3" :class="!loanDetails ? 'flex-row-reverse justify-between md:justify-normal' : ''">
             <Tag :name="!paymentOverdue  ? 'Ongoing' : 'Payment overdue'"
                  @click="$emit('open')"
+                 :class="loanDetails && paymentOverdue && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0) ? 'px-1 sm:px-auto' : 'px-3 sm:px-auto'"
             />
-            <Tag v-if="(instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-[10px] py-[3px]"/>
+            <Tag v-if="(instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="!loanRepaid ? '*Late fee' : 'Late fee'" class="px-[10px] py-[3px] mr-2 sm:mr-0" :class="loanDetails && paymentOverdue ? 'w-20 sm:w-auto' : ''"/>
           </div>
 
           <ButtonSecondary
             v-if="loanDetails"
             @click="$emit('close')"
-            class="bg-gray-dark text-white hover:text-gray-darker"
+            class="bg-gray-dark text-white hover:text-gray-darker w-[98px] sm:w-auto h-fit"
             name="Close"
             icon="fa-solid fa-close"
             size="xl"
@@ -75,12 +76,14 @@
               <p class="font-bold">Total re{{loanRepaid ? 'paid' : 'payable'}}</p>
             </div>
           </div>
-          <div class="flex flex-col justify-between text-end"
-             :class="loanDetails ? 'lg:flex-row lg:space-x-3 ' : ''"
+          <div class="flex flex-col justify-between text-end "
+             :class="loanDetails ? 'lg:flex-row lg:space-x-3 lg:items-center' : ''"
           >
             <h3
               :class="loanRepaid && hasConfirmedLateFees ? 'text-red-darker' : ''"
             >£{{loanRepaid && hasConfirmedLateFees ? instalmentsWithConfirmedLateFees.length*lateFeeValue : valueLeftToPay}}</h3>
+            <h5 v-if="!loanRepaid && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" class="font-semibold text-red-darker">+ £{{instalmentsWithConfirmedLateFees.length*lateFeeValue}}*</h5>
+
             <div class="flex text-gray">
               <p class="font-bold">{{loanRepaid && hasConfirmedLateFees ? 'Late fee to pay' : 'Left to pay'}}</p>
             </div>
