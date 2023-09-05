@@ -82,7 +82,7 @@
               :class="loanRepaid && haslateFees ? 'text-red-darker' : ''"
             >£{{loanRepaid && haslateFees ? instalmentsWithLateFees.length*lateFeeValue : valueLeftToPay}}</h3>
             <div class="flex text-gray">
-              <p class="font-bold">{{loanRepaid && haslateFees ? '..late fee to pay' : 'Left to pay'}}</p>
+              <p class="font-bold">{{loanRepaid && haslateFees ? 'Late fee to pay' : 'Left to pay'}}</p>
             </div>
           </div>
         </div>
@@ -132,7 +132,9 @@
             is-payment
             :array="lateInstalments.map(({ amountDue }) => amountDue)"
           >
-            <p class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
+            <p v-if="lateInstalments.length < 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
+            <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block">Choose how many to pay below</span>.</p>
+
           </LoanActionModalButtonGroup>
           <LoanActionModalButtonGroup
               v-if="!paymentOverdue && !loanRepaid"
@@ -238,15 +240,17 @@
           <h5 class="text-gray">Payment Overdue</h5>
           <div class="w-full">Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
           <LoanActionModalButtonGroup
-            v-if="paymentOverdue"
+            v-if="paymentOverdue && !loanRepaid"
             modal-title="Confirm instalment payment for:"
             :retailer-name="retailerName"
             button-name="Make payment now"
             button-icon="fa-solid fa-credit-card"
+            payment-type="late instalment"
             is-payment
+            :array="lateInstalments.map(({ amountDue }) => amountDue)"
           >
-            <p class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.
-            </p>
+            <p v-if="lateInstalments.length < 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
+            <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block">Choose how many to pay below</span>.</p>
           </LoanActionModalButtonGroup>
         </LoanSummary>
         <div v-else class="overflow-x-scroll table-scroll pb-7 sm:pb-0">
