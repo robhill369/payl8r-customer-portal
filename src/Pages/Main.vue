@@ -21,8 +21,8 @@
         <CardSectionHeader title="My overview" v-if="$route.path === '/'"/>
         <PaymentsCard
           total-left-to-pay=XX.XX
-          active-loans-count=X
-          repaid-loans-count=X
+          :active-loans-count="activeLoans(loans).length"
+          :repaid-loans-count="loans.length - activeLoans(loans).length"
         />
     </CardSection>
 
@@ -37,7 +37,7 @@
           />
         </template>
       </CardSectionHeader>
-      <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 pr-14 sm:pr-40 lg:pr-20 space-y-7 lg:space-y-0 lg:space-x-24">
+      <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 pr-14 sm:pr-40 lg:pr-9 xl:pr-28 3xl:pr-72 space-y-7 lg:space-y-0 lg:space-x-24">
         <PaymentsSchedule
           upcomingPayment=XX.XX
           upcomingPaymentDate=UPCPAYDATE
@@ -58,12 +58,11 @@
         </template>
         <template v-slot:tabs v-else>
           <Tabs
-              :tabs=loanTypes
+            :tabs=loanTypes
           />
         </template>
       </CardSectionHeader>
-<!--      v-for required for active loans-->
-      <div v-for="loan in loans" :key=loan.id>
+      <div v-if="$route.path === '/'" v-for="loan in activeLoans(loans)" :key=loan.id>
         <LoanCardModalGroup
           :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
           :loanStatus=loan.status
@@ -75,10 +74,10 @@
           :deposit-value=loan.depositValue
           :total-order-value=loan.totalOrderValue
           :total-interest-value=loan.totalInterestValue
-          :total-loan-value=loan.totalOrderValue-loan.depositValue+loan.totalInterestValue
-          :monthly-payback-value=((loan.totalOrderValue-loan.depositValue+loan.totalInterestValue)/loan.termLength).toFixed(2)
-          :value-repaid=loan.valueRepaid
-          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-loan.valueRepaid).toFixed(2)
+          :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)
+          monthly-payback-value="XXX.XX"
+          :value-repaid=valueRepaid(loan.transactions).toFixed(2)
+          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.transactions)).toFixed(2)
           :loan-upcoming-payment=loan.upcomingInstalmentValue
           :loan-upcoming-payment-date=loan.upcomingInstalmentDate
           :loan-previous-payment=loan.previousInstalmentValue
@@ -87,6 +86,34 @@
           current-last-four-digits="1234"
           :transactions=loan.transactions
           :instalments=loan.instalments
+          :is-repaid=loan.isRepaid
+        />
+      </div>
+      <div v-else v-for="loan in loans" :key=loan.id>
+        <LoanCardModalGroup
+          :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
+          :loanStatus=loan.status
+          :provider=loan.provider
+          :purchase-date=loan.purchaseDate
+          :loan-start-date=loan.startDate
+          :term-length=loan.termLength
+          :loan-status=loan.status
+          :deposit-value=loan.depositValue
+          :total-order-value=loan.totalOrderValue
+          :total-interest-value=loan.totalInterestValue
+          :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)
+          monthly-payback-value="XXX.XX"
+          :value-repaid=valueRepaid(loan.transactions).toFixed(2)
+          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.transactions)).toFixed(2)
+          :loan-upcoming-payment=loan.upcomingInstalmentValue
+          :loan-upcoming-payment-date=loan.upcomingInstalmentDate
+          :loan-previous-payment=loan.previousInstalmentValue
+          :loan-previous-payment-date=loan.previousInstalmentDate
+          :order-items=loan.orderItems
+          current-last-four-digits="1234"
+          :transactions=loan.transactions
+          :instalments=loan.instalments
+          :is-repaid=loan.isRepaid
         />
       </div>
     </CardSection>
@@ -113,7 +140,6 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
 import PaymentsCard from "@/components/Cards/Payments.vue";
 import CardSection from "@/Layout/CardSection.vue";
 import SimpleCard from "@/components/Cards/Simple.vue";
@@ -122,17 +148,56 @@ import PrimaryButton from "@/components/Buttons/Primary.vue";
 import Avatar from "@/components/Avatar.vue";
 import PageBase from "@/Pages/Base.vue";
 import Tabs from "@/components/Tabs.vue";
-import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
-import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
-import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCard.vue";
-import OrderHelpNotification from "@/components/Notifications/OrderHelp.vue";
-import UpdateDetailsHelpNotification from "@/components/Notifications/UpdateDetailsHelp.vue";
 import BaseCard from "@/components/Cards/Base.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
 
 import loanData from '@/assets/json/loans.json';
 const loans = loanData
+
+function valueRepaid(arr) {
+
+  const repaymentsOnly = arr.filter(function(el)
+    {
+      return el.description === 'Loan payment'
+    }
+  )
+
+  const sum = repaymentsOnly.reduce((acc, transaction) => {
+    return acc + (transaction.credit)
+  }, 0);
+
+  return sum;
+}
+
+function activeLoans(arr) {
+  const isRepaidOnly = arr.filter(function(el) {
+      return el.isRepaid === false
+    }
+  )
+  return isRepaidOnly
+}
+
+// function nextInstalment(arr) {
+//   const unpaidInstalments = arr.filter(function(el)
+//       {
+//         return el.status !== 'paid'
+//       }
+//   )
+//
+//   const nextAmountDue = unpaidInstalments[0]
+//
+//   return nextAmountDue
+// }
+
+// const activeLoans = loans.filter(findActiveLoans)
+
+// function filteredLoans(loan) {
+//   if(router.currentRoute === '/') {
+//     return activeLoans
+//   }
+//   else loans
+// }
 
 const loanTypes = [
   {
