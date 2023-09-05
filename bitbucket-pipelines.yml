@@ -21,7 +21,8 @@ pipelines:
             - echo $SSH_TO_SERVER > my_ssh_key.pem  # $SSH_TO_SERVER is an environment variable storing your private SSH key
             - chmod 600 my_ssh_key.pem  # Set correct permissions for the key
             - npm install  # Install dependencies
-            - ssh -i "my_ssh_key.pem" root@108.128.145.69 "cd /opt/customer-portal-dev && git pull origin main && npm install && pm2 restart vite "  # SSH and execute commands on the server
+            - ssh -i "my_ssh_key.pem" root@108.128.145.69 "cd /opt/customer-portal-dev && git pull origin main && npm install && pm2 delete vite && pm2 start 'npm run dev -- --port=5174' --name vite"
+            #- ssh -i "my_ssh_key.pem" root@108.128.145.69 "cd /opt/customer-portal-dev && git pull origin main && npm install && pm2 restart vite "  # SSH and execute commands on the server
 
 
 
