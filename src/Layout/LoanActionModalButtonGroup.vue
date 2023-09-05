@@ -1,6 +1,6 @@
 <template>
   <ButtonSecondary
-    class="w-full sm:w-auto flex justify-center"
+    class="md:w-fit w-full flex justify-center"
     :name=buttonName
     :icon=buttonIcon
     @click="modalOpen = true"
@@ -11,6 +11,8 @@
       :title=modalTitle
       :is-payment=isPayment
       @close="modalOpen = false"
+      :payment-type=paymentType
+      :array=array
     >
       <slot/>
     </LoanActionModal>
@@ -39,6 +41,12 @@ defineProps({
   modalTitle: {
     type: String,
     required: true
+  },
+  paymentType: {
+    type: String
+  },
+  array: {
+    type: Array,
   }
 })
 
