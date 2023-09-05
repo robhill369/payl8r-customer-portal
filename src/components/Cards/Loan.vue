@@ -15,7 +15,7 @@
             <Tag :name="!paymentOverdue  ? 'Ongoing' : 'Payment overdue'"
                  @click="$emit('open')"
             />
-            <Tag v-if="(instalmentsWithLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-2.5 h-6 py-0"/>
+            <Tag v-if="(instalmentsWithLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="loanDetails ? 'Late fee to pay' : 'Late fee'" class="px-[10px] py-[3px]"/>
           </div>
 
           <ButtonSecondary
