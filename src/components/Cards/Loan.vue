@@ -56,7 +56,7 @@
           </div>
           <ButtonBase
             v-if="loanDetails"
-            class="hidden md:block bg-white border border-gray-darker pointer-events-none h-fit"
+            class="hidden md:flex bg-white border border-gray-darker pointer-events-none items-center"
           >
             <h4 class="font-[400] whitespace-nowrap">£{{monthlyPaybackValue}} p/m</h4>
           </ButtonBase>
@@ -183,7 +183,7 @@
       </div>
       <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col">
         <ul class="grid gap-2 h-9 md:h-11 w-full bg-gray-dark rounded-full text-tab text-white p-1"
-          :class="haslateFees ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
+          :class="instalmentsWithLateFees ? 'grid-cols-4 3xl:max-w-[600px]' : 'grid-cols-3 max-w-[535px] lg:max-w-[512px]'"
         >
           <li>
             <button
@@ -203,7 +203,7 @@
               Payment schedule
             </button>
           </li>
-          <li v-if="haslateFees">
+          <li v-if="instalmentsWithLateFees">
             <button
               @click="currentTab(3)"
               class="w-full h-7 md:h-9 rounded-full"
