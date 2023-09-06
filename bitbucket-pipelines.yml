@@ -32,6 +32,8 @@ pipelines:
           script:
             - npm install
             - npm run build  # This should output the built project to a "dist" folder
+          artifacts:  # Define artifacts to be passed to each future step.
+          - dist/**  # The `dist` directory and all its contents
       - step:
           name: Deploy to S3
           script:
@@ -42,7 +44,9 @@ pipelines:
             - ./aws/install
             - aws --version
             # Deploy "dist" folder to your S3 bucket
+            #- aws s3 sync dist/ s3://customer-portal-payl8r/
             - aws s3 sync dist/ s3://customer-portal-payl8r/
+
 
 
 
