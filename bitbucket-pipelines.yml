@@ -39,9 +39,7 @@ pipelines:
             # Download and configure the AWS CLI
             - apt-get install unzip
             - curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            - unzip awscliv2.zip
-            - ./aws/install
-            - aws --version
+            - unzip awscliv2.zip && ./aws/install && aws --version
             # Deploy "dist" folder to your S3 bucket
             - aws s3 sync dist/ s3://customer-portal-payl8r/
 
