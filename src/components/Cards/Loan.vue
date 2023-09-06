@@ -6,7 +6,7 @@
   >
     <div class="flex flex-col w-full space-y-5">
       <div
-        class="flex flex-col lg:flex-row w-full lg:justify-between space-y-6 lg:space-y-9"
+        class="flex flex-col lg:flex-row w-full lg:justify-between space-y-7 lg:space-y-9"
         :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9 cursor-pointer'"
       >
         <div :class="loanDetails ? 'w-full flex justify-between items-center' : 'lg:absolute bottom-7 right-5 xl:right-9'">
@@ -16,7 +16,7 @@
                  @click="$emit('open')"
                  :class="loanDetails && paymentOverdue && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0) ? 'px-1 sm:px-auto' : 'px-3 sm:px-auto'"
             />
-            <Tag v-if="(instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="!loanRepaid ? '*Late fee' : 'Late fee'" class="px-[10px] py-[3px] mr-2 sm:mr-0" :class="loanDetails && paymentOverdue ? 'w-20 sm:w-auto' : ''"/>
+            <Tag v-if="(instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" :name="!loanRepaid ? '*Late fee' : 'Late fee to pay'" class="px-[10px] py-[3px] mr-2 sm:mr-0" :class="loanDetails && paymentOverdue ? 'w-20 sm:w-auto' : ''"/>
           </div>
 
           <ButtonSecondary
@@ -32,7 +32,7 @@
           class="flex justify-between"
           @click="$emit('open')"
         >
-          <div class="flex h-14 lg:h-fit pr-3">
+          <div class="flex h-12 lg:h-fit pr-3">
             <Avatar
                 class="hidden lg:flex"
                 :provider="provider"
@@ -63,12 +63,12 @@
           </ButtonBase>
         </div>
         <div
-          class="flex w-full space-x-2 justify-between h-12 lg:h-auto"
+          class="flex w-full space-x-2 justify-between h-16 lg:h-auto"
           :class="loanDetails ? '' : 'lg:max-w-[220px] xl:max-w-[265px]'"
           @click="$emit('open')"
         >
           <div
-            class="flex flex-col justify-between"
+            class="flex flex-col justify-between space-y-2 lg:space-y-0"
             :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
           >
             <h3>£{{(totalLoanValue-depositValue).toFixed(2)}}</h3>
@@ -76,13 +76,13 @@
               <p class="font-bold">Total re{{loanRepaid ? 'paid' : 'payable'}}</p>
             </div>
           </div>
-          <div class="flex flex-col justify-between text-end "
-             :class="loanDetails ? 'lg:flex-row lg:space-x-3 lg:items-center' : ''"
+          <div class="flex flex-col justify-between text-end relative space-y-2 lg:space-y-0"
+             :class="loanDetails ? 'lg:flex-row lg:space-x-2 lg:items-center' : ''"
           >
             <h3
               :class="loanRepaid && hasConfirmedLateFees ? 'text-red-darker' : ''"
             >£{{loanRepaid && hasConfirmedLateFees ? instalmentsWithConfirmedLateFees.length*lateFeeValue : valueLeftToPay}}</h3>
-            <h5 v-if="!loanRepaid && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" class="font-semibold text-red-darker">+ £{{instalmentsWithConfirmedLateFees.length*lateFeeValue}}*</h5>
+            <h5 v-if="!loanRepaid && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" class="absolute top-3.5 lg:top-5 font-medium text-red-darker" :class="loanDetails ? 'right-0 lg:right-20' : 'right-0'">+ £{{instalmentsWithConfirmedLateFees.length*lateFeeValue}}*</h5>
 
             <div class="flex text-gray">
               <p class="font-bold">{{loanRepaid && hasConfirmedLateFees ? 'Late fee to pay' : 'Left to pay'}}</p>
@@ -136,7 +136,7 @@
             :array="lateInstalments.map(({ amountDue }) => amountDue)"
           >
             <p v-if="lateInstalments.length < 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
-            <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithConfirmedLateFees.length !== 1">.<br class="hidden sm:block">Choose how many to pay below</span>.</p>
+            <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithConfirmedLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
 
           </LoanActionModalButtonGroup>
           <LoanActionModalButtonGroup
