@@ -82,7 +82,7 @@
             <h3
               :class="loanRepaid && hasConfirmedLateFees ? 'text-red-darker' : ''"
             >£{{loanRepaid && hasConfirmedLateFees ? instalmentsWithConfirmedLateFees.length*lateFeeValue : valueLeftToPay}}</h3>
-            <h5 v-if="!loanRepaid && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" class="absolute top-3.5 lg:top-5 font-medium text-red-darker" :class="loanDetails ? 'right-0 lg:right-20' : 'right-0'">+ £{{instalmentsWithConfirmedLateFees.length*lateFeeValue}}*</h5>
+            <h5 v-if="!loanRepaid && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" class="absolute top-3.5 lg:top-5 font-medium text-red-darker -right-1.5" :class="loanDetails ? 'lg:right-[73px]' : ''">+ £{{instalmentsWithConfirmedLateFees.length*lateFeeValue}}*</h5>
 
             <div class="flex text-gray">
               <p class="font-bold">{{loanRepaid && hasConfirmedLateFees ? 'Late fee to pay' : 'Left to pay'}}</p>
