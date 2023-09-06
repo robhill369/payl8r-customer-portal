@@ -46,6 +46,7 @@ pipelines:
             # Deploy "dist" folder to your S3 bucket
             #- aws s3 sync dist/ s3://customer-portal-payl8r/
             - aws s3 sync dist/ s3://customer-portal-payl8r/
+            - aws cloudfront create-invalidation --distribution-id E30SSZV4UWUSK1 --paths "/*"
 
 
 
