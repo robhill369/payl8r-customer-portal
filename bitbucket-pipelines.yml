@@ -47,7 +47,7 @@ pipelines:
             # Invalidate CloudFront cache to ensure the latest assets are served
             - aws cloudfront create-invalidation --distribution-id E30SSZV4UWUSK1 --paths "/*"
 
-    '{UAT}':
+    '{uat}':
       - step:
           name: Install and Build assets
           caches:
