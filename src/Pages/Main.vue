@@ -76,8 +76,8 @@
           :total-interest-value=loan.totalInterestValue
           :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)
           monthly-payback-value="XXX.XX"
-          :value-repaid=valueRepaid(loan.transactions).toFixed(2)
-          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.transactions)).toFixed(2)
+          :value-repaid=valueRepaid(loan.instalments).toFixed(2)
+          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.instalments)).toFixed(2)
           :loan-upcoming-payment=loan.upcomingInstalmentValue
           :loan-upcoming-payment-date=loan.upcomingInstalmentDate
           :loan-previous-payment=loan.previousInstalmentValue
@@ -86,6 +86,7 @@
           current-last-four-digits="1234"
           :transactions=loan.transactions
           :instalments=loan.instalments
+          :out-of-term-charges=loan.outOfTermCharges
           :is-repaid=loan.isRepaid
         />
       </div>
@@ -103,8 +104,8 @@
           :total-interest-value=loan.totalInterestValue
           :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)
           monthly-payback-value="XXX.XX"
-          :value-repaid=valueRepaid(loan.transactions).toFixed(2)
-          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.transactions)).toFixed(2)
+          :value-repaid=valueRepaid(loan.instalments).toFixed(2)
+          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valueRepaid(loan.instalments)).toFixed(2)
           :loan-upcoming-payment=loan.upcomingInstalmentValue
           :loan-upcoming-payment-date=loan.upcomingInstalmentDate
           :loan-previous-payment=loan.previousInstalmentValue
@@ -113,6 +114,7 @@
           current-last-four-digits="1234"
           :transactions=loan.transactions
           :instalments=loan.instalments
+          :out-of-term-charges=loan.outOfTermCharges
           :is-repaid=loan.isRepaid
         />
       </div>
@@ -157,14 +159,13 @@ const loans = loanData
 
 function valueRepaid(arr) {
 
-  const repaymentsOnly = arr.filter(function(el)
-    {
-      return el.description === 'Loan payment'
-    }
+  const isRepaidOnly = arr.filter(function(el) {
+        return el.status === 'paid'
+      }
   )
 
-  const sum = repaymentsOnly.reduce((acc, transaction) => {
-    return acc + (transaction.credit)
+  const sum = isRepaidOnly.reduce((acc, obj) => {
+    return acc + (obj.amountPaid )
   }, 0);
 
   return sum;

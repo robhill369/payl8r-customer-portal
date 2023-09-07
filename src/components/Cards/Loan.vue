@@ -85,7 +85,7 @@
             <h5 v-if="!loanRepaid && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" class="absolute top-3.5 lg:top-5 font-medium text-red-darker -right-1.5" :class="loanDetails ? 'lg:right-[73px]' : ''">+ £{{instalmentsWithConfirmedLateFees.length*lateFeeValue}}*</h5>
 
             <div class="flex text-gray">
-              <p class="font-bold">{{loanRepaid && hasConfirmedLateFees ? 'Late fee to pay' : 'Left to pay'}}</p>
+              <p class="font-bold">Left to pay</p>
             </div>
           </div>
         </div>
@@ -212,7 +212,7 @@
               class="w-full h-7 md:h-9 rounded-full"
               :class="tab === 3 ? 'bg-white text-gray-darker' : ''"
             >
-              Late<br class="sm:hidden"> fees
+              Late Fees<span v-if="props.outOfTermCharges.length"><br class="sm:hidden"> & Charges</span>
             </button>
           </li>
           <li>
@@ -264,6 +264,8 @@
           <LoanLateFees
             v-if="instalmentsWithLateFees && tab === 3"
             :instalments=props.instalments
+            :out-of-term-charges=props.outOfTermCharges
+            :ready-to-pay=loanRepaid
           />
           <LoanStatement
             v-if="tab === 4"
@@ -384,6 +386,10 @@ const props = defineProps({
     required: true
   },
   instalments: {
+    type: Array,
+    default: []
+  },
+  outOfTermCharges: {
     type: Array,
     default: []
   },

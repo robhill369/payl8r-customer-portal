@@ -32,6 +32,7 @@
             :instalments=instalments
             :order-items=orderItems
             :is-repaid=isRepaid
+            :out-of-term-charges=outOfTermCharges
           />
         </div>
       </div>
@@ -142,6 +143,9 @@ const props = defineProps({
   instalments: {
     type: Array,
     required: true
+  },
+  outOfTermCharges: {
+    type: Array,
   },
   orderItems: {
     type: Array,
