@@ -66,7 +66,7 @@ pipelines:
             - ./aws/install
             - aws --version
             # Deploy "dist" folder to S3 bucket 
-            - aws s3 sync dist/ s3://customer-portal-payl8r/
+            - aws s3 sync dist/ s3://customer-portal-payl8r-uat/
             # Invalidate CloudFront cache to ensure the latest assets are served
             - aws cloudfront create-invalidation --distribution-id E18GZF7QBKXHX4 --paths "/*"
 
