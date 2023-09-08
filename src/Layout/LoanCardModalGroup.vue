@@ -33,6 +33,7 @@
             :order-items=orderItems
             :is-repaid=isRepaid
             :out-of-term-charges=outOfTermCharges
+            :out-of-term-charges-due=outOfTermChargesDue
           />
         </div>
       </div>
@@ -50,6 +51,8 @@
       :total-loan-value=totalLoanValue
       :value-left-to-pay=valueLeftToPay
       :instalments=instalments
+      :out-of-term-charges=outOfTermCharges
+      :out-of-term-charges-due=outOfTermChargesDue
     />
   </div>
 </template>
@@ -153,6 +156,9 @@ const props = defineProps({
   isRepaid: {
     type: Boolean,
     default: false
+  },
+  outOfTermChargesDue: {
+    type: Number
   }
 })
 

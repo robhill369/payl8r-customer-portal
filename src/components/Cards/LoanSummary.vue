@@ -22,6 +22,10 @@
             <p class="font-bold pt-2.5">£{{totalLoanValue}}</p>
             <p class="col-span-4 pt-2.5">{{provider === 'upfront' ? 'Amount borrowed' : 'Order total'}}</p>
             <p class="font-bold pt-2.5">£{{totalOrderValue}}</p>
+            <template v-if="outOfTermChargesDue">
+              <p class="col-span-4 pt-2.5 text-red-darker">Out-of-term interest</p>
+              <p class="font-bold pt-2.5 text-red-darker">£{{outOfTermChargesDue}}</p>
+            </template>
             <p class="col-span-4 pt-2.5">Paid so far</p>
             <p class="font-bold pt-2.5">£{{valueRepaid}}</p>
           </div>
@@ -99,6 +103,9 @@ defineProps({
   valueRepaid: {
     type: Number,
     required: true
+  },
+  outOfTermChargesDue: {
+    type: Number
   },
   loanUpcomingPayment: {
     type: Number,

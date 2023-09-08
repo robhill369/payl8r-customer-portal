@@ -71,7 +71,7 @@
             class="flex flex-col justify-between space-y-2 lg:space-y-0"
             :class="loanDetails ? 'lg:flex-row lg:space-x-3' : ''"
           >
-            <h3>£{{(totalLoanValue-depositValue).toFixed(2)}}</h3>
+            <h3>£{{(totalLoanValue-depositValue+outOfTermChargesDue).toFixed(2)}}</h3>
             <div class="flex text-gray">
               <p class="font-bold">Total re{{loanRepaid ? 'paid' : 'payable'}}</p>
             </div>
@@ -94,7 +94,7 @@
         :payment-overdue=paymentOverdue
         @click="$emit('open')"
         :class="loanDetails ? '' : 'cursor-pointer'"
-        :progress="(valueRepaid/(totalLoanValue-depositValue))*100"
+        :progress="(valueRepaid/(totalLoanValue-depositValue+outOfTermChargesDue))*100"
       >
         <div
           v-if="(instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)"
@@ -232,6 +232,7 @@
           :total-loan-value=totalLoanValue
           :total-order-value=totalOrderValue
           :value-repaid=valueRepaid
+          :out-of-term-charges-due=outOfTermChargesDue
           :loan-upcoming-payment=loanUpcomingPayment
           :loan-upcoming-payment-date=loanUpcomingPaymentDate
           :loan-previous-payment=loanPreviousPayment
@@ -399,12 +400,15 @@ const props = defineProps({
   },
   isRepaid: {
     type: Boolean
+  },
+  outOfTermChargesDue: {
+    type: Number
   }
 })
 
 const lateFeeValue = 30
 
-const loanRepaid = props.valueRepaid  == props.totalLoanValue-props.depositValue
+const loanRepaid = props.valueRepaid  == props.totalLoanValue-props.depositValue-props.outOfTermChargesDue
 
 const tab = ref(1)
 
