@@ -79,11 +79,12 @@
           <div class="flex flex-col justify-between text-end relative space-y-2 lg:space-y-0"
              :class="loanDetails ? 'lg:flex-row lg:space-x-2 lg:items-center' : ''"
           >
-            <h3
-              :class="loanRepaid && hasConfirmedLateFees ? 'text-red-darker' : ''"
-            >£{{loanRepaid && hasConfirmedLateFees ? instalmentsWithConfirmedLateFees.length*lateFeeValue : valueLeftToPay}}</h3>
-            <h5 v-if="!loanRepaid && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" class="absolute top-3.5 lg:top-5 font-medium text-red-darker -right-1.5" :class="loanDetails ? 'lg:right-[73px]' : ''">+ £{{instalmentsWithConfirmedLateFees.length*lateFeeValue}}*</h5>
-
+            <h3 :class="loanRepaid && hasConfirmedLateFees ? 'text-red-darker' : ''">
+              £{{loanRepaid && hasConfirmedLateFees ? instalmentsWithConfirmedLateFees.length*lateFeeValue : valueLeftToPay}}
+            </h3>
+            <h5 v-if="!loanRepaid && (instalmentsWithConfirmedLateFees.length - (status === 'overdue' ? 1 : 0) > 0)" class="w-full absolute top-3.5 lg:top-5 font-medium text-red-darker -right-1.5" :class="loanDetails ? 'lg:right-[73px]' : ''">
+              + £{{instalmentsWithConfirmedLateFees.length*lateFeeValue}}*
+            </h5>
             <div class="flex text-gray">
               <p class="font-bold">Left to pay</p>
             </div>

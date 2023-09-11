@@ -18,10 +18,10 @@
         >
           <h5 class="text-gray">{{provider === 'upfront' ? 'Loan' : 'Order'}} Summary</h5>
           <div class="grid grid-cols-5">
-            <p class="col-span-4 pt-2.5">Loan total</p>
-            <p class="font-bold pt-2.5">£{{totalLoanValue}}</p>
             <p class="col-span-4 pt-2.5">{{provider === 'upfront' ? 'Amount borrowed' : 'Order total'}}</p>
             <p class="font-bold pt-2.5">£{{totalOrderValue}}</p>
+            <p class="col-span-4 pt-2.5">Loan total</p>
+            <p class="font-bold pt-2.5">£{{totalLoanValue}}</p>
             <template v-if="outOfTermChargesDue">
               <p class="col-span-4 pt-2.5 text-red-darker">Out-of-term interest</p>
               <p class="font-bold pt-2.5 text-red-darker">£{{outOfTermChargesDue}}</p>

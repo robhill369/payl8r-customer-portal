@@ -62,36 +62,37 @@
           />
         </template>
       </CardSectionHeader>
-      <div v-if="$route.path === '/'" v-for="loan in activeLoans(loans)" :key=loan.id>
-        <LoanCardModalGroup
-            :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
-            :loanStatus=loan.status
-            :provider=loan.provider
-            :purchase-date=loan.purchaseDate
-            :loan-start-date=loan.startDate
-            :term-length=loan.termLength
-            :loan-status=loan.status
-            :deposit-value=loan.depositValue
-            :total-order-value=loan.totalOrderValue
-            :total-interest-value=loan.totalInterestValue
-            :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)
-            monthly-payback-value="XXX.XX"
-            :value-repaid=(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges)).toFixed(2)
-            :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)+valueDue(loan.outOfTermCharges)-valuePaid(loan.outOfTermCharges)).toFixed(2)
-            :loan-upcoming-payment=loan.upcomingInstalmentValue
-            :loan-upcoming-payment-date=loan.upcomingInstalmentDate
-            :loan-previous-payment=loan.previousInstalmentValue
-            :loan-previous-payment-date=loan.previousInstalmentDate
-            :order-items=loan.orderItems
-            current-last-four-digits="1234"
-            :transactions=loan.transactions
-            :instalments=loan.instalments
-            :out-of-term-charges=loan.outOfTermCharges
-            :out-of-term-charges-due="valueDue(loan.outOfTermCharges)"
-            :is-repaid=loan.isRepaid
-        />
-      </div>
-      <div v-else v-for="loan in loans" :key=loan.id>
+<!--      <div v-if="$route.path === '/'" v-for="loan in activeLoans(loans)" :key=loan.id>-->
+<!--        <LoanCardModalGroup-->
+<!--            :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"-->
+<!--            :loanStatus=loan.status-->
+<!--            :provider=loan.provider-->
+<!--            :purchase-date=loan.purchaseDate-->
+<!--            :loan-start-date=loan.startDate-->
+<!--            :term-length=loan.termLength-->
+<!--            :loan-status=loan.status-->
+<!--            :deposit-value=loan.depositValue-->
+<!--            :total-order-value=loan.totalOrderValue-->
+<!--            :total-interest-value=loan.totalInterestValue-->
+<!--            :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)-->
+<!--            monthly-payback-value="XXX.XX"-->
+<!--            :value-repaid=(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges))-->
+<!--            :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)+valueDue(loan.outOfTermCharges)-valuePaid(loan.outOfTermCharges))-->
+<!--            :loan-upcoming-payment=loan.upcomingInstalmentValue-->
+<!--            :loan-upcoming-payment-date=loan.upcomingInstalmentDate-->
+<!--            :loan-previous-payment=loan.previousInstalmentValue-->
+<!--            :loan-previous-payment-date=loan.previousInstalmentDate-->
+<!--            :order-items=loan.orderItems-->
+<!--            current-last-four-digits="1234"-->
+<!--            :transactions=loan.transactions-->
+<!--            :instalments=loan.instalments-->
+<!--            :out-of-term-charges=loan.outOfTermCharges-->
+<!--            :out-of-term-charges-due="valueDue(loan.outOfTermCharges)"-->
+<!--            :is-repaid=loan.isRepaid-->
+<!--        />-->
+<!--      </div>-->
+      <div
+          v-for="loan in loans" :key=loan.id>
         <LoanCardModalGroup
           :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
           :loanStatus=loan.status
@@ -103,7 +104,7 @@
           :deposit-value=loan.depositValue
           :total-order-value=loan.totalOrderValue
           :total-interest-value=loan.totalInterestValue
-          :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)
+          :total-loan-value=(loan.totalOrderValue+loan.totalInterestValue).toFixed(2)
           monthly-payback-value="XXX.XX"
           :value-repaid=(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges)).toFixed(2)
           :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)+valueDue(loan.outOfTermCharges)-valuePaid(loan.outOfTermCharges)).toFixed(2)
