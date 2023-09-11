@@ -36,6 +36,7 @@ pipelines:
             - dist/**  # The `dist` directory and all its contents
       - step:
           name: Deploy to S3 Production
+          trigger: manual
           script:
             ## Download and configure the AWS CLI
             - curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
