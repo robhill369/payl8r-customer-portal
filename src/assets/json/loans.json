@@ -3778,7 +3778,7 @@
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "amountDue": 30,
-          "amountPaid": 0.00,
+          "amountPaid": 12,
           "status": "unpaid"
         }
       },

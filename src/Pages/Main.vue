@@ -107,7 +107,7 @@
           :total-loan-value=(loan.totalOrderValue+loan.totalInterestValue).toFixed(2)
           monthly-payback-value="XXX.XX"
           :value-repaid=(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges)).toFixed(2)
-          :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)+valueDue(loan.outOfTermCharges)-valuePaid(loan.outOfTermCharges)).toFixed(2)
+          :value-left-to-pay=Number(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)-valuePaid(loan.outOfTermCharges)+valueDue(loan.outOfTermCharges)).toFixed(2)
           :loan-upcoming-payment=loan.upcomingInstalmentValue
           :loan-upcoming-payment-date=loan.upcomingInstalmentDate
           :loan-previous-payment=loan.previousInstalmentValue
