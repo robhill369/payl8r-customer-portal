@@ -129,14 +129,14 @@
           <template v-if="!loanRepaid">
             <template v-if="paymentOverdue">
               <LoanActionModalButtonGroup
-                  v-if="valueLeftToPay == outOfTermChargesDue"
-                  modal-title="Confirm payment for:"
-                  :retailer-name="retailerName"
-                  button-name="OOT interest due - make payment"
-                  button-icon="fa-solid fa-credit-card"
-                  :payment-type="lateInstalmentsTotal ? 'late instalment' : 'OOT interest charge'"
-                  is-payment
-                  :array="OOTCharges"
+                v-if="valueLeftToPay == outOfTermChargesDue"
+                modal-title="Confirm payment for:"
+                :retailer-name="retailerName"
+                button-name="OOT interest due - make payment"
+                button-icon="fa-solid fa-credit-card"
+                :payment-type="lateInstalmentsTotal ? 'late instalment' : 'OOT interest charge'"
+                is-payment
+                :array="OOTCharges"
               >
                 <p>You currently have <span class="font-bold">{{OOTCharges.length}}</span> out-of-term (OOT) interest charge<span v-if="OOTCharges.length !== 1">s</span> due.<span v-if="OOTCharges.length !== 1"><br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
@@ -154,14 +154,14 @@
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
-                  v-if="isLastInstalment && LateFeeTotal"
-                  modal-title="Confirm instalment payment for:"
-                  :retailer-name="retailerName"
-                  button-name="Pay loan balance"
-                  button-icon="fa-solid fa-credit-card"
-                  payment-type="late instalment"
-                  is-payment
-                  :array="remainingPayments(instalments)"
+                v-if="props.instalments[props.instalments.length-1].isCurrent"
+                modal-title="Confirm payment for:"
+                :retailer-name="retailerName"
+                button-name="Pay loan balance"
+                button-icon="fa-solid fa-credit-card"
+                payment-type="late instalment"
+                is-payment
+                :array="remainingPayments(instalments)"
               >
                 <p v-if="lateInstalments.length === 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
@@ -169,22 +169,22 @@
             </template>
             <template v-else>
               <LoanActionModalButtonGroup
-                  modal-title="Confirm early instalment payment for:"
-                  :retailer-name="retailerName"
-                  button-name="Pay instalment early"
-                  button-icon="fa-solid fa-credit-card"
-                  is-payment
-                  :array=Array(1).fill(123)
+                modal-title="Confirm early instalment payment for:"
+                :retailer-name="retailerName"
+                button-name="Pay instalment early"
+                button-icon="fa-solid fa-credit-card"
+                is-payment
+                :array=Array(1).fill(123)
               >
                 <p>You will pay the instalment due <span class="font-bold">DATE</span> today.<br class="hidden sm:block">
                   Your next instalment will then be collected on <span class="font-bold">DATE</span>.
                 </p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
-                  modal-title="Change payment date for:"
-                  :retailer-name="retailerName"
-                  button-name="Change payment date"
-                  button-icon="fa-solid fa-arrows-rotate"
+                modal-title="Change payment date for:"
+                :retailer-name="retailerName"
+                button-name="Change payment date"
+                button-icon="fa-solid fa-arrows-rotate"
               >
                 <p>All future repayments will be changed to the newly chosen<br class="hidden sm:block">
                   day of the month. Choose a new date below:
