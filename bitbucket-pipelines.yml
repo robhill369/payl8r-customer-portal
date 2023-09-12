@@ -56,6 +56,7 @@ pipelines:
           script:
             - npm install
             - npm run build  # This should output the built project to a "dist" folder
+            - npm run test
           artifacts:  # Define artifacts to be passed to each future step.
             - dist/**  # The `dist` directory and all its contents
       - step:
