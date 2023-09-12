@@ -38,7 +38,7 @@
         <div class="flex justify-end items-center">
           <Tag
               payment-status
-              :name="charge.status !== 'unpaid'  ? charge.status : (readyToPay ? charge.status : 'applied')"
+              :name="charge.amountDue !== charge.amountPaid ? 'unpaid' : 'paid'"
               class="px-[12px] py-[5px]"
           />
         </div>

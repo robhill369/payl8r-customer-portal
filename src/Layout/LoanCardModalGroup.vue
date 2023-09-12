@@ -34,6 +34,7 @@
             :is-repaid=isRepaid
             :out-of-term-charges=outOfTermCharges
             :out-of-term-charges-due=outOfTermChargesDue
+            :is-last-instalment=isLastInstalment
           />
         </div>
       </div>
@@ -53,6 +54,7 @@
       :instalments=instalments
       :out-of-term-charges=outOfTermCharges
       :out-of-term-charges-due=outOfTermChargesDue
+      :is-last-instalment=isLastInstalment
     />
   </div>
 </template>

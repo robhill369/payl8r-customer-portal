@@ -126,55 +126,85 @@
           class="flex flex-col md:flex-row space-y-3.5 md:space-x-3 md:space-y-0"
           :class="loanDetails ? 'py-7 border-b -mx-5 px-5 xl:-mx-9 xl:px-9' : ''"
         >
-          <LoanActionModalButtonGroup
-            v-if="paymentOverdue && !loanRepaid"
-            modal-title="Confirm instalment payment for:"
-            :retailer-name="retailerName"
-            :button-name="lateInstalments.length !== 1 ? 'Instalments overdue - make payment' : 'Instalment overdue - make payment'"
-            button-icon="fa-solid fa-credit-card"
-            :payment-type="lateInstalmentsTotal ? 'late instalment' : 'OOT interest charge'"
-            is-payment
-            :array="remainingInstalmentPayments(instalments)"
-          >
-            <p v-if="lateInstalments.length < 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
-            <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
-          </LoanActionModalButtonGroup>
-          <LoanActionModalButtonGroup
-              v-if="!paymentOverdue && !loanRepaid"
-            modal-title="Confirm early instalment payment for:"
-            :retailer-name="retailerName"
-            button-name="Pay instalment early"
-            button-icon="fa-solid fa-credit-card"
-            is-payment
-            :array=Array(1).fill(123)
-          >
-            <p>You will pay the instalment due <span class="font-bold">DATE</span> today.<br class="hidden sm:block">
-              Your next instalment will then be collected on <span class="font-bold">DATE</span>.
-            </p>
-          </LoanActionModalButtonGroup>
-          <LoanActionModalButtonGroup
-              v-if="loanRepaid && LateFeeTotal"
-              modal-title="Confirm late fee payment for:"
-              :retailer-name="retailerName"
-              button-name="Pay late fee"
-              button-icon="fa-solid fa-credit-card"
-              is-payment
-              :array=LateFees
-          >
-            <p>You currently have <span class="font-bold">{{LateFees.length}}</span> late fee<span v-if="LateFees.length !== 1">s</span> worth <span class="font-bold">£{{LateFeeTotal}}.</span><span v-if="LateFees.length !== 1"><br class="hidden sm:block"> Choose how many to pay below</span>.</p>
-          </LoanActionModalButtonGroup>
-          <LoanActionModalButtonGroup
-            v-if="!paymentOverdue && !loanRepaid"
-            modal-title="Change payment date for:"
-            :retailer-name="retailerName"
-            button-name="Change payment date"
-            button-icon="fa-solid fa-arrows-rotate"
-          >
-            <p>All future repayments will be changed to the newly chosen<br class="hidden sm:block">
-              day of the month. Choose a new date below:
-            </p>
-          </LoanActionModalButtonGroup>
-          <a v-if="loanDetails || (loanRepaid && !LateFeeTotal)"
+          <template v-if="!loanRepaid">
+            <template v-if="paymentOverdue">
+              <LoanActionModalButtonGroup
+                  v-if="valueLeftToPay == outOfTermChargesDue"
+                  modal-title="Confirm payment for:"
+                  :retailer-name="retailerName"
+                  button-name="OOT interest due - make payment"
+                  button-icon="fa-solid fa-credit-card"
+                  :payment-type="lateInstalmentsTotal ? 'late instalment' : 'OOT interest charge'"
+                  is-payment
+                  :array="OOTCharges"
+              >
+                <p>You currently have <span class="font-bold">{{OOTCharges.length}}</span> out-of-term (OOT) interest charge<span v-if="OOTCharges.length !== 1">s</span> due.<span v-if="OOTCharges.length !== 1"><br class="hidden sm:block"> Choose how many to pay below</span>.</p>
+              </LoanActionModalButtonGroup>
+              <LoanActionModalButtonGroup
+                v-else
+                modal-title="Confirm instalment payment for:"
+                :retailer-name="retailerName"
+                :button-name="lateInstalments.length > 1 ? 'Instalments overdue - make payment' : 'Instalment overdue - make payment'"
+                button-icon="fa-solid fa-credit-card"
+                payment-type="late instalment"
+                is-payment
+                :array="remainingPayments(instalments)"
+              >
+                <p v-if="lateInstalments.length === 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
+                <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
+              </LoanActionModalButtonGroup>
+              <LoanActionModalButtonGroup
+                  v-if="isLastInstalment && LateFeeTotal"
+                  modal-title="Confirm instalment payment for:"
+                  :retailer-name="retailerName"
+                  button-name="Pay loan balance"
+                  button-icon="fa-solid fa-credit-card"
+                  payment-type="late instalment"
+                  is-payment
+                  :array="remainingPayments(instalments)"
+              >
+                <p v-if="lateInstalments.length === 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
+                <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
+              </LoanActionModalButtonGroup>
+            </template>
+            <template v-else>
+              <LoanActionModalButtonGroup
+                  modal-title="Confirm early instalment payment for:"
+                  :retailer-name="retailerName"
+                  button-name="Pay instalment early"
+                  button-icon="fa-solid fa-credit-card"
+                  is-payment
+                  :array=Array(1).fill(123)
+              >
+                <p>You will pay the instalment due <span class="font-bold">DATE</span> today.<br class="hidden sm:block">
+                  Your next instalment will then be collected on <span class="font-bold">DATE</span>.
+                </p>
+              </LoanActionModalButtonGroup>
+              <LoanActionModalButtonGroup
+                  modal-title="Change payment date for:"
+                  :retailer-name="retailerName"
+                  button-name="Change payment date"
+                  button-icon="fa-solid fa-arrows-rotate"
+              >
+                <p>All future repayments will be changed to the newly chosen<br class="hidden sm:block">
+                  day of the month. Choose a new date below:
+                </p>
+              </LoanActionModalButtonGroup>
+            </template>
+          </template>
+          <template v-else>
+            <LoanActionModalButtonGroup
+                v-if="LateFeeTotal"
+                modal-title="Confirm late fee payment for:"
+                :retailer-name="retailerName"
+                button-name="Pay late fee"
+                button-icon="fa-solid fa-credit-card"
+                is-payment
+                :array=LateFees
+            >
+              <p>You currently have <span class="font-bold">{{LateFees.length}}</span> late fee<span v-if="LateFees.length !== 1">s</span> worth <span class="font-bold">£{{LateFeeTotal}}.</span><span v-if="LateFees.length !== 1"><br class="hidden sm:block"> Choose how many to pay below.</span></p>
+            </LoanActionModalButtonGroup>
+          <a
             href="https://somo.co.uk/"
             target="_blank"
             class="text-button text-center py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit"
@@ -182,6 +212,7 @@
             <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2 lg:hidden xl:block"/>
             View loan agreement
           </a>
+          </template>
         </div>
       </div>
       <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col">
@@ -285,7 +316,7 @@
 
 
 <script setup>
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 
 import ProgressBar from "@/components/ProgressBar.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
@@ -406,15 +437,13 @@ const props = defineProps({
   }
 })
 
-const lateFeeValue = 30
-
 const loanRepaid = props.valueLeftToPay == 0
 
 const tab = ref(1)
 
 const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee)
 
-const remainingInstalmentPayments = (arr) => {
+const remainingPayments = (arr) => {
   const newArray = []
   arr.forEach((item) => {
       if (item.amountPaid !== item.amountDue && item.status !== 'upcoming')
@@ -432,12 +461,13 @@ const remainingLateFeePayments = (arr) => {
   return newArray
 }
 
-const LateFees = remainingLateFeePayments(instalmentsWithLateFees)
-const LateFeeTotal = LateFees.reduce((acc, obj) => {return acc + obj}, 0)
-
 const lateInstalments = props.instalments.filter(item => item.status === 'overdue');
 const lateInstalmentsTotal = lateInstalments.reduce((acc, obj) => {return acc + obj}, 0)
 
+const LateFees = remainingLateFeePayments(instalmentsWithLateFees)
+const LateFeeTotal = LateFees.reduce((acc, obj) => {return acc + obj}, 0)
+
+const OOTCharges = remainingPayments(props.outOfTermCharges)
 
 const currentTab = (tabNumber) => {
   tab.value = tabNumber;
