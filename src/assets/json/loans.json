@@ -1626,7 +1626,6 @@
     "retailerName": "7. Out of term, with no late payments",
     "isRepaid": true,
     "status": "paid",
-
     "purchaseDate": "9th Jan 2021",
     "startDate": "9th Feb 2021",
     "termLength": 18,
