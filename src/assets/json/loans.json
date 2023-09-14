@@ -43,6 +43,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "28th Oct 2023",
         "amountDue": 26.48,
         "amountPaid": 0,
@@ -50,6 +51,7 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "28th Nov 2023",
         "amountDue": 26.49,
         "amountPaid": 0,
@@ -85,6 +87,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "28th Oct 2023",
         "amountDue": 26.48,
         "amountPaid": 0,
@@ -92,6 +95,7 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "28th Nov 2023",
         "amountDue": 26.49,
         "amountPaid": 0,
@@ -131,6 +135,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "5th Sep 2023",
         "amountDue": 71.88,
         "amountPaid": 71.88,
@@ -146,6 +151,7 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "5th Nov 2023",
         "amountDue": 71.89,
         "amountPaid": 0.00,
@@ -168,6 +174,7 @@
     "retailerName": "",
     "isRepaid": false,
     "status": "paid",
+
     "purchaseDate": "5th July 2023",
     "startDate": "5th Aug 2023",
     "termLength": 3,
@@ -182,6 +189,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "5th Sep 2023",
         "amountDue": 71.88,
         "amountPaid": 71.88,
@@ -197,6 +205,7 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "5th Nov 2023",
         "amountDue": 71.89,
         "amountPaid": 0.00,
@@ -219,6 +228,7 @@
     "retailerName": "3. In term, with latest payment overdue",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 12,
@@ -240,6 +250,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "2nd Feb 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -247,6 +258,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "2nd Mar 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -254,6 +266,7 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "2nd Apr 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -261,6 +274,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "2nd May 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -268,6 +282,7 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "2nd Jun 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -275,6 +290,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "2nd Jul 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -282,6 +298,7 @@
       },
       {
         "id": 7,
+        "isCurrent": false,
         "date": "2nd Aug 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -289,12 +306,14 @@
       },
       {
         "id": 8,
+        "isCurrent": false,
         "date": "2nd Sep 2023",
         "amountDue": 109.08,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
+          "isWaivable": true,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -310,6 +329,7 @@
       },
       {
         "id": 10,
+        "isCurrent": false,
         "date": "2nd Nov 2023",
         "amountDue": 109.08,
         "amountPaid": 0,
@@ -317,6 +337,7 @@
       },
       {
         "id": 11,
+        "isCurrent": false,
         "date": "2nd Dec 2023",
         "amountDue": 109.08,
         "amountPaid": 0,
@@ -324,6 +345,7 @@
       },
       {
         "id": 12,
+        "isCurrent": false,
         "date": "2nd Jan 2024",
         "amountDue": 109.08,
         "amountPaid": 0,
@@ -394,6 +416,7 @@
     "retailerName": "",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 12,
@@ -408,6 +431,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "2nd Feb 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -415,6 +439,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "2nd Mar 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -422,6 +447,7 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "2nd Apr 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -429,6 +455,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "2nd May 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -436,6 +463,7 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "2nd Jun 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -443,6 +471,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "2nd Jul 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -450,6 +479,7 @@
       },
       {
         "id": 7,
+        "isCurrent": false,
         "date": "2nd Aug 2023",
         "amountDue": 109.08,
         "amountPaid": 109.08,
@@ -457,12 +487,14 @@
       },
       {
         "id": 8,
+        "isCurrent": false,
         "date": "2nd Sep 2023",
         "amountDue": 109.08,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
+          "isWaivable": true,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -478,6 +510,7 @@
       },
       {
         "id": 10,
+        "isCurrent": false,
         "date": "2nd Nov 2023",
         "amountDue": 109.08,
         "amountPaid": 0,
@@ -485,6 +518,7 @@
       },
       {
         "id": 11,
+        "isCurrent": false,
         "date": "2nd Dec 2023",
         "amountDue": 109.08,
         "amountPaid": 0,
@@ -492,6 +526,7 @@
       },
       {
         "id": 12,
+        "isCurrent": false,
         "date": "2nd Jan 2024",
         "amountDue": 109.08,
         "amountPaid": 0,
@@ -562,6 +597,7 @@
     "retailerName": "4. In term, with previous payment(s) overdue but paid. Late fees unpaid",
     "isRepaid": false,
     "status": "paid",
+
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 9,
@@ -583,6 +619,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "13th Feb 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -590,12 +627,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "13th Mar 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0,
           "status": "unpaid"
@@ -603,12 +642,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "13th Apr 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "cardExpired": true,
@@ -617,6 +658,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "13th May 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -624,12 +666,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "13th Jun 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "paid"
@@ -637,6 +681,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "13th Jul 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -644,6 +689,7 @@
       },
       {
         "id": 7,
+        "isCurrent": false,
         "date": "13th Aug 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -659,6 +705,7 @@
       },
       {
         "id": 9,
+        "isCurrent": false,
         "date": "13th Oct 2023",
         "amountDue": 81.16,
         "amountPaid": 0,
@@ -757,6 +804,7 @@
     "retailerName": "",
     "isRepaid": false,
     "status": "paid",
+
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 9,
@@ -771,6 +819,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "13th Feb 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -778,12 +827,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "13th Mar 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0,
           "status": "unpaid"
@@ -791,12 +842,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "13th Apr 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "cardExpired": true,
@@ -805,6 +858,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "13th May 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -812,12 +866,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "13th Jun 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -825,6 +881,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "13th Jul 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -832,6 +889,7 @@
       },
       {
         "id": 7,
+        "isCurrent": false,
         "date": "13th Aug 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -847,6 +905,7 @@
       },
       {
         "id": 9,
+        "isCurrent": false,
         "date": "13th Oct 2023",
         "amountDue": 81.16,
         "amountPaid": 0,
@@ -945,6 +1004,7 @@
     "retailerName": "5. In term, with previous payment(s) overdue but paid. Late fees waived",
     "isRepaid": false,
     "status": "paid",
+
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 9,
@@ -966,6 +1026,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "13th Feb 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -973,12 +1034,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "13th Mar 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0,
           "status": "waived"
@@ -986,12 +1049,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "13th Apr 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -999,6 +1064,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "13th May 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -1006,12 +1072,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "13th Jun 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -1019,6 +1087,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "13th Jul 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -1026,6 +1095,7 @@
       },
       {
         "id": 7,
+        "isCurrent": false,
         "date": "13th Aug 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -1041,6 +1111,7 @@
       },
       {
         "id": 9,
+        "isCurrent": false,
         "date": "13th Oct 2023",
         "amountDue": 81.16,
         "amountPaid": 0,
@@ -1146,6 +1217,7 @@
     "retailerName": "",
     "isRepaid": false,
     "status": "paid",
+
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 9,
@@ -1160,6 +1232,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "13th Feb 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -1167,12 +1240,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "13th Mar 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0,
           "status": "waived"
@@ -1180,12 +1255,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "13th Apr 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -1193,6 +1270,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "13th May 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -1200,12 +1278,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "13th Jun 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -1213,6 +1293,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "13th Jul 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -1220,6 +1301,7 @@
       },
       {
         "id": 7,
+        "isCurrent": false,
         "date": "13th Aug 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
@@ -1227,6 +1309,7 @@
       },
       {
         "id": 8,
+        "isCurrent": true,
         "date": "13th Sep 2023",
         "amountDue": 81.18,
         "amountPaid": 0,
@@ -1234,7 +1317,7 @@
       },
       {
         "id": 9,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "13th Oct 2023",
         "amountDue": 81.16,
         "amountPaid": 0,
@@ -1340,6 +1423,7 @@
     "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "23rd May 2023",
     "startDate": "23rd Jun 2023",
     "termLength": 6,
@@ -1361,12 +1445,14 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "23rd Jul 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Jul 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -1374,12 +1460,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "23rd Aug 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Aug 2023",
+          "isWaivable": true,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -1395,6 +1483,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "23rd Oct 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
@@ -1402,6 +1491,7 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "23rd Nov 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
@@ -1409,6 +1499,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "23rd Dec 2023",
         "amountDue": 55.05,
         "amountPaid": 0.00,
@@ -1437,6 +1528,7 @@
     "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "23rd May 2023",
     "startDate": "23rd Jun 2023",
     "termLength": 6,
@@ -1451,12 +1543,14 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "23rd Jul 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Jul 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -1464,12 +1558,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "23rd Aug 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Aug 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -1485,6 +1581,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "23rd Oct 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
@@ -1492,6 +1589,7 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "23rd Nov 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
@@ -1499,6 +1597,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "23rd Dec 2023",
         "amountDue": 55.05,
         "amountPaid": 0.00,
@@ -1527,6 +1626,7 @@
     "retailerName": "7. Out of term, with no late payments",
     "isRepaid": true,
     "status": "paid",
+
     "purchaseDate": "9th Jan 2021",
     "startDate": "9th Feb 2021",
     "termLength": 18,
@@ -1563,6 +1663,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "9th Mar 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1570,6 +1671,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "9th Apr 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1577,6 +1679,7 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "9th May 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1584,6 +1687,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "9th Jun 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1598,6 +1702,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "9th Aug 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1605,6 +1710,7 @@
       },
       {
         "id": 7,
+        "isCurrent": false,
         "date": "9th Sep 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1620,6 +1726,7 @@
       },
       {
         "id": 9,
+        "isCurrent": false,
         "date": "9th Nov 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1627,6 +1734,7 @@
       },
       {
         "id": 10,
+        "isCurrent": false,
         "date": "9th Dec 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1634,6 +1742,7 @@
       },
       {
         "id": 11,
+        "isCurrent": false,
         "date": "9th Jan 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1641,6 +1750,7 @@
       },
       {
         "id": 12,
+        "isCurrent": false,
         "date": "9th Feb 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1648,6 +1758,7 @@
       },
       {
         "id": 13,
+        "isCurrent": false,
         "date": "9th Mar 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1655,6 +1766,7 @@
       },
       {
         "id": 14,
+        "isCurrent": false,
         "date": "9th Apr 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1662,6 +1774,7 @@
       },
       {
         "id": 15,
+        "isCurrent": false,
         "date": "9th May 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1669,6 +1782,7 @@
       },
       {
         "id": 16,
+        "isCurrent": false,
         "date": "9th Jun 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1676,6 +1790,7 @@
       },
       {
         "id": 17,
+        "isCurrent": false,
         "date": "9th Jul 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1684,6 +1799,7 @@
       {
         "id": 18,
         "date": "9th Aug 2022",
+        "isCurrent": false,
         "amountDue": 74.43,
         "amountPaid": 74.43,
         "status": "paid"
@@ -1823,6 +1939,7 @@
     "retailerName": "",
     "isRepaid": true,
     "status": "paid",
+
     "purchaseDate": "9th Jan 2021",
     "startDate": "9th Feb 2021",
     "termLength": 18,
@@ -1837,6 +1954,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "9th Mar 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1844,6 +1962,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "9th Apr 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1851,6 +1970,7 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "9th May 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1858,6 +1978,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "9th Jun 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1865,6 +1986,7 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "9th Jul 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1872,6 +1994,7 @@
       },
       {
         "id": 6,
+        "isCurrent": false,
         "date": "9th Aug 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1879,6 +2002,7 @@
       },
       {
         "id": 7,
+        "isCurrent": false,
         "date": "9th Sep 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1894,6 +2018,7 @@
       },
       {
         "id": 9,
+        "isCurrent": false,
         "date": "9th Nov 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1901,6 +2026,7 @@
       },
       {
         "id": 10,
+        "isCurrent": false,
         "date": "9th Dec 2021",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1908,6 +2034,7 @@
       },
       {
         "id": 11,
+        "isCurrent": false,
         "date": "9th Jan 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1915,6 +2042,7 @@
       },
       {
         "id": 12,
+        "isCurrent": false,
         "date": "9th Feb 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1922,6 +2050,7 @@
       },
       {
         "id": 13,
+        "isCurrent": false,
         "date": "9th Mar 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1929,6 +2058,7 @@
       },
       {
         "id": 14,
+        "isCurrent": false,
         "date": "9th Apr 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1936,6 +2066,7 @@
       },
       {
         "id": 15,
+        "isCurrent": false,
         "date": "9th May 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1943,6 +2074,7 @@
       },
       {
         "id": 16,
+        "isCurrent": false,
         "date": "9th Jun 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1950,6 +2082,7 @@
       },
       {
         "id": 17,
+        "isCurrent": false,
         "date": "9th Jul 2022",
         "amountDue": 74.41,
         "amountPaid": 74.41,
@@ -1957,6 +2090,7 @@
       },
       {
         "id": 18,
+        "isCurrent": false,
         "date": "9th Aug 2022",
         "amountDue": 74.43,
         "amountPaid": 74.43,
@@ -2097,6 +2231,7 @@
     "retailerName": "8. Out of term, with instalments paid late. Multiple late fees unpaid",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -2118,6 +2253,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
@@ -2125,12 +2261,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -2138,12 +2276,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -2151,12 +2291,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -2164,12 +2306,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2269,6 +2413,7 @@
     "retailerName": "",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -2283,6 +2428,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
@@ -2290,12 +2436,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -2303,12 +2451,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -2316,12 +2466,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -2329,12 +2481,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2342,7 +2496,7 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
         "amountPaid": 55.05,
@@ -2434,6 +2588,7 @@
     "retailerName": "8.5. Out of term, with instalments paid late. Single late fee unpaid",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -2455,6 +2610,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
@@ -2462,6 +2618,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
@@ -2469,12 +2626,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -2482,12 +2641,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2495,12 +2656,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2508,7 +2671,7 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
         "amountPaid": 55.05,
@@ -2607,6 +2770,7 @@
     "retailerName": "",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -2621,6 +2785,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
@@ -2628,6 +2793,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
@@ -2635,12 +2801,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -2648,12 +2816,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2661,12 +2831,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2674,7 +2846,7 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
         "amountPaid": 55.05,
@@ -2773,6 +2945,7 @@
     "retailerName": "9. Out of term, with instalments paid late. Late fees waived",
     "isRepaid": true,
     "status": "paid",
+
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -2794,6 +2967,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
@@ -2801,12 +2975,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2814,12 +2990,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2827,12 +3005,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2840,12 +3020,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -2853,7 +3035,7 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
         "amountPaid": 55.05,
@@ -2966,6 +3148,7 @@
     "retailerName": "",
     "isRepaid": true,
     "status": "paid",
+
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -2980,6 +3163,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
@@ -2987,12 +3171,14 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -3000,12 +3186,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -3013,12 +3201,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -3026,12 +3216,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -3039,7 +3231,7 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
         "amountPaid": 55.05,
@@ -3152,6 +3344,7 @@
     "retailerName": "10. Out of term, with instalment payments outstanding",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,
@@ -3173,6 +3366,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "2nd Feb 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3180,6 +3374,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "2nd Mar 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3187,12 +3382,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3200,12 +3397,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3213,12 +3412,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3226,13 +3427,14 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "2nd Jul 2023",
         "amountDue": 179.90,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3319,6 +3521,7 @@
     "retailerName": "",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,
@@ -3333,6 +3536,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "2nd Feb 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3340,6 +3544,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "2nd Mar 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3347,12 +3552,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3360,12 +3567,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3373,12 +3582,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3386,13 +3597,14 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "2nd Jul 2023",
         "amountDue": 179.90,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3449,6 +3661,7 @@
     "retailerName": "11. In term, with last payment overdue",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "2nd Feb 2022",
     "startDate": "2nd Mar 2023",
     "termLength": 6,
@@ -3470,6 +3683,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3477,6 +3691,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3484,6 +3699,7 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3497,6 +3713,7 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "2nd Jul 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3510,6 +3727,7 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "2nd Aug 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3517,7 +3735,7 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "2nd Sep 2023",
         "amountDue": 179.90,
         "amountPaid": 0,
@@ -3580,6 +3798,7 @@
     "retailerName": "11.5. In term, with last payment overdue, with previous late fees",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "2nd Feb 2022",
     "startDate": "2nd Mar 2023",
     "termLength": 6,
@@ -3601,6 +3820,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3608,6 +3828,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3615,12 +3836,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -3628,12 +3851,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "2nd Jul 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3641,6 +3866,7 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "2nd Aug 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3648,13 +3874,14 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "2nd Sep 2023",
         "amountDue": 179.90,
         "amountPaid": 0,
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
+          "isWaivable": true,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3711,6 +3938,7 @@
     "retailerName": "12. Out of term with instalment payments paid late, with out-of-term charges unpaid",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,
@@ -3752,6 +3980,7 @@
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3765,6 +3994,7 @@
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3778,6 +4008,7 @@
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3792,6 +4023,7 @@
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3883,6 +4115,7 @@
     "retailerName": "13. Out of term with instalment payments paid late, out-of-term charges paid, late fees unpaid",
     "isRepaid": false,
     "status": "overdue",
+
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,
@@ -3904,6 +4137,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "2nd Feb 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3911,6 +4145,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "2nd Mar 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -3918,12 +4153,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 12,
           "status": "unpaid"
@@ -3931,12 +4168,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3944,12 +4183,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -3957,13 +4198,14 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "2nd Jul 2023",
         "amountDue": 179.90,
         "amountPaid": 179.90,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"
@@ -4064,6 +4306,7 @@
     "retailerName": "14. Out of term with instalment payments paid late, out-of-term charges paid, late fees paid",
     "isRepaid": false,
     "status": "complete",
+
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,
@@ -4085,6 +4328,7 @@
     "instalments": [
       {
         "id": 1,
+        "isCurrent": false,
         "date": "2nd Feb 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -4092,6 +4336,7 @@
       },
       {
         "id": 2,
+        "isCurrent": false,
         "date": "2nd Mar 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
@@ -4099,12 +4344,14 @@
       },
       {
         "id": 3,
+        "isCurrent": false,
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 30.00,
           "status": "paid"
@@ -4112,12 +4359,14 @@
       },
       {
         "id": 4,
+        "isCurrent": false,
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 30.00,
           "status": "paid"
@@ -4125,12 +4374,14 @@
       },
       {
         "id": 5,
+        "isCurrent": false,
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 30.00,
           "status": "paid"
@@ -4138,13 +4389,14 @@
       },
       {
         "id": 6,
-        "isCurrent": true,
+        "isCurrent": false,
         "date": "2nd Jul 2023",
         "amountDue": 179.90,
         "amountPaid": 179.90,
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 30.00,
           "status": "paid"

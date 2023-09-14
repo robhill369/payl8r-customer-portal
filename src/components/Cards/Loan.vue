@@ -16,7 +16,7 @@
                  @click="$emit('open')"
                  :class="loanDetails && paymentOverdue && (instalmentsWithLateFees.length - (status === 'overdue' ? 1 : 0) > 0) ? 'px-1 sm:px-auto' : 'px-3 sm:px-auto'"
             />
-            <Tag v-if="LateFeeTotal" :name="!loanRepaid ? '*Late fee' : 'Late fee to pay'" class="px-[10px] py-[3px] mr-2 sm:mr-0" :class="loanDetails && paymentOverdue ? 'w-20 sm:w-auto' : ''"/>
+            <Tag v-if="lateFeeTotal" :name="!loanRepaid ? '*Late fee' : 'Late fee to pay'" class="px-[10px] py-[3px] mr-2 sm:mr-0" :class="loanDetails && paymentOverdue ? 'w-20 sm:w-auto' : ''"/>
           </div>
 
           <ButtonSecondary
@@ -79,11 +79,11 @@
           <div class="flex flex-col justify-between text-end relative space-y-2 lg:space-y-0"
              :class="loanDetails ? 'lg:flex-row lg:space-x-2 lg:items-center' : ''"
           >
-            <h3 :class="loanRepaid && LateFeeTotal ? 'text-red-darker' : ''">
-              £{{loanRepaid && LateFeeTotal ? LateFeeTotal : valueLeftToPay}}
+            <h3 :class="loanRepaid && lateFeeTotal ? 'text-red-darker' : ''">
+              £{{loanRepaid && lateFeeTotal ? lateFeeTotal : valueLeftToPay}}
             </h3>
-            <h5 v-if="!loanRepaid && LateFeeTotal" class="w-20 absolute top-3.5 lg:top-5 font-medium text-red-darker -right-1.5" :class="loanDetails ? 'lg:right-[73px]' : ''">
-              + £{{LateFeeTotal}}*
+            <h5 v-if="!loanRepaid && lateFeeTotal" class="w-20 absolute top-3.5 lg:top-5 font-medium text-red-darker -right-1.5" :class="loanDetails ? 'lg:right-[73px]' : ''">
+              + £{{lateFeeTotal}}*
             </h5>
             <div class="flex text-gray">
               <p class="font-bold">Left to pay</p>
@@ -98,7 +98,7 @@
         :progress="(valueRepaid/(totalLoanValue-depositValue+outOfTermChargesDue))*100"
       >
         <div
-          v-if="LateFeeTotal"
+          v-if="lateFeeTotal"
           class="absolute bg-red-dark h-3.5 w-3.5 top-0 rounded-full"
           :class="valueLeftToPay - (totalLoanValue-depositValue) === 0 ? 'left-0' : 'right-0'"
         />
@@ -132,7 +132,7 @@
                 v-if="valueLeftToPay == outOfTermChargesDue"
                 modal-title="Confirm payment for:"
                 :retailer-name="retailerName"
-                button-name="OOT interest due - make payment"
+                button-name="OOT interest due - pay now"
                 button-icon="fa-solid fa-credit-card"
                 :payment-type="lateInstalmentsTotal ? 'late instalment' : 'OOT interest charge'"
                 is-payment
@@ -144,7 +144,7 @@
                 v-else
                 modal-title="Confirm instalment payment for:"
                 :retailer-name="retailerName"
-                :button-name="lateInstalments.length > 1 ? 'Instalments overdue - make payment' : 'Instalment overdue - make payment'"
+                :button-name="lateInstalments.length > 1 ? 'Instalments overdue - pay now' : 'Instalment overdue - pay now'"
                 button-icon="fa-solid fa-credit-card"
                 payment-type="late instalment"
                 is-payment
@@ -154,10 +154,10 @@
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
-                v-if="props.instalments[props.instalments.length-1].isCurrent"
+                v-if="props.instalments[props.instalments.length-1].status !== 'upcoming'"
                 modal-title="Confirm payment for:"
                 :retailer-name="retailerName"
-                button-name="Pay loan balance"
+                button-name="Pay in full"
                 button-icon="fa-solid fa-credit-card"
                 payment-type="late instalment"
                 is-payment
@@ -194,17 +194,28 @@
           </template>
           <template v-else>
             <LoanActionModalButtonGroup
-                v-if="LateFeeTotal"
-                modal-title="Confirm late fee payment for:"
-                :retailer-name="retailerName"
-                button-name="Pay late fee"
-                button-icon="fa-solid fa-credit-card"
-                is-payment
-                :array=LateFees
+              v-if="lateFeeTotal"
+              modal-title="Confirm late fee payment for:"
+              :retailer-name="retailerName"
+              button-name="Pay late fee"
+              button-icon="fa-solid fa-credit-card"
+              is-payment
+              :array=lateFees
             >
-              <p>You currently have <span class="font-bold">{{LateFees.length}}</span> late fee<span v-if="LateFees.length !== 1">s</span> worth <span class="font-bold">£{{LateFeeTotal}}.</span><span v-if="LateFees.length !== 1"><br class="hidden sm:block"> Choose how many to pay below.</span></p>
+              <p>You currently have <span class="font-bold">{{lateFees.length}}</span> late fee<span v-if="lateFees.length !== 1">s</span> worth <span class="font-bold">£{{lateFeeTotal}}.</span><span v-if="lateFees.length !== 1"><br class="hidden sm:block"> Choose how many to pay below.</span></p>
             </LoanActionModalButtonGroup>
+            <a
+              v-if="!loanDetails"
+              href="https://somo.co.uk/"
+              target="_blank"
+              class="text-button text-center py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit"
+            >
+              <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2 lg:hidden xl:block"/>
+              View loan agreement
+            </a>
+          </template>
           <a
+            v-if="loanDetails"
             href="https://somo.co.uk/"
             target="_blank"
             class="text-button text-center py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit"
@@ -212,7 +223,6 @@
             <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2 lg:hidden xl:block"/>
             View loan agreement
           </a>
-          </template>
         </div>
       </div>
       <div v-if="loanDetails" class="pt-3 lg:pt-6 pb-5 space-y-9 lg:space-y- relative flex flex-col">
@@ -426,21 +436,24 @@ const props = defineProps({
     default: []
   },
   orderItems: {
-    type: Array,
-    required: true
+    type: Array
   },
   isRepaid: {
     type: Boolean
   },
   outOfTermChargesDue: {
     type: Number
+  },
+  currentInstalment: {
+    type: Object
   }
 })
 
-const loanRepaid = props.valueLeftToPay == 0
-
 const tab = ref(1)
 
+const loanRepaid = props.valueLeftToPay == 0
+
+//refactor this to remove the late for a last instalment that is still payable within 28 days.
 const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee)
 
 const remainingPayments = (arr) => {
@@ -455,8 +468,9 @@ const remainingPayments = (arr) => {
 const remainingLateFeePayments = (arr) => {
   const newArray = []
   arr.forEach((item) => {
-    if (item.lateFee.amountPaid !== item.lateFee.amountDue && item.lateFee.status === 'unpaid')
+    if((item.lateFee.amountDue - item.lateFee.amountPaid !== 0) && item.lateFee.status === 'unpaid' && !item.lateFee.isWaivable) {
       newArray.push(item.lateFee.amountDue - item.lateFee.amountPaid)
+    }
   })
   return newArray
 }
@@ -464,8 +478,8 @@ const remainingLateFeePayments = (arr) => {
 const lateInstalments = props.instalments.filter(item => item.status === 'overdue');
 const lateInstalmentsTotal = lateInstalments.reduce((acc, obj) => {return acc + obj}, 0)
 
-const LateFees = remainingLateFeePayments(instalmentsWithLateFees)
-const LateFeeTotal = LateFees.reduce((acc, obj) => {return acc + obj}, 0)
+const lateFees = remainingLateFeePayments(instalmentsWithLateFees)
+const lateFeeTotal = lateFees.reduce((acc, obj) => {return acc + obj}, 0)
 
 const OOTCharges = remainingPayments(props.outOfTermCharges)
 

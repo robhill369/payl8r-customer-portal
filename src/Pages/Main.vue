@@ -106,7 +106,7 @@
           :total-interest-value=loan.totalInterestValue
           :total-loan-value=(loan.totalOrderValue+loan.totalInterestValue).toFixed(2)
           monthly-payback-value="XXX.XX"
-          :value-repaid=(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges)).toFixed(2)
+          :value-repaid=Number(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges)).toFixed(2)
           :value-left-to-pay=Number(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)-valuePaid(loan.outOfTermCharges)+valueDue(loan.outOfTermCharges)).toFixed(2)
           :loan-upcoming-payment=loan.upcomingInstalmentValue
           :loan-upcoming-payment-date=loan.upcomingInstalmentDate
@@ -119,6 +119,7 @@
           :out-of-term-charges=loan.outOfTermCharges
           :out-of-term-charges-due="valueDue(loan.outOfTermCharges)"
           :is-repaid=loan.isRepaid
+          :current-instalment="loan.instalments.find(item => item.isCurrent)"
         />
       </div>
     </CardSection>
