@@ -54,6 +54,7 @@
       :instalments=instalments
       :out-of-term-charges=outOfTermCharges
       :out-of-term-charges-due=outOfTermChargesDue
+      :current-instalment=currentInstalment
     />
   </div>
 </template>

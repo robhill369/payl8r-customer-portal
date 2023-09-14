@@ -33,10 +33,6 @@ defineProps({
   instalments: {
     type: Array,
     required: true
-  },
-  currentInstalmentStatus: {
-    type: String,
-    required: true
   }
 })
 

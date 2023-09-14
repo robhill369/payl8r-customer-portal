@@ -119,7 +119,7 @@
           :out-of-term-charges=loan.outOfTermCharges
           :out-of-term-charges-due="valueDue(loan.outOfTermCharges)"
           :is-repaid=loan.isRepaid
-          :current-instalment="loan.instalments.find(item => item.isCurrent)"
+          :current-instalment=currentInstalment(loan.instalments)
         />
       </div>
     </CardSection>
@@ -172,6 +172,12 @@ function valuePaid(arr) {
     return sum;
   }
   else return 0
+}
+
+const currentInstalment = (arr) => {
+  if(arr)
+    return arr.find(item => item.hasLapsed !== true
+  )
 }
 
 function valueDue(arr) {

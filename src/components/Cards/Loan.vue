@@ -56,10 +56,10 @@
             </div>
           </div>
           <ButtonBase
-            v-if="loanDetails"
+            v-if="loanDetails && Object.keys(currentInstalment).length"
             class="hidden md:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
-            <h4 class="font-[400] whitespace-nowrap">£{{monthlyPaybackValue}} p/m</h4>
+            <h4 class="font-[400] whitespace-nowrap">£{{currentInstalment.amountDue}} p/m</h4>
           </ButtonBase>
         </div>
         <div
@@ -445,7 +445,8 @@ const props = defineProps({
     type: Number
   },
   currentInstalment: {
-    type: Object
+    type: Object,
+    default: {}
   }
 })
 
