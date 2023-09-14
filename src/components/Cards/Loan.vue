@@ -56,7 +56,7 @@
             </div>
           </div>
           <ButtonBase
-            v-if="loanDetails && Object.keys(currentInstalment).length"
+            v-if="loanDetails && currentInstalment"
             class="hidden md:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
             <h4 class="font-[400] whitespace-nowrap">£{{currentInstalment.amountDue}} p/m</h4>
@@ -445,8 +445,7 @@ const props = defineProps({
     type: Number
   },
   currentInstalment: {
-    type: Object,
-    default: {}
+    type: Object
   }
 })
 
