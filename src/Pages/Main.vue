@@ -75,7 +75,6 @@
 <!--            :total-order-value=loan.totalOrderValue-->
 <!--            :total-interest-value=loan.totalInterestValue-->
 <!--            :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)-->
-<!--            monthly-payback-value="XXX.XX"-->
 <!--            :value-repaid=(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges))-->
 <!--            :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)+valueDue(loan.outOfTermCharges)-valuePaid(loan.outOfTermCharges))-->
 <!--            :loan-upcoming-payment=loan.upcomingInstalmentValue-->
@@ -105,7 +104,6 @@
           :total-order-value=loan.totalOrderValue
           :total-interest-value=loan.totalInterestValue
           :total-loan-value=(loan.totalOrderValue+loan.totalInterestValue).toFixed(2)
-          monthly-payback-value="XXX.XX"
           :value-repaid=Number(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges)).toFixed(2)
           :value-left-to-pay=Number(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)-valuePaid(loan.outOfTermCharges)+valueDue(loan.outOfTermCharges)).toFixed(2)
           :loan-upcoming-payment=loan.upcomingInstalmentValue

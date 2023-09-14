@@ -364,10 +364,6 @@ const props = defineProps({
     type: Number,
     required: true
   },
-  monthlyPaybackValue: {
-    type: Number,
-    default: 0
-  },
   currentInstalmentStatus: {
     type: String,
     required: true,

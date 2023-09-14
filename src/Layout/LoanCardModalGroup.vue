@@ -15,7 +15,6 @@
             :purchase-date=purchaseDate
             :loan-start-date=loanStartDate
             :term-length=termLength
-            :monthly-payback-value=monthlyPaybackValue
             :status=loanStatus
             :total-interest-value=totalInterestValue
             :total-order-value=totalOrderValue
@@ -84,10 +83,6 @@ const props = defineProps({
   },
   loanStartDate: {
     type: String,
-    required: true
-  },
-  monthlyPaybackValue: {
-    type: Number,
     required: true
   },
   currentInstalmentStatus: {
