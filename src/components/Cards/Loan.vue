@@ -154,7 +154,7 @@
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
-                v-if="(lateInstalmentsTotal || outOfTermChargesDue) && lateFeesTotal"
+                v-if="(lateInstalmentsTotal || outOfTermChargesDue) && lateFeesTotal && (instalments[instalments.length-1].hasLapsed)"
                 modal-title="Pay remaining loan balance for:"
                 :retailer-name="retailerName"
                 button-name="Pay in full"
