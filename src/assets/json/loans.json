@@ -3706,6 +3706,7 @@
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -3720,6 +3721,7 @@
         "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
+          "isWaivable": false,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "waived"
@@ -3742,6 +3744,7 @@
         "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
+          "isWaivable": true,
           "amountDue": 30,
           "amountPaid": 0.00,
           "status": "unpaid"

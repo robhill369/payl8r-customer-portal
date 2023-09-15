@@ -154,8 +154,8 @@
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
-                v-if="props.instalments[props.instalments.length-1].status !== 'upcoming'"
-                modal-title="Confirm payment of remaining balance for:"
+                v-if="(lateInstalmentsTotal || outOfTermChargesDue) && lateFeesTotal"
+                modal-title="Pay remaining loan balance for:"
                 :retailer-name="retailerName"
                 button-name="Pay in full"
                 button-icon="fa-solid fa-credit-card"
@@ -163,22 +163,27 @@
                 is-payment
                 :array="Array(1).fill(remainingBalance)"
               >
-                <p>amounting to</p>
-                <div class="grid auto-rows-auto grid-cols-2">
+                <p class="pb-5">The following payments are now due:</p>
+                <div class="grid auto-rows-auto grid-cols-5 gap-y-1">
                   <template v-if="lateInstalmentsTotal">
-                    <p class="text-left">Overdue instalments</p>
+                    <p class="text-left col-span-3">Overdue instalments</p>
+                    <p class="text-center font-bold">£</p>
                     <p class="font-bold text-right">{{lateInstalmentsTotal}}</p>
                   </template>
-                  <template v-if="lateFeesTotal">
-                    <p class="text-left">Late fees</p>
-                    <p class="font-bold text-right">{{lateFeesTotal}}</p>
-                  </template>
                   <template v-if="outOfTermChargesDue">
-                    <p class="text-left">Out-of-term interest</p>
+                    <p class="text-left col-span-3">Out-of-term interest</p>
+                    <p class="text-center font-bold">£</p>
                     <p class="font-bold text-right">{{outOfTermChargesDue}}</p>
                   </template>
+                  <template v-if="lateFeesTotal">
+                    <p class="text-left col-span-3">Late fees</p>
+                    <p class="text-center font-bold">£</p>
+                    <p class="font-bold text-right">{{lateFeesTotal}}</p>
+                  </template>
+                    <p class="text-left col-span-3 text-md pt-3 font-bold">Total to pay</p>
+                    <p class="text-center text-md font-bold pt-3">£</p>
+                    <p class="font-bold text-md text-right pt-3">{{remainingBalance}}</p>
                 </div>
-                <p>amounting to</p><h5 class="font-bold text-right font-medium">{{remainingBalance}}</h5>
               </LoanActionModalButtonGroup>
             </template>
             <template v-else>
@@ -306,7 +311,7 @@
             button-icon="fa-solid fa-credit-card"
             payment-type="late instalment"
             is-payment
-            :array="lateInstalments.map(({ amountDue }) => amountDue)"
+            :array="lateInstalments"
           >
             <p v-if="lateInstalments.length < 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">DATE</span>.</p>
             <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block">Choose how many to pay below</span>.</p>
@@ -469,7 +474,7 @@ const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee)
 const remainingPayments = (arr) => {
   const newArray = []
   arr.forEach((item) => {
-      if (item.amountPaid !== item.amountDue && item.hasLapsed)
+      if (item.amountPaid !== item.amountDue)
         newArray.push(item.amountDue - item.amountPaid)
   })
   return newArray
@@ -485,7 +490,7 @@ const remainingLateFeePayments = (arr) => {
   return newArray
 }
 
-const unpaidInstalments = props.instalments.filter(item => item.hasLapsed);
+const unpaidInstalments = props.instalments.filter(item => item.hasLapsed)
 const lateInstalments = remainingPayments(unpaidInstalments)
 const lateInstalmentsTotal = lateInstalments.reduce((acc, obj) => {return acc + obj}, 0)
 
