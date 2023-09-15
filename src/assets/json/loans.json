@@ -1213,6 +1213,219 @@
     ]
   },
   {
+    "id": 13,
+    "retailerName": "5.5. In term, with previous payment(s) overdue but paid. Late fees waived. Early payment made",
+    "isRepaid": false,
+    "status": "paid",
+
+    "purchaseDate": "13th Dec 2022",
+    "startDate": "13th Jan 2023",
+    "termLength": 9,
+    "provider": "payl8r",
+    "totalOrderValue": 600,
+    "depositValue": 80,
+    "totalInterestValue": 210.60,
+    "upcomingInstalmentValue": 81.18,
+    "upcomingInstalmentDate": "13th Sep 2023",
+    "previousInstalmentValue": 81.18,
+    "previousInstalmentDate": "17th Aug 2023",
+    "orderItems":[
+      {
+        "name": "product 1",
+        "qnty": 3,
+        "price": 200.00
+      }
+    ],
+    "instalments": [
+      {
+        "id": 1,
+        "hasLapsed": true,
+        "date": "13th Feb 2023",
+        "amountDue": 81.18,
+        "amountPaid": 81.18,
+        "status": "paid"
+      },
+      {
+        "id": 2,
+        "hasLapsed": true,
+        "date": "13th Mar 2023",
+        "amountDue": 81.18,
+        "amountPaid": 81.18,
+        "status": "paid",
+        "lateFee": {
+          "dateIncurred": "14th Mar 2023",
+          "isWaivable": false,
+          "amountDue": 30,
+          "amountPaid": 0,
+          "status": "waived"
+        }
+      },
+      {
+        "id": 3,
+        "hasLapsed": true,
+        "date": "13th Apr 2023",
+        "amountDue": 81.18,
+        "amountPaid": 81.18,
+        "status": "paid",
+        "lateFee": {
+          "dateIncurred": "14th Apr 2023",
+          "isWaivable": false,
+          "amountDue": 30,
+          "amountPaid": 0.00,
+          "status": "waived"
+        }
+      },
+      {
+        "id": 4,
+        "hasLapsed": true,
+        "date": "13th May 2023",
+        "amountDue": 81.18,
+        "amountPaid": 81.18,
+        "status": "paid"
+      },
+      {
+        "id": 5,
+        "hasLapsed": true,
+        "date": "13th Jun 2023",
+        "amountDue": 81.18,
+        "amountPaid": 81.18,
+        "status": "paid",
+        "lateFee": {
+          "dateIncurred": "14th Jun 2023",
+          "isWaivable": false,
+          "amountDue": 30,
+          "amountPaid": 0.00,
+          "status": "waived"
+        }
+      },
+      {
+        "id": 6,
+        "hasLapsed": true,
+        "date": "13th Jul 2023",
+        "amountDue": 81.18,
+        "amountPaid": 81.18,
+        "status": "paid"
+      },
+      {
+        "id": 7,
+        "hasLapsed": true,
+        "date": "13th Aug 2023",
+        "amountDue": 81.18,
+        "amountPaid": 81.18,
+        "status": "paid"
+      },
+      {
+        "id": 8,
+        "hasLapsed": false,
+        "date": "13th Sep 2023",
+        "amountDue": 81.18,
+        "amountPaid": 81.18,
+        "status": "paid"
+      },
+      {
+        "id": 9,
+        "hasLapsed": false,
+        "date": "13th Oct 2023",
+        "amountDue": 81.16,
+        "amountPaid": 0,
+        "status": "upcoming"
+      }
+    ],
+    "transactions": [
+      {
+        "date": "13th Feb 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 81.18,
+        "balance": 649.42
+      },
+      {
+        "date": "14th Mar 2023",
+        "description": "Late fee applied",
+        "debit": 30.00,
+        "credit": 0.00,
+        "balance": 679.42
+      },
+      {
+        "date": "24th Mar 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 81.18,
+        "balance": 598.24
+      },
+      {
+        "date": "24th Mar 2023",
+        "description": "Late fee waived",
+        "debit": 0.00,
+        "credit": 30.00,
+        "balance": 568.24
+      },
+      {
+        "date": "14th Apr 2023",
+        "description": "Late fee applied",
+        "debit": 30.00,
+        "credit": 0.00,
+        "balance": 598.24
+      },
+      {
+        "date": "19th Apr 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 81.18,
+        "balance": 517.06
+      },
+      {
+        "date": "19th Apr 2023",
+        "description": "Late fee waived",
+        "debit": 0.00,
+        "credit": 30.00,
+        "balance": 487.06
+      },
+      {
+        "date": "13th May 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 81.18,
+        "balance": 405.88
+      },
+      {
+        "date": "14th Jun 2023",
+        "description": "Late fee applied",
+        "debit": 30.00,
+        "credit": 0.00,
+        "balance": 435.88
+      },
+      {
+        "date": "16th Jun 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 81.18,
+        "balance": 354.70
+      },
+      {
+        "date": "16th Jun 2023",
+        "description": "Late fee waived",
+        "debit": 0.00,
+        "credit": 30.00,
+        "balance": 324.70
+      },
+      {
+        "date": "13th Jul 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 81.18,
+        "balance": 243.52
+      },
+      {
+        "date": "13th Aug 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 81.18,
+        "balance": 162.34
+      }
+    ]
+  },
+  {
     "id": 14,
     "retailerName": "",
     "isRepaid": false,

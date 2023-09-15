@@ -59,7 +59,7 @@
             v-if="loanDetails && currentInstalment"
             class="hidden md:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
-            <h4 class="font-[400] whitespace-nowrap">£{{currentInstalment.amountDue}} p/m</h4>
+            <h4 class="font-[400] whitespace-nowrap">£{{nextInstalment.amountDue}} p/m</h4>
           </ButtonBase>
         </div>
         <div
@@ -115,9 +115,19 @@
               icon="fa-solid fa-circle-exclamation"
               size="lg"
             />
-            <div class="text-sm space-y-2 pl-3">
-              <div>We have been unable to take payment for this loan automatically and it is now overdue.</div>
-              <div>Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
+            <div v-if="!loanRepaid">
+              <div class="text-sm space-y-2 pl-3" v-if="outOfTermChargesDue">
+                <div>Out of term interest to be paid off</div>
+                <div>Please pay</div>
+              </div>
+              <div v-else class="text-sm space-y-2 pl-3">
+                <div>We have been unable to take payment for this loan automatically and it is now overdue.</div>
+                <div>Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
+              </div>
+            </div>
+            <div v-else class="text-sm space-y-2 pl-3">
+              <div>Late fees to pay</div>
+              <div>Please pay</div>
             </div>
           </div>
 
@@ -154,7 +164,7 @@
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
-                v-if="(lateInstalmentsTotal || outOfTermChargesDue) && lateFeesTotal && (instalments[instalments.length-1].hasLapsed)"
+                v-if="(lateInstalmentsTotal || outOfTermChargesDue) && lateFeesTotal && instalments[instalments.length-1].hasLapsed"
                 modal-title="Pay remaining loan balance for:"
                 :retailer-name="retailerName"
                 button-name="Pay in full"
@@ -167,33 +177,34 @@
                 <div class="grid auto-rows-auto grid-cols-5 gap-y-1">
                   <template v-if="lateInstalmentsTotal">
                     <p class="text-left col-span-3">Overdue instalments</p>
-                    <p class="text-center font-bold">£</p>
+                    <p class="text-right font-bold">£</p>
                     <p class="font-bold text-right">{{lateInstalmentsTotal}}</p>
                   </template>
                   <template v-if="outOfTermChargesDue">
                     <p class="text-left col-span-3">Out-of-term interest</p>
-                    <p class="text-center font-bold">£</p>
+                    <p class="text-right font-bold">£</p>
                     <p class="font-bold text-right">{{outOfTermChargesDue}}</p>
                   </template>
                   <template v-if="lateFeesTotal">
                     <p class="text-left col-span-3">Late fees</p>
-                    <p class="text-center font-bold">£</p>
+                    <p class="text-right font-bold">£</p>
                     <p class="font-bold text-right">{{lateFeesTotal}}</p>
                   </template>
                     <p class="text-left col-span-3 text-md pt-3 font-bold">Total to pay</p>
-                    <p class="text-center text-md font-bold pt-3">£</p>
+                    <p class="text-right text-md font-bold pt-3">£</p>
                     <p class="font-bold text-md text-right pt-3">{{remainingBalance}}</p>
                 </div>
               </LoanActionModalButtonGroup>
             </template>
             <template v-else>
               <LoanActionModalButtonGroup
+                v-if="currentInstalment.amountPaid !== currentInstalment.amountDue"
                 modal-title="Confirm early instalment payment for:"
                 :retailer-name="retailerName"
                 button-name="Pay instalment early"
                 button-icon="fa-solid fa-credit-card"
                 is-payment
-                :array=Array(1).fill(123)
+                :array=Array(1).fill(currentInstalment.amountDue-currentInstalment.amountPaid)
               >
                 <p>You will pay the instalment due <span class="font-bold">DATE</span> today.<br class="hidden sm:block">
                   Your next instalment will then be collected on <span class="font-bold">DATE</span>.
@@ -490,8 +501,10 @@ const remainingLateFeePayments = (arr) => {
   return newArray
 }
 
-const unpaidInstalments = props.instalments.filter(item => item.hasLapsed)
-const lateInstalments = remainingPayments(unpaidInstalments)
+const nextInstalment = props.instalments.filter(item => !item.hasLapsed && item.amountPaid !== item.amountDue)[0]
+
+const lapsedInstalments = props.instalments.filter(item => item.hasLapsed)
+const lateInstalments = remainingPayments(lapsedInstalments)
 const lateInstalmentsTotal = lateInstalments.reduce((acc, obj) => {return acc + obj}, 0)
 
 const lateFees = remainingLateFeePayments(instalmentsWithLateFees)

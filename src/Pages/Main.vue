@@ -196,27 +196,6 @@ function activeLoans(arr) {
   return isRepaidOnly
 }
 
-// function nextInstalment(arr) {
-//   const unpaidInstalments = arr.filter(function(el)
-//       {
-//         return el.status !== 'paid'
-//       }
-//   )
-//
-//   const nextAmountDue = unpaidInstalments[0]
-//
-//   return nextAmountDue
-// }
-
-// const activeLoans = loans.filter(findActiveLoans)
-
-// function filteredLoans(loan) {
-//   if(router.currentRoute === '/') {
-//     return activeLoans
-//   }
-//   else loans
-// }
-
 const loanTypes = [
   {
     name: 'All loans',
