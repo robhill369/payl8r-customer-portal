@@ -2,7 +2,7 @@
 
   <BaseCard
     class="relative lg:flex-col px-5 xl:px-9 pt-7"
-    :class="loanDetails ? 'pb-2' : 'relative pb-7'"
+    :class="loanDetails ? 'pb-2' : 'relative pb-7', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
   >
     <div class="flex flex-col w-full space-y-5">
       <div
@@ -521,25 +521,17 @@ onMounted(() => {
   if(lapsedInstalments.length !== props.termLength) {
     if(lateInstalments.length) {
       status.value = 'Payment overdue'
-      console.log(props.retailerName)
-      console.log(status)
     }
     else {
       status.value = 'Ongoing'
-      console.log(props.retailerName)
-      console.log(status)
     }
   }
   else {
     if(OOTCharges.length || lateFees.length || lateInstalments.length) {
       status.value = 'Urgent'
-      console.log(props.retailerName)
-      console.log(status)
     }
     else {
       status.value = 'Complete'
-      console.log(props.retailerName)
-      console.log(status)
     }
   }
 })
