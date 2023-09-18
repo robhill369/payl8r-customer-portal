@@ -12,11 +12,11 @@
         <div :class="loanDetails ? 'w-full flex justify-between items-center' : 'lg:absolute bottom-7 right-5 xl:right-9'">
 
           <div class="relative flex items-center gap-3" :class="!loanDetails ? 'flex-row-reverse justify-between md:justify-normal' : ''">
-            <Tag :name="!paymentOverdue  ? 'Ongoing' : 'Payment overdue'"
+            <Tag :name="status"
                  @click="$emit('open')"
-                 :class="loanDetails && paymentOverdue && (instalmentsWithLateFees.length - (status === 'overdue' ? 1 : 0) > 0) ? 'px-1 sm:px-auto' : 'px-3 sm:px-auto'"
+                 :class="loanDetails && (status === 'Payment overdue' || status === 'Urgent') && (instalmentsWithLateFees.length - ((status === 'Payment overdue' || status === 'Urgent') ? 1 : 0) > 0) ? 'px-1 sm:px-auto' : 'px-3 sm:px-auto'"
             />
-            <Tag v-if="lateFeesTotal" :name="!loanRepaid ? '*Late fee' : 'Late fee to pay'" class="px-[10px] py-[3px] mr-2 sm:mr-0" :class="loanDetails && paymentOverdue ? 'w-20 sm:w-auto' : ''"/>
+            <Tag v-if="lateFeesTotal" :name="!loanRepaid ? '*Late fee' : 'Late fee to pay'" class="px-[10px] py-[3px] mr-2 sm:mr-0" :class="loanDetails && (status === 'Payment overdue' || status === 'Urgent') ? 'w-20 sm:w-auto' : ''"/>
           </div>
 
           <ButtonSecondary
@@ -36,7 +36,7 @@
             <Avatar
                 class="hidden lg:flex"
                 :provider="provider"
-                :avatar-colors= "paymentOverdue ? 'bg-red-light text-red' : 'bg-teal-light text-teal-dark'"
+                :avatar-colors= "(status === 'Payment overdue' || status === 'Urgent') ? 'bg-red-light text-red' : 'bg-teal-light text-teal-dark'"
                 :initial-title="retailerName"
             />
             <div
@@ -56,7 +56,7 @@
             </div>
           </div>
           <ButtonBase
-            v-if="loanDetails && currentInstalment"
+            v-if="loanDetails && currentInstalment && lapsedInstalments.length !== termLength"
             class="hidden md:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
             <h4 class="font-[400] whitespace-nowrap">£{{nextInstalment.amountDue}} p/m</h4>
@@ -92,7 +92,7 @@
         </div>
       </div>
       <ProgressBar
-        :payment-overdue=paymentOverdue
+        :payment-overdue="(status === 'Payment overdue' || status === 'Urgent')"
         @click="$emit('open')"
         :class="loanDetails ? '' : 'cursor-pointer'"
         :progress="(valueRepaid/(totalLoanValue-depositValue+outOfTermChargesDue))*100"
@@ -106,9 +106,9 @@
       <div>
         <div v-if="loanDetails"
           class="flex flex-col -mx-5 xl:-mx-9 mt-2"
-          :class="paymentOverdue ? 'bg-red-light' : 'border-b'"
+          :class="(status === 'Payment overdue' || status === 'Urgent') ? 'bg-red-light' : 'border-b'"
         >
-          <div v-if="paymentOverdue" class="flex items-center mx-5 xl:mx-6 3xl:mx-9 py-5">
+          <div v-if="(status === 'Payment overdue' || status === 'Urgent')" class="flex items-center mx-5 xl:mx-6 3xl:mx-9 py-5">
             <Avatar
               class="w-8 h-8"
               avatar-colors="bg-red text-red-light"
@@ -137,7 +137,7 @@
           :class="loanDetails ? 'py-7 border-b -mx-5 px-5 xl:-mx-9 xl:px-9' : ''"
         >
           <template v-if="!loanRepaid">
-            <template v-if="paymentOverdue">
+            <template v-if="(status === 'Payment overdue' || status === 'Urgent')">
               <LoanActionModalButtonGroup
                 v-if="valueLeftToPay == outOfTermChargesDue"
                 modal-title="Confirm payment for:"
@@ -167,7 +167,7 @@
                 v-if="(lateInstalmentsTotal || outOfTermChargesDue) && lateFeesTotal && instalments[instalments.length-1].hasLapsed"
                 modal-title="Pay remaining loan balance for:"
                 :retailer-name="retailerName"
-                button-name="Pay in full"
+                button-name="Pay balance"
                 button-icon="fa-solid fa-credit-card"
                 payment-type="late instalment"
                 is-payment
@@ -283,7 +283,7 @@
               class="w-full h-7 md:h-9 rounded-full"
               :class="tab === 3 ? 'bg-white text-gray-darker' : ''"
             >
-              Late Fees<span v-if="props.outOfTermCharges.length"><br class="sm:hidden"> & Charges</span>
+              Late Fees<span v-if="outOfTermCharges.length"><br class="sm:hidden"> & Charges</span>
             </button>
           </li>
           <li>
@@ -315,7 +315,7 @@
           <h5 class="text-gray">Payment Overdue</h5>
           <div class="w-full">Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
           <LoanActionModalButtonGroup
-            v-if="paymentOverdue && !loanRepaid"
+            v-if="(status === 'Payment overdue' || status === 'Urgent') && !loanRepaid"
             modal-title="Confirm instalment payment for:"
             :retailer-name="retailerName"
             button-name="Make payment now"
@@ -356,7 +356,7 @@
 
 
 <script setup>
-import {ref} from "vue";
+import {ref, onMounted} from "vue";
 
 import ProgressBar from "@/components/ProgressBar.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
@@ -393,11 +393,6 @@ const props = defineProps({
   termLength: {
     type: Number,
     required: true
-  },
-  currentInstalmentStatus: {
-    type: String,
-    required: true,
-    default: 'ongoing'
   },
   depositValue: {
     type: Number,
@@ -471,11 +466,13 @@ const props = defineProps({
     type: Number
   },
   currentInstalment: {
-    type: Object
+    type: Object,
+    default: {}
   }
 })
 
 const tab = ref(1)
+const status = ref('')
 
 const loanRepaid = props.valueLeftToPay == 0
 
@@ -500,10 +497,11 @@ const remainingLateFeePayments = (arr) => {
   })
   return newArray
 }
-
-const nextInstalment = props.instalments.filter(item => !item.hasLapsed && item.amountPaid !== item.amountDue)[0]
-
 const lapsedInstalments = props.instalments.filter(item => item.hasLapsed)
+const remainingInstalments = props.instalments.filter(item => !item.hasLapsed && item.amountPaid !== item.amountDue)
+
+const nextInstalment = lapsedInstalments.length !== props.termLength ? remainingInstalments[0] : {}
+
 const lateInstalments = remainingPayments(lapsedInstalments)
 const lateInstalmentsTotal = lateInstalments.reduce((acc, obj) => {return acc + obj}, 0)
 
@@ -517,5 +515,32 @@ const remainingBalance = lateInstalmentsTotal+props.outOfTermChargesDue+lateFees
 const currentTab = (tabNumber) => {
   tab.value = tabNumber;
 }
-const paymentOverdue = props.status === 'overdue'
+
+onMounted(() => {
+
+  if(lapsedInstalments.length !== props.termLength) {
+    if(lateInstalments.length) {
+      status.value = 'Payment overdue'
+      console.log(props.retailerName)
+      console.log(status)
+    }
+    else {
+      status.value = 'Ongoing'
+      console.log(props.retailerName)
+      console.log(status)
+    }
+  }
+  else {
+    if(OOTCharges.length || lateFees.length || lateInstalments.length) {
+      status.value = 'Urgent'
+      console.log(props.retailerName)
+      console.log(status)
+    }
+    else {
+      status.value = 'Complete'
+      console.log(props.retailerName)
+      console.log(status)
+    }
+  }
+})
 </script>

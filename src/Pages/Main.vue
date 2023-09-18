@@ -65,12 +65,10 @@
 <!--      <div v-if="$route.path === '/'" v-for="loan in activeLoans(loans)" :key=loan.id>-->
 <!--        <LoanCardModalGroup-->
 <!--            :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"-->
-<!--            :loanStatus=loan.status-->
 <!--            :provider=loan.provider-->
 <!--            :purchase-date=loan.purchaseDate-->
 <!--            :loan-start-date=loan.startDate-->
 <!--            :term-length=loan.termLength-->
-<!--            :loan-status=loan.status-->
 <!--            :deposit-value=loan.depositValue-->
 <!--            :total-order-value=loan.totalOrderValue-->
 <!--            :total-interest-value=loan.totalInterestValue-->
@@ -94,12 +92,10 @@
           v-for="loan in loans" :key=loan.id>
         <LoanCardModalGroup
           :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
-          :loanStatus=loan.status
           :provider=loan.provider
           :purchase-date=loan.purchaseDate
           :loan-start-date=loan.startDate
           :term-length=loan.termLength
-          :loan-status=loan.status
           :deposit-value=loan.depositValue
           :total-order-value=loan.totalOrderValue
           :total-interest-value=loan.totalInterestValue

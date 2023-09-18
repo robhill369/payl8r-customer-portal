@@ -1422,6 +1422,13 @@
         "debit": null,
         "credit": 81.18,
         "balance": 162.34
+      },
+      {
+        "date": "8th Sep 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 81.18,
+        "balance": 81.16
       }
     ]
   },
