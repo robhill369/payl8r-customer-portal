@@ -219,6 +219,78 @@
     ]
   },
   {
+    "id": 4,
+    "retailerName": "2.5. In term, no overdue payments, with a last payment upcoming",
+    "isRepaid": false,
+    "purchaseDate": "5th May 2023",
+    "startDate": "5th Jul 2023",
+    "termLength": 3,
+    "provider": "payl8r",
+    "totalOrderValue": 250,
+    "depositValue": 60,
+    "totalInterestValue": 25.65,
+    "upcomingInstalmentValue": 71.88,
+    "upcomingInstalmentDate": "5th Sep 2023",
+    "previousInstalmentValue": 71.88,
+    "previousInstalmentDate": "5th Aug 2023",
+    "orderItems":[
+      {
+        "name": "product 1",
+        "qnty": 3,
+        "price": 50.00
+      },
+      {
+        "name": "product 2",
+        "qnty": 1,
+        "price": 100.00
+      }
+    ],
+    "instalments": [
+      {
+        "id": 1,
+        "hasLapsed": true,
+        "date": "5th Aug 2023",
+        "amountDue": 71.88,
+        "amountPaid": 71.88,
+        "status": "paid"
+      },
+      {
+        "id": 2,
+        "hasLapsed": true,
+        "date": "5th Sep 2023",
+        "amountDue": 71.88,
+        "amountPaid": 71.88,
+        "status": "paid"
+      },
+      {
+        "id": 3,
+        "hasLapsed": false,
+        "date": "5th Oct 2023",
+        "amountDue": 71.89,
+        "amountPaid": 0.00,
+        "status": "upcoming"
+      }
+    ],
+    "transactions": [
+      {
+        "id": 1,
+        "date": "5th Oct 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 71.88,
+        "balance": 143.77
+      },
+      {
+        "id": 2,
+        "date": "5th Nov 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 71.88,
+        "balance": 143.77
+      }
+    ]
+  },
+  {
     "id": 7,
     "retailerName": "3. In term, with latest payment overdue",
     "isRepaid": false,
