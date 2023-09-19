@@ -37,24 +37,21 @@
         "hasLapsed": false,
         "date": "28th Sep 2023",
         "amountDue": 26.48,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 2,
         "hasLapsed": false,
         "date": "28th Oct 2023",
         "amountDue": 26.48,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 3,
         "hasLapsed": false,
         "date": "28th Nov 2023",
         "amountDue": 26.49,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       }
     ],
     "transactions": []
@@ -80,24 +77,21 @@
         "hasLapsed": false,
         "date": "28th Sep 2023",
         "amountDue": 26.48,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 2,
         "hasLapsed": false,
         "date": "28th Oct 2023",
         "amountDue": 26.48,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 3,
         "hasLapsed": false,
         "date": "28th Nov 2023",
         "amountDue": 26.49,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       }
     ],
     "transactions": []
@@ -135,24 +129,21 @@
         "hasLapsed": true,
         "date": "5th Sep 2023",
         "amountDue": 71.88,
-        "amountPaid": 71.88,
-        "status": "paid"
+        "amountPaid": 71.88
       },
       {
         "id": 2,
         "hasLapsed": false,
         "date": "5th Oct 2023",
         "amountDue": 71.88,
-        "amountPaid": 71.88,
-        "status": "paid"
+        "amountPaid": 71.88
       },
       {
         "id": 3,
         "hasLapsed": false,
         "date": "5th Nov 2023",
         "amountDue": 71.89,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       }
     ],
     "transactions": [
@@ -187,24 +178,21 @@
         "hasLapsed": true,
         "date": "5th Sep 2023",
         "amountDue": 71.88,
-        "amountPaid": 71.88,
-        "status": "paid"
+        "amountPaid": 71.88
       },
       {
         "id": 2,
         "hasLapsed": false,
         "date": "5th Oct 2023",
         "amountDue": 71.88,
-        "amountPaid": 71.88,
-        "status": "upcoming"
+        "amountPaid": 71.88
       },
       {
         "id": 3,
         "hasLapsed": false,
         "date": "5th Nov 2023",
         "amountDue": 71.89,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       }
     ],
     "transactions": [
@@ -251,24 +239,21 @@
         "hasLapsed": true,
         "date": "5th Aug 2023",
         "amountDue": 71.88,
-        "amountPaid": 71.88,
-        "status": "paid"
+        "amountPaid": 71.88
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "5th Sep 2023",
         "amountDue": 71.88,
-        "amountPaid": 71.88,
-        "status": "paid"
+        "amountPaid": 71.88
       },
       {
         "id": 3,
         "hasLapsed": false,
         "date": "5th Oct 2023",
         "amountDue": 71.89,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       }
     ],
     "transactions": [
@@ -318,56 +303,49 @@
         "hasLapsed": true,
         "date": "2nd Feb 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "2nd Mar 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 3,
         "hasLapsed": true,
         "date": "2nd Apr 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 4,
         "hasLapsed": true,
         "date": "2nd May 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 5,
         "hasLapsed": true,
         "date": "2nd Jun 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 6,
         "hasLapsed": true,
         "date": "2nd Jul 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 7,
         "hasLapsed": true,
         "date": "2nd Aug 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 8,
@@ -375,7 +353,6 @@
         "date": "2nd Sep 2023",
         "amountDue": 109.08,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
           "isWaivable": true,
@@ -389,32 +366,28 @@
         "hasLapsed": false,
         "date": "2nd Oct 2023",
         "amountDue": 109.08,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 10,
         "hasLapsed": false,
         "date": "2nd Nov 2023",
         "amountDue": 109.08,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 11,
         "hasLapsed": false,
         "date": "2nd Dec 2023",
         "amountDue": 109.08,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 12,
         "hasLapsed": false,
         "date": "2nd Jan 2024",
         "amountDue": 109.08,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       }
     ],
     "transactions": [
@@ -497,56 +470,49 @@
         "hasLapsed": true,
         "date": "2nd Feb 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "2nd Mar 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 3,
         "hasLapsed": true,
         "date": "2nd Apr 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 4,
         "hasLapsed": true,
         "date": "2nd May 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 5,
         "hasLapsed": true,
         "date": "2nd Jun 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 6,
         "hasLapsed": true,
         "date": "2nd Jul 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 7,
         "hasLapsed": true,
         "date": "2nd Aug 2023",
         "amountDue": 109.08,
-        "amountPaid": 109.08,
-        "status": "paid"
+        "amountPaid": 109.08
       },
       {
         "id": 8,
@@ -554,7 +520,6 @@
         "date": "2nd Sep 2023",
         "amountDue": 109.08,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
           "isWaivable": true,
@@ -568,16 +533,14 @@
         "hasLapsed": false,
         "date": "2nd Oct 2023",
         "amountDue": 109.08,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 10,
         "hasLapsed": false,
         "date": "2nd Nov 2023",
         "amountDue": 109.08,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 11,
@@ -592,8 +555,7 @@
         "hasLapsed": false,
         "date": "2nd Jan 2024",
         "amountDue": 109.08,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       }
     ],
     "transactions": [
@@ -683,8 +645,7 @@
         "hasLapsed": true,
         "date": "13th Feb 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 2,
@@ -692,7 +653,6 @@
         "date": "13th Mar 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
@@ -707,7 +667,6 @@
         "date": "13th Apr 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
@@ -722,8 +681,7 @@
         "hasLapsed": true,
         "date": "13th May 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 5,
@@ -731,7 +689,6 @@
         "date": "13th Jun 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
@@ -745,32 +702,28 @@
         "hasLapsed": true,
         "date": "13th Jul 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 7,
         "hasLapsed": true,
         "date": "13th Aug 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 8,
         "hasLapsed": false,
         "date": "13th Sep 2023",
         "amountDue": 81.18,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 9,
         "hasLapsed": false,
         "date": "13th Oct 2023",
         "amountDue": 81.16,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       }
     ],
     "transactions": [
@@ -881,8 +834,7 @@
         "hasLapsed": true,
         "date": "13th Feb 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 2,
@@ -890,7 +842,6 @@
         "date": "13th Mar 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
@@ -905,7 +856,6 @@
         "date": "13th Apr 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
@@ -920,8 +870,7 @@
         "hasLapsed": true,
         "date": "13th May 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 5,
@@ -929,7 +878,6 @@
         "date": "13th Jun 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
@@ -943,32 +891,28 @@
         "hasLapsed": true,
         "date": "13th Jul 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 7,
         "hasLapsed": true,
         "date": "13th Aug 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 8,
         "hasLapsed": false,
         "date": "13th Sep 2023",
         "amountDue": 81.18,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 9,
         "hasLapsed": false,
         "date": "13th Oct 2023",
         "amountDue": 81.16,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       }
     ],
     "transactions": [
@@ -1086,8 +1030,7 @@
         "hasLapsed": true,
         "date": "13th Feb 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 2,
@@ -1095,7 +1038,6 @@
         "date": "13th Mar 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
@@ -1110,7 +1052,6 @@
         "date": "13th Apr 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
@@ -1124,8 +1065,7 @@
         "hasLapsed": true,
         "date": "13th May 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 5,
@@ -1133,7 +1073,6 @@
         "date": "13th Jun 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
@@ -1147,32 +1086,28 @@
         "hasLapsed": true,
         "date": "13th Jul 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 7,
         "hasLapsed": true,
         "date": "13th Aug 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 8,
         "hasLapsed": false,
         "date": "13th Sep 2023",
         "amountDue": 81.18,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 9,
         "hasLapsed": false,
         "date": "13th Oct 2023",
         "amountDue": 81.16,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       }
     ],
     "transactions": [
@@ -1297,8 +1232,7 @@
         "hasLapsed": true,
         "date": "13th Feb 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 2,
@@ -1306,7 +1240,6 @@
         "date": "13th Mar 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
@@ -1321,7 +1254,6 @@
         "date": "13th Apr 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
@@ -1335,8 +1267,7 @@
         "hasLapsed": true,
         "date": "13th May 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 5,
@@ -1344,7 +1275,6 @@
         "date": "13th Jun 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
@@ -1358,32 +1288,28 @@
         "hasLapsed": true,
         "date": "13th Jul 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 7,
         "hasLapsed": true,
         "date": "13th Aug 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 8,
         "hasLapsed": false,
         "date": "13th Sep 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 9,
         "hasLapsed": false,
         "date": "13th Oct 2023",
         "amountDue": 81.16,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       }
     ],
     "transactions": [
@@ -1508,8 +1434,7 @@
         "hasLapsed": true,
         "date": "13th Feb 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 2,
@@ -1517,7 +1442,6 @@
         "date": "13th Mar 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
@@ -1532,7 +1456,6 @@
         "date": "13th Apr 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
@@ -1546,8 +1469,7 @@
         "hasLapsed": true,
         "date": "13th May 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 5,
@@ -1555,7 +1477,6 @@
         "date": "13th Jun 2023",
         "amountDue": 81.18,
         "amountPaid": 81.18,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
@@ -1569,32 +1490,28 @@
         "hasLapsed": true,
         "date": "13th Jul 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 7,
         "hasLapsed": true,
         "date": "13th Aug 2023",
         "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "status": "paid"
+        "amountPaid": 81.18
       },
       {
         "id": 8,
         "hasLapsed": false,
         "date": "13th Sep 2023",
         "amountDue": 81.18,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       },
       {
         "id": 9,
         "hasLapsed": false,
         "date": "13th Oct 2023",
         "amountDue": 81.16,
-        "amountPaid": 0,
-        "status": "upcoming"
+        "amountPaid": 0
       }
     ],
     "transactions": [
@@ -1720,7 +1637,6 @@
         "date": "23rd Jul 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Jul 2023",
           "isWaivable": false,
@@ -1735,7 +1651,6 @@
         "date": "23rd Aug 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Aug 2023",
           "isWaivable": true,
@@ -1749,16 +1664,14 @@
         "hasLapsed": false,
         "date": "23rd Sep 2023",
         "amountDue": 55.03,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       },
       {
         "id": 4,
         "hasLapsed": false,
         "date": "23rd Oct 2023",
         "amountDue": 55.03,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       },
       {
         "id": 5,
@@ -1773,8 +1686,7 @@
         "hasLapsed": false,
         "date": "23rd Dec 2023",
         "amountDue": 55.05,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       }
     ],
     "transactions": [
@@ -1816,7 +1728,6 @@
         "date": "23rd Jul 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Jul 2023",
           "isWaivable": false,
@@ -1831,7 +1742,6 @@
         "date": "23rd Aug 2023",
         "amountDue": 55.03,
         "amountPaid": 0.00,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "24th Aug 2023",
           "isWaivable": false,
@@ -1845,32 +1755,28 @@
         "hasLapsed": false,
         "date": "23rd Sep 2023",
         "amountDue": 55.03,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       },
       {
         "id": 4,
         "hasLapsed": false,
         "date": "23rd Oct 2023",
         "amountDue": 55.03,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       },
       {
         "id": 5,
         "hasLapsed": false,
         "date": "23rd Nov 2023",
         "amountDue": 55.03,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       },
       {
         "id": 6,
         "hasLapsed": false,
         "date": "23rd Dec 2023",
         "amountDue": 55.05,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       }
     ],
     "transactions": [
@@ -1933,144 +1839,126 @@
         "hasLapsed": true,
         "date": "9th Mar 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "9th Apr 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 3,
         "hasLapsed": true,
         "date": "9th May 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 4,
         "hasLapsed": true,
         "date": "9th Jun 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 5,
         "hasLapsed": true,
         "date": "9th Jul 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 6,
         "hasLapsed": true,
         "date": "9th Aug 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 7,
         "hasLapsed": true,
         "date": "9th Sep 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 8,
         "hasLapsed": true,
         "date": "9th Oct 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 9,
         "hasLapsed": true,
         "date": "9th Nov 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 10,
         "hasLapsed": true,
         "date": "9th Dec 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 11,
         "hasLapsed": true,
         "date": "9th Jan 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 12,
         "hasLapsed": true,
         "date": "9th Feb 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 13,
         "hasLapsed": true,
         "date": "9th Mar 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 14,
         "hasLapsed": true,
         "date": "9th Apr 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 15,
         "hasLapsed": true,
         "date": "9th May 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 16,
         "hasLapsed": true,
         "date": "9th Jun 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 17,
         "hasLapsed": true,
         "date": "9th Jul 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 18,
         "date": "9th Aug 2022",
         "hasLapsed": true,
         "amountDue": 74.43,
-        "amountPaid": 74.43,
-        "status": "paid"
+        "amountPaid": 74.43
       }
     ],
     "transactions": [
@@ -2223,144 +2111,126 @@
         "hasLapsed": true,
         "date": "9th Mar 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "9th Apr 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 3,
         "hasLapsed": true,
         "date": "9th May 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 4,
         "hasLapsed": true,
         "date": "9th Jun 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 5,
         "hasLapsed": true,
         "date": "9th Jul 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 6,
         "hasLapsed": true,
         "date": "9th Aug 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 7,
         "hasLapsed": true,
         "date": "9th Sep 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 8,
         "hasLapsed": true,
         "date": "9th Oct 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 9,
         "hasLapsed": true,
         "date": "9th Nov 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 10,
         "hasLapsed": true,
         "date": "9th Dec 2021",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 11,
         "hasLapsed": true,
         "date": "9th Jan 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 12,
         "hasLapsed": true,
         "date": "9th Feb 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 13,
         "hasLapsed": true,
         "date": "9th Mar 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 14,
         "hasLapsed": true,
         "date": "9th Apr 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 15,
         "hasLapsed": true,
         "date": "9th May 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 16,
         "hasLapsed": true,
         "date": "9th Jun 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 17,
         "hasLapsed": true,
         "date": "9th Jul 2022",
         "amountDue": 74.41,
-        "amountPaid": 74.41,
-        "status": "paid"
+        "amountPaid": 74.41
       },
       {
         "id": 18,
         "hasLapsed": true,
         "date": "9th Aug 2022",
         "amountDue": 74.43,
-        "amountPaid": 74.43,
-        "status": "paid"
+        "amountPaid": 74.43
       }
     ],
     "transactions": [
@@ -2520,8 +2390,7 @@
         "hasLapsed": true,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "status": "paid"
+        "amountPaid": 55.03
       },
       {
         "id": 2,
@@ -2529,7 +2398,6 @@
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
           "isWaivable": false,
@@ -2544,7 +2412,6 @@
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
@@ -2559,7 +2426,6 @@
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
@@ -2574,7 +2440,6 @@
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
@@ -2588,8 +2453,7 @@
         "hasLapsed": true,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
-        "amountPaid": 55.05,
-        "status": "paid"
+        "amountPaid": 55.05
       }
     ],
     "transactions": [
@@ -2693,8 +2557,7 @@
         "hasLapsed": true,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "status": "paid"
+        "amountPaid": 55.03
       },
       {
         "id": 2,
@@ -2702,7 +2565,6 @@
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
           "isWaivable": false,
@@ -2717,7 +2579,6 @@
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
@@ -2732,7 +2593,6 @@
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
@@ -2747,7 +2607,6 @@
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
@@ -2761,8 +2620,7 @@
         "hasLapsed": true,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
-        "amountPaid": 55.05,
-        "status": "paid"
+        "amountPaid": 55.05
       }
     ],
     "transactions": [
@@ -2873,16 +2731,14 @@
         "hasLapsed": true,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "status": "paid"
+        "amountPaid": 55.03
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "9th Mar 2023",
         "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "status": "paid"
+        "amountPaid": 55.03
       },
       {
         "id": 3,
@@ -2890,7 +2746,6 @@
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
@@ -2905,7 +2760,6 @@
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
@@ -2920,7 +2774,6 @@
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
@@ -2934,8 +2787,7 @@
         "hasLapsed": true,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
-        "amountPaid": 55.05,
-        "status": "paid"
+        "amountPaid": 55.05
       }
     ],
     "transactions": [
@@ -3046,16 +2898,14 @@
         "hasLapsed": true,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "status": "paid"
+        "amountPaid": 55.03
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "9th Mar 2023",
         "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "status": "paid"
+        "amountPaid": 55.03
       },
       {
         "id": 3,
@@ -3063,7 +2913,6 @@
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
@@ -3078,7 +2927,6 @@
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
@@ -3093,7 +2941,6 @@
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
@@ -3107,8 +2954,7 @@
         "hasLapsed": true,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
-        "amountPaid": 55.05,
-        "status": "paid"
+        "amountPaid": 55.05
       }
     ],
     "transactions": [
@@ -3226,8 +3072,7 @@
         "hasLapsed": true,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "status": "paid"
+        "amountPaid": 55.03
       },
       {
         "id": 2,
@@ -3240,8 +3085,7 @@
           "dateIncurred": "10th Mar 2023",
           "isWaivable": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3250,7 +3094,6 @@
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
@@ -3265,7 +3108,6 @@
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
@@ -3280,7 +3122,6 @@
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
@@ -3294,8 +3135,7 @@
         "hasLapsed": true,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
-        "amountPaid": 55.05,
-        "status": "paid"
+        "amountPaid": 55.05
       }
     ],
     "transactions": [
@@ -3420,8 +3260,7 @@
         "hasLapsed": true,
         "date": "9th Feb 2023",
         "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "status": "paid"
+        "amountPaid": 55.03
       },
       {
         "id": 2,
@@ -3429,7 +3268,6 @@
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
           "isWaivable": false,
@@ -3444,7 +3282,6 @@
         "date": "9th Apr 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
@@ -3459,7 +3296,6 @@
         "date": "9th May 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
@@ -3474,7 +3310,6 @@
         "date": "9th Jun 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
@@ -3488,8 +3323,7 @@
         "hasLapsed": true,
         "date": "9th Jul 2023",
         "amountDue": 55.05,
-        "amountPaid": 55.05,
-        "status": "paid"
+        "amountPaid": 55.05
       }
     ],
     "transactions": [
@@ -3621,16 +3455,14 @@
         "hasLapsed": true,
         "date": "2nd Feb 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "2nd Mar 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 3,
@@ -3638,7 +3470,6 @@
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
@@ -3653,7 +3484,6 @@
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
@@ -3668,7 +3498,6 @@
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
@@ -3683,7 +3512,6 @@
         "date": "2nd Jul 2023",
         "amountDue": 179.90,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
@@ -3789,16 +3617,14 @@
         "hasLapsed": true,
         "date": "2nd Feb 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "2nd Mar 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 3,
@@ -3806,7 +3632,6 @@
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
@@ -3821,7 +3646,6 @@
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
@@ -3836,7 +3660,6 @@
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
@@ -3851,7 +3674,6 @@
         "date": "2nd Jul 2023",
         "amountDue": 179.90,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
@@ -3934,16 +3756,14 @@
         "hasLapsed": true,
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "2nd May 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 3,
@@ -3951,7 +3771,6 @@
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
@@ -3966,7 +3785,6 @@
         "date": "2nd Jul 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
@@ -3980,8 +3798,7 @@
         "hasLapsed": true,
         "date": "2nd Aug 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 6,
@@ -3989,7 +3806,6 @@
         "date": "2nd Sep 2023",
         "amountDue": 179.90,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
           "isWaivable": true,
@@ -4072,16 +3888,14 @@
         "hasLapsed": true,
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "2nd May 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 3,
@@ -4089,7 +3903,6 @@
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
@@ -4104,7 +3917,6 @@
         "date": "2nd Jul 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
@@ -4118,8 +3930,7 @@
         "hasLapsed": true,
         "date": "2nd Aug 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 6,
@@ -4127,7 +3938,6 @@
         "date": "2nd Sep 2023",
         "amountDue": 179.90,
         "amountPaid": 0,
-        "status": "overdue",
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
           "isWaivable": true,
@@ -4210,16 +4020,14 @@
         "hasLapsed": true,
         "date": "2nd Feb 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "2nd Mar 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 3,
@@ -4227,7 +4035,6 @@
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
@@ -4242,7 +4049,6 @@
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
@@ -4257,7 +4063,6 @@
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
@@ -4272,7 +4077,6 @@
         "date": "2nd Jul 2023",
         "amountDue": 179.90,
         "amountPaid": 179.90,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
@@ -4390,16 +4194,14 @@
         "hasLapsed": true,
         "date": "2nd Feb 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "2nd Mar 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 3,
@@ -4407,7 +4209,6 @@
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
@@ -4422,7 +4223,6 @@
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
@@ -4437,7 +4237,6 @@
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
@@ -4452,7 +4251,6 @@
         "date": "2nd Jul 2023",
         "amountDue": 179.90,
         "amountPaid": 179.90,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
@@ -4579,16 +4377,14 @@
         "hasLapsed": true,
         "date": "2nd Feb 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
         "date": "2nd Mar 2023",
         "amountDue": 179.92,
-        "amountPaid": 179.92,
-        "status": "paid"
+        "amountPaid": 179.92
       },
       {
         "id": 3,
@@ -4596,7 +4392,6 @@
         "date": "2nd Apr 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
@@ -4611,7 +4406,6 @@
         "date": "2nd May 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
@@ -4626,7 +4420,6 @@
         "date": "2nd Jun 2023",
         "amountDue": 179.92,
         "amountPaid": 179.92,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
@@ -4641,7 +4434,6 @@
         "date": "2nd Jul 2023",
         "amountDue": 179.90,
         "amountPaid": 179.90,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,

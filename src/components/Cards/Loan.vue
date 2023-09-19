@@ -1,10 +1,10 @@
 <template>
 
   <BaseCard
-    class="relative lg:flex-col px-5 xl:px-9 pt-7"
-    :class="loanDetails ? 'pb-2' : 'relative pb-7', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
+    class="relative lg:flex-col px-5 xl:px-9 pt-7 cursor-pointer  transition ease-in-out duration-200"
+    :class="loanDetails ? 'pb-2' : 'relative pb-7 hover:scale-105', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
   >
-    <div v-if="status === 'Complete' && !loanDetails" class="bg-teal border-2 border-teal-dark w-full h-full absolute top-0 left-0 opacity-20 rounded-lg"/>
+    <div v-if="status === 'Complete'" class="bg-teal  w-full h-full absolute top-0 left-0 opacity-20" :class="loanDetails ? 'h-[386px] lg:h-[370px] rounded-t-lg' : 'h-full border-2 border-teal-dark rounded-lg'"/>
     <div class="flex flex-col w-full space-y-5 z-10">
       <div
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-7 lg:space-y-9"

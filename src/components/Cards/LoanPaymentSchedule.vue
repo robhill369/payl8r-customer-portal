@@ -37,14 +37,14 @@ defineProps({
 })
 
 const instalmentStatus = (obj) => {
-  if(obj.hasLapsed) {
-    if(obj.amountDue === obj.amountPaid) {
-      return 'paid'
+  if(obj.amountDue !== obj.amountPaid) {
+    if(obj.hasLapsed) {
+      return 'overdue'
     }
     else
-      return 'overdue'
+      return 'upcoming'
   }
-  else return 'upcoming'
+  else return 'paid'
 }
 
 </script>

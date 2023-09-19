@@ -15,7 +15,6 @@
             :purchase-date=purchaseDate
             :loan-start-date=loanStartDate
             :term-length=termLength
-            :status=loanStatus
             :total-interest-value=totalInterestValue
             :total-order-value=totalOrderValue
             :total-loan-value=totalLoanValue
@@ -42,8 +41,7 @@
       v-else
       @open="loanModalOpen = true"
       :retailer-name=retailerName
-      :provider="provider"
-      :status=loanStatus
+      :provider=provider
       :value-repaid="valueRepaid"
       :loan-start-date=loanStartDate
       :term-length=termLength
@@ -72,10 +70,6 @@ const props = defineProps({
   },
   purchaseDate: {
     type: String
-  },
-  loanStatus: {
-    type: String,
-    required: true
   },
   termLength: {
     type: Number,
