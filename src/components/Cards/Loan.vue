@@ -1,11 +1,16 @@
 <template>
 
   <BaseCard
-    class="relative lg:flex-col px-5 xl:px-9 pt-7 cursor-pointer  transition ease-in-out duration-200"
-    :class="loanDetails ? 'pb-2' : 'relative pb-7 hover:scale-105', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
+    class="relative lg:flex-col px-5 xl:px-9 pt-7 cursor-pointer transition ease-in-out duration-200"
+    :class="loanDetails ? 'pb-2' : 'relative pb-7 hover:scale-105 hover:drop-shadow-lg', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
   >
-    <div v-if="status === 'Complete'" class="bg-teal  w-full h-full absolute top-0 left-0 opacity-20" :class="loanDetails ? 'h-[386px] lg:h-[370px] rounded-t-lg' : 'h-full border-2 border-teal-dark rounded-lg'"/>
-    <div class="flex flex-col w-full space-y-5 z-10">
+    <div
+      v-if="status === 'Complete'"
+      class="bg-teal  w-full h-full absolute top-0 left-0 opacity-20"
+      :class="loanDetails ? 'h-[386px] lg:h-[370px] rounded-t-lg' : 'h-full border border-teal-dark rounded-lg'"
+      @click="$emit('open')"
+    />
+    <div class="flex flex-col w-full space-y-5" :class="loanDetails ? 'z-10' : ''">
       <div
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-7 lg:space-y-9"
         :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9 cursor-pointer'"
@@ -77,9 +82,8 @@
               <p class="font-bold">Total re{{loanRepaid ? 'paid' : 'payable'}}</p>
             </div>
           </div>
-          <div class="flex flex-col justify-between text-end relative space-y-2 lg:space-y-0"
-             :class="loanDetails ? 'lg:flex-row lg:space-x-2 lg:items-center' : ''"
-          >
+          <div class="flex flex-col justify-between text-end space-y-2 lg:space-y-0"
+             :class="loanDetails ? 'lg:flex-row lg:space-x-2 lg:items-center' : '', status !== 'Complete' ? 'relative' : ''">
             <h3 :class="loanRepaid && lateFeesTotal ? 'text-red-darker' : ''">
               £{{loanRepaid && lateFeesTotal ? lateFeesTotal : valueLeftToPay}}
             </h3>
@@ -239,7 +243,7 @@
               v-if="!loanDetails"
               href="https://somo.co.uk/"
               target="_blank"
-              class="text-button text-center py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit"
+              class="text-button text-center py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit z-10"
             >
               <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2 lg:hidden xl:block"/>
               View loan agreement
@@ -492,12 +496,13 @@ const remainingPayments = (arr) => {
 const remainingLateFeePayments = (arr) => {
   const newArray = []
   arr.forEach((item) => {
-    if((item.lateFee.amountDue - item.lateFee.amountPaid !== 0) && item.lateFee.status === 'unpaid' && !item.lateFee.isWaivable) {
+    if((item.lateFee.amountDue - item.lateFee.amountPaid !== 0) && !item.lateFee.isWaived && !item.lateFee.isWaivable) {
       newArray.push(item.lateFee.amountDue - item.lateFee.amountPaid)
     }
   })
   return newArray
 }
+
 const lapsedInstalments = props.instalments.filter(item => item.hasLapsed)
 
 const nextInstalment = lapsedInstalments.length !== props.termLength ? props.instalments[props.currentInstalment.id] : {}

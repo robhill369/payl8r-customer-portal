@@ -19,7 +19,7 @@
         <div class="flex justify-end">
           <Tag
             payment-status
-            :name="instalment.lateFee.status !== 'unpaid'  ? instalment.lateFee.status : (readyToPay ? instalment.lateFee.status : 'applied')"
+            :name="!instalment.lateFee.isWaived && readyToPay ? 'unpaid' : 'applied'"
             class="px-[12px] py-[5px]"
           />
         </div>

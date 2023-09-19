@@ -97,7 +97,7 @@
     "transactions": []
   },
   {
-    "id": 4,
+    "id": 3,
     "retailerName": "2. In term, no overdue payments",
     "isRepaid": false,
     "purchaseDate": "5th July 2023",
@@ -158,7 +158,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 4,
     "retailerName": "",
     "isRepaid": false,
     "purchaseDate": "5th July 2023",
@@ -207,7 +207,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "retailerName": "2.5. In term, no overdue payments, with a last payment upcoming",
     "isRepaid": false,
     "purchaseDate": "5th May 2023",
@@ -276,7 +276,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": 6,
     "retailerName": "3. In term, with latest payment overdue",
     "isRepaid": false,
     "purchaseDate": "2nd Dec 2022",
@@ -356,10 +356,176 @@
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
           "isWaivable": true,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
+      },
+      {
+        "id": 9,
+        "hasLapsed": false,
+        "date": "2nd Oct 2023",
+        "amountDue": 109.08,
+        "amountPaid": 0
+      },
+      {
+        "id": 10,
+        "hasLapsed": false,
+        "date": "2nd Nov 2023",
+        "amountDue": 109.08,
+        "amountPaid": 0
+      },
+      {
+        "id": 11,
+        "hasLapsed": false,
+        "date": "2nd Dec 2023",
+        "amountDue": 109.08,
+        "amountPaid": 0
+      },
+      {
+        "id": 12,
+        "hasLapsed": false,
+        "date": "2nd Jan 2024",
+        "amountDue": 109.08,
+        "amountPaid": 0
+      }
+    ],
+    "transactions": [
+      {
+        "date": "2nd Feb 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 109.08,
+        "balance": 1199.92
+      },
+      {
+        "date": "5th Mar 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 109.08,
+        "balance": 1090.84
+      },
+      {
+        "date": "7th Apr 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 109.08,
+        "balance": 981.76
+      },
+      {
+        "date": "20th May 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 109.08,
+        "balance": 872.68
+      },
+      {
+        "date": "2nd Jun 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 109.08,
+        "balance": 763.60
+      },
+      {
+        "date": "2nd Jul 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 109.08,
+        "balance": 654.52
+      },
+      {
+        "date": "2nd Aug 2023",
+        "description": "Loan payment",
+        "debit": null,
+        "credit": 109.08,
+        "balance": 545.44
+      },
+      {
+        "date": "3rd Sep 2023",
+        "description": "Late fee applied",
+        "debit": 30.00,
+        "credit": 0,
+        "balance": 575.44
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "retailerName": "",
+    "isRepaid": false,
+    "purchaseDate": "2nd Dec 2022",
+    "startDate": "2nd Jan 2023",
+    "termLength": 12,
+    "provider": "upfront",
+    "totalOrderValue": 1100,
+    "depositValue": 250,
+    "totalInterestValue": 459,
+    "upcomingInstalmentValue": 109.08,
+    "upcomingInstalmentDate": null,
+    "previousInstalmentValue": 109.08,
+    "previousInstalmentDate": "2nd Aug 2023",
+    "instalments": [
+      {
+        "id": 1,
+        "hasLapsed": true,
+        "date": "2nd Feb 2023",
+        "amountDue": 109.08,
+        "amountPaid": 109.08
+      },
+      {
+        "id": 2,
+        "hasLapsed": true,
+        "date": "2nd Mar 2023",
+        "amountDue": 109.08,
+        "amountPaid": 109.08
+      },
+      {
+        "id": 3,
+        "hasLapsed": true,
+        "date": "2nd Apr 2023",
+        "amountDue": 109.08,
+        "amountPaid": 109.08
+      },
+      {
+        "id": 4,
+        "hasLapsed": true,
+        "date": "2nd May 2023",
+        "amountDue": 109.08,
+        "amountPaid": 109.08
+      },
+      {
+        "id": 5,
+        "hasLapsed": true,
+        "date": "2nd Jun 2023",
+        "amountDue": 109.08,
+        "amountPaid": 109.08
+      },
+      {
+        "id": 6,
+        "hasLapsed": true,
+        "date": "2nd Jul 2023",
+        "amountDue": 109.08,
+        "amountPaid": 109.08
+      },
+      {
+        "id": 7,
+        "hasLapsed": true,
+        "date": "2nd Aug 2023",
+        "amountDue": 109.08,
+        "amountPaid": 109.08
+      },
+      {
+        "id": 8,
+        "hasLapsed": true,
+        "date": "2nd Sep 2023",
+        "amountDue": 109.08,
+        "amountPaid": 0,
+        "lateFee": {
+          "dateIncurred": "3rd Sep 2023",
+          "isWaivable": true,
+          "isWaived": false,
+          "amountDue": 30,
+          "amountPaid": 0.00}
       },
       {
         "id": 9,
@@ -451,174 +617,6 @@
   },
   {
     "id": 8,
-    "retailerName": "",
-    "isRepaid": false,
-    "purchaseDate": "2nd Dec 2022",
-    "startDate": "2nd Jan 2023",
-    "termLength": 12,
-    "provider": "upfront",
-    "totalOrderValue": 1100,
-    "depositValue": 250,
-    "totalInterestValue": 459,
-    "upcomingInstalmentValue": 109.08,
-    "upcomingInstalmentDate": null,
-    "previousInstalmentValue": 109.08,
-    "previousInstalmentDate": "2nd Aug 2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "2nd Feb 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "2nd Mar 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 3,
-        "hasLapsed": true,
-        "date": "2nd Apr 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 4,
-        "hasLapsed": true,
-        "date": "2nd May 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 5,
-        "hasLapsed": true,
-        "date": "2nd Jun 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 6,
-        "hasLapsed": true,
-        "date": "2nd Jul 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 7,
-        "hasLapsed": true,
-        "date": "2nd Aug 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 8,
-        "hasLapsed": true,
-        "date": "2nd Sep 2023",
-        "amountDue": 109.08,
-        "amountPaid": 0,
-        "lateFee": {
-          "dateIncurred": "3rd Sep 2023",
-          "isWaivable": true,
-          "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
-        }
-      },
-      {
-        "id": 9,
-        "hasLapsed": false,
-        "date": "2nd Oct 2023",
-        "amountDue": 109.08,
-        "amountPaid": 0
-      },
-      {
-        "id": 10,
-        "hasLapsed": false,
-        "date": "2nd Nov 2023",
-        "amountDue": 109.08,
-        "amountPaid": 0
-      },
-      {
-        "id": 11,
-        "hasLapsed": false,
-        "date": "2nd Dec 2023",
-        "amountDue": 109.08,
-        "amountPaid": 0,
-        "status": "upcoming"
-      },
-      {
-        "id": 12,
-        "hasLapsed": false,
-        "date": "2nd Jan 2024",
-        "amountDue": 109.08,
-        "amountPaid": 0
-      }
-    ],
-    "transactions": [
-      {
-        "date": "2nd Feb 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 1199.92
-      },
-      {
-        "date": "5th Mar 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 1090.84
-      },
-      {
-        "date": "7th Apr 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 981.76
-      },
-      {
-        "date": "20th May 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 872.68
-      },
-      {
-        "date": "2nd Jun 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 763.60
-      },
-      {
-        "date": "2nd Jul 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 654.52
-      },
-      {
-        "date": "2nd Aug 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 545.44
-      },
-      {
-        "date": "3rd Sep 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0,
-        "balance": 575.44
-      }
-    ]
-  },
-  {
-    "id": 10,
     "retailerName": "4. In term, with previous payment(s) overdue but paid. Late fees unpaid",
     "isRepaid": false,
     "purchaseDate": "13th Dec 2022",
@@ -656,9 +654,9 @@
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0,
-          "status": "unpaid"
+          "amountPaid": 0
         }
       },
       {
@@ -670,10 +668,10 @@
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
           "amountPaid": 0.00,
-          "cardExpired": true,
-          "status": "waived"
+          "cardExpired": true
         }
       },
       {
@@ -692,9 +690,9 @@
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "paid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -814,7 +812,7 @@
     ]
   },
   {
-    "id": 11,
+    "id": 9,
     "retailerName": "",
     "isRepaid": false,
     "purchaseDate": "13th Dec 2022",
@@ -845,9 +843,9 @@
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0,
-          "status": "unpaid"
+          "amountPaid": 0
         }
       },
       {
@@ -859,10 +857,10 @@
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
           "amountPaid": 0.00,
-          "cardExpired": true,
-          "status": "waived"
+          "cardExpired": true
         }
       },
       {
@@ -881,9 +879,9 @@
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1003,7 +1001,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": 10,
     "retailerName": "5. In term, with previous payment(s) overdue but paid. Late fees waived",
     "isRepaid": false,
     "purchaseDate": "13th Dec 2022",
@@ -1041,9 +1039,9 @@
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0,
-          "status": "waived"
+          "amountPaid": 0
         }
       },
       {
@@ -1055,9 +1053,9 @@
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1076,9 +1074,9 @@
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1205,7 +1203,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": 11,
     "retailerName": "5.5. In term, with previous payment(s) overdue but paid. Late fees waived. Early payment made",
     "isRepaid": false,
     "purchaseDate": "13th Dec 2022",
@@ -1243,9 +1241,9 @@
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0,
-          "status": "waived"
+          "amountPaid": 0
         }
       },
       {
@@ -1257,9 +1255,9 @@
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1278,9 +1276,9 @@
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1414,7 +1412,7 @@
     ]
   },
   {
-    "id": 14,
+    "id": 12,
     "retailerName": "",
     "isRepaid": false,
     "purchaseDate": "13th Dec 2022",
@@ -1445,9 +1443,9 @@
         "lateFee": {
           "dateIncurred": "14th Mar 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0,
-          "status": "waived"
+          "amountPaid": 0
         }
       },
       {
@@ -1459,9 +1457,9 @@
         "lateFee": {
           "dateIncurred": "14th Apr 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1480,9 +1478,9 @@
         "lateFee": {
           "dateIncurred": "14th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1609,7 +1607,7 @@
     ]
   },
   {
-    "id": 16,
+    "id": 13,
     "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
     "isRepaid": false,
     "purchaseDate": "23rd May 2023",
@@ -1640,9 +1638,9 @@
         "lateFee": {
           "dateIncurred": "24th Jul 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1654,9 +1652,9 @@
         "lateFee": {
           "dateIncurred": "24th Aug 2023",
           "isWaivable": true,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1678,8 +1676,7 @@
         "hasLapsed": false,
         "date": "23rd Nov 2023",
         "amountDue": 55.03,
-        "amountPaid": 0.00,
-        "status": "upcoming"
+        "amountPaid": 0.00
       },
       {
         "id": 6,
@@ -1707,7 +1704,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 14,
     "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
     "isRepaid": false,
     "purchaseDate": "23rd May 2023",
@@ -1731,9 +1728,9 @@
         "lateFee": {
           "dateIncurred": "24th Jul 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1744,10 +1741,10 @@
         "amountPaid": 0.00,
         "lateFee": {
           "dateIncurred": "24th Aug 2023",
-          "isWaivable": false,
+          "isWaivable": true,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -1797,7 +1794,7 @@
     ]
   },
   {
-    "id": 19,
+    "id": 15,
     "retailerName": "7. Out of term, with no late payments",
     "isRepaid": true,
     "purchaseDate": "9th Jan 2021",
@@ -2091,7 +2088,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 16,
     "retailerName": "",
     "isRepaid": true,
     "purchaseDate": "9th Jan 2021",
@@ -2363,7 +2360,7 @@
     ]
   },
   {
-    "id": 22,
+    "id": 17,
     "retailerName": "8. Out of term, with instalments paid late. Multiple late fees unpaid",
     "isRepaid": false,
     "purchaseDate": "9th Dec 2022",
@@ -2401,9 +2398,9 @@
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2415,9 +2412,9 @@
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2429,9 +2426,9 @@
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2443,9 +2440,9 @@
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2537,7 +2534,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": 18,
     "retailerName": "",
     "isRepaid": false,
     "purchaseDate": "9th Dec 2022",
@@ -2568,9 +2565,9 @@
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2582,9 +2579,9 @@
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2596,9 +2593,9 @@
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2610,9 +2607,9 @@
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2704,7 +2701,7 @@
     ]
   },
   {
-    "id": 24,
+    "id": 19,
     "retailerName": "8.5. Out of term, with instalments paid late. Single late fee unpaid",
     "isRepaid": false,
     "purchaseDate": "9th Dec 2022",
@@ -2749,9 +2746,9 @@
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2763,9 +2760,9 @@
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2777,9 +2774,9 @@
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2878,7 +2875,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 20,
     "retailerName": "",
     "isRepaid": false,
     "purchaseDate": "9th Dec 2022",
@@ -2916,9 +2913,9 @@
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2930,9 +2927,9 @@
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -2944,9 +2941,9 @@
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3045,7 +3042,7 @@
     ]
   },
   {
-    "id": 26,
+    "id": 21,
     "retailerName": "9. Out of term, with instalments paid late. Late fees waived",
     "isRepaid": true,
     "purchaseDate": "9th Dec 2022",
@@ -3080,10 +3077,10 @@
         "date": "9th Mar 2023",
         "amountDue": 55.03,
         "amountPaid": 55.03,
-        "status": "paid",
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
           "amountPaid": 0.00
         }
@@ -3097,9 +3094,9 @@
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3111,9 +3108,9 @@
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3125,9 +3122,9 @@
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3240,7 +3237,7 @@
     ]
   },
   {
-    "id": 27,
+    "id": 22,
     "retailerName": "",
     "isRepaid": true,
     "purchaseDate": "9th Dec 2022",
@@ -3271,9 +3268,9 @@
         "lateFee": {
           "dateIncurred": "10th Mar 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3285,9 +3282,9 @@
         "lateFee": {
           "dateIncurred": "10th Apr 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3299,9 +3296,9 @@
         "lateFee": {
           "dateIncurred": "10th May 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3313,9 +3310,9 @@
         "lateFee": {
           "dateIncurred": "10th Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3428,7 +3425,7 @@
     ]
   },
   {
-    "id": 28,
+    "id": 23,
     "retailerName": "10. Out of term, with instalment payments outstanding",
     "isRepaid": false,
     "purchaseDate": "2nd Dec 2022",
@@ -3473,9 +3470,9 @@
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3487,9 +3484,9 @@
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3501,9 +3498,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3515,9 +3512,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       }
     ],
@@ -3597,7 +3594,7 @@
     ]
   },
   {
-    "id": 29,
+    "id": 24,
     "retailerName": "",
     "isRepaid": false,
     "purchaseDate": "2nd Dec 2022",
@@ -3635,9 +3632,9 @@
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3649,9 +3646,9 @@
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3663,9 +3660,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3677,9 +3674,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       }
     ],
@@ -3729,7 +3726,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 25,
     "retailerName": "11. In term, with last payment overdue",
     "isRepaid": false,
     "purchaseDate": "2nd Feb 2022",
@@ -3774,9 +3771,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3788,9 +3785,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3809,9 +3806,9 @@
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
           "isWaivable": true,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       }
     ],
@@ -3861,7 +3858,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 26,
     "retailerName": "11.5. In term, with last payment overdue, with previous late fees",
     "isRepaid": false,
     "purchaseDate": "2nd Feb 2022",
@@ -3906,9 +3903,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
+          "isWaived": true,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "waived"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3920,9 +3917,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -3941,9 +3938,9 @@
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
           "isWaivable": true,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       }
     ],
@@ -3993,7 +3990,7 @@
     ]
   },
   {
-    "id": 31,
+    "id": 27,
     "retailerName": "12. Out of term with instalment payments paid late, with out-of-term charges unpaid",
     "isRepaid": false,
     "purchaseDate": "2nd Dec 2022",
@@ -4038,9 +4035,9 @@
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -4052,9 +4049,9 @@
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -4066,9 +4063,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -4080,9 +4077,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       }
     ],
@@ -4167,7 +4164,7 @@
     ]
   },
   {
-    "id": 32,
+    "id": 28,
     "retailerName": "13. Out of term with instalment payments paid late, out-of-term charges paid, late fees unpaid",
     "isRepaid": false,
     "purchaseDate": "2nd Dec 2022",
@@ -4212,9 +4209,9 @@
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 12,
-          "status": "unpaid"
+          "amountPaid": 12
         }
       },
       {
@@ -4226,9 +4223,9 @@
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -4240,9 +4237,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       },
       {
@@ -4254,9 +4251,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 0.00,
-          "status": "unpaid"
+          "amountPaid": 0.00
         }
       }
     ],
@@ -4350,7 +4347,7 @@
     ]
   },
   {
-    "id": 33,
+    "id": 29,
     "retailerName": "14. Out of term with instalment payments paid late, out-of-term charges paid, late fees paid",
     "isRepaid": false,
     "purchaseDate": "2nd Dec 2022",
@@ -4395,9 +4392,9 @@
         "lateFee": {
           "dateIncurred": "3rd Apr 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 30.00,
-          "status": "paid"
+          "amountPaid": 30.00
         }
       },
       {
@@ -4409,9 +4406,9 @@
         "lateFee": {
           "dateIncurred": "3rd May 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 30.00,
-          "status": "paid"
+          "amountPaid": 30.00
         }
       },
       {
@@ -4423,9 +4420,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jun 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 30.00,
-          "status": "paid"
+          "amountPaid": 30.00
         }
       },
       {
@@ -4437,9 +4434,9 @@
         "lateFee": {
           "dateIncurred": "3rd Jul 2023",
           "isWaivable": false,
+          "isWaived": false,
           "amountDue": 30,
-          "amountPaid": 30.00,
-          "status": "paid"
+          "amountPaid": 30.00
         }
       }
     ],
