@@ -3523,15 +3523,13 @@
         "id": 1,
         "dateIncurred": "3rd Aug 2023",
         "amountDue": 32.38,
-        "amountPaid": 0,
-        "status": "unpaid"
+        "amountPaid": 0
       },
       {
         "id": 2,
         "dateIncurred": "3rd Sep 2023",
         "amountDue": 32.38,
-        "amountPaid": 0,
-        "status": "unpaid"
+        "amountPaid": 0
       }
     ],
     "transactions": [
@@ -4262,15 +4260,13 @@
         "id": 1,
         "dateIncurred": "3rd Aug 2023",
         "amountDue": 32.38,
-        "amountPaid": 32.38,
-        "status": "paid"
+        "amountPaid": 32.38
       },
       {
         "id": 2,
         "dateIncurred": "3rd Sep 2023",
         "amountDue": 32.38,
-        "amountPaid": 32.38,
-        "status": "paid"
+        "amountPaid": 32.38
       }
     ],
     "transactions": [
@@ -4445,15 +4441,13 @@
         "id": 1,
         "dateIncurred": "3rd Aug 2023",
         "amountDue": 32.38,
-        "amountPaid": 32.38,
-        "status": "paid"
+        "amountPaid": 32.38
       },
       {
         "id": 2,
         "dateIncurred": "3rd Sep 2023",
         "amountDue": 32.38,
-        "amountPaid": 32.38,
-        "status": "paid"
+        "amountPaid": 32.38
       }
     ],
     "transactions": [
