@@ -56,7 +56,7 @@
             </div>
           </div>
           <ButtonBase
-            v-if="loanDetails && currentInstalment && lapsedInstalments.length !== termLength"
+            v-if="loanDetails && currentInstalment && nextInstalment && lapsedInstalments.length !== termLength"
             class="hidden md:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
             <h4 class="font-[400] whitespace-nowrap">£{{nextInstalment.amountDue}} p/m</h4>
@@ -160,7 +160,7 @@
                 is-payment
                 :array="lateInstalments"
               >
-                <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment.length">Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{nextInstalment.date}}</span>.</span></p>
+                <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment !== null">Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{nextInstalment.date}}</span>.</span></p>
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
@@ -206,8 +206,8 @@
                 is-payment
                 :array=Array(1).fill(currentInstalment.amountDue-currentInstalment.amountPaid)
               >
-                <p>You will pay the instalment due <span class="font-bold">{{currentInstalment.date}}</span> today.<span v-if="lapsedInstalments <= termLength-1"><br class="hidden sm:block">
-                  Your next instalment will then be collected on <span class="font-bold">{{instalments[nextInstalment.id].date}}</span>.</span>
+                <p>You will pay the instalment due <span class="font-bold">{{currentInstalment.date}}</span> today.<span v-if="nextInstalment"><br class="hidden sm:block">
+                  Your next instalment will then be collected on <span class="font-bold">{{nextInstalment.date}}</span>.</span>
                 </p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
@@ -498,9 +498,8 @@ const remainingLateFeePayments = (arr) => {
   return newArray
 }
 const lapsedInstalments = props.instalments.filter(item => item.hasLapsed)
-const remainingInstalments = props.instalments.filter(item => !item.hasLapsed && item.amountPaid !== item.amountDue)
 
-const nextInstalment = lapsedInstalments.length !== props.termLength ? remainingInstalments[0] : {}
+const nextInstalment = lapsedInstalments.length !== props.termLength ? props.instalments[props.currentInstalment.id] : {}
 
 const lateInstalments = remainingPayments(lapsedInstalments)
 const lateInstalmentsTotal = lateInstalments.reduce((acc, obj) => {return acc + obj}, 0)
