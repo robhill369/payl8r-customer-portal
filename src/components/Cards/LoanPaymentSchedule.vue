@@ -18,7 +18,7 @@
       <div class="border-b w-full flex justify-end h-14 items-center">
         <Tag
             payment-status
-            :name=instalment.status
+            :name="instalmentStatus(instalment)"
             class="px-[12px] py-[5px]"
         />
       </div>
@@ -35,5 +35,16 @@ defineProps({
     required: true
   }
 })
+
+const instalmentStatus = (obj) => {
+  if(obj.hasLapsed) {
+    if(obj.amountDue === obj.amountPaid) {
+      return 'paid'
+    }
+    else
+      return 'overdue'
+  }
+  else return 'upcoming'
+}
 
 </script>

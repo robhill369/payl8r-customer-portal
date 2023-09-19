@@ -4,7 +4,7 @@
     class="relative lg:flex-col px-5 xl:px-9 pt-7"
     :class="loanDetails ? 'pb-2' : 'relative pb-7', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
   >
-    <div v-if="status === 'Complete' && !loanDetails" class="bg-teal border-2 border-teal-dark w-full h-full absolute top-0 left-0 opacity-20 rounded-md"/>
+    <div v-if="status === 'Complete' && !loanDetails" class="bg-teal border-2 border-teal-dark w-full h-full absolute top-0 left-0 opacity-20 rounded-lg"/>
     <div class="flex flex-col w-full space-y-5 z-10">
       <div
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-7 lg:space-y-9"
@@ -161,7 +161,7 @@
                 is-payment
                 :array="lateInstalments"
               >
-                <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment !== null">Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{nextInstalment.date}}</span>.</span></p>
+                <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment !== null"> Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{currentInstalment.date}}</span>.</span></p>
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
