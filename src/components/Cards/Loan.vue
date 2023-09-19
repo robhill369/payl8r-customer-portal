@@ -4,7 +4,8 @@
     class="relative lg:flex-col px-5 xl:px-9 pt-7"
     :class="loanDetails ? 'pb-2' : 'relative pb-7', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
   >
-    <div class="flex flex-col w-full space-y-5">
+    <div v-if="status === 'Complete' && !loanDetails" class="bg-teal border-2 border-teal-dark w-full h-full absolute top-0 left-0 opacity-20 rounded-md"/>
+    <div class="flex flex-col w-full space-y-5 z-10">
       <div
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-7 lg:space-y-9"
         :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9 cursor-pointer'"
