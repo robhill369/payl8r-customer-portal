@@ -21,8 +21,8 @@
         <CardSectionHeader title="My overview" v-if="$route.path === '/'"/>
         <PaymentsCard
           total-left-to-pay=XX.XX
-          :active-loans-count="activeLoans(loans).length"
-          :repaid-loans-count="loans.length - activeLoans(loans).length"
+          :active-loans-count="loans.filter(item => item.isActive).length"
+          :repaid-loans-count="loans.length - loans.filter(item => item.isActive).length"
         />
     </CardSection>
 
@@ -62,60 +62,33 @@
           />
         </template>
       </CardSectionHeader>
-<!--      <div v-if="$route.path === '/'" v-for="loan in activeLoans(loans)" :key=loan.id>-->
-<!--        <LoanCardModalGroup-->
-<!--            :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"-->
-<!--            :provider=loan.provider-->
-<!--            :purchase-date=loan.purchaseDate-->
-<!--            :loan-start-date=loan.startDate-->
-<!--            :term-length=loan.termLength-->
-<!--            :deposit-value=loan.depositValue-->
-<!--            :total-order-value=loan.totalOrderValue-->
-<!--            :total-interest-value=loan.totalInterestValue-->
-<!--            :total-loan-value=Number(loan.totalOrderValue+loan.totalInterestValue)-->
-<!--            :value-repaid=(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges))-->
-<!--            :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)+valueDue(loan.outOfTermCharges)-valuePaid(loan.outOfTermCharges))-->
-<!--            :loan-upcoming-payment=loan.upcomingInstalmentValue-->
-<!--            :loan-upcoming-payment-date=loan.upcomingInstalmentDate-->
-<!--            :loan-previous-payment=loan.previousInstalmentValue-->
-<!--            :loan-previous-payment-date=loan.previousInstalmentDate-->
-<!--            :order-items=loan.orderItems-->
-<!--            current-last-four-digits="1234"-->
-<!--            :transactions=loan.transactions-->
-<!--            :instalments=loan.instalments-->
-<!--            :out-of-term-charges=loan.outOfTermCharges-->
-<!--            :out-of-term-charges-due="valueDue(loan.outOfTermCharges)"-->
-<!--            :is-repaid=loan.isRepaid-->
-<!--        />-->
-<!--      </div>-->
-      <div
-          v-for="loan in loans" :key=loan.id>
-        <LoanCardModalGroup
-          :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
-          :provider=loan.provider
-          :purchase-date=loan.purchaseDate
-          :loan-start-date=loan.startDate
-          :term-length=loan.termLength
-          :deposit-value=loan.depositValue
-          :total-order-value=loan.totalOrderValue
-          :total-interest-value=loan.totalInterestValue
-          :total-loan-value=(loan.totalOrderValue+loan.totalInterestValue).toFixed(2)
-          :value-repaid=Number(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges)).toFixed(2)
-          :value-left-to-pay=Number(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)-valuePaid(loan.outOfTermCharges)+valueDue(loan.outOfTermCharges)).toFixed(2)
-          :loan-upcoming-payment=loan.upcomingInstalmentValue
-          :loan-upcoming-payment-date=loan.upcomingInstalmentDate
-          :loan-previous-payment=loan.previousInstalmentValue
-          :loan-previous-payment-date=loan.previousInstalmentDate
-          :order-items=loan.orderItems
-          current-last-four-digits="1234"
-          :transactions=loan.transactions
-          :instalments=loan.instalments
-          :out-of-term-charges=loan.outOfTermCharges
-          :out-of-term-charges-due="valueDue(loan.outOfTermCharges)"
-          :is-repaid=loan.isRepaid
-          :current-instalment=currentInstalment(loan.instalments)
-        />
-      </div>
+        <div v-for="loan in filteredLoans(loans)" :key=loan.id>
+          <LoanCardModalGroup
+            :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
+            :provider=loan.provider
+            :purchase-date=loan.purchaseDate
+            :loan-start-date=loan.startDate
+            :term-length=loan.termLength
+            :deposit-value=loan.depositValue
+            :total-order-value=loan.totalOrderValue
+            :total-interest-value=loan.totalInterestValue
+            :total-loan-value=(loan.totalOrderValue+loan.totalInterestValue).toFixed(2)
+            :value-repaid=Number(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges)).toFixed(2)
+            :value-left-to-pay=Number(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)-valuePaid(loan.outOfTermCharges)+valueDue(loan.outOfTermCharges)).toFixed(2)
+            :loan-upcoming-payment=loan.upcomingInstalmentValue
+            :loan-upcoming-payment-date=loan.upcomingInstalmentDate
+            :loan-previous-payment=loan.previousInstalmentValue
+            :loan-previous-payment-date=loan.previousInstalmentDate
+            :order-items=loan.orderItems
+            current-last-four-digits="1234"
+            :transactions=loan.transactions
+            :instalments=loan.instalments
+            :out-of-term-charges=loan.outOfTermCharges
+            :out-of-term-charges-due="valueDue(loan.outOfTermCharges)"
+            :is-repaid=loan.isRepaid
+            :current-instalment=currentInstalment(loan.instalments)
+          />
+        </div>
     </CardSection>
     <CardSection>
       <CardSectionHeader title="Keeping your account healthy">
@@ -140,6 +113,8 @@
 </template>
 
 <script setup>
+import {ref} from "vue";
+import {useRoute} from "vue-router";
 import PaymentsCard from "@/components/Cards/Payments.vue";
 import CardSection from "@/Layout/CardSection.vue";
 import SimpleCard from "@/components/Cards/Simple.vue";
@@ -183,13 +158,14 @@ function valueDue(arr) {
   else return 0
 }
 
-
-function activeLoans(arr) {
-  const isRepaidOnly = arr.filter(function(el) {
-      return el.isRepaid === false
-    }
-  )
-  return isRepaidOnly
+const route = useRoute()
+function filteredLoans(arr) {
+  if(route.path === '/') {
+    return arr.filter(function (loan) {
+      return loan.isActive
+    })
+  }
+  return arr
 }
 
 const loanTypes = [

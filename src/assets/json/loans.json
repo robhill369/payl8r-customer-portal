@@ -2,7 +2,7 @@
   {
     "id": 1,
     "retailerName": "1. Arranged, no payments due yet",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "28th Aug 2023",
     "startDate": "28th Sep 2023",
     "termLength": 3,
@@ -53,13 +53,12 @@
         "amountDue": 26.49,
         "amountPaid": 0
       }
-    ],
-    "transactions": []
+    ]
   },
   {
     "id": 2,
     "retailerName": "",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "28th Aug 2023",
     "startDate": "28th Sep 2023",
     "termLength": 3,
@@ -93,13 +92,12 @@
         "amountDue": 26.49,
         "amountPaid": 0
       }
-    ],
-    "transactions": []
+    ]
   },
   {
     "id": 3,
     "retailerName": "2. In term, no overdue payments",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "5th July 2023",
     "startDate": "5th Aug 2023",
     "termLength": 3,
@@ -160,7 +158,7 @@
   {
     "id": 4,
     "retailerName": "",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "5th July 2023",
     "startDate": "5th Aug 2023",
     "termLength": 3,
@@ -209,7 +207,7 @@
   {
     "id": 5,
     "retailerName": "2.5. In term, no overdue payments, with a last payment upcoming",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "5th May 2023",
     "startDate": "5th Jul 2023",
     "termLength": 3,
@@ -278,7 +276,7 @@
   {
     "id": 6,
     "retailerName": "3. In term, with latest payment overdue",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 12,
@@ -452,7 +450,7 @@
   {
     "id": 7,
     "retailerName": "",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 12,
@@ -618,7 +616,7 @@
   {
     "id": 8,
     "retailerName": "4. In term, with previous payment(s) overdue but paid. Late fees unpaid",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 9,
@@ -814,7 +812,7 @@
   {
     "id": 9,
     "retailerName": "",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 9,
@@ -1003,7 +1001,7 @@
   {
     "id": 10,
     "retailerName": "5. In term, with previous payment(s) overdue but paid. Late fees waived",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 9,
@@ -1205,7 +1203,7 @@
   {
     "id": 11,
     "retailerName": "5.5. In term, with previous payment(s) overdue but paid. Late fees waived. Early payment made",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 9,
@@ -1414,7 +1412,7 @@
   {
     "id": 12,
     "retailerName": "",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "13th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 9,
@@ -1609,7 +1607,7 @@
   {
     "id": 13,
     "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "23rd May 2023",
     "startDate": "23rd Jun 2023",
     "termLength": 6,
@@ -1706,7 +1704,7 @@
   {
     "id": 14,
     "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "23rd May 2023",
     "startDate": "23rd Jun 2023",
     "termLength": 6,
@@ -1796,7 +1794,7 @@
   {
     "id": 15,
     "retailerName": "7. Out of term, with no late payments",
-    "isRepaid": true,
+    "isActive": false,
     "purchaseDate": "9th Jan 2021",
     "startDate": "9th Feb 2021",
     "termLength": 18,
@@ -2090,7 +2088,7 @@
   {
     "id": 16,
     "retailerName": "",
-    "isRepaid": true,
+    "isActive": false,
     "purchaseDate": "9th Jan 2021",
     "startDate": "9th Feb 2021",
     "termLength": 18,
@@ -2362,7 +2360,7 @@
   {
     "id": 17,
     "retailerName": "8. Out of term, with instalments paid late. Multiple late fees unpaid",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -2536,7 +2534,7 @@
   {
     "id": 18,
     "retailerName": "",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -2703,7 +2701,7 @@
   {
     "id": 19,
     "retailerName": "8.5. Out of term, with instalments paid late. Single late fee unpaid",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -2877,7 +2875,7 @@
   {
     "id": 20,
     "retailerName": "",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -3044,7 +3042,7 @@
   {
     "id": 21,
     "retailerName": "9. Out of term, with instalments paid late. Late fees waived",
-    "isRepaid": true,
+    "isActive": false,
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -3239,7 +3237,7 @@
   {
     "id": 22,
     "retailerName": "",
-    "isRepaid": true,
+    "isActive": false,
     "purchaseDate": "9th Dec 2022",
     "startDate": "13th Jan 2023",
     "termLength": 6,
@@ -3427,7 +3425,7 @@
   {
     "id": 23,
     "retailerName": "10. Out of term, with instalment payments outstanding",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,
@@ -3594,7 +3592,7 @@
   {
     "id": 24,
     "retailerName": "",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,
@@ -3726,7 +3724,7 @@
   {
     "id": 25,
     "retailerName": "11. In term, with last payment overdue",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "2nd Feb 2022",
     "startDate": "2nd Mar 2023",
     "termLength": 6,
@@ -3858,7 +3856,7 @@
   {
     "id": 26,
     "retailerName": "11.5. In term, with last payment overdue, with previous late fees",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "2nd Feb 2022",
     "startDate": "2nd Mar 2023",
     "termLength": 6,
@@ -3990,7 +3988,7 @@
   {
     "id": 27,
     "retailerName": "12. Out of term with instalment payments paid late, with out-of-term charges unpaid",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,
@@ -4164,7 +4162,7 @@
   {
     "id": 28,
     "retailerName": "13. Out of term with instalment payments paid late, out-of-term charges paid, late fees unpaid",
-    "isRepaid": false,
+    "isActive": true,
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,
@@ -4345,7 +4343,7 @@
   {
     "id": 29,
     "retailerName": "14. Out of term with instalment payments paid late, out-of-term charges paid, late fees paid",
-    "isRepaid": false,
+    "isActive": false,
     "purchaseDate": "2nd Dec 2022",
     "startDate": "2nd Jan 2023",
     "termLength": 6,

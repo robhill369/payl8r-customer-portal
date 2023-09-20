@@ -384,10 +384,6 @@ const props = defineProps({
     type: String,
     required: true
   },
-  status: {
-    type: String,
-    required: true
-  },
   purchaseDate: {
     type: String,
   },
@@ -464,9 +460,6 @@ const props = defineProps({
   orderItems: {
     type: Array
   },
-  isRepaid: {
-    type: Boolean
-  },
   outOfTermChargesDue: {
     type: Number
   },
@@ -522,7 +515,6 @@ const currentTab = (tabNumber) => {
 }
 
 onMounted(() => {
-
   if(lapsedInstalments.length !== props.termLength) {
     if(lateInstalments.length) {
       status.value = 'Payment overdue'
