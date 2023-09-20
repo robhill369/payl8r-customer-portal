@@ -40,6 +40,7 @@
     <LoanCard
       v-else
       @open="loanModalOpen = true"
+      @show="tallyBalance"
       :retailer-name=retailerName
       :provider=provider
       :value-repaid="valueRepaid"
@@ -59,6 +60,8 @@
 import {ref} from "vue";
 
 import LoanCard from "@/components/Cards/Loan.vue";
+
+const emit = defineEmits(['tally'])
 
 const props = defineProps({
   retailerName: {
@@ -155,6 +158,10 @@ const props = defineProps({
     type: Object
   }
 })
+
+const tallyBalance = (val) => {
+  emit('tally', val)
+}
 
 const loanModalOpen = ref(false)
 </script>

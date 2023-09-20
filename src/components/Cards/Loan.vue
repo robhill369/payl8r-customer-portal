@@ -361,7 +361,7 @@
 
 
 <script setup>
-import {ref, onMounted} from "vue";
+import {ref, onMounted, onUpdated} from "vue";
 
 import ProgressBar from "@/components/ProgressBar.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
@@ -374,6 +374,8 @@ import LoanPaymentSchedule from "@/components/Cards/LoanPaymentSchedule.vue";
 import LoanStatement from "@/components/Cards/LoanStatement.vue";
 import LoanActionModalButtonGroup from "@/Layout/LoanActionModalButtonGroup.vue";
 import LoanLateFees from "@/components/Cards/LoanLateFees.vue";
+
+const emit = defineEmits(['show'])
 
 const props = defineProps({
   retailerName: {
@@ -507,8 +509,9 @@ const lateFees = remainingLateFeePayments(instalmentsWithLateFees)
 const lateFeesTotal = lateFees.reduce((acc, obj) => {return acc + obj}, 0)
 
 const OOTCharges = remainingPayments(props.outOfTermCharges)
+const outOfTermChargesRemaining = OOTCharges.reduce((acc, obj) => {return acc + obj}, 0)
 
-const remainingBalance = lateInstalmentsTotal+props.outOfTermChargesDue+lateFeesTotal
+const remainingBalance = lateInstalmentsTotal+outOfTermChargesRemaining+lateFeesTotal
 
 const currentTab = (tabNumber) => {
   tab.value = tabNumber;
@@ -531,5 +534,7 @@ onMounted(() => {
       status.value = 'Complete'
     }
   }
+  emit('show', remainingBalance)
 })
+
 </script>

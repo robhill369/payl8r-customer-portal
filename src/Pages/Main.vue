@@ -20,7 +20,7 @@
     <CardSection>
         <CardSectionHeader title="My overview" v-if="$route.path === '/'"/>
         <PaymentsCard
-          total-left-to-pay=XX.XX
+          :total-left-to-pay=remainingBalance
           :active-loans-count="loans.filter(item => item.isActive).length"
           :repaid-loans-count="loans.length - loans.filter(item => item.isActive).length"
         />
@@ -64,6 +64,7 @@
       </CardSectionHeader>
         <div v-for="loan in filteredLoans(loans)" :key=loan.id>
           <LoanCardModalGroup
+            @tally="balanceSum"
             :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
             :provider=loan.provider
             :purchase-date=loan.purchaseDate
@@ -128,7 +129,10 @@ import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
 
 import loanData from '@/assets/json/loans.json';
+
 const loans = loanData
+
+const remainingBalance = ref(0.00)
 
 function valuePaid(arr) {
   if(arr) {
@@ -166,6 +170,10 @@ function filteredLoans(arr) {
     })
   }
   return arr
+}
+
+const balanceSum = (val) => {
+  return remainingBalance.value += val
 }
 
 const loanTypes = [
