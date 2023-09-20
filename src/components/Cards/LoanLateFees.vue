@@ -19,7 +19,7 @@
         <div class="flex justify-end">
           <Tag
             payment-status
-            :name="!instalment.lateFee.isWaived && readyToPay ? 'unpaid' : 'applied'"
+            :name=lateFeeStatus(instalment.lateFee)
             class="px-[12px] py-[5px]"
           />
         </div>
@@ -68,5 +68,17 @@ const props = defineProps({
   }
 })
 
+const lateFeeStatus = (obj) => {
+  if(!obj.isWaived) {
+      if(obj.amountDue !== obj.amountPaid ) {
+        if(props.readyToPay) {
+          return 'unpaid'
+        }
+        else return 'applied'
+      }
+    else
+      return 'paid'
+  }
+  else return 'waived'
+}
 </script>
-
