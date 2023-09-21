@@ -14,7 +14,7 @@
       >
         <p>{{instalment.id}}</p>
         <p class="col-span-2">{{instalment.lateFee.dateIncurred}}</p>
-        <p>£{{instalment.lateFee.amountDue}}</p>
+        <p>£{{instalment.lateFee.amountPaid === 0 || instalment.lateFee.amountPaid === instalment.lateFee.amountDue ? instalment.lateFee.amountDue : instalment.lateFee.amountDue-instalment.lateFee.amountPaid}}</p>
         <p class="col-span-3 pl-2">{{instalment.lateFee.cardExpired ? 'Failed payment (card expired)' : 'Failed payment'}}</p>
         <div class="flex justify-end">
           <Tag
@@ -33,7 +33,7 @@
       >
         <p>+{{charge.id}}</p>
         <p class="col-span-2">{{charge.dateIncurred}}</p>
-        <p>£{{charge.amountDue}}</p>
+        <p>£{{charge.amountPaid === 0 || charge.amountPaid === charge.amountDue ? charge.amountDue : charge.amountDue-charge.amountPaid}}</p>
         <p class="col-span-3 pl-2">Out-of-term interest</p>
         <div class="flex justify-end items-center">
           <Tag

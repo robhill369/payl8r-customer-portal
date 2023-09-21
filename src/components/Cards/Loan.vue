@@ -1,8 +1,8 @@
 <template>
 
   <BaseCard
-    class="relative lg:flex-col px-5 xl:px-9 pt-7 cursor-pointer transition ease-in-out duration-200"
-    :class="loanDetails ? 'pb-2' : 'relative pb-7 hover:scale-105 hover:drop-shadow-lg', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
+    class="relative lg:flex-col px-5 xl:px-9 pt-7 transition ease-in-out duration-200"
+    :class="loanDetails ? 'pb-2' : 'relative pb-7 hover:scale-105 hover:drop-shadow-lg cursor-pointer', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
   >
     <div
       v-if="status === 'Complete'"
@@ -340,7 +340,7 @@
           />
           <LoanLateFees
             v-if="instalmentsWithLateFees && tab === 3"
-            :instalments=props.instalments
+            :instalments=lapsedInstalments.slice(0,instalmentsWithLateFees[instalmentsWithLateFees.length-1].id)
             :out-of-term-charges=props.outOfTermCharges
             :ready-to-pay=loanRepaid
           />
