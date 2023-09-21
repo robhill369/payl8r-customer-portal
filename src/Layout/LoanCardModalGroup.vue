@@ -38,7 +38,6 @@
       </div>
     </Teleport>
     <LoanCard
-      v-else
       @open="loanModalOpen = true"
       @show="tallyBalance"
       :retailer-name=retailerName
@@ -57,7 +56,7 @@
   </div>
 </template>
 <script setup>
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 
 import LoanCard from "@/components/Cards/Loan.vue";
 

@@ -474,49 +474,6 @@ const props = defineProps({
 const tab = ref(1)
 const status = ref('')
 
-const loanRepaid = props.valueLeftToPay == 0
-
-//refactor this to remove the late for a last instalment that is still payable within 28 days.
-const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee)
-
-const remainingPayments = (arr) => {
-  const newArray = []
-  arr.forEach((item) => {
-      if (item.amountPaid !== item.amountDue)
-        newArray.push(item.amountDue - item.amountPaid)
-  })
-  return newArray
-}
-
-const remainingLateFeePayments = (arr) => {
-  const newArray = []
-  arr.forEach((item) => {
-    if((item.lateFee.amountDue - item.lateFee.amountPaid !== 0) && !item.lateFee.isWaived && !item.lateFee.isWaivable) {
-      newArray.push(item.lateFee.amountDue - item.lateFee.amountPaid)
-    }
-  })
-  return newArray
-}
-
-const lapsedInstalments = props.instalments.filter(item => item.hasLapsed)
-
-const nextInstalment = lapsedInstalments.length !== props.termLength ? props.instalments[props.currentInstalment.id] : {}
-
-const lateInstalments = remainingPayments(lapsedInstalments)
-const lateInstalmentsTotal = lateInstalments.reduce((acc, obj) => {return acc + obj}, 0)
-
-const lateFees = remainingLateFeePayments(instalmentsWithLateFees)
-const lateFeesTotal = lateFees.reduce((acc, obj) => {return acc + obj}, 0)
-
-const OOTCharges = remainingPayments(props.outOfTermCharges)
-const outOfTermChargesRemaining = OOTCharges.reduce((acc, obj) => {return acc + obj}, 0)
-
-const remainingBalance = lateInstalmentsTotal+outOfTermChargesRemaining+lateFeesTotal
-
-const currentTab = (tabNumber) => {
-  tab.value = tabNumber;
-}
-
 onMounted(() => {
   if(lapsedInstalments.length !== props.termLength) {
     if(lateInstalments.length) {
@@ -534,7 +491,43 @@ onMounted(() => {
       status.value = 'Complete'
     }
   }
-  emit('show', remainingBalance)
 })
+
+const remainingPayments = (arr) => {
+  const newArray = []
+  arr.forEach((item) => {
+    if (item.amountPaid !== item.amountDue)
+      newArray.push(item.amountDue - item.amountPaid)
+  })
+  return newArray
+}
+
+const remainingLateFeePayments = (arr) => {
+  const newArray = []
+  arr.forEach((item) => {
+    if((item.lateFee.amountDue - item.lateFee.amountPaid !== 0) && !item.lateFee.isWaived && !item.lateFee.isWaivable) {
+      newArray.push(item.lateFee.amountDue - item.lateFee.amountPaid)
+    }
+  })
+  return newArray
+}
+
+const currentTab = (tabNumber) => {
+  tab.value = tabNumber;
+}
+
+const loanRepaid = props.valueLeftToPay == 0
+const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee)
+const lapsedInstalments = props.instalments.filter(item => item.hasLapsed)
+const nextInstalment = lapsedInstalments.length !== props.termLength ? props.instalments[props.currentInstalment.id] : {}
+const lateInstalments = remainingPayments(lapsedInstalments)
+const lateInstalmentsTotal = lateInstalments.reduce((acc, obj) => {return acc + obj}, 0)
+const lateFees = remainingLateFeePayments(instalmentsWithLateFees)
+const lateFeesTotal = lateFees.reduce((acc, obj) => {return acc + obj}, 0)
+const OOTCharges = remainingPayments(props.outOfTermCharges)
+const outOfTermChargesRemaining = OOTCharges.reduce((acc, obj) => {return acc + obj}, 0)
+const remainingBalance = lateInstalmentsTotal+outOfTermChargesRemaining+lateFeesTotal
+
+emit('show', remainingBalance)
 
 </script>
