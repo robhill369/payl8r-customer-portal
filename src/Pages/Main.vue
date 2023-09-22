@@ -20,7 +20,7 @@
     <CardSection>
         <CardSectionHeader title="My overview" v-if="$route.path === '/'"/>
         <PaymentsCard
-          :total-left-to-pay=remainingBalance
+          :total-left-to-pay=remainingBalance.toFixed(2)
           :active-loans-count="loans.filter(item => item.isActive).length"
           :repaid-loans-count="loans.length - loans.filter(item => item.isActive).length"
         />
@@ -28,12 +28,13 @@
 
 <!--    Account status section-->
     <CardSection v-if="$route.path === '/'">
-      <CardSectionHeader title="Account status">
+      <CardSectionHeader :title="1 === 2 ? 'Your account is in great shape' : 'Your account needs attention'">
         <template v-slot:icon>
           <Avatar
-            class="w-7 h-7 mr-4 bg-teal text-white"
-            icon="fa-solid fa-thumbs-up"
-            size="md"
+            class="w-7 h-7 mr-4"
+            :class="1 === 2 ? 'bg-teal text-white' : 'bg-white text-red-dark'"
+            :icon="1 === 2 ? 'fa-solid fa-thumbs-up' : 'fa-solid fa-circle-exclamation'"
+            :size="1 === 2 ? 'md' : '2xl'"
           />
         </template>
       </CardSectionHeader>

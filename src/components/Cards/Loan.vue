@@ -2,7 +2,7 @@
 
   <BaseCard
     class="relative lg:flex-col px-5 xl:px-9 pt-7 transition ease-in-out duration-200"
-    :class="loanDetails ? 'pb-2' : 'relative pb-7 hover:scale-105 hover:drop-shadow-lg cursor-pointer', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
+    :class="loanDetails ? 'pb-2' : 'relative pb-8 hover:scale-105 hover:drop-shadow-lg cursor-pointer', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
   >
     <div
       v-if="status === 'Complete'"
