@@ -14,7 +14,7 @@
     "upcomingInstalmentDate": "28th Sep 2023",
     "previousInstalmentValue": null,
     "previousInstalmentDate": null,
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 1,
@@ -35,60 +35,27 @@
       {
         "id": 1,
         "hasLapsed": false,
-        "date": "28th Sep 2023",
+        "dueDates": [
+          "28th Sep 2023"
+        ],
         "amountDue": 26.48,
         "amountPaid": 0
       },
       {
         "id": 2,
         "hasLapsed": false,
-        "date": "28th Oct 2023",
+        "dueDates": [
+          "28th Oct 2023"
+        ],
         "amountDue": 26.48,
         "amountPaid": 0
       },
       {
         "id": 3,
         "hasLapsed": false,
-        "date": "28th Nov 2023",
-        "amountDue": 26.49,
-        "amountPaid": 0
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "retailerName": "",
-    "isActive": true,
-    "purchaseDate": "28th Aug 2023",
-    "startDate": "28th Sep 2023",
-    "termLength": 3,
-    "provider": "upfront",
-    "totalOrderValue": 100,
-    "depositValue": 30,
-    "totalInterestValue": 9.45,
-    "upcomingInstalmentValue": 26.48,
-    "upcomingInstalmentDate": "28th Sep 2023",
-    "previousInstalmentValue": null,
-    "previousInstalmentDate": null,
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": false,
-        "date": "28th Sep 2023",
-        "amountDue": 26.48,
-        "amountPaid": 0
-      },
-      {
-        "id": 2,
-        "hasLapsed": false,
-        "date": "28th Oct 2023",
-        "amountDue": 26.48,
-        "amountPaid": 0
-      },
-      {
-        "id": 3,
-        "hasLapsed": false,
-        "date": "28th Nov 2023",
+        "dueDates": [
+          "28th Nov 2023"
+        ],
         "amountDue": 26.49,
         "amountPaid": 0
       }
@@ -109,7 +76,7 @@
     "upcomingInstalmentDate": "5th Oct 2023",
     "previousInstalmentValue": 71.88,
     "previousInstalmentDate": "5th Sep  2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 3,
@@ -125,70 +92,27 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "5th Sep 2023",
+        "dueDates": [
+          "5th Sep 2023"
+        ],
         "amountDue": 71.88,
         "amountPaid": 71.88
       },
       {
         "id": 2,
         "hasLapsed": false,
-        "date": "5th Oct 2023",
+        "dueDates": [
+          "5th Oct 2023"
+        ],
         "amountDue": 71.88,
         "amountPaid": 71.88
       },
       {
         "id": 3,
         "hasLapsed": false,
-        "date": "5th Nov 2023",
-        "amountDue": 71.89,
-        "amountPaid": 0.00
-      }
-    ],
-    "transactions": [
-      {
-        "id": 1,
-        "date": "5th Sep 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 71.88,
-        "balance": 143.77
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "retailerName": "",
-    "isActive": true,
-    "purchaseDate": "5th July 2023",
-    "startDate": "5th Aug 2023",
-    "termLength": 3,
-    "provider": "upfront",
-    "totalOrderValue": 250,
-    "depositValue": 60,
-    "totalInterestValue": 25.65,
-    "upcomingInstalmentValue": 71.88,
-    "upcomingInstalmentDate": "5th Oct 2023",
-    "previousInstalmentValue": 71.88,
-    "previousInstalmentDate": "5th Sep  2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "5th Sep 2023",
-        "amountDue": 71.88,
-        "amountPaid": 71.88
-      },
-      {
-        "id": 2,
-        "hasLapsed": false,
-        "date": "5th Oct 2023",
-        "amountDue": 71.88,
-        "amountPaid": 71.88
-      },
-      {
-        "id": 3,
-        "hasLapsed": false,
-        "date": "5th Nov 2023",
+        "dueDates": [
+          "5th Nov 2023"
+        ],
         "amountDue": 71.89,
         "amountPaid": 0.00
       }
@@ -219,7 +143,7 @@
     "upcomingInstalmentDate": "5th Sep 2023",
     "previousInstalmentValue": 71.88,
     "previousInstalmentDate": "5th Aug 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 3,
@@ -235,21 +159,27 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "5th Aug 2023",
+        "dueDates": [
+          "5th Aug 2023"
+        ],
         "amountDue": 71.88,
         "amountPaid": 71.88
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "5th Sep 2023",
+        "dueDates": [
+          "5th Sep 2023"
+        ],
         "amountDue": 71.88,
         "amountPaid": 71.88
       },
       {
         "id": 3,
         "hasLapsed": false,
-        "date": "5th Oct 2023",
+        "dueDates": [
+          "5th Oct 2023"
+        ],
         "amountDue": 71.89,
         "amountPaid": 0.00
       }
@@ -288,7 +218,7 @@
     "upcomingInstalmentDate": null,
     "previousInstalmentValue": 109.08,
     "previousInstalmentDate": "2nd Aug 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 1,
@@ -299,49 +229,63 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "2nd Feb 2023",
+        "dueDates": [
+          "2nd Feb 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 109.08
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "2nd Mar 2023",
+        "dueDates": [
+          "2nd Mar 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 109.08
       },
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "2nd Apr 2023",
+        "dueDates": [
+          "2nd Apr 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 109.08
       },
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "2nd May 2023",
+        "dueDates": [
+          "2nd May 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 109.08
       },
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "2nd Jun 2023",
+        "dueDates": [
+          "2nd Jun 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 109.08
       },
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "2nd Jul 2023",
+        "dueDates": [
+          "2nd Jul 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 109.08
       },
       {
         "id": 7,
         "hasLapsed": true,
-        "date": "2nd Aug 2023",
+        "dueDates": [
+          "2nd Aug 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 109.08
       },
@@ -349,6 +293,11 @@
         "id": 8,
         "hasLapsed": true,
         "date": "2nd Sep 2023",
+        "dueDates": [
+          "2nd Sep 2023",
+          "4th Sep 2023",
+          "7th Sep 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 0,
         "lateFee": {
@@ -363,193 +312,36 @@
         "id": 9,
         "hasLapsed": false,
         "date": "2nd Oct 2023",
+        "dueDates": [
+          "2nd Oct 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 0
       },
       {
         "id": 10,
         "hasLapsed": false,
-        "date": "2nd Nov 2023",
+        "dueDates": [
+          "2nd Nov 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 0
       },
       {
         "id": 11,
         "hasLapsed": false,
-        "date": "2nd Dec 2023",
+        "dueDates": [
+          "2nd Dec 2023"
+        ],
         "amountDue": 109.08,
         "amountPaid": 0
       },
       {
         "id": 12,
         "hasLapsed": false,
-        "date": "2nd Jan 2024",
-        "amountDue": 109.08,
-        "amountPaid": 0
-      }
-    ],
-    "transactions": [
-      {
-        "date": "2nd Feb 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 1199.92
-      },
-      {
-        "date": "5th Mar 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 1090.84
-      },
-      {
-        "date": "7th Apr 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 981.76
-      },
-      {
-        "date": "20th May 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 872.68
-      },
-      {
-        "date": "2nd Jun 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 763.60
-      },
-      {
-        "date": "2nd Jul 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 654.52
-      },
-      {
-        "date": "2nd Aug 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 109.08,
-        "balance": 545.44
-      },
-      {
-        "date": "3rd Sep 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0,
-        "balance": 575.44
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "retailerName": "",
-    "isActive": true,
-    "purchaseDate": "2nd Dec 2022",
-    "startDate": "2nd Jan 2023",
-    "termLength": 12,
-    "provider": "upfront",
-    "totalOrderValue": 1100,
-    "depositValue": 250,
-    "totalInterestValue": 459,
-    "upcomingInstalmentValue": 109.08,
-    "upcomingInstalmentDate": null,
-    "previousInstalmentValue": 109.08,
-    "previousInstalmentDate": "2nd Aug 2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "2nd Feb 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "2nd Mar 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 3,
-        "hasLapsed": true,
-        "date": "2nd Apr 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 4,
-        "hasLapsed": true,
-        "date": "2nd May 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 5,
-        "hasLapsed": true,
-        "date": "2nd Jun 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 6,
-        "hasLapsed": true,
-        "date": "2nd Jul 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 7,
-        "hasLapsed": true,
-        "date": "2nd Aug 2023",
-        "amountDue": 109.08,
-        "amountPaid": 109.08
-      },
-      {
-        "id": 8,
-        "hasLapsed": true,
-        "date": "2nd Sep 2023",
-        "amountDue": 109.08,
-        "amountPaid": 0,
-        "lateFee": {
-          "dateIncurred": "3rd Sep 2023",
-          "isWaivable": true,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00}
-      },
-      {
-        "id": 9,
-        "hasLapsed": false,
-        "date": "2nd Oct 2023",
-        "amountDue": 109.08,
-        "amountPaid": 0
-      },
-      {
-        "id": 10,
-        "hasLapsed": false,
-        "date": "2nd Nov 2023",
-        "amountDue": 109.08,
-        "amountPaid": 0
-      },
-      {
-        "id": 11,
-        "hasLapsed": false,
-        "date": "2nd Dec 2023",
-        "amountDue": 109.08,
-        "amountPaid": 0
-      },
-      {
-        "id": 12,
-        "hasLapsed": false,
-        "date": "2nd Jan 2024",
+        "dueDates": [
+          "2nd Jan 2024"
+        ],
         "amountDue": 109.08,
         "amountPaid": 0
       }
@@ -628,7 +420,7 @@
     "upcomingInstalmentDate": "13th Sep 2023",
     "previousInstalmentValue": 81.18,
     "previousInstalmentDate": "17th Aug 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 3,
@@ -639,14 +431,21 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "13th Feb 2023",
+        "dueDates": [
+          "13th Feb 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "13th Mar 2023",
+        "dueDates": [
+          "13th Mar 2023",
+          "15th Mar 2023",
+          "18th Mar 2023",
+          "18th Apr 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "lateFee": {
@@ -660,7 +459,10 @@
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "13th Apr 2023",
+        "dueDates": [
+          "13th Apr 2023",
+          "15th Apr 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "lateFee": {
@@ -675,14 +477,19 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "13th May 2023",
+        "dueDates": [
+          "13th May 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "13th Jun 2023",
+        "dueDates": [
+          "13th Jun 2023",
+          "15th Jun 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "lateFee": {
@@ -696,217 +503,36 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "13th Jul 2023",
+        "dueDates": [
+          "13th Jul 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 7,
         "hasLapsed": true,
-        "date": "13th Aug 2023",
+        "dueDates": [
+          "13th Aug 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 8,
         "hasLapsed": false,
-        "date": "13th Sep 2023",
+        "dueDates": [
+          "13th Sep 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 0
       },
       {
         "id": 9,
         "hasLapsed": false,
-        "date": "13th Oct 2023",
-        "amountDue": 81.16,
-        "amountPaid": 0
-      }
-    ],
-    "transactions": [
-      {
-        "date": "13th Feb 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 649.42
-      },
-      {
-        "date": "14th Mar 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 679.42
-      },
-      {
-        "date": "14th Apr 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 709.42
-      },
-      {
-        "date": "17th Apr 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 628.24
-      },
-      {
-        "date": "19th Apr 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 547.06
-      },
-      {
-        "date": "19th Apr 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 517.06
-      },
-      {
-        "date": "13th May 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 435.88
-      },
-      {
-        "date": "14th Jun 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 465.88
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 384.70
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 354.70
-      },
-      {
-        "date": "13th Jul 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 273.52
-      },
-      {
-        "date": "13th Aug 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 192.34
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "retailerName": "",
-    "isActive": true,
-    "purchaseDate": "13th Dec 2022",
-    "startDate": "13th Jan 2023",
-    "termLength": 9,
-    "provider": "upfront",
-    "totalOrderValue": 600,
-    "depositValue": 80,
-    "totalInterestValue": 210.60,
-    "upcomingInstalmentValue": 81.18,
-    "upcomingInstalmentDate": "13th Sep 2023",
-    "previousInstalmentValue": 81.18,
-    "previousInstalmentDate": "17th Aug 2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "13th Feb 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "13th Mar 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "lateFee": {
-          "dateIncurred": "14th Mar 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0
-        }
-      },
-      {
-        "id": 3,
-        "hasLapsed": true,
-        "date": "13th Apr 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "lateFee": {
-          "dateIncurred": "14th Apr 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00,
-          "cardExpired": true
-        }
-      },
-      {
-        "id": 4,
-        "hasLapsed": true,
-        "date": "13th May 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18
-      },
-      {
-        "id": 5,
-        "hasLapsed": true,
-        "date": "13th Jun 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "lateFee": {
-          "dateIncurred": "14th Jun 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 6,
-        "hasLapsed": true,
-        "date": "13th Jul 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18
-      },
-      {
-        "id": 7,
-        "hasLapsed": true,
-        "date": "13th Aug 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18
-      },
-      {
-        "id": 8,
-        "hasLapsed": false,
-        "date": "13th Sep 2023",
-        "amountDue": 81.18,
-        "amountPaid": 0
-      },
-      {
-        "id": 9,
-        "hasLapsed": false,
-        "date": "13th Oct 2023",
+        "dueDates": [
+          "13th Oct 2023"
+        ],
         "amountDue": 81.16,
         "amountPaid": 0
       }
@@ -1013,7 +639,7 @@
     "upcomingInstalmentDate": "13th Sep 2023",
     "previousInstalmentValue": 81.18,
     "previousInstalmentDate": "17th Aug 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 3,
@@ -1024,14 +650,19 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "13th Feb 2023",
+        "dueDates": [
+          "13th Feb 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "13th Mar 2023",
+        "dueDates": [
+          "13th Mar 2023",
+          "15th Mar 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "lateFee": {
@@ -1045,7 +676,10 @@
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "13th Apr 2023",
+        "dueDates": [
+          "13th Apr 2023",
+          "15th Apr 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "lateFee": {
@@ -1059,14 +693,19 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "13th May 2023",
+        "dueDates": [
+          "13th May 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "13th Jun 2023",
+        "dueDates": [
+          "13th Jun 2023",
+          "15th Jun 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "lateFee": {
@@ -1080,28 +719,36 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "13th Jul 2023",
+        "dueDates": [
+          "13th Jul 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 7,
         "hasLapsed": true,
-        "date": "13th Aug 2023",
+        "dueDates": [
+          "13th Aug 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 8,
         "hasLapsed": false,
-        "date": "13th Sep 2023",
+        "dueDates": [
+          "13th Sep 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 0
       },
       {
         "id": 9,
         "hasLapsed": false,
-        "date": "13th Oct 2023",
+        "dueDates": [
+          "13th Oct 2023"
+        ],
         "amountDue": 81.16,
         "amountPaid": 0
       }
@@ -1215,7 +862,7 @@
     "upcomingInstalmentDate": "13th Sep 2023",
     "previousInstalmentValue": 81.18,
     "previousInstalmentDate": "17th Aug 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 3,
@@ -1226,14 +873,19 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "13th Feb 2023",
+        "dueDates": [
+          "13th Feb 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "13th Mar 2023",
+        "dueDates": [
+          "13th Mar 2023",
+          "15th Mar 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "lateFee": {
@@ -1247,7 +899,10 @@
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "13th Apr 2023",
+        "dueDates": [
+          "13th Apr 2023",
+          "15th Apr 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "lateFee": {
@@ -1261,14 +916,19 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "13th May 2023",
+        "dueDates": [
+          "13th May 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "13th Jun 2023",
+        "dueDates": [
+          "13th Jun 2023",
+          "15th Jun 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18,
         "lateFee": {
@@ -1282,28 +942,36 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "13th Jul 2023",
+        "dueDates": [
+          "13th Jul 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 7,
         "hasLapsed": true,
-        "date": "13th Aug 2023",
+        "dueDates": [
+          "13th Aug 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 8,
         "hasLapsed": false,
-        "date": "13th Sep 2023",
+        "dueDates": [
+          "13th Sep 2023"
+        ],
         "amountDue": 81.18,
         "amountPaid": 81.18
       },
       {
         "id": 9,
         "hasLapsed": false,
-        "date": "13th Oct 2023",
+        "dueDates": [
+          "13th Oct 2023"
+        ],
         "amountDue": 81.16,
         "amountPaid": 0
       }
@@ -1410,201 +1078,6 @@
     ]
   },
   {
-    "id": 12,
-    "retailerName": "",
-    "isActive": true,
-    "purchaseDate": "13th Dec 2022",
-    "startDate": "13th Jan 2023",
-    "termLength": 9,
-    "provider": "upfront",
-    "totalOrderValue": 600,
-    "depositValue": 80,
-    "totalInterestValue": 210.60,
-    "upcomingInstalmentValue": 81.18,
-    "upcomingInstalmentDate": "13th Sep 2023",
-    "previousInstalmentValue": 81.18,
-    "previousInstalmentDate": "17th Aug 2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "13th Feb 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "13th Mar 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "lateFee": {
-          "dateIncurred": "14th Mar 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0
-        }
-      },
-      {
-        "id": 3,
-        "hasLapsed": true,
-        "date": "13th Apr 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "lateFee": {
-          "dateIncurred": "14th Apr 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 4,
-        "hasLapsed": true,
-        "date": "13th May 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18
-      },
-      {
-        "id": 5,
-        "hasLapsed": true,
-        "date": "13th Jun 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18,
-        "lateFee": {
-          "dateIncurred": "14th Jun 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 6,
-        "hasLapsed": true,
-        "date": "13th Jul 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18
-      },
-      {
-        "id": 7,
-        "hasLapsed": true,
-        "date": "13th Aug 2023",
-        "amountDue": 81.18,
-        "amountPaid": 81.18
-      },
-      {
-        "id": 8,
-        "hasLapsed": false,
-        "date": "13th Sep 2023",
-        "amountDue": 81.18,
-        "amountPaid": 0
-      },
-      {
-        "id": 9,
-        "hasLapsed": false,
-        "date": "13th Oct 2023",
-        "amountDue": 81.16,
-        "amountPaid": 0
-      }
-    ],
-    "transactions": [
-      {
-        "date": "13th Feb 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 649.42
-      },
-      {
-        "date": "14th Mar 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 679.42
-      },
-      {
-        "date": "24th Mar 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 598.24
-      },
-      {
-        "date": "24th Mar 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 568.24
-      },
-      {
-        "date": "14th Apr 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 598.24
-      },
-      {
-        "date": "19th Apr 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 517.06
-      },
-      {
-        "date": "19th Apr 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 487.06
-      },
-      {
-        "date": "13th May 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 405.88
-      },
-      {
-        "date": "14th Jun 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 435.88
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 354.70
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 324.70
-      },
-      {
-        "date": "13th Jul 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 243.52
-      },
-      {
-        "date": "13th Aug 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 81.18,
-        "balance": 162.34
-      }
-    ]
-  },
-  {
     "id": 13,
     "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
     "isActive": true,
@@ -1619,7 +1092,7 @@
     "upcomingInstalmentDate": null,
     "previousInstalmentValue": 0,
     "previousInstalmentDate": "",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 3,
@@ -1630,9 +1103,14 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "23rd Jul 2023",
+        "dueDates": [
+          "23rd Jul 2023",
+          "25th Jul 2023",
+          "28th Jul 2023",
+          "28th Aug 2023"
+        ],
         "amountDue": 55.03,
-        "amountPaid": 0.00,
+        "amountPaid": 27.52,
         "lateFee": {
           "dateIncurred": "24th Jul 2023",
           "isWaivable": false,
@@ -1644,7 +1122,11 @@
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "23rd Aug 2023",
+        "dueDates": [
+          "23rd Aug 2023",
+          "25th Aug 2023",
+          "29th Aug 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 0.00,
         "lateFee": {
@@ -1658,118 +1140,36 @@
       {
         "id": 3,
         "hasLapsed": false,
-        "date": "23rd Sep 2023",
+        "dueDates": [
+          "23rd Sep 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 0.00
       },
       {
         "id": 4,
         "hasLapsed": false,
-        "date": "23rd Oct 2023",
+        "dueDates": [
+          "23rd Oct 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 0.00
       },
       {
         "id": 5,
         "hasLapsed": false,
-        "date": "23rd Nov 2023",
+        "dueDates": [
+          "23rd Nov 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 0.00
       },
       {
         "id": 6,
         "hasLapsed": false,
-        "date": "23rd Dec 2023",
-        "amountDue": 55.05,
-        "amountPaid": 0.00
-      }
-    ],
-    "transactions": [
-      {
-        "date": "24th Jul 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 360.20
-      },
-      {
-        "date": "24th Aug 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 390.20
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
-    "isActive": true,
-    "purchaseDate": "23rd May 2023",
-    "startDate": "23rd Jun 2023",
-    "termLength": 6,
-    "provider": "upfront",
-    "totalOrderValue": 300,
-    "depositValue": 40,
-    "totalInterestValue": 70.20,
-    "upcomingInstalmentValue": 55.03,
-    "upcomingInstalmentDate": null,
-    "previousInstalmentValue": 0,
-    "previousInstalmentDate": "",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "23rd Jul 2023",
-        "amountDue": 55.03,
-        "amountPaid": 0.00,
-        "lateFee": {
-          "dateIncurred": "24th Jul 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "23rd Aug 2023",
-        "amountDue": 55.03,
-        "amountPaid": 0.00,
-        "lateFee": {
-          "dateIncurred": "24th Aug 2023",
-          "isWaivable": true,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 3,
-        "hasLapsed": false,
-        "date": "23rd Sep 2023",
-        "amountDue": 55.03,
-        "amountPaid": 0.00
-      },
-      {
-        "id": 4,
-        "hasLapsed": false,
-        "date": "23rd Oct 2023",
-        "amountDue": 55.03,
-        "amountPaid": 0.00
-      },
-      {
-        "id": 5,
-        "hasLapsed": false,
-        "date": "23rd Nov 2023",
-        "amountDue": 55.03,
-        "amountPaid": 0.00
-      },
-      {
-        "id": 6,
-        "hasLapsed": false,
-        "date": "23rd Dec 2023",
+        "dueDates": [
+          "23rd Dec 2023"
+        ],
         "amountDue": 55.05,
         "amountPaid": 0.00
       }
@@ -1806,7 +1206,7 @@
     "upcomingInstalmentDate": "",
     "previousInstalmentValue": 74.41,
     "previousInstalmentDate": "5th Sep  2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 1,
@@ -1832,398 +1232,162 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "9th Mar 2021",
+        "dueDates": [
+          "9th Mar 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "9th Apr 2021",
+        "dueDates": [
+          "9th Apr 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "9th May 2021",
+        "dueDates": [
+          "9th May 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "9th Jun 2021",
+        "dueDates": [
+          "9th Jun 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "9th Jul 2021",
+        "dueDates": [
+          "9th Jul 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "9th Aug 2021",
+        "dueDates": [
+          "9th Aug 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 7,
         "hasLapsed": true,
-        "date": "9th Sep 2021",
+        "dueDates": [
+          "9th Sep 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 8,
         "hasLapsed": true,
-        "date": "9th Oct 2021",
+        "dueDates": [
+          "9th Oct 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 9,
         "hasLapsed": true,
-        "date": "9th Nov 2021",
+        "dueDates": [
+          "9th Nov 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 10,
         "hasLapsed": true,
-        "date": "9th Dec 2021",
+        "dueDates": [
+          "9th Dec 2021"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 11,
         "hasLapsed": true,
-        "date": "9th Jan 2022",
+        "dueDates": [
+          "9th Jan 2022"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 12,
         "hasLapsed": true,
-        "date": "9th Feb 2022",
+        "dueDates": [
+          "9th Feb 2022"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 13,
         "hasLapsed": true,
-        "date": "9th Mar 2022",
+        "dueDates": [
+          "9th Mar 2022"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 14,
         "hasLapsed": true,
-        "date": "9th Apr 2022",
+        "dueDates": [
+          "9th Apr 2022"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 15,
         "hasLapsed": true,
-        "date": "9th May 2022",
+        "dueDates": [
+          "9th May 2022"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 16,
         "hasLapsed": true,
-        "date": "9th Jun 2022",
+        "dueDates": [
+          "9th Jun 2022"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 17,
         "hasLapsed": true,
-        "date": "9th Jul 2022",
+        "dueDates": [
+          "9th Jul 2022"
+        ],
         "amountDue": 74.41,
         "amountPaid": 74.41
       },
       {
         "id": 18,
-        "date": "9th Aug 2022",
+        "dueDates": [
+          "9th Aug 2022"
+        ],
         "hasLapsed": true,
-        "amountDue": 74.43,
-        "amountPaid": 74.43
-      }
-    ],
-    "transactions": [
-      {
-        "date": "9th Mar 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 1264.99
-      },
-      {
-        "date": "9th Apr 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 1190.58
-      },
-      {
-        "date": "9th May 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 1116.17
-      },
-      {
-        "date": "9th Jun 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 1041.76
-      },
-      {
-        "date": "9th Jul 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 967.35
-      },
-      {
-        "date": "9th Aug 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 892.94
-      },
-      {
-        "date": "9th Sep 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 818.53
-      },
-      {
-        "date": "9th Oct 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 744.12
-      },
-      {
-        "date": "9th Nov 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 669.71
-      },
-      {
-        "date": "9th Dec 2021",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 595.30
-      },
-      {
-        "date": "9th Jan 2022",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 520.89
-      },
-      {
-        "date": "9th Feb 2022",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 446.48
-      },
-      {
-        "date": "9th Mar 2022",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 372.07
-      },
-      {
-        "date": "9th Apr 2022",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 297.66
-      },
-      {
-        "date": "9th May 2022",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 223.25
-      },
-      {
-        "date": "9th Jun 2022",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 148.84
-      },
-      {
-        "date": "9th Jul 2022",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.41,
-        "balance": 74.43
-      },
-      {
-        "date": "9th Aug 2022",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 74.43,
-        "balance": 0.00
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "retailerName": "",
-    "isActive": false,
-    "purchaseDate": "9th Jan 2021",
-    "startDate": "9th Feb 2021",
-    "termLength": 18,
-    "totalOrderValue": 840,
-    "provider": "upfront",
-    "depositValue": 100,
-    "totalInterestValue": 599.40,
-    "upcomingInstalmentValue": 0,
-    "upcomingInstalmentDate": "",
-    "previousInstalmentValue": 74.41,
-    "previousInstalmentDate": "5th Sep  2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "9th Mar 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "9th Apr 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 3,
-        "hasLapsed": true,
-        "date": "9th May 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 4,
-        "hasLapsed": true,
-        "date": "9th Jun 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 5,
-        "hasLapsed": true,
-        "date": "9th Jul 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 6,
-        "hasLapsed": true,
-        "date": "9th Aug 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 7,
-        "hasLapsed": true,
-        "date": "9th Sep 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 8,
-        "hasLapsed": true,
-        "date": "9th Oct 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 9,
-        "hasLapsed": true,
-        "date": "9th Nov 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 10,
-        "hasLapsed": true,
-        "date": "9th Dec 2021",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 11,
-        "hasLapsed": true,
-        "date": "9th Jan 2022",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 12,
-        "hasLapsed": true,
-        "date": "9th Feb 2022",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 13,
-        "hasLapsed": true,
-        "date": "9th Mar 2022",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 14,
-        "hasLapsed": true,
-        "date": "9th Apr 2022",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 15,
-        "hasLapsed": true,
-        "date": "9th May 2022",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 16,
-        "hasLapsed": true,
-        "date": "9th Jun 2022",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 17,
-        "hasLapsed": true,
-        "date": "9th Jul 2022",
-        "amountDue": 74.41,
-        "amountPaid": 74.41
-      },
-      {
-        "id": 18,
-        "hasLapsed": true,
-        "date": "9th Aug 2022",
         "amountDue": 74.43,
         "amountPaid": 74.43
       }
@@ -2372,7 +1536,7 @@
     "upcomingInstalmentDate": "",
     "previousInstalmentValue": 74.41,
     "previousInstalmentDate": "5th Sep  2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 3,
@@ -2383,14 +1547,21 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "9th Feb 2023",
+        "dueDates": [
+          "9th Feb 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "9th Mar 2023",
+        "dueDates": [
+          "9th Mar 2023",
+          "11th Mar 2023",
+          "14th Mar 2023",
+          "14th Apr 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -2404,7 +1575,12 @@
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "9th Apr 2023",
+        "dueDates": [
+          "9th Apr 2023",
+          "11th Apr 2023",
+          "14th Apr 2023",
+          "14th May 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -2418,7 +1594,12 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "9th May 2023",
+        "dueDates": [
+          "9th May 2023",
+          "11th May 2023",
+          "14th May 2023",
+          "14th Jun 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -2432,7 +1613,10 @@
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "9th Jun 2023",
+        "dueDates": [
+          "9th Jun 2023",
+          "11th Jun 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -2446,174 +1630,9 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "9th Jul 2023",
-        "amountDue": 55.05,
-        "amountPaid": 55.05
-      }
-    ],
-    "transactions": [
-      {
-        "date": "9th Feb 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 275.17
-      },
-      {
-        "date": "10th Mar 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 305.17
-      },
-      {
-        "date": "10th Apr 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 335.17
-      },
-      {
-        "date": "12th Apr 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 280.14
-      },
-      {
-        "date": "10th May 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 310.14
-      },
-      {
-        "date": "14th May 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 255.11
-      },
-      {
-        "date": "17th May 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 200.08
-      },
-      {
-        "date": "10th Jun 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 230.08
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 175.05
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 145.05
-      },
-      {
-        "date": "9th Jul 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.05,
-        "balance": 90.00
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "retailerName": "",
-    "isActive": true,
-    "purchaseDate": "9th Dec 2022",
-    "startDate": "13th Jan 2023",
-    "termLength": 6,
-    "provider": "upfront",
-    "totalOrderValue": 300,
-    "depositValue": 40,
-    "totalInterestValue": 70.20,
-    "upcomingInstalmentValue": 0,
-    "upcomingInstalmentDate": "",
-    "previousInstalmentValue": 74.41,
-    "previousInstalmentDate": "5th Sep  2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "9th Feb 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "9th Mar 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th Mar 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 3,
-        "hasLapsed": true,
-        "date": "9th Apr 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th Apr 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 4,
-        "hasLapsed": true,
-        "date": "9th May 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th May 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 5,
-        "hasLapsed": true,
-        "date": "9th Jun 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th Jun 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 6,
-        "hasLapsed": true,
-        "date": "9th Jul 2023",
+        "dueDates": [
+          "9th Jul 2023"
+        ],
         "amountDue": 55.05,
         "amountPaid": 55.05
       }
@@ -2713,7 +1732,7 @@
     "upcomingInstalmentDate": "",
     "previousInstalmentValue": 74.41,
     "previousInstalmentDate": "5th Sep  2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 3,
@@ -2724,21 +1743,29 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "9th Feb 2023",
+        "dueDates": [
+          "9th Feb 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "9th Mar 2023",
+        "dueDates": [
+          "9th Mar 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03
       },
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "9th Apr 2023",
+        "dueDates": [
+          "9th Apr 2023",
+          "11th Apr 2023",
+          "14th Apr 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -2752,7 +1779,10 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "9th May 2023",
+        "dueDates": [
+          "9th May 2023",
+          "11th May 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -2766,7 +1796,11 @@
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "9th Jun 2023",
+        "dueDates": [
+          "9th Jun 2023",
+          "11th Jun 2023",
+          "14th Jun 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -2780,174 +1814,9 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "9th Jul 2023",
-        "amountDue": 55.05,
-        "amountPaid": 55.05
-      }
-    ],
-    "transactions": [
-      {
-        "date": "9th Feb 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 275.17
-      },
-      {
-        "date": "10th Mar 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 305.17
-      },
-      {
-        "date": "10th Apr 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 335.17
-      },
-      {
-        "date": "12th Apr 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 280.14
-      },
-      {
-        "date": "10th May 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 310.14
-      },
-      {
-        "date": "14th May 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 255.11
-      },
-      {
-        "date": "17th May 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 200.08
-      },
-      {
-        "date": "17th May 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 170.08
-      },
-      {
-        "date": "10th Jun 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 200.08
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 145.05
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 115.05
-      },
-      {
-        "date": "9th Jul 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.05,
-        "balance": 60.00
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "retailerName": "",
-    "isActive": true,
-    "purchaseDate": "9th Dec 2022",
-    "startDate": "13th Jan 2023",
-    "termLength": 6,
-    "provider": "upfront",
-    "totalOrderValue": 300,
-    "depositValue": 40,
-    "totalInterestValue": 70.20,
-    "upcomingInstalmentValue": 0,
-    "upcomingInstalmentDate": "",
-    "previousInstalmentValue": 74.41,
-    "previousInstalmentDate": "5th Sep  2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "9th Feb 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "9th Mar 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03
-      },
-      {
-        "id": 3,
-        "hasLapsed": true,
-        "date": "9th Apr 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th Apr 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 4,
-        "hasLapsed": true,
-        "date": "9th May 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th May 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 5,
-        "hasLapsed": true,
-        "date": "9th Jun 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th Jun 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 6,
-        "hasLapsed": true,
-        "date": "9th Jul 2023",
+        "dueDates": [
+          "9th Jul 2023"
+        ],
         "amountDue": 55.05,
         "amountPaid": 55.05
       }
@@ -3054,7 +1923,7 @@
     "upcomingInstalmentDate": "",
     "previousInstalmentValue": 74.41,
     "previousInstalmentDate": "5th Sep  2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 3,
@@ -3065,14 +1934,20 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "9th Feb 2023",
+        "dueDates": [
+          "9th Feb 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "9th Mar 2023",
+        "dueDates": [
+          "9th Mar 2023",
+          "11th Mar 2023",
+          "14th Mar 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -3086,7 +1961,11 @@
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "9th Apr 2023",
+        "dueDates": [
+          "9th Apr 2023",
+          "11th Apr 2023",
+          "14th Apr 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -3100,7 +1979,11 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "9th May 2023",
+        "dueDates": [
+          "9th May 2023",
+          "11th May 2023",
+          "14th May 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -3114,7 +1997,11 @@
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "9th Jun 2023",
+        "dueDates": [
+          "9th Jun 2023",
+          "11th Jun 2023",
+          "14th Jun 2023"
+        ],
         "amountDue": 55.03,
         "amountPaid": 55.03,
         "lateFee": {
@@ -3128,195 +2015,9 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "9th Jul 2023",
-        "amountDue": 55.05,
-        "amountPaid": 55.05
-      }
-    ],
-    "transactions": [
-      {
-        "date": "9th Feb 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 275.17
-      },
-      {
-        "date": "10th Mar 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 305.17
-      },
-      {
-        "date": "14th Mar 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 250.14
-      },
-      {
-        "date": "14th Mar 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 220.14
-      },
-      {
-        "date": "10th Apr 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 250.14
-      },
-      {
-        "date": "12th Apr 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 195.11
-      },
-      {
-        "date": "12th Apr 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 165.11
-      },
-      {
-        "date": "10th May 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 195.11
-      },
-      {
-        "date": "14th May 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 140.08
-      },
-      {
-        "date": "14th May 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 110.08
-      },
-      {
-        "date": "10th Jun 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 140.08
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.03,
-        "balance": 85.05
-      },
-      {
-        "date": "16th Jun 2023",
-        "description": "Late fee waived",
-        "debit": 0.00,
-        "credit": 30.00,
-        "balance": 55.05
-      },
-      {
-        "date": "9th Jul 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 55.05,
-        "balance": 0.00
-      }
-    ]
-  },
-  {
-    "id": 22,
-    "retailerName": "",
-    "isActive": false,
-    "purchaseDate": "9th Dec 2022",
-    "startDate": "13th Jan 2023",
-    "termLength": 6,
-    "provider": "upfront",
-    "totalOrderValue": 300,
-    "depositValue": 40,
-    "totalInterestValue": 70.20,
-    "upcomingInstalmentValue": 0,
-    "upcomingInstalmentDate": "",
-    "previousInstalmentValue": 74.41,
-    "previousInstalmentDate": "5th Sep  2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "9th Feb 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "9th Mar 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th Mar 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 3,
-        "hasLapsed": true,
-        "date": "9th Apr 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th Apr 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 4,
-        "hasLapsed": true,
-        "date": "9th May 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th May 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 5,
-        "hasLapsed": true,
-        "date": "9th Jun 2023",
-        "amountDue": 55.03,
-        "amountPaid": 55.03,
-        "lateFee": {
-          "dateIncurred": "10th Jun 2023",
-          "isWaivable": false,
-          "isWaived": true,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 6,
-        "hasLapsed": true,
-        "date": "9th Jul 2023",
+        "dueDates": [
+          "9th Jul 2023"
+        ],
         "amountDue": 55.05,
         "amountPaid": 55.05
       }
@@ -3437,7 +2138,7 @@
     "upcomingInstalmentDate": null,
     "previousInstalmentValue": 179.92,
     "previousInstalmentDate": "2nd Mar 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 1,
@@ -3448,21 +2149,29 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "2nd Feb 2023",
+        "dueDates": [
+          "2nd Feb 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "2nd Mar 2023",
+        "dueDates": [
+          "2nd Mar 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "2nd Apr 2023",
+        "dueDates": [
+          "2nd Apr 2023",
+          "4th Apr 2023",
+          "7th Apr 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 0,
         "lateFee": {
@@ -3476,7 +2185,11 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "2nd May 2023",
+        "dueDates": [
+          "2nd May 2023",
+          "4th May 2023",
+          "7th May 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 0,
         "lateFee": {
@@ -3490,7 +2203,11 @@
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "2nd Jun 2023",
+        "dueDates": [
+          "2nd Jun 2023",
+          "4th Jun 2023",
+          "7th Jun 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 0,
         "lateFee": {
@@ -3504,7 +2221,11 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "2nd Jul 2023",
+        "dueDates": [
+          "2nd Jul 2023",
+          "4th Jul 2023",
+          "7th Jul 2023"
+        ],
         "amountDue": 179.90,
         "amountPaid": 0,
         "lateFee": {
@@ -3590,138 +2311,6 @@
     ]
   },
   {
-    "id": 24,
-    "retailerName": "",
-    "isActive": true,
-    "purchaseDate": "2nd Dec 2022",
-    "startDate": "2nd Jan 2023",
-    "termLength": 6,
-    "provider": "upfront",
-    "totalOrderValue": 1100,
-    "depositValue": 250,
-    "totalInterestValue": 229.50,
-    "upcomingInstalmentValue": 179.92,
-    "upcomingInstalmentDate": null,
-    "previousInstalmentValue": 179.92,
-    "previousInstalmentDate": "2nd Mar 2023",
-    "instalments": [
-      {
-        "id": 1,
-        "hasLapsed": true,
-        "date": "2nd Feb 2023",
-        "amountDue": 179.92,
-        "amountPaid": 179.92
-      },
-      {
-        "id": 2,
-        "hasLapsed": true,
-        "date": "2nd Mar 2023",
-        "amountDue": 179.92,
-        "amountPaid": 179.92
-      },
-      {
-        "id": 3,
-        "hasLapsed": true,
-        "date": "2nd Apr 2023",
-        "amountDue": 179.92,
-        "amountPaid": 0,
-        "lateFee": {
-          "dateIncurred": "3rd Apr 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 4,
-        "hasLapsed": true,
-        "date": "2nd May 2023",
-        "amountDue": 179.92,
-        "amountPaid": 0,
-        "lateFee": {
-          "dateIncurred": "3rd May 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 5,
-        "hasLapsed": true,
-        "date": "2nd Jun 2023",
-        "amountDue": 179.92,
-        "amountPaid": 0,
-        "lateFee": {
-          "dateIncurred": "3rd Jun 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      },
-      {
-        "id": 6,
-        "hasLapsed": true,
-        "date": "2nd Jul 2023",
-        "amountDue": 179.90,
-        "amountPaid": 0,
-        "lateFee": {
-          "dateIncurred": "3rd Jul 2023",
-          "isWaivable": false,
-          "isWaived": false,
-          "amountDue": 30,
-          "amountPaid": 0.00
-        }
-      }
-    ],
-    "transactions": [
-      {
-        "date": "2nd Feb 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 179.92,
-        "balance": 899.58
-      },
-      {
-        "date": "2nd Mar 2023",
-        "description": "Loan payment",
-        "debit": null,
-        "credit": 179.92,
-        "balance": 719.66
-      },
-      {
-        "date": "3rd Apr 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 749.66
-      },
-      {
-        "date": "3rd May 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 779.66
-      },
-      {
-        "date": "3rd Jun 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 809.66
-      },
-      {
-        "date": "3rd Jul 2023",
-        "description": "Late fee applied",
-        "debit": 30.00,
-        "credit": 0.00,
-        "balance": 839.66
-      }
-    ]
-  },
-  {
     "id": 25,
     "retailerName": "11. In term, with last payment overdue",
     "isActive": true,
@@ -3736,7 +2325,7 @@
     "upcomingInstalmentDate": null,
     "previousInstalmentValue": 179.92,
     "previousInstalmentDate": "2nd Mar 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 1,
@@ -3747,21 +2336,27 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "2nd Apr 2023",
+        "dueDates": [
+          "2nd Apr 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "2nd May 2023",
+        "dueDates": [
+          "2nd May 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "2nd Jun 2023",
+        "dueDates": [
+          "2nd Jun 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -3775,7 +2370,10 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "2nd Jul 2023",
+        "dueDates": [
+          "2nd Jul 2023",
+          "4th Jul 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -3789,14 +2387,21 @@
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "2nd Aug 2023",
+        "dueDates": [
+          "2nd Aug 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "2nd Sep 2023",
+        "dueDates": [
+          "2nd Sep 2023",
+          "4th Sep 2023",
+          "7th Sep 2023",
+          "7th Oct 2023"
+        ],
         "amountDue": 179.90,
         "amountPaid": 0,
         "lateFee": {
@@ -3868,7 +2473,7 @@
     "upcomingInstalmentDate": null,
     "previousInstalmentValue": 179.92,
     "previousInstalmentDate": "2nd Mar 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 1,
@@ -3879,21 +2484,28 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "2nd Apr 2023",
+        "dueDates": [
+          "2nd Apr 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "2nd May 2023",
+        "dueDates": [
+          "2nd May 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "2nd Jun 2023",
+        "dueDates": [
+          "2nd Jun 2023",
+          "4th Jun 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -3907,7 +2519,11 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "2nd Jul 2023",
+        "dueDates": [
+          "2nd Jul 2023",
+          "4th Jul 2023",
+          "7th Jul 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -3921,16 +2537,23 @@
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "2nd Aug 2023",
+        "dueDates": [
+          "2nd Aug 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "2nd Sep 2023",
+        "dueDates": [
+          "2nd Sep 2023",
+          "4th Sep 2023",
+          "7th Sep 2023",
+          "7th Oct 2023"
+        ],
         "amountDue": 179.90,
-        "amountPaid": 0,
+        "amountPaid": 89.95,
         "lateFee": {
           "dateIncurred": "3rd Sep 2023",
           "isWaivable": true,
@@ -4000,7 +2623,7 @@
     "upcomingInstalmentDate": null,
     "previousInstalmentValue": 179.90,
     "previousInstalmentDate": "2nd Mar 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 1,
@@ -4011,21 +2634,29 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "2nd Feb 2023",
+        "dueDates": [
+          "2nd Feb 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "2nd Mar 2023",
+        "dueDates": [
+          "2nd Mar 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "2nd Apr 2023",
+        "dueDates": [
+          "2nd Apr 2023",
+          "4th Apr 2023",
+          "7th Apr 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -4039,7 +2670,11 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "2nd May 2023",
+        "dueDates": [
+          "2nd May 2023",
+          "4th May 2023",
+          "7th May 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -4053,7 +2688,11 @@
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "2nd Jun 2023",
+        "dueDates": [
+          "2nd Jun 2023",
+          "4th Jun 2023",
+          "7th Jun 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -4067,7 +2706,11 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "2nd Jul 2023",
+        "dueDates": [
+          "2nd Jul 2023",
+          "4th Jul 2023",
+          "7th Jul 2023"
+        ],
         "amountDue": 179.90,
         "amountPaid": 179.90,
         "lateFee": {
@@ -4174,7 +2817,7 @@
     "upcomingInstalmentDate": null,
     "previousInstalmentValue": 179.90,
     "previousInstalmentDate": "2nd Mar 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 1,
@@ -4185,21 +2828,29 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "2nd Feb 2023",
+        "dueDates": [
+          "2nd Feb 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "2nd Mar 2023",
+        "dueDates": [
+          "2nd Mar 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "2nd Apr 2023",
+        "dueDates": [
+          "2nd Apr 2023",
+          "4th Apr 2023",
+          "7th Apr 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -4213,7 +2864,11 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "2nd May 2023",
+        "dueDates": [
+          "2nd May 2023",
+          "4th May 2023",
+          "7th May 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -4227,7 +2882,11 @@
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "2nd Jun 2023",
+        "dueDates": [
+          "2nd Jun 2023",
+          "4th Jun 2023",
+          "7th Jun 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -4241,7 +2900,11 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "2nd Jul 2023",
+        "dueDates": [
+          "2nd Jul 2023",
+          "4th Jul 2023",
+          "7th Jul 2023"
+        ],
         "amountDue": 179.90,
         "amountPaid": 179.90,
         "lateFee": {
@@ -4355,7 +3018,7 @@
     "upcomingInstalmentDate": null,
     "previousInstalmentValue": 179.90,
     "previousInstalmentDate": "2nd Mar 2023",
-    "orderItems":[
+    "orderItems": [
       {
         "name": "product 1",
         "qnty": 1,
@@ -4366,21 +3029,29 @@
       {
         "id": 1,
         "hasLapsed": true,
-        "date": "2nd Feb 2023",
+        "dueDates": [
+          "2nd Feb 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 2,
         "hasLapsed": true,
-        "date": "2nd Mar 2023",
+        "dueDates": [
+          "2nd Mar 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92
       },
       {
         "id": 3,
         "hasLapsed": true,
-        "date": "2nd Apr 2023",
+        "dueDates": [
+          "2nd Apr 2023",
+          "4th Apr 2023",
+          "7th Apr 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -4394,7 +3065,11 @@
       {
         "id": 4,
         "hasLapsed": true,
-        "date": "2nd May 2023",
+        "dueDates": [
+          "2nd May 2023",
+          "4th May 2023",
+          "7th May 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -4408,7 +3083,11 @@
       {
         "id": 5,
         "hasLapsed": true,
-        "date": "2nd Jun 2023",
+        "dueDates": [
+          "2nd Jun 2023",
+          "4th Jun 2023",
+          "7th JUn 2023"
+        ],
         "amountDue": 179.92,
         "amountPaid": 179.92,
         "lateFee": {
@@ -4422,7 +3101,11 @@
       {
         "id": 6,
         "hasLapsed": true,
-        "date": "2nd Jul 2023",
+        "dueDates": [
+          "2nd Jul 2023",
+          "4th Jul 2023",
+          "7th Jul 2023"
+        ],
         "amountDue": 179.90,
         "amountPaid": 179.90,
         "lateFee": {

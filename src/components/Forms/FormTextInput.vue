@@ -7,8 +7,9 @@
       class="bg-gray-light px-3 sm:px-5 py-3 border-b border-gray-dark text-gray-darker w-full focus:bg-pink-lighter focus:border-pink"
       :disabled=disabled
       :placeholder="currentValuePlaceholder ? currentValuePlaceholder : placeholder"
+      :value=currentValue
     />
-    <font-awesome-icon icon="fa-solid fa-lock" size="md" v-if="disabled" class="absolute right-5 top-14  text-gray"/>
+    <font-awesome-icon icon="fa-solid fa-lock" v-if="disabled" class="absolute right-5 top-14 text-gray"/>
   </div>
 </template>
 
@@ -37,6 +38,9 @@ defineProps ({
     type: String,
   },
   placeholder: {
+    type: String,
+  },
+  currentValue: {
     type: String,
   }
 })

@@ -2,12 +2,12 @@
   <AppLayout>
     <header>
       <Navbar
-          class="xs:hidden lg:block"
-          username="USERNAME"
+          class="xs:hidden lg:block capitalize"
+          :username="user.firstName+' '+user.lastName"
       />
       <NavbarMobile
           class="relative lg:hidden"
-          username="USERNAME"
+          :username="user.firstName+' '+user.lastName"
       />
     </header>
     <main class="currentColor ">
@@ -24,14 +24,10 @@
 <script setup>
 import Navbar from './Layout/Navbar.vue'
 import AppLayout from './Layout/AppLayout.vue'
-import MainPage from './Pages/Main.vue'
 import NavbarMobile from "@/Layout/NavbarMobile.vue";
-import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
-import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
-import PaymentCardUpdatedNotification from "@/components/Notifications/PaymentCard.vue";
-import HelpPage from "@/Pages/Help.vue";
-import AccountPage from "@/Pages/Account.vue";
 
+import schemaData from '@/assets/json/schema.json'
 
+const user = schemaData.user
 
 </script>

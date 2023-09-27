@@ -6,7 +6,7 @@
     <h1 v-else-if="initialTitle" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-[350] capitalize">
       {{initialTitle ? initialTitle.charAt(0) : ''}}
     </h1>
-    <font-awesome-icon :icon="icon" :size="size" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"/>
+    <font-awesome-icon v-if="icon" :icon="icon" :size="props.size" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"/>
   </div>
 </template>
 
@@ -30,9 +30,8 @@ const props = defineProps({
   },
   provider: {
     type: String,
-    required: true
+    default: 'payl8r'
   }
 })
-
 
 </script>

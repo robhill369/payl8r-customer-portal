@@ -2,25 +2,23 @@
   <PageBase>
     <div>
       <div v-if="$route.path === '/'">
-        <h2>Hey, USERNAME</h2>
+        <h2 class="capitalize">Hey {{user.firstName}},</h2>
         <div class="mt-4 text-md text-gray">This is your Payl8r dashboard</div>
       </div>
 <!--      v-if Notifications-->
-<!--      <div class="pt-12" >-->
-<!--                    v-for Notification in Notifications-->
-<!--        <PaymentSuccessfulNotification class="mb-4"/>-->
-<!--        <PaymentCardUpdatedNotification class="mb-4"/>-->
-<!--        <PaymentsOverdueNotification class="mb-4"/>-->
-<!--        <OrderHelpNotification/>-->
-<!--        <UpdateDetailsHelpNotification/>-->
-<!--      </div>-->
+      <div v-if="1 === 2" class="pt-12 space-y-5">
+        <PaymentSuccessfulNotification v-if="1 === 2"/>
+        <PaymentsOverdueNotification v-if="loanStatuses.includes('Payment overdue')">
+          <p v-if="loanStatuses.includes('Payment overdue')">Instalments are overdue. Pay within 28 days of their due date to avoid late fees.</p>
+          <p v-if="loanStatuses.includes('Urgent') && !loanStatuses.includes('Payment overdue')">Pay unpaid late fees now to avoid potential negative effects to your credit file.</p>
+        </PaymentsOverdueNotification>
+      </div>
     </div>
-
 <!--    My overview section-->
     <CardSection>
         <CardSectionHeader title="My overview" v-if="$route.path === '/'"/>
         <PaymentsCard
-          :total-left-to-pay=remainingBalance.toFixed(2)
+          :total-left-to-pay="(remainingBalance.reduce((acc, obj) => {return acc + obj}, 0)).toFixed(2)"
           :active-loans-count="loans.filter(item => item.isActive).length"
           :repaid-loans-count="loans.length - loans.filter(item => item.isActive).length"
         />
@@ -28,13 +26,13 @@
 
 <!--    Account status section-->
     <CardSection v-if="$route.path === '/'">
-      <CardSectionHeader :title="1 === 2 ? 'Your account is in great shape' : 'Your account needs attention'">
+      <CardSectionHeader :title="!loanStatuses.includes('Payment overdue') && !loanStatuses.includes('Urgent') ? 'Your account is in great shape' : 'Your account needs attention'">
         <template v-slot:icon>
           <Avatar
             class="w-7 h-7 mr-4"
-            :class="1 === 2 ? 'bg-teal text-white' : 'bg-white text-red-dark'"
-            :icon="1 === 2 ? 'fa-solid fa-thumbs-up' : 'fa-solid fa-circle-exclamation'"
-            :size="1 === 2 ? 'md' : '2xl'"
+            :class="!loanStatuses.includes('Payment overdue') && !loanStatuses.includes('Urgent') ? 'bg-teal text-white' : 'bg-white text-red-dark'"
+            :icon="!loanStatuses.includes('Payment overdue') && !loanStatuses.includes('Urgent') ? 'fa-solid fa-thumbs-up' : 'fa-solid fa-circle-exclamation'"
+            :size="!loanStatuses.includes('Payment overdue') && !loanStatuses.includes('Urgent') ? '' : '2xl'"
           />
         </template>
       </CardSectionHeader>
@@ -47,6 +45,7 @@
         />
       </BaseCard>
     </CardSection>
+
 <!--    My (active) loans section-->
     <CardSection>
       <CardSectionHeader :title="$route.path === '/' ? 'My active loans' : 'My loans'">
@@ -65,7 +64,8 @@
       </CardSectionHeader>
         <div v-for="loan in filteredLoans(loans)" :key=loan.id>
           <LoanCardModalGroup
-            @tally="balanceSum"
+            @tally="balanceSum($event)"
+            @status="collateLoanStatuses($event)"
             :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
             :provider=loan.provider
             :purchase-date=loan.purchaseDate
@@ -74,15 +74,15 @@
             :deposit-value=loan.depositValue
             :total-order-value=loan.totalOrderValue
             :total-interest-value=loan.totalInterestValue
-            :total-loan-value=(loan.totalOrderValue+loan.totalInterestValue).toFixed(2)
-            :value-repaid=Number(valuePaid(loan.instalments)+valuePaid(loan.outOfTermCharges)).toFixed(2)
-            :value-left-to-pay=Number(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)-valuePaid(loan.outOfTermCharges)+valueDue(loan.outOfTermCharges)).toFixed(2)
+            :total-loan-value=(loan.totalOrderValue+loan.totalInterestValue)
+            :value-repaid=valuePaid(loan.instalments)+Number(valuePaid(loan.outOfTermCharges))
+            :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)-valuePaid(loan.outOfTermCharges)+valueDue(loan.outOfTermCharges))
             :loan-upcoming-payment=loan.upcomingInstalmentValue
             :loan-upcoming-payment-date=loan.upcomingInstalmentDate
             :loan-previous-payment=loan.previousInstalmentValue
             :loan-previous-payment-date=loan.previousInstalmentDate
             :order-items=loan.orderItems
-            current-last-four-digits="1234"
+            :current-last-four-digits=1234
             :transactions=loan.transactions
             :instalments=loan.instalments
             :out-of-term-charges=loan.outOfTermCharges
@@ -128,12 +128,20 @@ import Tabs from "@/components/Tabs.vue";
 import BaseCard from "@/components/Cards/Base.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 import LoanCardModalGroup from "@/Layout/LoanCardModalGroup.vue";
+import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuccessful.vue";
+import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
 
-import loanData from '@/assets/json/loans.json';
+import schemaData from '@/assets/json/schema.json'
 
-const loans = loanData
+const user = schemaData.user
+const loans = schemaData.loans
 
-const remainingBalance = ref(0.00)
+const remainingBalance = ref([])
+const loanStatuses = ref([])
+
+const collateLoanStatuses = (event) => {
+  loanStatuses.value.push(event)
+}
 
 function valuePaid(arr) {
   if(arr) {
@@ -164,7 +172,10 @@ function valueDue(arr) {
 }
 
 const route = useRoute()
+
 function filteredLoans(arr) {
+  // const orderedByDate = arr.sort((a, b) => (a.retailerName) > (b.retailerName) ? 1 : -1)
+
   if(route.path === '/') {
     return arr.filter(function (loan) {
       return loan.isActive
@@ -174,7 +185,7 @@ function filteredLoans(arr) {
 }
 
 const balanceSum = (val) => {
-  return remainingBalance.value += val
+  remainingBalance.value.push(val)
 }
 
 const loanTypes = [
@@ -191,5 +202,6 @@ const loanTypes = [
     name: 'Payl8r business',
   },
 ]
+
 
 </script>

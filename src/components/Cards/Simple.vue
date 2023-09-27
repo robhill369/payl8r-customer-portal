@@ -1,13 +1,13 @@
 <template>
   <BaseCard class="px-9 py-7">
     <Avatar
-      :class=avatarColors
-      :icon=icon
-      :size=iconSize
+      :class=props.avatarColors
+      :icon=props.icon
+      :size=props.iconSize
     />
     <TitledCopy class="pl-7"
-      :title=title
-      :body=body
+      :title=props.title
+      :body=props.body
     />
   </BaseCard>
 </template>

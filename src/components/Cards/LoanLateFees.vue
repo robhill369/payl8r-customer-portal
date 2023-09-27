@@ -10,10 +10,17 @@
     <div v-for="instalment in instalments">
       <div
         v-if="instalment.lateFee"
-        class="grid grid-cols-8 w-full auto-rows-auto items-center h-14 px-1.5 border-b"
+        class="grid grid-cols-8 w-full auto-rows-auto items-center px-1.5 border-b" :class="instalment.dueDates.length === 1 ? 'py-4' : 'py-3'"
       >
         <p>{{instalment.id}}</p>
-        <p class="col-span-2">{{instalment.lateFee.dateIncurred}}</p>
+
+        <div class="col-span-2 relative">
+          <div v-for="(n, index) in instalment.dueDates.length">
+            <p class="leading-5 invisible" :class="index !== instalment.dueDates.length-1 ? 'text-sm' : ''">{{n}}</p>
+          </div>
+        <p class="absolute top-1/2 -translate-y-1/2">{{instalment.lateFee.dateIncurred}}</p>
+        </div>
+
         <p>£{{instalment.lateFee.amountPaid === 0 || instalment.lateFee.amountPaid === instalment.lateFee.amountDue ? instalment.lateFee.amountDue : instalment.lateFee.amountDue-instalment.lateFee.amountPaid}}</p>
         <p class="col-span-3 pl-2">{{instalment.lateFee.cardExpired ? 'Failed payment (card expired)' : 'Failed payment'}}</p>
         <div class="flex justify-end">
@@ -24,12 +31,11 @@
           />
         </div>
       </div>
-      <div v-else class="w-full items-center h-14 bg-gray-light border-b flex align-middle justify-center text-gray"/>
-
+      <div v-else class="w-full items-center bg-gray-light border-b flex align-middle justify-center text-gray h-[57px]"/>
     </div>
     <div v-for="charge in outOfTermCharges">
       <div
-          class="grid grid-cols-8 w-full auto-rows-auto items-center h-14 bg-red-lighter border-b px-1.5"
+          class="grid grid-cols-8 w-full auto-rows-auto items-center bg-red-lighter border-b px-1.5 py-4"
       >
         <p>+{{charge.id}}</p>
         <p class="col-span-2">{{charge.dateIncurred}}</p>

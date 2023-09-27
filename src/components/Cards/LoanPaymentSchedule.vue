@@ -8,14 +8,23 @@
       <div class="flex justify-end">Status</div>
     </div>
     <div
-      class="grid grid-cols-8 w-full auto-rows-auto items-center h-14 px-1.5 border-b"
+      class="grid grid-cols-8 w-full auto-rows-auto items-center px-1.5 border-b" :class="instalment.dueDates.length === 1 ? 'py-4' : 'py-3'"
       v-for="instalment in instalments"
     >
-      <p class="flex h-14 items-center border-b">{{instalment.id}}</p>
-      <p class="flex h-14 items-center border-b col-span-2">{{instalment.date}}</p>
-      <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountDue}}</p>
-      <p class="flex h-14 items-center border-b col-span-2">£{{instalment.amountPaid}}</p>
-      <div class="border-b w-full flex justify-end h-14 items-center">
+      <p class="flex items-center">{{instalment.id}}</p>
+      <div class="flex items-center col-span-2">
+        <p v-if="instalment.dueDates.length === 1">
+          {{instalment.dueDates[0]}}
+        </p>
+        <div v-else>
+          <div class="flex" v-for="(date, index) in instalment.dueDates">
+            <p class="leading-5" :class="index !== instalment.dueDates.length-1 ? isPaid(instalment)+' line-through text-sm' : ''">{{date}}</p>
+          </div>
+        </div>
+      </div>
+      <p class="flex items-center col-span-2">£{{instalment.amountDue}}</p>
+      <p class="flex items-center col-span-2">£{{instalment.amountPaid}}</p>
+      <div class=" w-full flex justify-end items-center">
         <Tag
             payment-status
             :name="instalmentStatus(instalment)"
@@ -45,6 +54,13 @@ const instalmentStatus = (obj) => {
       return 'upcoming'
   }
   else return 'paid'
+}
+
+const isPaid = (instalment) => {
+  if(instalment.amountDue !== instalment.amountPaid) {
+    return 'text-red-dark'
+  }
+  else return 'text-gray'
 }
 
 </script>

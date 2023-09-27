@@ -5,9 +5,6 @@ import './index.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-
-
-
 /* import specific icons */
 
 
@@ -21,6 +18,7 @@ import {
     faBars,
     faCircleExclamation,
     faCircleCheck,
+    faCircleUser,
     faCircleInfo,
     faXmark,
     faArrowsRotate,
@@ -52,6 +50,7 @@ library.add(
     faBars,
     faCircleExclamation,
     faCircleCheck,
+    faCircleUser,
     faCircleInfo,
     faXmark,
     faArrowsRotate,

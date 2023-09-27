@@ -14,10 +14,6 @@ import Payl8rLogo from "@/components/icons/Payl8rLogo.vue";
 import NavbarList from "@/Layout/NavbarList.vue";
 
 defineProps({
-  msg: {
-    type: String,
-    required: true
-  },
   username: {
     type: String,
     required: true

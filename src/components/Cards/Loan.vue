@@ -85,7 +85,7 @@
           <div class="flex flex-col justify-between text-end space-y-2 lg:space-y-0"
              :class="loanDetails ? 'lg:flex-row lg:space-x-2 lg:items-center' : '', status !== 'Complete' ? 'relative' : ''">
             <h3 :class="loanRepaid && lateFeesTotal ? 'text-red-darker' : ''">
-              £{{loanRepaid && lateFeesTotal ? lateFeesTotal : valueLeftToPay}}
+              £{{loanRepaid && lateFeesTotal ? lateFeesTotal : valueLeftToPay.toFixed(2)}}
             </h3>
             <h5 v-if="!loanRepaid && lateFeesTotal" class="w-20 absolute top-3.5 lg:top-5 font-medium text-red-darker -right-1.5" :class="loanDetails ? 'lg:right-[73px]' : ''">
               + £{{lateFeesTotal}}*
@@ -165,7 +165,7 @@
                 is-payment
                 :array="lateInstalments"
               >
-                <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment !== null"> Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{currentInstalment.date}}</span>.</span></p>
+                <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment !== null"> Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{currentInstalment.dueDates[0]}}</span>.</span></p>
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
@@ -211,8 +211,8 @@
                 is-payment
                 :array=Array(1).fill(currentInstalment.amountDue-currentInstalment.amountPaid)
               >
-                <p>You will pay the instalment due <span class="font-bold">{{currentInstalment.date}}</span> today.<span v-if="nextInstalment"><br class="hidden sm:block">
-                  Your next instalment will then be collected on <span class="font-bold">{{nextInstalment.date}}</span>.</span>
+                <p>You will pay the instalment due <span class="font-bold">{{currentInstalment.dueDates[currentInstalment.dueDates.length-1]}}</span> today.<span v-if="nextInstalment"><br class="hidden sm:block">
+                  Your next instalment will then be collected on <span class="font-bold">{{nextInstalment.dueDates[nextInstalment.dueDates.length-1]}}</span>.</span>
                 </p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
@@ -329,7 +329,7 @@
             is-payment
             :array="lateInstalments"
           >
-            <p v-if="lateInstalments.length < 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{nextInstalment.date}}</span>.</p>
+            <p v-if="lateInstalments.length < 1" class=" ">We will attempt to take payment from your card. Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{nextInstalment.dueDates[nextInstalment.dueDates.length-1]}}</span>.</p>
             <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block">Choose how many to pay below</span>.</p>
           </LoanActionModalButtonGroup>
         </LoanSummary>
@@ -359,9 +359,8 @@
   </BaseCard>
 </template>
 
-
 <script setup>
-import {ref, onMounted, onUpdated} from "vue";
+import {ref, onMounted} from "vue";
 
 import ProgressBar from "@/components/ProgressBar.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
@@ -375,7 +374,7 @@ import LoanStatement from "@/components/Cards/LoanStatement.vue";
 import LoanActionModalButtonGroup from "@/Layout/LoanActionModalButtonGroup.vue";
 import LoanLateFees from "@/components/Cards/LoanLateFees.vue";
 
-const emit = defineEmits(['show'])
+const emit = defineEmits(['tally', 'status'])
 
 const props = defineProps({
   retailerName: {
@@ -390,7 +389,7 @@ const props = defineProps({
     type: String,
   },
   loanStartDate: {
-    type: String,
+    type: Date,
     required: true
   },
   termLength: {
@@ -401,20 +400,17 @@ const props = defineProps({
     type: Number,
   },
   totalInterestValue: {
-    type: Number,
-    required: true
+    type: Number
   },
   valueLeftToPay: {
     type: Number,
     required: true
   },
   totalLoanValue: {
-    type: Number,
-    required: true
+    type: Number
   },
   totalOrderValue: {
-    type: Number,
-    required: true
+    type: Number
   },
   valueRepaid: {
     type: Number,
@@ -423,25 +419,20 @@ const props = defineProps({
   },
   loanUpcomingPayment: {
     type: Number,
-    required: true,
     default: 0
   },
   loanUpcomingPaymentDate: {
-    type: Date,
-    required: true,
+    type: Date
   },
   loanPreviousPayment: {
     type: Number,
-    required: true,
     default: 0
   },
   loanPreviousPaymentDate: {
-    type: Date,
-    required: true,
+    type: Date
   },
   currentLastFourDigits: {
-    type: Number,
-    required: true,
+    type: Number
   },
   loanDetails: {
     type: Boolean,
@@ -449,7 +440,7 @@ const props = defineProps({
   },
   transactions: {
     type: Array,
-    required: true
+    default: []
   },
   instalments: {
     type: Array,
@@ -491,6 +482,7 @@ onMounted(() => {
       status.value = 'Complete'
     }
   }
+  emit('status', status.value)
 })
 
 const remainingPayments = (arr) => {
@@ -519,15 +511,13 @@ const currentTab = (tabNumber) => {
 const loanRepaid = props.valueLeftToPay == 0
 const instalmentsWithLateFees = props.instalments.filter(item => item.lateFee)
 const lapsedInstalments = props.instalments.filter(item => item.hasLapsed)
-const nextInstalment = lapsedInstalments.length !== props.termLength ? props.instalments[props.currentInstalment.id] : {}
+const nextInstalment = lapsedInstalments.length !== props.termLength ? props.instalments[props.currentInstalment.id] : null
 const lateInstalments = remainingPayments(lapsedInstalments)
 const lateInstalmentsTotal = lateInstalments.reduce((acc, obj) => {return acc + obj}, 0)
 const lateFees = remainingLateFeePayments(instalmentsWithLateFees)
 const lateFeesTotal = lateFees.reduce((acc, obj) => {return acc + obj}, 0)
 const OOTCharges = remainingPayments(props.outOfTermCharges)
-const outOfTermChargesRemaining = OOTCharges.reduce((acc, obj) => {return acc + obj}, 0)
-const remainingBalance = lateInstalmentsTotal+outOfTermChargesRemaining+lateFeesTotal
 
-emit('show', remainingBalance)
+emit('tally', Number(props.valueLeftToPay)+lateFeesTotal)
 
 </script>

@@ -4,7 +4,7 @@
       title="Action needed"
       icon="fa-solid fa-circle-exclamation"
   >
-    <p>You have payments overdue, pay soon to avoid late fees.</p>
+    <slot/>
   </BaseNotification>
 </template>
 

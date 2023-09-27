@@ -13,7 +13,7 @@
             :retailer-name=retailerName
             :provider="provider"
             :purchase-date=purchaseDate
-            :loan-start-date=loanStartDate
+            :loan-start-date="new Date(loanStartDate)"
             :term-length=termLength
             :total-interest-value=totalInterestValue
             :total-order-value=totalOrderValue
@@ -22,9 +22,9 @@
             :value-repaid="valueRepaid"
             :value-left-to-pay=valueLeftToPay
             :loan-upcoming-payment=loanUpcomingPayment
-            :loan-upcoming-payment-date=loanUpcomingPaymentDate
+            :loan-upcoming-payment-date="new Date(loanUpcomingPaymentDate)"
             :loan-previous-payment=loanPreviousPayment
-            :loan-previous-payment-date=loanPreviousPaymentDate
+            :loan-previous-payment-date="new Date(loanPreviousPaymentDate)"
             :current-last-four-digits=currentLastFourDigits
             :transactions=transactions
             :instalments=instalments
@@ -39,11 +39,12 @@
     </Teleport>
     <LoanCard
       @open="loanModalOpen = true"
-      @show="tallyBalance"
+      @tally="tallyBalance"
+      @status="$emit('status', $event)"
       :retailer-name=retailerName
       :provider=provider
       :value-repaid="valueRepaid"
-      :loan-start-date=loanStartDate
+      :loan-start-date="new Date(loanStartDate)"
       :term-length=termLength
       :deposit-value=depositValue
       :total-loan-value=totalLoanValue
@@ -60,7 +61,9 @@ import {onMounted, ref} from "vue";
 
 import LoanCard from "@/components/Cards/Loan.vue";
 
-const emit = defineEmits(['tally'])
+const emit = defineEmits(['tally', 'status'])
+
+console.log()
 
 const props = defineProps({
   retailerName: {
@@ -81,11 +84,6 @@ const props = defineProps({
     type: String,
     required: true
   },
-  currentInstalmentStatus: {
-    type: String,
-    required: true,
-    default: 'ongoing'
-  },
   depositValue: {
     type: Number,
     required: true,
@@ -95,12 +93,10 @@ const props = defineProps({
     type: Number,
   },
   totalLoanValue: {
-    type: Number,
-    required: true
+    type: Number
   },
   totalOrderValue: {
-    type: Number,
-    required: true
+    type: Number
   },
   valueRepaid: {
     type: Number,
@@ -112,33 +108,26 @@ const props = defineProps({
   },
   loanUpcomingPayment: {
     type: Number,
-    required: true,
     default: 0
   },
   loanUpcomingPaymentDate: {
-    type: Date,
-    required: true,
+    type: String
   },
   loanPreviousPayment: {
     type: Number,
-    required: true,
     default: 0
   },
   loanPreviousPaymentDate: {
-    type: Date,
-    required: true,
+    type: String
   },
   currentLastFourDigits: {
-    type: Number,
-    required: true,
+    type: Number
   },
   transactions: {
-    type: Array,
-    required: true
+    type: Array
   },
   instalments: {
-    type: Array,
-    required: true
+    type: Array
   },
   outOfTermCharges: {
     type: Array,

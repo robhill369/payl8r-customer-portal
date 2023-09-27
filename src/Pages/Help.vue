@@ -32,7 +32,7 @@
       </CardSectionHeader>
       <div class="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10">
         <SimpleCard
-          avatar-colors="bg-pink-light text-pink -rotate-45"
+          avatar-colors="bg-pink-light text-pink rotate-45"
           icon="fa-solid fa-hand"
           icon-size="2xl"
           title="Here to support you"
