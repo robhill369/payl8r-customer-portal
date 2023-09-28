@@ -62,7 +62,7 @@
           />
         </template>
       </CardSectionHeader>
-        <div v-for="loan in filteredLoans(loans)" :key=loan.id>
+        <div v-for="loan in filteredLoans(orderedLoans)" :key=loan.id>
           <LoanCardModalGroup
             @tally="balanceSum($event)"
             @status="collateLoanStatuses($event)"
@@ -115,7 +115,8 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import moment from "moment";
+import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import PaymentsCard from "@/components/Cards/Payments.vue";
 import CardSection from "@/Layout/CardSection.vue";
@@ -138,6 +139,23 @@ const loans = schemaData.loans
 
 const remainingBalance = ref([])
 const loanStatuses = ref([])
+const orderedLoans = ref([])
+
+onMounted(() => {
+  loans.forEach((loan) => {
+    const endDate = moment(loan.instalments[loan.instalments.length-1].dueDates[0], 'YYYY-MM-DD')
+    loan['endDate'] = endDate
+    orderedLoans.value.push(loan)
+  })
+  orderedLoans.value.sort(
+    (loanA, loanB) => loanA.endDate - loanB.endDate
+  )
+  orderedLoans.value.forEach((loan) => {
+    if(loan.isActive === false) {
+      orderedLoans.value.push(orderedLoans.value.splice(orderedLoans.value.indexOf(loan), 1)[0]);
+    }
+  })
+})
 
 const collateLoanStatuses = (event) => {
   loanStatuses.value.push(event)
@@ -174,8 +192,6 @@ function valueDue(arr) {
 const route = useRoute()
 
 function filteredLoans(arr) {
-  // const orderedByDate = arr.sort((a, b) => (a.retailerName) > (b.retailerName) ? 1 : -1)
-
   if(route.path === '/') {
     return arr.filter(function (loan) {
       return loan.isActive
