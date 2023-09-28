@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col-reverse lg:flex-col text-nav">
+  <div class="flex flex-col-reverse lg:flex-col text-nav" :class="overviewOnly ? 'lg:-translate-y-[69px]' : ''">
     <NavbarItem path="/my-account" class="lg:text-gray lg:pointer-events-none lg:bg-white">
       <font-awesome-icon icon="fa-solid fa-user-circle" size="xl" class="-mr-1.5 lg:mr-0"/>
       <template v-slot:title>{{ username }}</template>
@@ -15,6 +15,7 @@
       <NavbarItem
         path="/my-loans"
         @click="$emit('closeNav')"
+        v-if="!overviewOnly"
       >
         <font-awesome-icon icon="fa-solid fa-wallet" size="xl"/>
         <template v-slot:title>My loans</template>
@@ -51,6 +52,11 @@ import NavbarItem from "@/Layout/NavbarItem.vue";
 defineProps ({
   username: {
     type: String
+  },
+  overviewOnly: {
+    type: Boolean,
+    default: false,
+    required: true
   }
 })
 </script>

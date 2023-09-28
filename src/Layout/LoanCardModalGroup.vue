@@ -13,7 +13,7 @@
             :retailer-name=retailerName
             :provider="provider"
             :purchase-date=purchaseDate
-            :loan-start-date="new Date(loanStartDate)"
+            :loan-start-date="loanStartDate"
             :term-length=termLength
             :total-interest-value=totalInterestValue
             :total-order-value=totalOrderValue
@@ -22,9 +22,9 @@
             :value-repaid="valueRepaid"
             :value-left-to-pay=valueLeftToPay
             :loan-upcoming-payment=loanUpcomingPayment
-            :loan-upcoming-payment-date="new Date(loanUpcomingPaymentDate)"
+            :loan-upcoming-payment-date="loanUpcomingPaymentDate"
             :loan-previous-payment=loanPreviousPayment
-            :loan-previous-payment-date="new Date(loanPreviousPaymentDate)"
+            :loan-previous-payment-date="loanPreviousPaymentDate"
             :current-last-four-digits=currentLastFourDigits
             :transactions=transactions
             :instalments=instalments
@@ -44,7 +44,7 @@
       :retailer-name=retailerName
       :provider=provider
       :value-repaid="valueRepaid"
-      :loan-start-date="new Date(loanStartDate)"
+      :loan-start-date="loanStartDate"
       :term-length=termLength
       :deposit-value=depositValue
       :total-loan-value=totalLoanValue

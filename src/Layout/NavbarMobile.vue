@@ -25,6 +25,7 @@
               class="pl-5"
               :NavOpened="NavOpened"
               :username=username
+              :overview-only=overviewOnly
               @closeNav="NavOpened = false"
           />
         </div>
@@ -46,6 +47,10 @@ import {ref} from "vue";
 defineProps ({
   username: {
     type: String,
+    required: true
+  },
+  overviewOnly: {
+    type: Boolean,
     required: true
   }
 })

@@ -48,10 +48,11 @@
 
 <!--    My (active) loans section-->
     <CardSection>
-      <CardSectionHeader :title="$route.path === '/' ? 'My active loans' : 'My loans'">
+      <CardSectionHeader :title="$route.path === '/' && loans.length > 1 ? 'My active loans' : 'My loans'">
         <template v-slot:button v-if="$route.path === '/'">
           <router-link to="/my-loans">
             <PrimaryButton
+                v-if="loans.length !== 1"
                 name="View all loans"
             />
           </router-link>
@@ -134,6 +135,8 @@ import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOver
 
 import schemaData from '@/assets/json/schema.json'
 
+const emit = defineEmits(['show'])
+
 const user = schemaData.user
 const loans = schemaData.loans
 
@@ -142,6 +145,10 @@ const loanStatuses = ref([])
 const orderedLoans = ref([])
 
 onMounted(() => {
+  if(loans.length === 1) {
+    emit('show')
+  }
+
   loans.forEach((loan) => {
     const endDate = moment(loan.instalments[loan.instalments.length-1].dueDates[0], 'YYYY-MM-DD')
     loan['endDate'] = endDate
@@ -151,7 +158,7 @@ onMounted(() => {
     (loanA, loanB) => loanA.endDate - loanB.endDate
   )
   orderedLoans.value.forEach((loan) => {
-    if(loan.isActive === false) {
+    if(!loan.isActive) {
       orderedLoans.value.push(orderedLoans.value.splice(orderedLoans.value.indexOf(loan), 1)[0]);
     }
   })
