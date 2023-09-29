@@ -7,7 +7,7 @@
     <div
       v-if="status === 'Complete'"
       class="bg-teal  w-full h-full absolute top-0 left-0 opacity-20"
-      :class="loanDetails ? 'h-[386px] lg:h-[370px] rounded-t-lg' : 'h-full border border-teal-dark rounded-lg'"
+      :class="loanDetails ? 'h-[387px] lg:h-[370px] rounded-t-lg' : 'h-full border border-teal-dark rounded-lg'"
       @click="$emit('open')"
     />
     <div class="flex flex-col w-full space-y-5" :class="loanDetails ? 'z-10' : ''">

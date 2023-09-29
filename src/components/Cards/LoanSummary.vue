@@ -27,7 +27,7 @@
               <p class="font-bold pt-2.5 w-16 text-right" :class="!isRepaid ? 'text-red-darker' : ''">£{{outOfTermChargesDue}}</p>
             </template>
             <p class="col-span-4 pt-2.5">Paid so far</p>
-            <p class="font-bold pt-2.5 w-16 text-right">£{{valueRepaid}}</p>
+            <p class="font-bold pt-2.5 w-16 text-right">£{{valueRepaid.toFixed(2)}}</p>
           </div>
           <div class="h-3"/>
         </div>
