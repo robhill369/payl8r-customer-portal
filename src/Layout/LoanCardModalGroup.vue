@@ -13,7 +13,7 @@
             :retailer-name=retailerName
             :provider="provider"
             :purchase-date=purchaseDate
-            :loan-start-date="loanStartDate"
+            :start-date="startDate"
             :term-length=termLength
             :total-interest-value=totalInterestValue
             :total-order-value=totalOrderValue
@@ -44,7 +44,7 @@
       :retailer-name=retailerName
       :provider=provider
       :value-repaid="valueRepaid"
-      :loan-start-date="loanStartDate"
+      :start-date="startDate"
       :term-length=termLength
       :deposit-value=depositValue
       :total-loan-value=totalLoanValue
@@ -80,7 +80,7 @@ const props = defineProps({
     type: Number,
     required: true
   },
-  loanStartDate: {
+  startDate: {
     type: String,
     required: true
   },

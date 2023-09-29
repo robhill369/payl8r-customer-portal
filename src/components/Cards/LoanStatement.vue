@@ -23,7 +23,7 @@
       <p class="flex h-14 items-center border-b col-span-4">£{{totalInterestValue.toFixed(2)}}</p>
       <p class="flex h-14 items-center border-b flex justify-end">£{{(totalInterestValue+totalOrderValue-depositValue).toFixed(2)}}</p>
       <template v-for="transaction in transactions">
-        <p class="flex h-14 items-center border-b col-span-3">{{transaction.date}}</p>
+        <p class="flex h-14 items-center border-b col-span-3">{{useDateFormat(transaction.date)}}</p>
         <p class="flex h-14 items-center border-b col-span-4 pr-3 ">{{transaction.description}}</p>
         <p class="flex h-14 items-center border-b col-span-2">{{transaction.debit ? '£'+transaction.debit : ''}}</p>
         <p class="flex h-14 items-center border-b col-span-2">{{transaction.credit ? '£'+transaction.credit : ''}}</p>
@@ -34,6 +34,7 @@
 </template>
 
 <script setup>
+import useDateFormat from "@/composables/useDateFormat";
 
 const props = defineProps({
     loanStartDate: {

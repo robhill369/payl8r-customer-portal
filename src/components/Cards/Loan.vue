@@ -56,7 +56,7 @@
                 {{retailerName}}
               </h3>
               <div class="flex text-gray space-x-4">
-                <p class="font-bold">{{loanStartDate}}</p>
+                <p class="font-bold">{{useDateFormat(startDate)}}</p>
                 <p>{{termLength}} month payment plan</p>
               </div>
             </div>
@@ -165,7 +165,7 @@
                 is-payment
                 :array="lateInstalments"
               >
-                <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment !== null"> Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{currentInstalment.dueDates[0]}}</span>.</span></p>
+                <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment !== null"> Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{useDateFormat(currentInstalment.dueDates[0])}}</span>.</span></p>
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
@@ -211,8 +211,8 @@
                 is-payment
                 :array=Array(1).fill(currentInstalment.amountDue-currentInstalment.amountPaid)
               >
-                <p>You will pay the instalment due <span class="font-bold">{{currentInstalment.dueDates[currentInstalment.dueDates.length-1]}}</span> today.<span v-if="nextInstalment"><br class="hidden sm:block">
-                  Your next instalment will then be collected on <span class="font-bold">{{nextInstalment.dueDates[nextInstalment.dueDates.length-1]}}</span>.</span>
+                <p>You will pay the instalment due <span class="font-bold">{{useDateFormat(currentInstalment.dueDates[currentInstalment.dueDates.length-1])}}</span> today.<span v-if="nextInstalment"><br class="hidden sm:block">
+                  Your next instalment will then be collected on <span class="font-bold">{{useDateFormat(nextInstalment.dueDates[nextInstalment.dueDates.length-1])}}</span>.</span>
                 </p>
               </LoanActionModalButtonGroup>
               <LoanActionModalButtonGroup
@@ -310,9 +310,9 @@
           :value-repaid=valueRepaid
           :out-of-term-charges-due=outOfTermChargesDue
           :loan-upcoming-payment=loanUpcomingPayment
-          :loan-upcoming-payment-date=loanUpcomingPaymentDate
+          :loan-upcoming-payment-date=useDateFormat(loanUpcomingPaymentDate)
           :loan-previous-payment=loanPreviousPayment
-          :loan-previous-payment-date=loanPreviousPaymentDate
+          :loan-previous-payment-date=useDateFormat(loanPreviousPaymentDate)
           :current-last-four-digits=currentLastFourDigits
           :order-items=orderItems
           :is-repaid=loanRepaid
@@ -346,8 +346,8 @@
           />
           <LoanStatement
             v-if="tab === 4"
-            :purchase-date=purchaseDate
-            :loan-start-date=loanStartDate
+            :purchase-date=useDateFormat(purchaseDate)
+            :loan-start-date=useDateFormat(startDate)
             :total-order-value=totalOrderValue
             :total-interest-value="totalInterestValue"
             :deposit-value=depositValue
@@ -361,6 +361,7 @@
 
 <script setup>
 import {ref, onMounted} from "vue";
+import useDateFormat from "@/composables/useDateFormat";
 
 import ProgressBar from "@/components/ProgressBar.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
@@ -388,7 +389,7 @@ const props = defineProps({
   purchaseDate: {
     type: String,
   },
-  loanStartDate: {
+  startDate: {
     type: Date,
     required: true
   },

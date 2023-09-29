@@ -5,7 +5,7 @@
       <UserCard
         class="capitalize"
         :username="user.firstName+' '+user.lastName"
-        :registrationDate=user.createdAt
+        :registrationDate=useDateFormat(user.createdAt)
       />
       <BaseCard class="px-6 sm:px-9 py-12">
         <UpdatePaymentDetailsForm
@@ -28,6 +28,8 @@
 </template>
 
 <script setup>
+import useDateFormat from "@/composables/useDateFormat";
+
 import CardSection from "@/Layout/CardSection.vue";
 import PageBase from "@/Pages/Base.vue";
 import UserCard from "@/components/Cards/User.vue";

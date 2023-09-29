@@ -70,7 +70,7 @@
             :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
             :provider=loan.provider
             :purchase-date=loan.purchaseDate
-            :loan-start-date=loan.startDate
+            :start-date=loan.startDate
             :term-length=loan.termLength
             :deposit-value=loan.depositValue
             :total-order-value=loan.totalOrderValue
@@ -155,11 +155,11 @@ onMounted(() => {
     orderedLoans.value.push(loan)
   })
   orderedLoans.value.sort(
-    (loanA, loanB) => loanA.endDate - loanB.endDate
+    (loanA, loanB) => loanA.endDate > loanB.endDate ? 1 : -1
   )
-  orderedLoans.value.forEach((loan) => {
+  orderedLoans.value.forEach((loan, index) => {
     if(!loan.isActive) {
-      orderedLoans.value.push(orderedLoans.value.splice(orderedLoans.value.indexOf(loan), 1)[0]);
+      orderedLoans.value.push(orderedLoans.value.splice(index, 1)[0]);
     }
   })
 })
@@ -225,6 +225,5 @@ const loanTypes = [
     name: 'Payl8r business',
   },
 ]
-
 
 </script>

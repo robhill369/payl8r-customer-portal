@@ -18,7 +18,7 @@
           <div v-for="(n, index) in instalment.dueDates.length">
             <p class="leading-5 invisible" :class="index !== instalment.dueDates.length-1 ? 'text-sm' : ''">{{n}}</p>
           </div>
-        <p class="absolute top-1/2 -translate-y-1/2">{{instalment.lateFee.dateIncurred}}</p>
+        <p class="absolute top-1/2 -translate-y-1/2">{{useDateFormat(instalment.lateFee.dateIncurred)}}</p>
         </div>
 
         <p>£{{instalment.lateFee.amountPaid === 0 || instalment.lateFee.amountPaid === instalment.lateFee.amountDue ? instalment.lateFee.amountDue : instalment.lateFee.amountDue-instalment.lateFee.amountPaid}}</p>
@@ -38,7 +38,7 @@
           class="grid grid-cols-8 w-full auto-rows-auto items-center bg-red-lighter border-b px-1.5 py-4"
       >
         <p>+{{charge.id}}</p>
-        <p class="col-span-2">{{charge.dateIncurred}}</p>
+        <p class="col-span-2">{{useDateFormat(charge.dateIncurred)}}</p>
         <p>£{{charge.amountPaid === 0 || charge.amountPaid === charge.amountDue ? charge.amountDue : charge.amountDue-charge.amountPaid}}</p>
         <p class="col-span-3 pl-2">Out-of-term interest</p>
         <div class="flex justify-end items-center">
@@ -55,6 +55,7 @@
 
 <script setup>
 import Tag from "@/components/Tag.vue";
+import useDateFormat from "@/composables/useDateFormat";
 
 const props = defineProps({
   transactions: {

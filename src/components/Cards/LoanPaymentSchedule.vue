@@ -14,11 +14,11 @@
       <p class="flex items-center">{{instalment.id}}</p>
       <div class="flex items-center col-span-2">
         <p v-if="instalment.dueDates.length === 1">
-          {{instalment.dueDates[0]}}
+          {{useDateFormat(instalment.dueDates[0])}}
         </p>
         <div v-else>
           <div class="flex" v-for="(date, index) in instalment.dueDates">
-            <p class="leading-5" :class="index !== instalment.dueDates.length-1 ? isPaid(instalment)+' line-through text-sm' : ''">{{date}}</p>
+            <p class="leading-5" :class="index !== instalment.dueDates.length-1 ? isPaid(instalment)+' line-through text-sm' : ''">{{useDateFormat(date)}}</p>
           </div>
         </div>
       </div>
@@ -37,6 +37,7 @@
 
 <script setup>
 import Tag from "@/components/Tag.vue";
+import useDateFormat from "@/composables/useDateFormat";
 
 defineProps({
   instalments: {
