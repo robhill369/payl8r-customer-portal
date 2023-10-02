@@ -6,24 +6,25 @@
     "email": "rob.hill@payl8r.com",
     "homeAddress": "This is my home address",
     "phoneNumber": 111111111,
+    "cardNumber": "5678",
+    "cardExpires": "0125",
     "createdAt": "2021-01-09"
   },
   "loans": [
     {
       "id": 1,
-      "retailerName": "1. Arranged, no payments due yet",
+      "retailerDescription": "1. Arranged, no payments due yet",
       "isActive": true,
-      "purchaseDate": "2023-08-28",
-      "startDate": "2023-09-28",
-      "termLength": 3,
+      "contractSignDate": "2023-09-28",
+      "termInMonths": 3,
       "provider": "payl8r",
-      "totalOrderValue": 100,
-      "depositValue": 30,
-      "totalInterestValue": 9.45,
-      "upcomingInstalmentValue": 26.48,
+      "originalOrderAmount": 100,
+      "depositAmount": 0,
+      "totalInterestAmount": 9.45,
+      "upcomingInstalmentAmount": 26.48,
       "upcomingInstalmentDate": "2023-09-28",
-      "previousInstalmentValue": null,
-      "previousInstalmentDate": null,
+      "lastPaymentAmount": null,
+      "lastPaymentDate": null,
       "orderItems":[
         {
           "name": "product 1",
@@ -44,7 +45,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-09-28"
           ],
@@ -53,7 +54,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-10-28"
           ],
@@ -62,7 +63,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-11-28"
           ],
@@ -73,19 +74,18 @@
     },
     {
       "id": 3,
-      "retailerName": "2. In term, no overdue payments",
+      "retailerDescription": "2. In term, no overdue payments",
       "isActive": true,
-      "purchaseDate": "2023-07-05",
-      "startDate": "2023-08-05",
-      "termLength": 3,
+      "contractSignDate": "2023-08-05",
+      "termInMonths": 3,
       "provider": "payl8r",
-      "totalOrderValue": 250,
-      "depositValue": 60,
-      "totalInterestValue": 25.65,
-      "upcomingInstalmentValue": 71.88,
+      "originalOrderAmount": 250,
+      "depositAmount": 60,
+      "totalInterestAmount": 25.65,
+      "upcomingInstalmentAmount": 71.88,
       "upcomingInstalmentDate": "2023-10-05",
-      "previousInstalmentValue": 71.88,
-      "previousInstalmentDate": "2023-09-05",
+      "lastPaymentAmount": 71.88,
+      "lastPaymentDate": "2023-09-05",
       "orderItems":[
         {
           "name": "product 1",
@@ -101,7 +101,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-09-05"
           ],
@@ -110,7 +110,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-10-05"
           ],
@@ -119,7 +119,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-11-05"
           ],
@@ -140,19 +140,18 @@
     },
     {
       "id": 5,
-      "retailerName": "2.5. In term, no overdue payments, with a last payment upcoming",
+      "retailerDescription": "2.5. In term, no overdue payments, with a last payment upcoming",
       "isActive": true,
-      "purchaseDate": "2023-05-05",
-      "startDate": "2023-06-05",
-      "termLength": 3,
+      "contractSignDate": "2023-06-05",
+      "termInMonths": 3,
       "provider": "payl8r",
-      "totalOrderValue": 250,
-      "depositValue": 60,
-      "totalInterestValue": 25.65,
-      "upcomingInstalmentValue": 71.88,
+      "originalOrderAmount": 250,
+      "depositAmount": 60,
+      "totalInterestAmount": 25.65,
+      "upcomingInstalmentAmount": 71.88,
       "upcomingInstalmentDate": "2023-09-05",
-      "previousInstalmentValue": 71.88,
-      "previousInstalmentDate": "2023-08-05",
+      "lastPaymentAmount": 71.88,
+      "lastPaymentDate": "2023-08-05",
       "orderItems":[
         {
           "name": "product 1",
@@ -168,7 +167,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-08-05"
           ],
@@ -177,7 +176,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-09-05"
           ],
@@ -186,7 +185,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-10-05"
           ],
@@ -215,19 +214,18 @@
     },
     {
       "id": 6,
-      "retailerName": "3. In term, with latest payment overdue",
+      "retailerDescription": "3. In term, with latest payment overdue",
       "isActive": true,
-      "purchaseDate": "2022-12-02",
-      "startDate": "2023-01-02",
-      "termLength": 12,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 12,
       "provider": "payl8r",
-      "totalOrderValue": 1100,
-      "depositValue": 250,
-      "totalInterestValue": 459,
-      "upcomingInstalmentValue": 109.08,
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 459,
+      "upcomingInstalmentAmount": 109.08,
       "upcomingInstalmentDate": null,
-      "previousInstalmentValue": 109.08,
-      "previousInstalmentDate": "2023-08-02",
+      "lastPaymentAmount": 109.08,
+      "lastPaymentDate": "2023-08-02",
       "orderItems":[
         {
           "name": "product 1",
@@ -238,7 +236,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
@@ -247,7 +245,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
@@ -256,7 +254,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-02"
           ],
@@ -265,7 +263,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-02"
           ],
@@ -274,7 +272,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-02"
           ],
@@ -283,7 +281,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-02"
           ],
@@ -292,7 +290,7 @@
         },
         {
           "id": 7,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-08-02"
           ],
@@ -301,7 +299,7 @@
         },
         {
           "id": 8,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-09-02",
             "2023-09-04",
@@ -311,7 +309,7 @@
           "amountPaid": 0,
           "lateFee": {
             "dateIncurred": "2023-09-03",
-            "isWaivable": true,
+            "isAutoWaivable": true,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -319,7 +317,7 @@
         },
         {
           "id": 9,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-10-02"
           ],
@@ -328,7 +326,7 @@
         },
         {
           "id": 10,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-11-02"
           ],
@@ -337,7 +335,7 @@
         },
         {
           "id": 11,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-12-02"
           ],
@@ -346,7 +344,7 @@
         },
         {
           "id": 12,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2024-01-02"
           ],
@@ -415,19 +413,18 @@
     },
     {
       "id": 8,
-      "retailerName": "4. In term, with previous payment(s) overdue but paid. Late fees unpaid",
+      "retailerDescription": "4. In term, with previous payment(s) overdue but paid. Late fees unpaid",
       "isActive": true,
-      "purchaseDate": "2022-12-13",
-      "startDate": "2023-01-13",
-      "termLength": 9,
+      "contractSignDate": "2023-01-13",
+      "termInMonths": 9,
       "provider": "payl8r",
-      "totalOrderValue": 600,
-      "depositValue": 80,
-      "totalInterestValue": 210.60,
-      "upcomingInstalmentValue": 81.18,
+      "originalOrderAmount": 600,
+      "depositAmount": 80,
+      "totalInterestAmount": 210.60,
+      "upcomingInstalmentAmount": 81.18,
       "upcomingInstalmentDate": "2023-09-13",
-      "previousInstalmentValue": 81.18,
-      "previousInstalmentDate": "2023-08-17",
+      "lastPaymentAmount": 81.18,
+      "lastPaymentDate": "2023-08-17",
       "orderItems":[
         {
           "name": "product 1",
@@ -438,7 +435,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-13"
           ],
@@ -447,7 +444,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-13",
             "2023-03-15",
@@ -458,7 +455,7 @@
           "amountPaid": 81.18,
           "lateFee": {
             "dateIncurred": "2023-03-14",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0
@@ -466,7 +463,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-13",
             "2023-04-15"
@@ -475,7 +472,7 @@
           "amountPaid": 81.18,
           "lateFee": {
             "dateIncurred": "2023-04-14",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00,
@@ -484,7 +481,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-13"
           ],
@@ -493,7 +490,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-13",
             "2023-06-15"
@@ -502,7 +499,7 @@
           "amountPaid": 81.18,
           "lateFee": {
             "dateIncurred": "2023-06-14",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -510,7 +507,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-13"
           ],
@@ -519,7 +516,7 @@
         },
         {
           "id": 7,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-08-13"
           ],
@@ -528,7 +525,7 @@
         },
         {
           "id": 8,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-09-13"
           ],
@@ -537,7 +534,7 @@
         },
         {
           "id": 9,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-10-13"
           ],
@@ -634,19 +631,18 @@
     },
     {
       "id": 10,
-      "retailerName": "5. In term, with previous payment(s) overdue but paid. Late fees waived",
+      "retailerDescription": "5. In term, with previous payment(s) overdue but paid. Late fees waived",
       "isActive": true,
-      "purchaseDate": "2022-12-13",
-      "startDate": "2023-01-13",
-      "termLength": 9,
+      "contractSignDate": "2023-01-13",
+      "termInMonths": 9,
       "provider": "payl8r",
-      "totalOrderValue": 600,
-      "depositValue": 80,
-      "totalInterestValue": 210.60,
-      "upcomingInstalmentValue": 81.18,
+      "originalOrderAmount": 600,
+      "depositAmount": 80,
+      "totalInterestAmount": 210.60,
+      "upcomingInstalmentAmount": 81.18,
       "upcomingInstalmentDate": "2023-09-13",
-      "previousInstalmentValue": 81.18,
-      "previousInstalmentDate": "2023-08-17",
+      "lastPaymentAmount": 81.18,
+      "lastPaymentDate": "2023-08-17",
       "orderItems":[
         {
           "name": "product 1",
@@ -657,7 +653,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-13"
           ],
@@ -666,7 +662,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-13",
             "2023-03-15"
@@ -675,7 +671,7 @@
           "amountPaid": 81.18,
           "lateFee": {
             "dateIncurred": "2023-03-14",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0
@@ -683,7 +679,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-13",
             "2023-04-15"
@@ -692,7 +688,7 @@
           "amountPaid": 81.18,
           "lateFee": {
             "dateIncurred": "2023-04-14",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -700,7 +696,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-13"
           ],
@@ -709,7 +705,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-13",
             "2023-06-15"
@@ -718,7 +714,7 @@
           "amountPaid": 81.18,
           "lateFee": {
             "dateIncurred": "2023-06-14",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -726,7 +722,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-13"
           ],
@@ -735,7 +731,7 @@
         },
         {
           "id": 7,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-08-13"
           ],
@@ -744,7 +740,7 @@
         },
         {
           "id": 8,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-09-13"
           ],
@@ -753,7 +749,7 @@
         },
         {
           "id": 9,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-10-13"
           ],
@@ -857,19 +853,18 @@
     },
     {
       "id": 11,
-      "retailerName": "5.5. In term, with previous payment(s) overdue but paid. Late fees waived. Early payment made",
+      "retailerDescription": "5.5. In term, with previous payment(s) overdue but paid. Late fees waived. Early payment made",
       "isActive": true,
-      "purchaseDate": "2022-12-13",
-      "startDate": "2023-01-13",
-      "termLength": 9,
+      "contractSignDate": "2023-01-13",
+      "termInMonths": 9,
       "provider": "payl8r",
-      "totalOrderValue": 600,
-      "depositValue": 80,
-      "totalInterestValue": 210.60,
-      "upcomingInstalmentValue": 81.18,
+      "originalOrderAmount": 600,
+      "depositAmount": 80,
+      "totalInterestAmount": 210.60,
+      "upcomingInstalmentAmount": 81.18,
       "upcomingInstalmentDate": "2023-09-13",
-      "previousInstalmentValue": 81.18,
-      "previousInstalmentDate": "2023-08-17",
+      "lastPaymentAmount": 81.18,
+      "lastPaymentDate": "2023-08-17",
       "orderItems":[
         {
           "name": "product 1",
@@ -880,7 +875,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-13"
           ],
@@ -889,7 +884,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-13",
             "2023-03-15"
@@ -898,7 +893,7 @@
           "amountPaid": 81.18,
           "lateFee": {
             "dateIncurred": "2023-03-14",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0
@@ -906,7 +901,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-13",
             "2023-04-15"
@@ -915,7 +910,7 @@
           "amountPaid": 81.18,
           "lateFee": {
             "dateIncurred": "2023-04-14",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -923,7 +918,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-13"
           ],
@@ -932,7 +927,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-13",
             "2023-06-15"
@@ -941,7 +936,7 @@
           "amountPaid": 81.18,
           "lateFee": {
             "dateIncurred": "2023-06-14",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -949,7 +944,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-13"
           ],
@@ -958,7 +953,7 @@
         },
         {
           "id": 7,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-08-13"
           ],
@@ -967,7 +962,7 @@
         },
         {
           "id": 8,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-09-13"
           ],
@@ -976,7 +971,7 @@
         },
         {
           "id": 9,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-10-13"
           ],
@@ -1087,19 +1082,18 @@
     },
     {
       "id": 13,
-      "retailerName": "6. In term, with previous payment(s) overdue and unpaid",
+      "retailerDescription": "6. In term, with previous payment(s) overdue and unpaid",
       "isActive": true,
-      "purchaseDate": "2023-05-23",
-      "startDate": "2023-06-23",
-      "termLength": 6,
+      "contractSignDate": "2023-06-23",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 300,
-      "depositValue": 40,
-      "totalInterestValue": 70.20,
-      "upcomingInstalmentValue": 55.03,
+      "originalOrderAmount": 300,
+      "depositAmount": 40,
+      "totalInterestAmount": 70.20,
+      "upcomingInstalmentAmount": 55.03,
       "upcomingInstalmentDate": null,
-      "previousInstalmentValue": 0,
-      "previousInstalmentDate": "",
+      "lastPaymentAmount": 0,
+      "lastPaymentDate": "",
       "orderItems":[
         {
           "name": "product 1",
@@ -1110,7 +1104,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-23",
             "2023-07-25",
@@ -1121,7 +1115,7 @@
           "amountPaid": 27.52,
           "lateFee": {
             "dateIncurred": "2023-07-24",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1129,7 +1123,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-08-23",
             "2023-08-25",
@@ -1139,7 +1133,7 @@
           "amountPaid": 0.00,
           "lateFee": {
             "dateIncurred": "2023-08-24",
-            "isWaivable": true,
+            "isAutoWaivable": true,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1147,7 +1141,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-09-23"
           ],
@@ -1156,7 +1150,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-10-23"
           ],
@@ -1165,7 +1159,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-11-23"
           ],
@@ -1174,7 +1168,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": false,
+          "isDue": false,
           "dueDates": [
             "2023-12-23"
           ],
@@ -1201,19 +1195,18 @@
     },
     {
       "id": 15,
-      "retailerName": "7. Out of term, with no late payments",
+      "retailerDescription": "7. Out of term, with no late payments",
       "isActive": false,
-      "purchaseDate": "2021-01-09",
-      "startDate": "2021-02-09",
-      "termLength": 18,
-      "totalOrderValue": 840,
+      "contractSignDate": "2021-02-09",
+      "termInMonths": 18,
+      "originalOrderAmount": 840,
       "provider": "payl8r",
-      "depositValue": 100,
-      "totalInterestValue": 599.40,
-      "upcomingInstalmentValue": 0,
+      "depositAmount": 100,
+      "totalInterestAmount": 599.40,
+      "upcomingInstalmentAmount": 0,
       "upcomingInstalmentDate": "",
-      "previousInstalmentValue": 74.41,
-      "previousInstalmentDate": "2023-09-05",
+      "lastPaymentAmount": 74.41,
+      "lastPaymentDate": "2023-09-05",
       "orderItems":[
         {
           "name": "product 1",
@@ -1239,7 +1232,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-03-09"
           ],
@@ -1248,7 +1241,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-04-09"
           ],        "amountDue": 74.41,
@@ -1256,7 +1249,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-05-09"
           ],
@@ -1265,7 +1258,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-06-09"
           ],
@@ -1274,7 +1267,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-07-09"
           ],
@@ -1283,7 +1276,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-08-09"
           ],
@@ -1292,7 +1285,7 @@
         },
         {
           "id": 7,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-09-09"
           ],
@@ -1301,7 +1294,7 @@
         },
         {
           "id": 8,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-10-09"
           ],
@@ -1310,7 +1303,7 @@
         },
         {
           "id": 9,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-11-09"
           ],
@@ -1319,7 +1312,7 @@
         },
         {
           "id": 10,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2021-12-09"
           ],
@@ -1328,7 +1321,7 @@
         },
         {
           "id": 11,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2022-01-09"
           ],
@@ -1337,7 +1330,7 @@
         },
         {
           "id": 12,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2022-02-09"
           ],
@@ -1346,7 +1339,7 @@
         },
         {
           "id": 13,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2022-03-09"
           ],
@@ -1355,7 +1348,7 @@
         },
         {
           "id": 14,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2022-04-09"
           ],
@@ -1364,7 +1357,7 @@
         },
         {
           "id": 15,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2022-05-09"
           ],
@@ -1373,7 +1366,7 @@
         },
         {
           "id": 16,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2022-06-09"
           ],
@@ -1382,7 +1375,7 @@
         },
         {
           "id": 17,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2022-07-09"
           ],
@@ -1394,7 +1387,7 @@
           "dueDates": [
             "2022-08-09"
           ],
-          "hasLapsed": true,
+          "isDue": true,
           "amountDue": 74.43,
           "amountPaid": 74.43
         }
@@ -1530,19 +1523,18 @@
     },
     {
       "id": 17,
-      "retailerName": "8. Out of term, with instalments paid late. Multiple late fees unpaid",
+      "retailerDescription": "8. Out of term, with instalments paid late. Multiple late fees unpaid",
       "isActive": true,
-      "purchaseDate": "2022-12-09",
-      "startDate": "2023-01-09",
-      "termLength": 6,
+      "contractSignDate": "2023-01-09",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 300,
-      "depositValue": 40,
-      "totalInterestValue": 70.20,
-      "upcomingInstalmentValue": 0,
+      "originalOrderAmount": 300,
+      "depositAmount": 40,
+      "totalInterestAmount": 70.20,
+      "upcomingInstalmentAmount": 0,
       "upcomingInstalmentDate": "",
-      "previousInstalmentValue": 74.41,
-      "previousInstalmentDate": "2023-09-05",
+      "lastPaymentAmount": 74.41,
+      "lastPaymentDate": "2023-09-05",
       "orderItems":[
         {
           "name": "product 1",
@@ -1553,7 +1545,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-09"
           ],
@@ -1562,7 +1554,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-09",
             "2023-03-11",
@@ -1573,7 +1565,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-03-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1581,7 +1573,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-09",
             "2023-04-11",
@@ -1592,7 +1584,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-04-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1600,7 +1592,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-09",
             "2023-05-11",
@@ -1611,7 +1603,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-05-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1619,7 +1611,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-09",
             "2023-05-11"
@@ -1628,7 +1620,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-05-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1636,7 +1628,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-09"
           ],
@@ -1726,19 +1718,18 @@
     },
     {
       "id": 19,
-      "retailerName": "8.5. Out of term, with instalments paid late. Single late fee unpaid",
+      "retailerDescription": "8.5. Out of term, with instalments paid late. Single late fee unpaid",
       "isActive": true,
-      "purchaseDate": "2022-12-09",
-      "startDate": "2023-01-09",
-      "termLength": 6,
+      "contractSignDate": "2023-01-09",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 300,
-      "depositValue": 40,
-      "totalInterestValue": 70.20,
-      "upcomingInstalmentValue": 0,
+      "originalOrderAmount": 300,
+      "depositAmount": 40,
+      "totalInterestAmount": 70.20,
+      "upcomingInstalmentAmount": 0,
       "upcomingInstalmentDate": "",
-      "previousInstalmentValue": 74.41,
-      "previousInstalmentDate": "2023-09-09",
+      "lastPaymentAmount": 74.41,
+      "lastPaymentDate": "2023-09-09",
       "orderItems":[
         {
           "name": "product 1",
@@ -1749,7 +1740,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-09"
           ],
@@ -1758,7 +1749,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-09"
           ],
@@ -1767,7 +1758,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-09",
             "2023-04-11",
@@ -1777,7 +1768,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-04-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1785,7 +1776,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-09",
             "2023-05-11"
@@ -1794,7 +1785,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-05-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1802,7 +1793,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-09",
             "2023-06-11",
@@ -1812,7 +1803,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-06-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1820,7 +1811,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-09"
           ],
@@ -1917,19 +1908,18 @@
     },
     {
       "id": 21,
-      "retailerName": "9. Out of term, with instalments paid late. Late fees waived",
+      "retailerDescription": "9. Out of term, with instalments paid late. Late fees waived",
       "isActive": false,
-      "purchaseDate": "2022-12-09",
-      "startDate": "2023-01-09",
-      "termLength": 6,
+      "contractSignDate": "2023-01-09",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 300,
-      "depositValue": 40,
-      "totalInterestValue": 70.20,
-      "upcomingInstalmentValue": 0,
+      "originalOrderAmount": 300,
+      "depositAmount": 40,
+      "totalInterestAmount": 70.20,
+      "upcomingInstalmentAmount": 0,
       "upcomingInstalmentDate": "",
-      "previousInstalmentValue": 74.41,
-      "previousInstalmentDate": "2023-09-05",
+      "lastPaymentAmount": 74.41,
+      "lastPaymentDate": "2023-09-05",
       "orderItems":[
         {
           "name": "product 1",
@@ -1940,7 +1930,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-09"
           ],
@@ -1949,7 +1939,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-09",
             "2023-03-11",
@@ -1959,7 +1949,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-03-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1967,7 +1957,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-09",
             "2023-04-11",
@@ -1977,7 +1967,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-04-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -1985,7 +1975,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-09",
             "2023-05-11",
@@ -1995,7 +1985,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-05-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2003,7 +1993,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-09",
             "2023-06-11",
@@ -2013,7 +2003,7 @@
           "amountPaid": 55.03,
           "lateFee": {
             "dateIncurred": "2023-06-10",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2021,7 +2011,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-09"
           ],
@@ -2132,19 +2122,18 @@
     },
     {
       "id": 23,
-      "retailerName": "10. Out of term, with instalment payments outstanding",
+      "retailerDescription": "10. Out of term, with instalment payments outstanding",
       "isActive": true,
-      "purchaseDate": "2022-12-02",
-      "startDate": "2023-01-02",
-      "termLength": 6,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 1100,
-      "depositValue": 250,
-      "totalInterestValue": 229.50,
-      "upcomingInstalmentValue": 179.92,
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalmentAmount": 179.92,
       "upcomingInstalmentDate": null,
-      "previousInstalmentValue": 179.92,
-      "previousInstalmentDate": "2023-03-02",
+      "lastPaymentAmount": 179.92,
+      "lastPaymentDate": "2023-03-02",
       "orderItems":[
         {
           "name": "product 1",
@@ -2155,7 +2144,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
@@ -2164,7 +2153,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
@@ -2173,7 +2162,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-02",
             "2023-04-04",
@@ -2183,7 +2172,7 @@
           "amountPaid": 0,
           "lateFee": {
             "dateIncurred": "2023-04-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2191,7 +2180,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-02",
             "2023-05-04",
@@ -2201,7 +2190,7 @@
           "amountPaid": 0,
           "lateFee": {
             "dateIncurred": "2023-05-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2209,7 +2198,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04",
@@ -2219,7 +2208,7 @@
           "amountPaid": 0,
           "lateFee": {
             "dateIncurred": "2023-06-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2227,7 +2216,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
@@ -2237,7 +2226,7 @@
           "amountPaid": 0,
           "lateFee": {
             "dateIncurred": "2023-07-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2319,19 +2308,18 @@
     },
     {
       "id": 25,
-      "retailerName": "11. In term, with last payment overdue",
+      "retailerDescription": "11. In term, with last payment overdue",
       "isActive": true,
-      "purchaseDate": "2023-02-02",
-      "startDate": "2023-03-02",
-      "termLength": 6,
+      "contractSignDate": "2023-03-02",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 1100,
-      "depositValue": 250,
-      "totalInterestValue": 229.50,
-      "upcomingInstalmentValue": 179.92,
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalmentAmount": 179.92,
       "upcomingInstalmentDate": null,
-      "previousInstalmentValue": 179.92,
-      "previousInstalmentDate": "2023-08-02",
+      "lastPaymentAmount": 179.92,
+      "lastPaymentDate": "2023-08-02",
       "orderItems":[
         {
           "name": "product 1",
@@ -2342,7 +2330,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-02"
           ],
@@ -2351,7 +2339,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-02"
           ],
@@ -2360,7 +2348,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-02"
           ],
@@ -2368,7 +2356,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2376,7 +2364,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04"
@@ -2385,7 +2373,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-07-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2393,7 +2381,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-08-02"
           ],
@@ -2402,7 +2390,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-09-02",
             "2023-09-04",
@@ -2413,7 +2401,7 @@
           "amountPaid": 0,
           "lateFee": {
             "dateIncurred": "2023-09-03",
-            "isWaivable": true,
+            "isAutoWaivable": true,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2467,19 +2455,18 @@
     },
     {
       "id": 26,
-      "retailerName": "11.5. In term, with last payment overdue, with previous late fees",
+      "retailerDescription": "11.5. In term, with last payment overdue, with previous late fees",
       "isActive": true,
-      "purchaseDate": "2023-02-02",
-      "startDate": "2023-03-02",
-      "termLength": 6,
+      "contractSignDate": "2023-03-02",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 1100,
-      "depositValue": 250,
-      "totalInterestValue": 229.50,
-      "upcomingInstalmentValue": 179.92,
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalmentAmount": 179.92,
       "upcomingInstalmentDate": null,
-      "previousInstalmentValue": 179.92,
-      "previousInstalmentDate": "2023-08-02",
+      "lastPaymentAmount": 179.92,
+      "lastPaymentDate": "2023-08-02",
       "orderItems":[
         {
           "name": "product 1",
@@ -2490,7 +2477,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-02"
           ],
@@ -2499,7 +2486,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-02"
           ],
@@ -2508,7 +2495,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04"
@@ -2517,7 +2504,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": true,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2525,7 +2512,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
@@ -2535,7 +2522,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-07-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2543,7 +2530,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-08-02"
           ],
@@ -2552,7 +2539,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-09-02",
             "2023-09-04",
@@ -2563,7 +2550,7 @@
           "amountPaid": 89.95,
           "lateFee": {
             "dateIncurred": "2023-09-03",
-            "isWaivable": true,
+            "isAutoWaivable": true,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2617,19 +2604,18 @@
     },
     {
       "id": 27,
-      "retailerName": "12. Out of term with instalment payments paid late, with out-of-term charges unpaid",
+      "retailerDescription": "12. Out of term with instalment payments paid late, with out-of-term charges unpaid",
       "isActive": true,
-      "purchaseDate": "2022-12-02",
-      "startDate": "2023-01-02",
-      "termLength": 6,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 1100,
-      "depositValue": 250,
-      "totalInterestValue": 229.50,
-      "upcomingInstalmentValue": "",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalmentAmount": "",
       "upcomingInstalmentDate": null,
-      "previousInstalmentValue": 179.90,
-      "previousInstalmentDate": "2023-03-02",
+      "lastPaymentAmount": 179.90,
+      "lastPaymentDate": "2023-03-02",
       "orderItems":[
         {
           "name": "product 1",
@@ -2640,7 +2626,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
@@ -2649,7 +2635,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
@@ -2658,7 +2644,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-02",
             "2023-04-04",
@@ -2668,7 +2654,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-04-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2676,7 +2662,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-02",
             "2023-05-04",
@@ -2686,7 +2672,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-05-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2694,7 +2680,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04",
@@ -2704,7 +2690,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2712,7 +2698,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
@@ -2722,7 +2708,7 @@
           "amountPaid": 179.90,
           "lateFee": {
             "dateIncurred": "2023-07-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2811,19 +2797,18 @@
     },
     {
       "id": 28,
-      "retailerName": "13. Out of term with instalment payments paid late, out-of-term charges paid, late fees unpaid",
+      "retailerDescription": "13. Out of term with instalment payments paid late, out-of-term charges paid, late fees unpaid",
       "isActive": true,
-      "purchaseDate": "2022-12-02",
-      "startDate": "2023-01-02",
-      "termLength": 6,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 1100,
-      "depositValue": 250,
-      "totalInterestValue": 229.50,
-      "upcomingInstalmentValue": "",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalmentAmount": "",
       "upcomingInstalmentDate": null,
-      "previousInstalmentValue": 179.90,
-      "previousInstalmentDate": "2023-03-02",
+      "lastPaymentAmount": 179.90,
+      "lastPaymentDate": "2023-03-02",
       "orderItems":[
         {
           "name": "product 1",
@@ -2834,7 +2819,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
@@ -2843,7 +2828,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
@@ -2852,7 +2837,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-02",
             "2023-04-04",
@@ -2862,7 +2847,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-04-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 12
@@ -2870,7 +2855,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-02",
             "2023-05-04",
@@ -2880,7 +2865,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-05-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2888,7 +2873,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04",
@@ -2898,7 +2883,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -2906,7 +2891,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
@@ -2916,7 +2901,7 @@
           "amountPaid": 179.90,
           "lateFee": {
             "dateIncurred": "2023-07-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 0.00
@@ -3012,19 +2997,18 @@
     },
     {
       "id": 29,
-      "retailerName": "14. Out of term with instalment payments paid late, out-of-term charges paid, late fees paid",
+      "retailerDescription": "14. Out of term with instalment payments paid late, out-of-term charges paid, late fees paid",
       "isActive": false,
-      "purchaseDate": "2022-12-02",
-      "startDate": "2023-01-02",
-      "termLength": 6,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 6,
       "provider": "payl8r",
-      "totalOrderValue": 1100,
-      "depositValue": 250,
-      "totalInterestValue": 229.50,
-      "upcomingInstalmentValue": "",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalmentAmount": "",
       "upcomingInstalmentDate": null,
-      "previousInstalmentValue": 179.90,
-      "previousInstalmentDate": "2023-07-02",
+      "lastPaymentAmount": 179.90,
+      "lastPaymentDate": "2023-07-02",
       "orderItems":[
         {
           "name": "product 1",
@@ -3035,7 +3019,7 @@
       "instalments": [
         {
           "id": 1,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
@@ -3044,7 +3028,7 @@
         },
         {
           "id": 2,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
@@ -3053,7 +3037,7 @@
         },
         {
           "id": 3,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-04-02",
             "2023-04-04",
@@ -3063,7 +3047,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-04-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 30.00
@@ -3071,7 +3055,7 @@
         },
         {
           "id": 4,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-05-02",
             "2023-05-04",
@@ -3081,7 +3065,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-05-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 30.00
@@ -3089,7 +3073,7 @@
         },
         {
           "id": 5,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04",
@@ -3099,7 +3083,7 @@
           "amountPaid": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 30.00
@@ -3107,7 +3091,7 @@
         },
         {
           "id": 6,
-          "hasLapsed": true,
+          "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
@@ -3117,7 +3101,7 @@
           "amountPaid": 179.90,
           "lateFee": {
             "dateIncurred": "2023-07-03",
-            "isWaivable": false,
+            "isAutoWaivable": false,
             "isWaived": false,
             "amountDue": 30,
             "amountPaid": 30.00

@@ -3,7 +3,7 @@
     <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 h-screen w-screen overflow-auto">
       <BaseCard class="flex-col w-auto sm:h-auto lg:absolute lg:-translate-x-[calc(50%-140px)] 2xl:-translate-x-[calc(50%-28px)] lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 py-10 px-10 items-center justify-between h-full sm:h-auto sm:space-y-7">
         <h5 class="text-gray">{{ title }}</h5>
-        <h3 class="font-semibold lg:w-72">{{ retailerName }}</h3>
+        <h3 class="font-semibold lg:w-72">{{ retailerDescription }}</h3>
         <div class="text-center">
           <slot/>
         </div>
@@ -39,8 +39,8 @@
             >
               <div class="text-xs">will be charged to</div>
               <div class="flex bg-gray-light rounded-lg py-2 px-4 items-center text-gray-darker justify-between h-10">
-                <VisaLogo class="w-6"/>
-                <div class="flex text-nav pl-4 w-30">•••• •••• •••• 1234</div>
+                <font-awesome-icon icon="fa-solid fa-credit-card" size="xl"/>
+                <div class="flex text-nav pl-4 w-30">•••• •••• •••• {{props.currentLastFourDigits}}</div>
               </div>
             </div>
           </div>
@@ -48,8 +48,8 @@
             <div class="flex bg-gray-light rounded-lg p-2 text-nav h-10 items-center"><span>£</span>{{array[0]}}</div>
             <div class="text-xs font-normal">will be charged to</div>
             <div class="flex bg-gray-light rounded-lg py-2 px-4 items-center text-gray-darker justify-between h-10">
-              <VisaLogo class="w-6"/>
-              <div class="flex text-nav pl-4 w-30">•••• •••• •••• 1234</div>
+              <font-awesome-icon icon="fa-solid fa-credit-card" size="xl"/>
+              <div class="flex text-nav pl-4 w-30">•••• •••• •••• {{props.currentLastFourDigits}}</div>
             </div>
           </div>
         </div>
@@ -77,7 +77,6 @@
 import {ref} from "vue";
 import BaseCard from "@/components/Cards/Base.vue";
 import ConfirmButton from "@/components/Buttons/Confirm.vue";
-import VisaLogo from "@/components/icons/VisaLogo.vue";
 import CancelButton from "@/components/Buttons/Cancel.vue";
 
 const props = defineProps({
@@ -88,12 +87,15 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  retailerName: {
+  retailerDescription: {
     type: String,
   },
   paymentType: {
     type: String,
     default: 'late fee'
+  },
+  currentLastFourDigits: {
+    type: Number
   },
   array: {
     type: Array,

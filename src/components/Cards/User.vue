@@ -9,7 +9,7 @@
       />
       <div class="flex flex-col justify-between lg:pl-7 space-y-3">
         <h3 class="font-semibold">{{ props.username }}</h3>
-        <div class="text-md text-gray">Payl8r user since {{ props.registrationDate }}</div>
+        <div class="text-md text-gray normal-case">Payl8r user since {{ props.registrationDate }}</div>
       </div>
     </div>
   </BaseCard>

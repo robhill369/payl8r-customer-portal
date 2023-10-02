@@ -10,7 +10,7 @@
         <PaymentSuccessfulNotification v-if="1 === 2"/>
         <PaymentsOverdueNotification v-if="loanStatuses.includes('Payment overdue')">
           <p v-if="loanStatuses.includes('Payment overdue')">Instalments are overdue. Pay within 28 days of their due date to avoid late fees.</p>
-          <p v-if="loanStatuses.includes('Urgent') && !loanStatuses.includes('Payment overdue')">Pay unpaid late fees now to avoid potential negative effects to your credit file.</p>
+          <p v-if="loanStatuses.includes('Urgent') && !loanStatuses.includes('Payment overdue')">Pay unpaid late fees soon to avoid potential negative effects to your credit file.</p>
         </PaymentsOverdueNotification>
       </div>
     </div>
@@ -67,27 +67,27 @@
           <LoanCardModalGroup
             @tally="balanceSum($event)"
             @status="collateLoanStatuses($event)"
-            :retailer-name="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerName"
+            :retailer-Description="loan.provider === 'upfront' ? 'Upfront loan' : loan.retailerDescription"
             :provider=loan.provider
             :purchase-date=loan.purchaseDate
-            :start-date=loan.startDate
-            :term-length=loan.termLength
-            :deposit-value=loan.depositValue
-            :total-order-value=loan.totalOrderValue
-            :total-interest-value=loan.totalInterestValue
-            :total-loan-value=(loan.totalOrderValue+loan.totalInterestValue)
-            :value-repaid=valuePaid(loan.instalments)+Number(valuePaid(loan.outOfTermCharges))
-            :value-left-to-pay=(loan.totalOrderValue-loan.depositValue+loan.totalInterestValue-valuePaid(loan.instalments)-valuePaid(loan.outOfTermCharges)+valueDue(loan.outOfTermCharges))
-            :loan-upcoming-payment=loan.upcomingInstalmentValue
+            :contract-sign-date=loan.contractSignDate
+            :term-in-months=loan.termInMonths
+            :deposit-amount=loan.depositAmount
+            :original-order-amount=loan.originalOrderAmount
+            :total-interest-amount=loan.totalInterestAmount
+            :total-loan-value=(loan.originalOrderAmount+loan.totalInterestAmount-loan.depositAmount)
+            :value-repaid=amountPaid(loan.instalments)+Number(amountPaid(loan.outOfTermCharges))
+            :value-left-to-pay=(loan.originalOrderAmount-loan.depositAmount+loan.totalInterestAmount-amountPaid(loan.instalments)-amountPaid(loan.outOfTermCharges)+amountDue(loan.outOfTermCharges))
+            :loan-upcoming-payment=loan.upcomingInstalmentAmount
             :loan-upcoming-payment-date=loan.upcomingInstalmentDate
-            :loan-previous-payment=loan.previousInstalmentValue
-            :loan-previous-payment-date=loan.previousInstalmentDate
+            :loan-previous-payment=loan.lastPaymentAmount
+            :loan-previous-payment-date=loan.lastPaymentDate
             :order-items=loan.orderItems
-            :current-last-four-digits=1234
+            :current-last-four-digits=user.cardNumber
             :transactions=loan.transactions
             :instalments=loan.instalments
             :out-of-term-charges=loan.outOfTermCharges
-            :out-of-term-charges-due="valueDue(loan.outOfTermCharges)"
+            :out-of-term-charges-amount="amountDue(loan.outOfTermCharges)"
             :is-repaid=loan.isRepaid
             :current-instalment=currentInstalment(loan.instalments)
           />
@@ -168,7 +168,7 @@ const collateLoanStatuses = (event) => {
   loanStatuses.value.push(event)
 }
 
-function valuePaid(arr) {
+function amountPaid(arr) {
   if(arr) {
     const paidArray = arr.filter(function (el) {
       return el.amountPaid !== 0
@@ -183,11 +183,11 @@ function valuePaid(arr) {
 
 const currentInstalment = (arr) => {
   if(arr)
-    return arr.find(item => item.hasLapsed !== true
+    return arr.find(item => item.isDue !== true
   )
 }
 
-function valueDue(arr) {
+function amountDue(arr) {
   if(arr) {
     return arr.reduce((acc, obj) => {
       return acc + (obj.amountDue)

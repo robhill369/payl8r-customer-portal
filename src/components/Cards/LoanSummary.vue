@@ -19,15 +19,15 @@
           <h5 class="text-gray">{{provider === 'upfront' ? 'Loan' : 'Order'}} Summary</h5>
           <div class="grid grid-cols-5">
             <p class="col-span-4 pt-2.5">{{provider === 'upfront' ? 'Amount borrowed' : 'Order total'}}</p>
-            <p class="font-bold pt-2.5 w-16 text-right">£{{totalOrderValue}}</p>
+            <p class="font-bold pt-2.5 w-16 text-right">£{{originalOrderAmount.toFixed(2)}}</p>
+            <p class="col-span-4 pt-2.5">Deposit amount</p>
+            <p class="font-bold pt-2.5 w-16 text-right">£{{depositAmount.toFixed(2)}}</p>
             <p class="col-span-4 pt-2.5">Loan total</p>
-            <p class="font-bold pt-2.5 w-16 text-right">£{{totalLoanValue}}</p>
-            <template v-if="outOfTermChargesDue">
-              <p class="col-span-4 pt-2.5" :class="!isRepaid ? 'text-red-darker' : ''">Out-of-term interest</p>
-              <p class="font-bold pt-2.5 w-16 text-right" :class="!isRepaid ? 'text-red-darker' : ''">£{{outOfTermChargesDue}}</p>
+            <p class="font-bold pt-2.5 w-16 text-right">£{{totalLoanValue.toFixed(2)}}</p>
+            <template v-if="outOfTermChargesAmount">
+              <p class="col-span-4 pt-2.5" :class="!loanRepaid ? 'text-red-darker' : ''">Out-of-term interest</p>
+              <p class="font-bold pt-2.5 w-16 text-right" :class="!loanRepaid ? 'text-red-darker' : ''">£{{outOfTermChargesAmount.toFixed(2)}}</p>
             </template>
-            <p class="col-span-4 pt-2.5">Paid so far</p>
-            <p class="font-bold pt-2.5 w-16 text-right">£{{valueRepaid.toFixed(2)}}</p>
           </div>
           <div class="h-3"/>
         </div>
@@ -55,7 +55,7 @@
       </div>
       <div
         class="flex flex-col space-y-5 flex-shrink-0 w-72 xl:w-80 3xl:w-[480px]"
-        v-if="!isRepaid"
+        v-if="!isComplete"
       >
         <h5 class="text-gray">Payment method</h5>
         <div class="flex ">
@@ -74,7 +74,7 @@
     <TitledCopy
         :title="provider === 'upfront' ? 'Issues with this loan?' : 'Issues with this order?'"
         :body="provider === 'upfront' ? 'Upfront loan copy for support channels required here' :
-          retailerName+' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"
+          retailerDescription+' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"
     />
   </div>
 </template>
@@ -84,7 +84,7 @@ import TitledCopy from "@/Layout/TitledCopy.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 
 defineProps({
-  retailerName: {
+  retailerDescription: {
     type: String,
     required: true,
     default: 'The retailer'
@@ -96,7 +96,11 @@ defineProps({
     type: Number,
     required: true
   },
-  totalOrderValue: {
+  originalOrderAmount: {
+    type: Number,
+    required: true
+  },
+  depositAmount: {
     type: Number,
     required: true
   },
@@ -104,7 +108,7 @@ defineProps({
     type: Number,
     required: true
   },
-  outOfTermChargesDue: {
+  outOfTermChargesAmount: {
     type: Number
   },
   loanUpcomingPayment: {
@@ -125,9 +129,12 @@ defineProps({
     type: Date,
     required: true,
   },
-  isRepaid: {
+  loanRepaid: {
     type: Boolean,
     default: false
+  },
+  isComplete: {
+    type: Boolean,
   },
   currentLastFourDigits: {
     type: Number,

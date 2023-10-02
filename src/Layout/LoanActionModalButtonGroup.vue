@@ -7,10 +7,11 @@
   />
   <teleport to="body" v-if="modalOpen">
     <LoanActionModal
-      :retailer-name="retailerName"
+      :retailer-description="retailerDescription"
       :title=modalTitle
       :is-payment=isPayment
       @close="modalOpen = false"
+      :current-last-four-digits=currentLastFourDigits
       :payment-type=paymentType
       :array=array
     >
@@ -24,7 +25,7 @@ import LoanActionModal from "@/components/Modals/LoanAction.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
 
 defineProps({
-  retailerName: {
+  retailerDescription: {
     type: String,
   },
   buttonName: {
@@ -44,6 +45,9 @@ defineProps({
   },
   paymentType: {
     type: String
+  },
+  currentLastFourDigits: {
+    type: Number
   },
   array: {
     type: Array,

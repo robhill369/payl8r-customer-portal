@@ -9,7 +9,7 @@
       />
       <BaseCard class="px-6 sm:px-9 py-12">
         <UpdatePaymentDetailsForm
-          :current-last-four-digits=1234
+          :current-last-four-digits=user.cardNumber
         />
       </BaseCard>
       <BaseCard class="px-6 sm:px-9 py-12">

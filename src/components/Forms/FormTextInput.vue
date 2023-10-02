@@ -14,9 +14,6 @@
 </template>
 
 <script setup>
-
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-
 defineProps ({
   title: {
     type: String,

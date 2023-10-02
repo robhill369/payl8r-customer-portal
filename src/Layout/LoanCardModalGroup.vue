@@ -10,15 +10,15 @@
           <LoanCard
             @close="loanModalOpen = false"
             loan-details
-            :retailer-name=retailerName
+            :retailer-description=retailerDescription
             :provider="provider"
             :purchase-date=purchaseDate
-            :start-date="startDate"
-            :term-length=termLength
-            :total-interest-value=totalInterestValue
-            :total-order-value=totalOrderValue
+            :contract-sign-date="contractSignDate"
+            :term-in-months=termInMonths
+            :total-interest-amount=totalInterestAmount
+            :original-order-amount=originalOrderAmount
             :total-loan-value=totalLoanValue
-            :deposit-value=depositValue
+            :deposit-amount=depositAmount
             :value-repaid="valueRepaid"
             :value-left-to-pay=valueLeftToPay
             :loan-upcoming-payment=loanUpcomingPayment
@@ -31,7 +31,7 @@
             :order-items=orderItems
             :is-repaid=isRepaid
             :out-of-term-charges=outOfTermCharges
-            :out-of-term-charges-due=outOfTermChargesDue
+            :out-of-term-charges-amount=outOfTermChargesAmount
             :current-instalment=currentInstalment
           />
         </div>
@@ -41,17 +41,18 @@
       @open="loanModalOpen = true"
       @tally="tallyBalance"
       @status="$emit('status', $event)"
-      :retailer-name=retailerName
+      :retailer-description=retailerDescription
       :provider=provider
       :value-repaid="valueRepaid"
-      :start-date="startDate"
-      :term-length=termLength
-      :deposit-value=depositValue
+      :contract-sign-date="contractSignDate"
+      :term-in-months=termInMonths
+      :deposit-amount=depositAmount
       :total-loan-value=totalLoanValue
       :value-left-to-pay=valueLeftToPay
+      :current-last-four-digits=currentLastFourDigits
       :instalments=instalments
       :out-of-term-charges=outOfTermCharges
-      :out-of-term-charges-due=outOfTermChargesDue
+      :out-of-term-charges-amount=outOfTermChargesAmount
       :current-instalment=currentInstalment
     />
   </div>
@@ -66,7 +67,7 @@ const emit = defineEmits(['tally', 'status'])
 console.log()
 
 const props = defineProps({
-  retailerName: {
+  retailerDescription: {
     type: String,
     required: true
   },
@@ -76,26 +77,26 @@ const props = defineProps({
   purchaseDate: {
     type: String
   },
-  termLength: {
+  termInMonths: {
     type: Number,
     required: true
   },
-  startDate: {
+  contractSignDate: {
     type: String,
     required: true
   },
-  depositValue: {
+  depositAmount: {
     type: Number,
     required: true,
     default: 0.00
   },
-  totalInterestValue: {
+  totalInterestAmount: {
     type: Number,
   },
   totalLoanValue: {
     type: Number
   },
-  totalOrderValue: {
+  originalOrderAmount: {
     type: Number
   },
   valueRepaid: {
@@ -139,7 +140,7 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  outOfTermChargesDue: {
+  outOfTermChargesAmount: {
     type: Number
   },
   currentInstalment: {

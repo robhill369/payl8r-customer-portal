@@ -22,8 +22,8 @@
           </div>
         </div>
       </div>
-      <p class="flex items-center col-span-2">£{{instalment.amountDue}}</p>
-      <p class="flex items-center col-span-2">£{{instalment.amountPaid}}</p>
+      <p class="flex items-center col-span-2">£{{instalment.amountDue.toFixed(2)}}</p>
+      <p class="flex items-center col-span-2">£{{instalment.amountPaid.toFixed(2)}}</p>
       <div class=" w-full flex justify-end items-center">
         <Tag
             payment-status
@@ -48,7 +48,7 @@ defineProps({
 
 const instalmentStatus = (obj) => {
   if(obj.amountDue !== obj.amountPaid) {
-    if(obj.hasLapsed) {
+    if(obj.isDue) {
       return 'overdue'
     }
     else
