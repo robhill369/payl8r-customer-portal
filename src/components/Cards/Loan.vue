@@ -186,17 +186,17 @@
                   <template v-if="lateInstalmentsTotal">
                     <p class="text-left col-span-3">Overdue instalments</p>
                     <p class="text-right font-bold">£</p>
-                    <p class="font-bold text-right">{{lateInstalmentsTotal}}</p>
+                    <p class="font-bold text-right">{{lateInstalmentsTotal.toFixed(2)}}</p>
                   </template>
                   <template v-if="outOfTermChargesAmount">
                     <p class="text-left col-span-3">Out-of-term interest</p>
                     <p class="text-right font-bold">£</p>
-                    <p class="font-bold text-right">{{outOfTermChargesAmount}}</p>
+                    <p class="font-bold text-right">{{outOfTermChargesAmount.toFixed(2)}}</p>
                   </template>
                   <template v-if="lateFeesTotal">
                     <p class="text-left col-span-3">Late fees</p>
                     <p class="text-right font-bold">£</p>
-                    <p class="font-bold text-right">{{lateFeesTotal}}</p>
+                    <p class="font-bold text-right">{{lateFeesTotal.toFixed(2)}}</p>
                   </template>
                     <p class="text-left col-span-3 text-md pt-3 font-bold">Total to pay</p>
                     <p class="text-right text-md font-bold pt-3">£</p>
@@ -242,7 +242,7 @@
               :current-last-four-digits=currentLastFourDigits
               :array=lateFees
             >
-              <p>You currently have <span class="font-bold">{{lateFees.length}}</span> late fee<span v-if="lateFees.length !== 1">s</span> worth <span class="font-bold">£{{lateFeesTotal}}.</span><span v-if="lateFees.length !== 1"><br class="hidden sm:block"> Choose how many to pay below.</span></p>
+              <p>You currently have <span class="font-bold">{{lateFees.length}}</span> late fee<span v-if="lateFees.length !== 1">s</span> worth <span class="font-bold">£{{lateFeesTotal.toFixed(2)}}.</span><span v-if="lateFees.length !== 1"><br class="hidden sm:block"> Choose how many to pay below.</span></p>
             </LoanActionModalButtonGroup>
             <a
               v-if="!loanDetails"
@@ -472,6 +472,7 @@ const props = defineProps({
 
 const tab = ref(1)
 const status = ref('')
+const remainingBalance = ref()
 
 onMounted(() => {
   if(lapsedInstalments.length !== props.termInMonths) {
@@ -526,6 +527,8 @@ const lateFees = remainingLateFeePayments(instalmentsWithLateFees)
 const lateFeesTotal = lateFees.reduce((acc, obj) => {return acc + obj}, 0)
 const OOTCharges = remainingPayments(props.outOfTermCharges)
 const loanRepaid = props.valueLeftToPay === 0
+
+remainingBalance.value = lateInstalmentsTotal+lateFeesTotal+props.outOfTermChargesAmount
 
     emit('tally', Number(props.valueLeftToPay)+lateFeesTotal)
 

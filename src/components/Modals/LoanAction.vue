@@ -45,7 +45,7 @@
             </div>
           </div>
           <div v-else class="flex flex-col sm:flex-row justify-between align-middle items-center space-y-3 sm:space-y-0 sm:space-x-2 ">
-            <div class="flex bg-gray-light rounded-lg p-2 text-nav h-10 items-center"><span>£</span>{{array[0]}}</div>
+            <div class="flex bg-gray-light rounded-lg p-2 text-nav h-10 items-center"><span>£</span>{{array[0].toFixed(2)}}</div>
             <div class="text-xs font-normal">will be charged to</div>
             <div class="flex bg-gray-light rounded-lg py-2 px-4 items-center text-gray-darker justify-between h-10">
               <font-awesome-icon icon="fa-solid fa-credit-card" size="xl"/>
