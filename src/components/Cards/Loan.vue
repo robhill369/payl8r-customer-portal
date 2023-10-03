@@ -65,7 +65,7 @@
             v-if="loanDetails && currentInstalment && nextInstalment && lapsedInstalments.length !== termInMonths"
             class="hidden md:block bg-white border border-gray-darker pointer-events-none h-fit"
           >
-            <h4 class="font-[400] whitespace-nowrap">£{{nextInstalment.amountDue}} p/m</h4>
+            <h4 class="font-[400] whitespace-nowrap">£{{nextInstalment.dueAmount}} p/m</h4>
           </ButtonBase>
         </div>
         <div
@@ -121,13 +121,13 @@
               size="xl"
             />
             <div v-if="!loanRepaid">
-              <div class="text-sm space-y-2 pl-3" v-if="outOfTermChargesAmount">
-                <div>You have been charged out-of-term interest from instalments that were overdue.</div>
-                <div>Please pay the remaining balance to avoid potential negative effects to your credit file.</div>
-              </div>
-              <div v-else class="text-sm space-y-2 pl-3">
+              <div class="text-sm space-y-2 pl-3" v-if="lateInstalmentsTotal">
                 <div>We have been unable to take payment for this loan automatically and it is now overdue.</div>
                 <div>Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
+              </div>
+              <div v-else class="text-sm space-y-2 pl-3" >
+                <div>You have been charged out-of-term interest from instalments that were overdue.</div>
+                <div>Please pay the remaining balance to avoid potential negative effects to your credit file.</div>
               </div>
             </div>
             <div v-else class="text-sm space-y-2 pl-3">
@@ -206,14 +206,14 @@
             </template>
             <template v-else>
               <LoanActionModalButtonGroup
-                v-if="currentInstalment.amountPaid !== currentInstalment.amountDue"
+                v-if="currentInstalment.paidAmount !== currentInstalment.dueAmount"
                 modal-title="Confirm early instalment payment for:"
                 :retailer-description="retailerDescription"
                 button-name="Pay instalment early"
                 button-icon="fa-solid fa-credit-card"
                 is-payment
                 :current-last-four-digits=currentLastFourDigits
-                :array=Array(1).fill(currentInstalment.amountDue-currentInstalment.amountPaid)
+                :array=Array(1).fill(currentInstalment.dueAmount-currentInstalment.paidAmount)
               >
                 <p>You will pay the instalment due <span class="font-bold">{{useDateFormat(currentInstalment.dueDates[currentInstalment.dueDates.length-1])}}</span> today.<span v-if="nextInstalment"><br class="hidden sm:block">
                   Your next instalment will then be collected on <span class="font-bold">{{useDateFormat(nextInstalment.dueDates[nextInstalment.dueDates.length-1])}}</span>.</span>
@@ -497,8 +497,8 @@ onMounted(() => {
 const remainingPayments = (arr) => {
   const newArray = []
   arr.forEach((item) => {
-    if (item.amountPaid !== item.amountDue)
-      newArray.push(item.amountDue - item.amountPaid)
+    if (item.paidAmount !== item.dueAmount)
+      newArray.push(item.dueAmount - item.paidAmount)
   })
   return newArray
 }
@@ -506,8 +506,8 @@ const remainingPayments = (arr) => {
 const remainingLateFeePayments = (arr) => {
   const newArray = []
   arr.forEach((item) => {
-    if((item.lateFee.amountDue - item.lateFee.amountPaid !== 0) && !item.lateFee.isWaived && !item.lateFee.isAutoWaivable) {
-      newArray.push(item.lateFee.amountDue - item.lateFee.amountPaid)
+    if((item.lateFee.dueAmount - item.lateFee.paidAmount !== 0) && !item.lateFee.isWaived && !item.lateFee.isAutoWaivable) {
+      newArray.push(item.lateFee.dueAmount - item.lateFee.paidAmount)
     }
   })
   return newArray

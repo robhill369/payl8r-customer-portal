@@ -8,22 +8,22 @@
       <div class="flex justify-end">Status</div>
     </div>
     <div
-      class="grid grid-cols-8 w-full auto-rows-auto items-center px-1.5 border-b" :class="instalment.dueDates.length === 1 ? 'py-4' : 'py-3'"
-      v-for="instalment in instalments"
+      class="grid grid-cols-8 w-full auto-rows-auto items-center px-1.5 border-b py-4"
+      v-for="instalment in instalments" :key="instalment.month"
     >
-      <p class="flex items-center">{{instalment.id}}</p>
+      <p class="flex items-center">{{instalment.month}}</p>
       <div class="flex items-center col-span-2">
-        <p v-if="instalment.dueDates.length === 1">
-          {{useDateFormat(instalment.dueDates[0])}}
-        </p>
-        <div v-else>
-          <div class="flex" v-for="(date, index) in instalment.dueDates">
-            <p class="leading-5" :class="index !== instalment.dueDates.length-1 ? isPaid(instalment)+' line-through text-sm' : ''">{{useDateFormat(date)}}</p>
-          </div>
+        <div v-if="instalment.dueDates.length === 1" class="relative">
+          <p>{{ useDateFormat(instalment.dueDates.toString()) }}</p>
+          <div v-if="instalment.numberOfAttempts" class="absolute top-5 text-xxs text-gray">{{useOrdinalSuffix(instalment.numberOfAttempts+1)}} attempt</div>
+        </div>
+        <div v-else class="relative">
+          <p>{{ useDateFormat(instalment.dueDates[instalment.dueDates.length-1].toString()) }}</p>
+          <div class="absolute top-5 text-xxs text-gray">{{useOrdinalSuffix(instalment.dueDates.length)}} attempt </div>
         </div>
       </div>
-      <p class="flex items-center col-span-2">£{{instalment.amountDue.toFixed(2)}}</p>
-      <p class="flex items-center col-span-2">£{{instalment.amountPaid.toFixed(2)}}</p>
+      <p class="flex items-center col-span-2">£{{instalment.dueAmount.toFixed(2)}}</p>
+      <p class="flex items-center col-span-2">£{{instalment.paidAmount.toFixed(2)}}</p>
       <div class=" w-full flex justify-end items-center">
         <Tag
             payment-status
@@ -38,6 +38,7 @@
 <script setup>
 import Tag from "@/components/Tag.vue";
 import useDateFormat from "@/composables/useDateFormat";
+import useOrdinalSuffix from "@/composables/useOrdinalSuffix";
 
 defineProps({
   instalments: {
@@ -47,7 +48,7 @@ defineProps({
 })
 
 const instalmentStatus = (obj) => {
-  if(obj.amountDue !== obj.amountPaid) {
+  if(obj.dueAmount !== obj.paidAmount) {
     if(obj.isDue) {
       return 'overdue'
     }
@@ -58,7 +59,7 @@ const instalmentStatus = (obj) => {
 }
 
 const isPaid = (instalment) => {
-  if(instalment.amountDue !== instalment.amountPaid) {
+  if(instalment.dueAmount !== instalment.paidAmount) {
     return 'text-red-dark'
   }
   else return 'text-gray'

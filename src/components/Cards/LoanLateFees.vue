@@ -10,18 +10,18 @@
     <div v-for="instalment in instalments">
       <div
         v-if="instalment.lateFee"
-        class="grid grid-cols-8 w-full auto-rows-auto items-center px-1.5 border-b" :class="instalment.dueDates.length === 1 ? 'py-4' : 'py-3'"
+        class="grid grid-cols-8 w-full auto-rows-auto items-center px-1.5 border-b py-4"
       >
-        <p>{{instalment.id}}</p>
+        <p>{{instalment.month}}</p>
 
         <div class="col-span-2 relative">
-          <div v-for="(n, index) in instalment.dueDates.length">
-            <p class="leading-5 invisible" :class="index !== instalment.dueDates.length-1 ? 'text-sm' : ''">{{n}}</p>
-          </div>
+<!--          <div v-for="(n, index) in instalment.dueDates.length">-->
+<!--            <p class="leading-5 invisible" :class="index !== instalment.dueDates.length-1 ? 'text-sm' : ''">{{n}}</p>-->
+<!--          </div>-->
         <p class="absolute top-1/2 -translate-y-1/2">{{useDateFormat(instalment.lateFee.dateIncurred)}}</p>
         </div>
 
-        <p>£{{instalment.lateFee.amountPaid === 0 || instalment.lateFee.amountPaid === instalment.lateFee.amountDue ? instalment.lateFee.amountDue.toFixed(2) : (instalment.lateFee.amountDue-instalment.lateFee.amountPaid).toFixed(2)}}</p>
+        <p>£{{instalment.lateFee.paidAmount === 0 || instalment.lateFee.paidAmount === instalment.lateFee.dueAmount ? instalment.lateFee.dueAmount.toFixed(2) : (instalment.lateFee.dueAmount-instalment.lateFee.paidAmount).toFixed(2)}}</p>
         <p class="col-span-3 pl-2">{{instalment.lateFee.cardExpired ? 'Failed payment (card expired)' : 'Failed payment'}}</p>
         <div class="flex justify-end">
           <Tag
@@ -33,18 +33,18 @@
       </div>
       <div v-else class="w-full items-center bg-gray-light border-b flex align-middle justify-center text-gray h-[57px]"/>
     </div>
-    <div v-for="charge in outOfTermCharges">
+    <div v-for="(charge, index) in outOfTermCharges">
       <div
           class="grid grid-cols-8 w-full auto-rows-auto items-center bg-red-lighter border-b px-1.5 py-4"
       >
-        <p>+{{charge.id}}</p>
+        <p>+{{index+1}}</p>
         <p class="col-span-2">{{useDateFormat(charge.dateIncurred)}}</p>
-        <p>£{{charge.amountPaid === 0 || charge.amountPaid === charge.amountDue ? charge.amountDue.toFixed(2) : (charge.amountDue-charge.amountPaid).toFixed(2)}}</p>
+        <p>£{{charge.paidAmount === 0 || charge.paidAmount === charge.dueAmount ? charge.dueAmount.toFixed(2) : (charge.dueAmount-charge.paidAmount).toFixed(2)}}</p>
         <p class="col-span-3 pl-2">Out-of-term interest</p>
         <div class="flex justify-end items-center">
           <Tag
               payment-status
-              :name="charge.amountDue !== charge.amountPaid ? 'unpaid' : 'paid'"
+              :name="charge.dueAmount !== charge.paidAmount ? 'unpaid' : 'paid'"
               class="px-[12px] py-[5px]"
           />
         </div>
@@ -77,7 +77,7 @@ const props = defineProps({
 
 const lateFeeStatus = (obj) => {
   if(!obj.isWaived) {
-      if(obj.amountDue !== obj.amountPaid ) {
+      if(obj.dueAmount !== obj.paidAmount ) {
         if(props.readyToPay) {
           return 'unpaid'
         }

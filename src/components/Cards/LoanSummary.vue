@@ -46,9 +46,9 @@
                 class="grid grid-cols-5 auto-rows-auto"
                 v-for="item in orderItems"
             >
-              <p class="col-span-3 pt-2.5 pr-2">{{item.name}}</p>
-              <p class="font-bold pt-2.5 pr-2">{{ item.qnty }}</p>
-              <p class="font-bold pt-2.5 pr-2">£{{ (item.price * item.qnty).toFixed(2) }}</p>
+              <p class="col-span-3 pt-2.5 pr-2">{{item.description}}</p>
+              <p class="font-bold pt-2.5 pr-2">{{ item.quantity }}</p>
+              <p class="font-bold pt-2.5 pr-2">£{{ (item.price * item.quantity).toFixed(2) }}</p>
             </div>
           </div>
         </div>

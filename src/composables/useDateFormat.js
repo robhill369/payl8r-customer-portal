@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import moment from "moment/moment";
+import useOrdinalSuffix from "@/composables/useOrdinalSuffix";
 export default function usedateFormat(dateString) {
         const date = moment(dateString, 'YYYY-MM-DD')
         const day = date.format('DD')
@@ -16,5 +17,5 @@ export default function usedateFormat(dateString) {
                 ? int + ordinals[digits[0] - 1]
                 : int + ordinals[3];
         };
-        return toOrdinalSuffix(Number(day))+' '+moment(month).format('MMM')+' '+year
+        return useOrdinalSuffix(Number(day))+' '+moment(month).format('MMM')+' '+year
 }

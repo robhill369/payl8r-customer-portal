@@ -13,6 +13,7 @@
   "loans": [
     {
       "id": 1,
+      "contractFilename": "blah",
       "retailerDescription": "1. Arranged, no payments due yet",
       "isActive": true,
       "contractSignDate": "2023-09-28",
@@ -27,53 +28,56 @@
       "lastPaymentDate": null,
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 1,
+          "description": "product 1",
+          "quantity": 1,
           "price": 10.00
         },
         {
-          "name": "product 2",
-          "qnty": 1,
+          "description": "product 2",
+          "quantity": 1,
           "price": 30.00
         },
         {
-          "name": "product 3",
-          "qnty": 3,
+          "description": "product 3",
+          "quantity": 3,
           "price": 20.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": false,
           "dueDates": [
             "2023-09-28"
           ],
-          "amountDue": 26.48,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "paidAmount": 0
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": false,
           "dueDates": [
             "2023-10-28"
           ],
-          "amountDue": 26.48,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 26.48,
+          "paidAmount": 0
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": false,
           "dueDates": [
             "2023-11-28"
           ],
-          "amountDue": 26.49,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 26.49,
+          "paidAmount": 0
         }
       ]
     },
     {
       "id": 3,
+      "contractFilename": "blah",
       "retailerDescription": "2. In term, no overdue payments",
       "isActive": true,
       "contractSignDate": "2023-08-05",
@@ -88,43 +92,46 @@
       "lastPaymentDate": "2023-09-05",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 3,
+          "description": "product 1",
+          "quantity": 3,
           "price": 50.00
         },
         {
-          "name": "product 2",
-          "qnty": 1,
+          "description": "product 2",
+          "quantity": 1,
           "price": 100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-09-05"
           ],
-          "amountDue": 71.88,
-          "amountPaid": 71.88
+          "numberOfAttempts": null,
+          "dueAmount": 71.88,
+          "paidAmount": 71.88
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": false,
           "dueDates": [
             "2023-10-05"
           ],
-          "amountDue": 71.88,
-          "amountPaid": 71.88
+          "numberOfAttempts": null,
+          "dueAmount": 71.88,
+          "paidAmount": 71.88
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": false,
           "dueDates": [
             "2023-11-05"
           ],
-          "amountDue": 71.89,
-          "amountPaid": 0.00
+          "numberOfAttempts": null,
+          "dueAmount": 71.89,
+          "paidAmount": 0.00
         }
       ],
       "transactions": [
@@ -140,6 +147,7 @@
     },
     {
       "id": 5,
+      "contractFilename": "blah",
       "retailerDescription": "2.5. In term, no overdue payments, with a last payment upcoming",
       "isActive": true,
       "contractSignDate": "2023-06-05",
@@ -154,43 +162,46 @@
       "lastPaymentDate": "2023-08-05",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 3,
+          "description": "product 1",
+          "quantity": 3,
           "price": 50.00
         },
         {
-          "name": "product 2",
-          "qnty": 1,
+          "description": "product 2",
+          "quantity": 1,
           "price": 100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-08-05"
           ],
-          "amountDue": 71.88,
-          "amountPaid": 71.88
+          "numberOfAttempts": null,
+          "dueAmount": 71.88,
+          "paidAmount": 71.88
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-09-05"
           ],
-          "amountDue": 71.88,
-          "amountPaid": 71.88
+          "numberOfAttempts": null,
+          "dueAmount": 71.88,
+          "paidAmount": 71.88
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": false,
           "dueDates": [
             "2023-10-05"
           ],
-          "amountDue": 71.89,
-          "amountPaid": 0.00
+          "numberOfAttempts": null,
+          "dueAmount": 71.89,
+          "paidAmount": 0.00
         }
       ],
       "transactions": [
@@ -214,6 +225,7 @@
     },
     {
       "id": 6,
+      "contractFilename": "blah",
       "retailerDescription": "3. In term, with latest payment overdue",
       "isActive": true,
       "contractSignDate": "2023-01-02",
@@ -228,128 +240,140 @@
       "lastPaymentDate": "2023-08-02",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 1,
+          "description": "product 1",
+          "quantity": 1,
           "price": 1100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 109.08
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 109.08
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 109.08
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 109.08
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 109.08
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 109.08
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
         },
         {
-          "id": 7,
+          "month": 7,
           "isDue": true,
           "dueDates": [
             "2023-08-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 109.08
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
         },
         {
-          "id": 8,
+          "month": 8,
           "isDue": true,
           "dueDates": [
             "2023-09-02",
             "2023-09-04",
             "2023-09-07"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 0,
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0,
           "lateFee": {
             "dateIncurred": "2023-09-03",
             "isAutoWaivable": true,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 9,
+          "month": 9,
           "isDue": false,
           "dueDates": [
             "2023-10-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0
         },
         {
-          "id": 10,
+          "month": 10,
           "isDue": false,
           "dueDates": [
             "2023-11-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0
         },
         {
-          "id": 11,
+          "month": 11,
           "isDue": false,
           "dueDates": [
             "2023-12-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0
         },
         {
-          "id": 12,
+          "month": 12,
           "isDue": false,
           "dueDates": [
             "2024-01-02"
           ],
-          "amountDue": 109.08,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0
         }
       ],
       "transactions": [
@@ -413,6 +437,7 @@
     },
     {
       "id": 8,
+      "contractFilename": "blah",
       "retailerDescription": "4. In term, with previous payment(s) overdue but paid. Late fees unpaid",
       "isActive": true,
       "contractSignDate": "2023-01-13",
@@ -427,23 +452,24 @@
       "lastPaymentDate": "2023-08-17",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 3,
+          "description": "product 1",
+          "quantity": 3,
           "price": 200.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-13",
@@ -451,95 +477,103 @@
             "2023-03-18",
             "2023-04-18"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18,
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
           "lateFee": {
             "dateIncurred": "2023-03-14",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0
+            "dueAmount": 30,
+            "paidAmount": 0
           }
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-13",
             "2023-04-15"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18,
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
           "lateFee": {
             "dateIncurred": "2023-04-14",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00,
+            "dueAmount": 30,
+            "paidAmount": 0.00,
             "cardExpired": true
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-13",
             "2023-06-15"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18,
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
           "lateFee": {
             "dateIncurred": "2023-06-14",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 7,
+          "month": 7,
           "isDue": true,
           "dueDates": [
             "2023-08-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 8,
+          "month": 8,
           "isDue": false,
           "dueDates": [
             "2023-09-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 0
         },
         {
-          "id": 9,
+          "month": 9,
           "isDue": false,
           "dueDates": [
             "2023-10-13"
           ],
-          "amountDue": 81.16,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 81.16,
+          "paidAmount": 0
         }
       ],
       "transactions": [
@@ -631,6 +665,7 @@
     },
     {
       "id": 10,
+      "contractFilename": "blah",
       "retailerDescription": "5. In term, with previous payment(s) overdue but paid. Late fees waived",
       "isActive": true,
       "contractSignDate": "2023-01-13",
@@ -645,116 +680,125 @@
       "lastPaymentDate": "2023-08-17",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 3,
+          "description": "product 1",
+          "quantity": 3,
           "price": 200.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-13",
             "2023-03-15"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18,
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
           "lateFee": {
             "dateIncurred": "2023-03-14",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0
+            "dueAmount": 30,
+            "paidAmount": 0
           }
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-13",
             "2023-04-15"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18,
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
           "lateFee": {
             "dateIncurred": "2023-04-14",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-13",
             "2023-06-15"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18,
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
           "lateFee": {
             "dateIncurred": "2023-06-14",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 7,
+          "month": 7,
           "isDue": true,
           "dueDates": [
             "2023-08-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 8,
+          "month": 8,
           "isDue": false,
           "dueDates": [
             "2023-09-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 0
         },
         {
-          "id": 9,
+          "month": 9,
           "isDue": false,
           "dueDates": [
             "2023-10-13"
           ],
-          "amountDue": 81.16,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 81.16,
+          "paidAmount": 0
         }
       ],
       "transactions": [
@@ -853,6 +897,7 @@
     },
     {
       "id": 11,
+      "contractFilename": "blah",
       "retailerDescription": "5.5. In term, with previous payment(s) overdue but paid. Late fees waived. Early payment made",
       "isActive": true,
       "contractSignDate": "2023-01-13",
@@ -867,116 +912,125 @@
       "lastPaymentDate": "2023-08-17",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 3,
+          "description": "product 1",
+          "quantity": 3,
           "price": 200.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-13",
             "2023-03-15"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18,
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
           "lateFee": {
             "dateIncurred": "2023-03-14",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0
+            "dueAmount": 30,
+            "paidAmount": 0
           }
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-13",
             "2023-04-15"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18,
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
           "lateFee": {
             "dateIncurred": "2023-04-14",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-13",
             "2023-06-15"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18,
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
           "lateFee": {
             "dateIncurred": "2023-06-14",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 7,
+          "month": 7,
           "isDue": true,
           "dueDates": [
             "2023-08-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 8,
+          "month": 8,
           "isDue": false,
           "dueDates": [
             "2023-09-13"
           ],
-          "amountDue": 81.18,
-          "amountPaid": 81.18
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
         },
         {
-          "id": 9,
+          "month": 9,
           "isDue": false,
           "dueDates": [
             "2023-10-13"
           ],
-          "amountDue": 81.16,
-          "amountPaid": 0
+          "numberOfAttempts": null,
+          "dueAmount": 81.16,
+          "paidAmount": 0
         }
       ],
       "transactions": [
@@ -1082,6 +1136,7 @@
     },
     {
       "id": 13,
+      "contractFilename": "blah",
       "retailerDescription": "6. In term, with previous payment(s) overdue and unpaid",
       "isActive": true,
       "contractSignDate": "2023-06-23",
@@ -1096,14 +1151,14 @@
       "lastPaymentDate": "",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 3,
+          "description": "product 1",
+          "quantity": 3,
           "price": 100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-07-23",
@@ -1111,69 +1166,75 @@
             "2023-07-28",
             "2023-08-28"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 27.52,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 27.52,
           "lateFee": {
             "dateIncurred": "2023-07-24",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-08-23",
             "2023-08-25",
             "2023-08-28"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 0.00,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 0.00,
           "lateFee": {
             "dateIncurred": "2023-08-24",
             "isAutoWaivable": true,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": false,
           "dueDates": [
             "2023-09-23"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 0.00
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 0.00
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": false,
           "dueDates": [
             "2023-10-23"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 0.00
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 0.00
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": false,
           "dueDates": [
             "2023-11-23"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 0.00
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 0.00
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": false,
           "dueDates": [
             "2023-12-23"
           ],
-          "amountDue": 55.05,
-          "amountPaid": 0.00
+          "numberOfAttempts": null,
+          "dueAmount": 55.05,
+          "paidAmount": 0.00
         }
       ],
       "transactions": [
@@ -1195,6 +1256,7 @@
     },
     {
       "id": 15,
+      "contractFilename": "blah",
       "retailerDescription": "7. Out of term, with no late payments",
       "isActive": false,
       "contractSignDate": "2021-02-09",
@@ -1209,187 +1271,206 @@
       "lastPaymentDate": "2023-09-05",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 1,
+          "description": "product 1",
+          "quantity": 1,
           "price": 250.00
         },
         {
-          "name": "product 2",
-          "qnty": 3,
+          "description": "product 2",
+          "quantity": 3,
           "price": 100.00
         },
         {
-          "name": "product 3",
-          "qnty": 1,
+          "description": "product 3",
+          "quantity": 1,
           "price": 145.00
         },
         {
-          "name": "product 4",
-          "qnty": 1,
+          "description": "product 4",
+          "quantity": 1,
           "price": 145.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2021-03-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2021-04-09"
-          ],        "amountDue": 74.41,
-          "amountPaid": 74.41
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2021-05-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2021-06-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2021-07-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2021-08-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 7,
+          "month": 7,
           "isDue": true,
           "dueDates": [
             "2021-09-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 8,
+          "month": 8,
           "isDue": true,
           "dueDates": [
             "2021-10-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 9,
+          "month": 9,
           "isDue": true,
           "dueDates": [
             "2021-11-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 10,
+          "month": 10,
           "isDue": true,
           "dueDates": [
             "2021-12-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 11,
+          "month": 11,
           "isDue": true,
           "dueDates": [
             "2022-01-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 12,
+          "month": 12,
           "isDue": true,
           "dueDates": [
             "2022-02-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 13,
+          "month": 13,
           "isDue": true,
           "dueDates": [
             "2022-03-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 14,
+          "month": 14,
           "isDue": true,
           "dueDates": [
             "2022-04-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 15,
+          "month": 15,
           "isDue": true,
           "dueDates": [
             "2022-05-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 16,
+          "month": 16,
           "isDue": true,
           "dueDates": [
             "2022-06-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 17,
+          "month": 17,
           "isDue": true,
           "dueDates": [
             "2022-07-09"
           ],
-          "amountDue": 74.41,
-          "amountPaid": 74.41
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
         },
         {
-          "id": 18,
+          "month": 18,
           "dueDates": [
             "2022-08-09"
           ],
+          "numberOfAttempts": null,
           "isDue": true,
-          "amountDue": 74.43,
-          "amountPaid": 74.43
+          "dueAmount": 74.43,
+          "paidAmount": 74.43
         }
       ],
       "transactions": [
@@ -1523,6 +1604,7 @@
     },
     {
       "id": 17,
+      "contractFilename": "blah",
       "retailerDescription": "8. Out of term, with instalments paid late. Multiple late fees unpaid",
       "isActive": true,
       "contractSignDate": "2023-01-09",
@@ -1537,23 +1619,24 @@
       "lastPaymentDate": "2023-09-05",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 3,
+          "description": "product 1",
+          "quantity": 3,
           "price": 100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-09"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03
+          "numberOfAttempts":  3,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-09",
@@ -1561,18 +1644,19 @@
             "2023-03-14",
             "2023-04-14"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-03-10",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-09",
@@ -1580,60 +1664,64 @@
             "2023-04-14",
             "2023-05-14"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-04-10",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-09",
             "2023-05-11",
             "2023-05-14",
-            "2023-05-14"
+            "2023-06-14"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-05-10",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
-            "2023-05-09",
-            "2023-05-11"
+            "2023-06-09",
+            "2023-06-11"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
-            "dateIncurred": "2023-05-10",
+            "dateIncurred": "2023-06-10",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
-            "2023-06-09"
+            "2023-07-09"
           ],
-          "amountDue": 55.05,
-          "amountPaid": 55.05
+          "numberOfAttempts": null,
+          "dueAmount": 55.05,
+          "paidAmount": 55.05
         }
       ],
       "transactions": [
@@ -1718,6 +1806,7 @@
     },
     {
       "id": 19,
+      "contractFilename": "blah",
       "retailerDescription": "8.5. Out of term, with instalments paid late. Single late fee unpaid",
       "isActive": true,
       "contractSignDate": "2023-01-09",
@@ -1732,91 +1821,97 @@
       "lastPaymentDate": "2023-09-09",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 3,
+          "description": "product 1",
+          "quantity": 3,
           "price": 100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-09"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-09"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-09",
             "2023-04-11",
             "2023-04-14"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-04-10",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-09",
             "2023-05-11"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-05-10",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-09",
             "2023-06-11",
             "2023-06-14"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-06-10",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-09"
           ],
-          "amountDue": 55.05,
-          "amountPaid": 55.05
+          "numberOfAttempts": null,
+          "dueAmount": 55.05,
+          "paidAmount": 55.05
         }
       ],
       "transactions": [
@@ -1908,6 +2003,7 @@
     },
     {
       "id": 21,
+      "contractFilename": "blah",
       "retailerDescription": "9. Out of term, with instalments paid late. Late fees waived",
       "isActive": false,
       "contractSignDate": "2023-01-09",
@@ -1922,101 +2018,107 @@
       "lastPaymentDate": "2023-09-05",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 3,
+          "description": "product 1",
+          "quantity": 3,
           "price": 100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-09"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-09",
             "2023-03-11",
             "2023-03-14"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-03-10",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-09",
             "2023-04-11",
             "2023-04-14"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-04-10",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-09",
             "2023-05-11",
             "2023-05-14"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-05-10",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-09",
             "2023-06-11",
             "2023-06-14"
           ],
-          "amountDue": 55.03,
-          "amountPaid": 55.03,
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
           "lateFee": {
             "dateIncurred": "2023-06-10",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-09"
           ],
-          "amountDue": 55.05,
-          "amountPaid": 55.05
+          "numberOfAttempts": null,
+          "dueAmount": 55.05,
+          "paidAmount": 55.05
         }
       ],
       "transactions": [
@@ -2122,6 +2224,7 @@
     },
     {
       "id": 23,
+      "contractFilename": "blah",
       "retailerDescription": "10. Out of term, with instalment payments outstanding",
       "isActive": true,
       "contractSignDate": "2023-01-02",
@@ -2136,115 +2239,119 @@
       "lastPaymentDate": "2023-03-02",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 1,
+          "description": "product 1",
+          "quantity": 1,
           "price": 1100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-02",
             "2023-04-04",
             "2023-04-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 0,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 0,
           "lateFee": {
             "dateIncurred": "2023-04-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-02",
             "2023-05-04",
             "2023-05-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 0,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 0,
           "lateFee": {
             "dateIncurred": "2023-05-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04",
             "2023-06-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 0,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 0,
           "lateFee": {
             "dateIncurred": "2023-06-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
             "2023-07-07"
           ],
-          "amountDue": 179.90,
-          "amountPaid": 0,
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 0,
           "lateFee": {
             "dateIncurred": "2023-07-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         }
       ],
       "outOfTermCharges": [
         {
-          "id": 1,
           "dateIncurred": "2023-08-03",
-          "amountDue": 32.38,
-          "amountPaid": 0
+          "dueAmount": 32.38,
+          "paidAmount": 0
         },
         {
-          "id": 2,
           "dateIncurred": "2023-09-03",
-          "amountDue": 32.38,
-          "amountPaid": 0
+          "dueAmount": 32.38,
+          "paidAmount": 0
         }
       ],
       "transactions": [
@@ -2308,6 +2415,7 @@
     },
     {
       "id": 25,
+      "contractFilename": "blah",
       "retailerDescription": "11. In term, with last payment overdue",
       "isActive": true,
       "contractSignDate": "2023-03-02",
@@ -2322,74 +2430,79 @@
       "lastPaymentDate": "2023-08-02",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 1,
+          "description": "product 1",
+          "quantity": 1,
           "price": 1100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-04-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-05-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-06-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-07-03",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-08-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-09-02",
@@ -2397,14 +2510,15 @@
             "2023-09-07",
             "2023-10-07"
           ],
-          "amountDue": 179.90,
-          "amountPaid": 0,
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 0,
           "lateFee": {
             "dateIncurred": "2023-09-03",
             "isAutoWaivable": true,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         }
       ],
@@ -2455,6 +2569,7 @@
     },
     {
       "id": 26,
+      "contractFilename": "blah",
       "retailerDescription": "11.5. In term, with last payment overdue, with previous late fees",
       "isActive": true,
       "contractSignDate": "2023-03-02",
@@ -2469,76 +2584,81 @@
       "lastPaymentDate": "2023-08-02",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 1,
+          "description": "product 1",
+          "quantity": 1,
           "price": 1100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-04-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-05-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
             "isAutoWaivable": false,
             "isWaived": true,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
             "2023-07-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-07-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-08-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-09-02",
@@ -2546,14 +2666,15 @@
             "2023-09-07",
             "2023-10-07"
           ],
-          "amountDue": 179.90,
-          "amountPaid": 89.95,
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 89.95,
           "lateFee": {
             "dateIncurred": "2023-09-03",
             "isAutoWaivable": true,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         }
       ],
@@ -2604,6 +2725,7 @@
     },
     {
       "id": 27,
+      "contractFilename": "blah",
       "retailerDescription": "12. Out of term with instalment payments paid late, with out-of-term charges unpaid",
       "isActive": true,
       "contractSignDate": "2023-01-02",
@@ -2618,115 +2740,119 @@
       "lastPaymentDate": "2023-03-02",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 1,
+          "description": "product 1",
+          "quantity": 1,
           "price": 1100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-02",
             "2023-04-04",
             "2023-04-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-04-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-02",
             "2023-05-04",
             "2023-05-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-05-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04",
             "2023-06-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
             "2023-07-07"
           ],
-          "amountDue": 179.90,
-          "amountPaid": 179.90,
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 179.90,
           "lateFee": {
             "dateIncurred": "2023-07-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         }
       ],
       "outOfTermCharges": [
         {
-          "id": 1,
           "dateIncurred": "2023-08-03",
-          "amountDue": 32.38,
-          "amountPaid": 0
+          "dueAmount": 32.38,
+          "paidAmount": 0
         },
         {
-          "id": 2,
           "dateIncurred": "2023-09-03",
-          "amountDue": 32.38,
-          "amountPaid": 0
+          "dueAmount": 32.38,
+          "paidAmount": 0
         }
       ],
       "transactions": [
@@ -2797,6 +2923,7 @@
     },
     {
       "id": 28,
+      "contractFilename": "blah",
       "retailerDescription": "13. Out of term with instalment payments paid late, out-of-term charges paid, late fees unpaid",
       "isActive": true,
       "contractSignDate": "2023-01-02",
@@ -2811,115 +2938,119 @@
       "lastPaymentDate": "2023-03-02",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 1,
+          "description": "product 1",
+          "quantity": 1,
           "price": 1100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-02",
             "2023-04-04",
             "2023-04-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-04-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 12
+            "dueAmount": 30,
+            "paidAmount": 12
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-02",
             "2023-05-04",
             "2023-05-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-05-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04",
             "2023-06-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
             "2023-07-07"
           ],
-          "amountDue": 179.90,
-          "amountPaid": 179.90,
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 179.90,
           "lateFee": {
             "dateIncurred": "2023-07-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 0.00
+            "dueAmount": 30,
+            "paidAmount": 0.00
           }
         }
       ],
       "outOfTermCharges": [
         {
-          "id": 1,
           "dateIncurred": "2023-08-03",
-          "amountDue": 32.38,
-          "amountPaid": 32.38
+          "dueAmount": 32.38,
+          "paidAmount": 32.38
         },
         {
-          "id": 2,
           "dateIncurred": "2023-09-03",
-          "amountDue": 32.38,
-          "amountPaid": 32.38
+          "dueAmount": 32.38,
+          "paidAmount": 32.38
         }
       ],
       "transactions": [
@@ -2997,6 +3128,7 @@
     },
     {
       "id": 29,
+      "contractFilename": "blah",
       "retailerDescription": "14. Out of term with instalment payments paid late, out-of-term charges paid, late fees paid",
       "isActive": false,
       "contractSignDate": "2023-01-02",
@@ -3011,115 +3143,119 @@
       "lastPaymentDate": "2023-07-02",
       "orderItems":[
         {
-          "name": "product 1",
-          "qnty": 1,
+          "description": "product 1",
+          "quantity": 1,
           "price": 1100.00
         }
       ],
       "instalments": [
         {
-          "id": 1,
+          "month": 1,
           "isDue": true,
           "dueDates": [
             "2023-02-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 2,
+          "month": 2,
           "isDue": true,
           "dueDates": [
             "2023-03-02"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
         },
         {
-          "id": 3,
+          "month": 3,
           "isDue": true,
           "dueDates": [
             "2023-04-02",
             "2023-04-04",
             "2023-04-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-04-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 30.00
+            "dueAmount": 30,
+            "paidAmount": 30.00
           }
         },
         {
-          "id": 4,
+          "month": 4,
           "isDue": true,
           "dueDates": [
             "2023-05-02",
             "2023-05-04",
             "2023-05-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-05-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 30.00
+            "dueAmount": 30,
+            "paidAmount": 30.00
           }
         },
         {
-          "id": 5,
+          "month": 5,
           "isDue": true,
           "dueDates": [
             "2023-06-02",
             "2023-06-04",
             "2023-06-07"
           ],
-          "amountDue": 179.92,
-          "amountPaid": 179.92,
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
           "lateFee": {
             "dateIncurred": "2023-06-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 30.00
+            "dueAmount": 30,
+            "paidAmount": 30.00
           }
         },
         {
-          "id": 6,
+          "month": 6,
           "isDue": true,
           "dueDates": [
             "2023-07-02",
             "2023-07-04",
             "2023-07-07"
           ],
-          "amountDue": 179.90,
-          "amountPaid": 179.90,
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 179.90,
           "lateFee": {
             "dateIncurred": "2023-07-03",
             "isAutoWaivable": false,
             "isWaived": false,
-            "amountDue": 30,
-            "amountPaid": 30.00
+            "dueAmount": 30,
+            "paidAmount": 30.00
           }
         }
       ],
       "outOfTermCharges": [
         {
-          "id": 1,
           "dateIncurred": "2023-08-03",
-          "amountDue": 32.38,
-          "amountPaid": 32.38
+          "dueAmount": 32.38,
+          "paidAmount": 32.38
         },
         {
-          "id": 2,
           "dateIncurred": "2023-09-03",
-          "amountDue": 32.38,
-          "amountPaid": 32.38
+          "dueAmount": 32.38,
+          "paidAmount": 32.38
         }
       ],
       "transactions": [

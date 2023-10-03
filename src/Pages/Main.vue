@@ -76,8 +76,8 @@
             :original-order-amount=loan.originalOrderAmount
             :total-interest-amount=loan.totalInterestAmount
             :total-loan-value=(loan.originalOrderAmount+loan.totalInterestAmount-loan.depositAmount)
-            :value-repaid=amountPaid(loan.instalments)+Number(amountPaid(loan.outOfTermCharges))
-            :value-left-to-pay=(loan.originalOrderAmount-loan.depositAmount+loan.totalInterestAmount-amountPaid(loan.instalments)-amountPaid(loan.outOfTermCharges)+amountDue(loan.outOfTermCharges))
+            :value-repaid=paidAmount(loan.instalments)+Number(paidAmount(loan.outOfTermCharges))
+            :value-left-to-pay=(loan.originalOrderAmount-loan.depositAmount+loan.totalInterestAmount-paidAmount(loan.instalments)-paidAmount(loan.outOfTermCharges)+dueAmount(loan.outOfTermCharges))
             :loan-upcoming-payment=loan.upcomingInstalmentAmount
             :loan-upcoming-payment-date=loan.upcomingInstalmentDate
             :loan-previous-payment=loan.lastPaymentAmount
@@ -87,7 +87,7 @@
             :transactions=loan.transactions
             :instalments=loan.instalments
             :out-of-term-charges=loan.outOfTermCharges
-            :out-of-term-charges-amount="amountDue(loan.outOfTermCharges)"
+            :out-of-term-charges-amount="dueAmount(loan.outOfTermCharges)"
             :is-repaid=loan.isRepaid
             :current-instalment=currentInstalment(loan.instalments)
           />
@@ -168,13 +168,13 @@ const collateLoanStatuses = (event) => {
   loanStatuses.value.push(event)
 }
 
-function amountPaid(arr) {
+function paidAmount(arr) {
   if(arr) {
     const paidArray = arr.filter(function (el) {
-      return el.amountPaid !== 0
+      return el.paidAmount !== 0
     })
     const sum = paidArray.reduce((acc, obj) => {
-      return acc + (obj.amountPaid)
+      return acc + (obj.paidAmount)
     }, 0);
     return sum;
   }
@@ -187,10 +187,10 @@ const currentInstalment = (arr) => {
   )
 }
 
-function amountDue(arr) {
+function dueAmount(arr) {
   if(arr) {
     return arr.reduce((acc, obj) => {
-      return acc + (obj.amountDue)
+      return acc + (obj.dueAmount)
     }, 0);
   }
   else return 0
