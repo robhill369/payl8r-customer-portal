@@ -155,7 +155,7 @@ onMounted(() => {
     orderedLoans.value.push(loan)
   })
   orderedLoans.value.sort(
-    (loanA, loanB) => loanA.endDate > loanB.endDate ? 1 : -1
+    (loanA, loanB) => loanA.endDate - loanB.endDate
   )
   orderedLoans.value.forEach((loan, index) => {
     if(!loan.isActive) {
