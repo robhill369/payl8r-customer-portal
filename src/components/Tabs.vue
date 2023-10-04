@@ -15,12 +15,6 @@ defineProps({
   }
 })
 
-// const hello = ref(1)
-//
-// const currentTab = (tabNumber) => {
-//   hello.value = tabNumber;
-// }
-
 // const toKebabCase = (str) =>
 //     str &&
 //     str

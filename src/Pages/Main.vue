@@ -38,10 +38,8 @@
       </CardSectionHeader>
       <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 pr-14 sm:pr-40 lg:pr-9 xl:pr-28 3xl:pr-72 space-y-7 lg:space-y-0 lg:space-x-24">
         <PaymentsSchedule
-          upcomingPayment=XX.XX
-          upcomingPaymentDate=UPCPAYDATE
-          previousPayment=XX.XX
-          previousPaymentDate=PRVPAYDATE
+          :upcoming-instalment=upcomingInstalment
+          :last-payment=lastPayment
         />
       </BaseCard>
     </CardSection>
@@ -78,10 +76,8 @@
             :total-loan-value=(loan.originalOrderAmount+loan.totalInterestAmount-loan.depositAmount)
             :value-repaid=paidAmount(loan.instalments)+Number(paidAmount(loan.outOfTermCharges))
             :value-left-to-pay=(loan.originalOrderAmount-loan.depositAmount+loan.totalInterestAmount-paidAmount(loan.instalments)-paidAmount(loan.outOfTermCharges)+dueAmount(loan.outOfTermCharges))
-            :loan-upcoming-payment=loan.upcomingInstalmentAmount
-            :loan-upcoming-payment-date=loan.upcomingInstalmentDate
-            :loan-previous-payment=loan.lastPaymentAmount
-            :loan-previous-payment-date=loan.lastPaymentDate
+            :upcoming-instalment=loan.upcomingInstalment
+            :last-payment=loan.lastPayment
             :order-items=loan.orderItems
             :current-last-four-digits=user.cardNumber
             :transactions=loan.transactions
@@ -134,6 +130,7 @@ import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuc
 import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
 
 import schemaData from '@/assets/json/schema.json'
+import usedateFormat from "@/composables/useDateFormat";
 
 const emit = defineEmits(['show'])
 
@@ -143,13 +140,31 @@ const loans = schemaData.loans
 const remainingBalance = ref([])
 const loanStatuses = ref([])
 const orderedLoans = ref([])
+const lastPayment = ref('')
+const upcomingInstalment = ref('')
 
 onMounted(() => {
   if(loans.length === 1) {
     emit('show')
   }
 
+  const loansOrderedByLastPaymentDate = loans.sort((loanA, loanB) => new Date(loanA.lastPayment.date) - new Date(loanB.lastPayment.date))
+  lastPayment.value = loansOrderedByLastPaymentDate[loansOrderedByLastPaymentDate.length-1].lastPayment
+
+  const loansOrderedByUpcomingInstalmentDate = loans.sort((loanA, loanB) => new Date(loanA.upcomingInstalment.date) - new Date(loanB.upcomingInstalment.date))
+  upcomingInstalment.value = loansOrderedByUpcomingInstalmentDate[0].upcomingInstalment
+
   loans.forEach((loan) => {
+    const remainingLateFeePayments = (arr) => {
+      const newArray = []
+      arr.forEach((item) => {
+        if((item.lateFee.dueAmount - item.lateFee.paidAmount !== 0) && !item.lateFee.isWaived && !item.lateFee.isAutoWaivable) {
+          newArray.push(item.lateFee.dueAmount - item.lateFee.paidAmount)
+        }
+      })
+      return newArray
+    }
+
     const endDate = moment(loan.instalments[loan.instalments.length-1].dueDates[0], 'YYYY-MM-DD')
     loan['endDate'] = endDate
     orderedLoans.value.push(loan)

@@ -2,10 +2,8 @@
   <div>
     <PaymentsSchedule
         is-loan-card
-        :upcoming-payment=loanUpcomingPayment
-        :upcoming-payment-date=loanUpcomingPaymentDate
-        :previous-payment=loanPreviousPayment
-        :previous-payment-date=loanPreviousPaymentDate
+        :upcoming-instalment=upcomingInstalment
+        :last-payment=lastPayment
     >
       <slot/>
     </PaymentsSchedule>
@@ -111,23 +109,11 @@ defineProps({
   outOfTermChargesAmount: {
     type: Number
   },
-  loanUpcomingPayment: {
-    type: Number,
-    required: true,
-    default: 0
+  upcomingInstalment: {
+    type: Object,
   },
-  loanUpcomingPaymentDate: {
-    type: Date,
-    required: true,
-  },
-  loanPreviousPayment: {
-    type: Number,
-    required: true,
-    default: 0
-  },
-  loanPreviousPaymentDate: {
-    type: Date,
-    required: true,
+  lastPayment: {
+    type: Object,
   },
   loanRepaid: {
     type: Boolean,

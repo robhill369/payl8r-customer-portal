@@ -22,10 +22,14 @@
       "originalOrderAmount": 100,
       "depositAmount": 0,
       "totalInterestAmount": 9.45,
-      "upcomingInstalmentAmount": 26.48,
-      "upcomingInstalmentDate": "2023-09-28",
-      "lastPaymentAmount": null,
-      "lastPaymentDate": null,
+      "upcomingInstalment": {
+        "amount": 26.48,
+        "date": "2023-09-28"
+      },
+      "lastPayment": {
+        "amount": null,
+        "date": null
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -51,6 +55,7 @@
             "2023-09-28"
           ],
           "numberOfAttempts": null,
+          "dueAmount": 26.48,
           "paidAmount": 0
         },
         {
@@ -86,10 +91,14 @@
       "originalOrderAmount": 250,
       "depositAmount": 60,
       "totalInterestAmount": 25.65,
-      "upcomingInstalmentAmount": 71.88,
-      "upcomingInstalmentDate": "2023-10-05",
-      "lastPaymentAmount": 71.88,
-      "lastPaymentDate": "2023-09-05",
+      "upcomingInstalment": {
+        "amount": 71.89,
+        "date": "2023-11-05"
+      },
+      "lastPayment": {
+        "amount": 71.88,
+        "date": "2023-09-10"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -156,10 +165,14 @@
       "originalOrderAmount": 250,
       "depositAmount": 60,
       "totalInterestAmount": 25.65,
-      "upcomingInstalmentAmount": 71.88,
-      "upcomingInstalmentDate": "2023-09-05",
-      "lastPaymentAmount": 71.88,
-      "lastPaymentDate": "2023-08-05",
+      "upcomingInstalment": {
+        "amount": 71.89,
+        "date": "2023-10-05"
+      },
+      "lastPayment": {
+        "amount": 71.88,
+        "date": "2023-09-05"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -234,10 +247,14 @@
       "originalOrderAmount": 1100,
       "depositAmount": 250,
       "totalInterestAmount": 459,
-      "upcomingInstalmentAmount": 109.08,
-      "upcomingInstalmentDate": null,
-      "lastPaymentAmount": 109.08,
-      "lastPaymentDate": "2023-08-02",
+      "upcomingInstalment": {
+        "amount": 109.08,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 109.08,
+        "date": "2023-08-02"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -446,10 +463,14 @@
       "originalOrderAmount": 600,
       "depositAmount": 80,
       "totalInterestAmount": 210.60,
-      "upcomingInstalmentAmount": 81.18,
-      "upcomingInstalmentDate": "2023-09-13",
-      "lastPaymentAmount": 81.18,
-      "lastPaymentDate": "2023-08-17",
+      "upcomingInstalment": {
+        "amount": 81.18,
+        "date": "2023-09-13"
+      },
+      "lastPayment": {
+        "amount": 81.18,
+        "date": "2023-08-17"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -674,10 +695,14 @@
       "originalOrderAmount": 600,
       "depositAmount": 80,
       "totalInterestAmount": 210.60,
-      "upcomingInstalmentAmount": 81.18,
-      "upcomingInstalmentDate": "2023-09-13",
-      "lastPaymentAmount": 81.18,
-      "lastPaymentDate": "2023-08-17",
+      "upcomingInstalment": {
+        "amount": 81.18,
+        "date": "2023-09-13"
+      },
+      "lastPayment": {
+        "amount": 81.18,
+        "date": "2023-08-17"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -906,10 +931,14 @@
       "originalOrderAmount": 600,
       "depositAmount": 80,
       "totalInterestAmount": 210.60,
-      "upcomingInstalmentAmount": 81.18,
-      "upcomingInstalmentDate": "2023-09-13",
-      "lastPaymentAmount": 81.18,
-      "lastPaymentDate": "2023-08-17",
+      "upcomingInstalment": {
+        "amount": 81.18,
+        "date": "2023-09-13"
+      },
+      "lastPayment": {
+        "amount": 81.18,
+        "date": "2023-08-17"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -1145,10 +1174,14 @@
       "originalOrderAmount": 300,
       "depositAmount": 40,
       "totalInterestAmount": 70.20,
-      "upcomingInstalmentAmount": 55.03,
-      "upcomingInstalmentDate": null,
-      "lastPaymentAmount": 0,
-      "lastPaymentDate": "",
+      "upcomingInstalment": {
+        "amount": 55.03,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 27.52,
+        "date": "2023-07-28"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -1265,10 +1298,14 @@
       "provider": "payl8r",
       "depositAmount": 100,
       "totalInterestAmount": 599.40,
-      "upcomingInstalmentAmount": 0,
-      "upcomingInstalmentDate": "",
-      "lastPaymentAmount": 74.41,
-      "lastPaymentDate": "2023-09-05",
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 74.41,
+        "date": "2023-09-05"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -1613,10 +1650,14 @@
       "originalOrderAmount": 300,
       "depositAmount": 40,
       "totalInterestAmount": 70.20,
-      "upcomingInstalmentAmount": 0,
-      "upcomingInstalmentDate": "",
-      "lastPaymentAmount": 74.41,
-      "lastPaymentDate": "2023-09-05",
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 74.41,
+        "date": "2023-09-05"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -1815,10 +1856,14 @@
       "originalOrderAmount": 300,
       "depositAmount": 40,
       "totalInterestAmount": 70.20,
-      "upcomingInstalmentAmount": 0,
-      "upcomingInstalmentDate": "",
-      "lastPaymentAmount": 74.41,
-      "lastPaymentDate": "2023-09-09",
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 74.41,
+        "date": "2023-09-09"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -2012,10 +2057,14 @@
       "originalOrderAmount": 300,
       "depositAmount": 40,
       "totalInterestAmount": 70.20,
-      "upcomingInstalmentAmount": 0,
-      "upcomingInstalmentDate": "",
-      "lastPaymentAmount": 74.41,
-      "lastPaymentDate": "2023-09-05",
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 74.41,
+        "date": "2023-09-05"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -2233,10 +2282,14 @@
       "originalOrderAmount": 1100,
       "depositAmount": 250,
       "totalInterestAmount": 229.50,
-      "upcomingInstalmentAmount": 179.92,
-      "upcomingInstalmentDate": null,
-      "lastPaymentAmount": 179.92,
-      "lastPaymentDate": "2023-03-02",
+      "upcomingInstalment": {
+        "amount": 179.92,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.92,
+        "date": "2023-03-02"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -2424,10 +2477,14 @@
       "originalOrderAmount": 1100,
       "depositAmount": 250,
       "totalInterestAmount": 229.50,
-      "upcomingInstalmentAmount": 179.92,
-      "upcomingInstalmentDate": null,
-      "lastPaymentAmount": 179.92,
-      "lastPaymentDate": "2023-08-02",
+      "upcomingInstalment": {
+        "amount": 179.92,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.92,
+        "date": "2023-08-02"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -2578,10 +2635,14 @@
       "originalOrderAmount": 1100,
       "depositAmount": 250,
       "totalInterestAmount": 229.50,
-      "upcomingInstalmentAmount": 179.92,
-      "upcomingInstalmentDate": null,
-      "lastPaymentAmount": 179.92,
-      "lastPaymentDate": "2023-08-02",
+      "upcomingInstalment": {
+        "amount": 179.92,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.92,
+        "date": "2023-08-02"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -2734,10 +2795,14 @@
       "originalOrderAmount": 1100,
       "depositAmount": 250,
       "totalInterestAmount": 229.50,
-      "upcomingInstalmentAmount": "",
-      "upcomingInstalmentDate": null,
-      "lastPaymentAmount": 179.90,
-      "lastPaymentDate": "2023-03-02",
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.90,
+        "date": "2023-03-02"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -2932,10 +2997,14 @@
       "originalOrderAmount": 1100,
       "depositAmount": 250,
       "totalInterestAmount": 229.50,
-      "upcomingInstalmentAmount": "",
-      "upcomingInstalmentDate": null,
-      "lastPaymentAmount": 179.90,
-      "lastPaymentDate": "2023-03-02",
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.90,
+        "date": "2023-03-02"
+      },
       "orderItems":[
         {
           "description": "product 1",
@@ -3137,10 +3206,14 @@
       "originalOrderAmount": 1100,
       "depositAmount": 250,
       "totalInterestAmount": 229.50,
-      "upcomingInstalmentAmount": "",
-      "upcomingInstalmentDate": null,
-      "lastPaymentAmount": 179.90,
-      "lastPaymentDate": "2023-07-02",
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.90,
+        "date": "2023-07-02"
+      },
       "orderItems":[
         {
           "description": "product 1",

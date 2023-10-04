@@ -21,10 +21,8 @@
             :deposit-amount=depositAmount
             :value-repaid="valueRepaid"
             :value-left-to-pay=valueLeftToPay
-            :loan-upcoming-payment=loanUpcomingPayment
-            :loan-upcoming-payment-date="loanUpcomingPaymentDate"
-            :loan-previous-payment=loanPreviousPayment
-            :loan-previous-payment-date="loanPreviousPaymentDate"
+            :last-payment=lastPayment
+            :upcoming-Instalment=upcomingInstalment
             :current-last-four-digits=currentLastFourDigits
             :transactions=transactions
             :instalments=instalments
@@ -107,19 +105,11 @@ const props = defineProps({
     type: Number,
     required: true
   },
-  loanUpcomingPayment: {
-    type: Number,
-    default: 0
+  upcomingInstalment: {
+    type: Object
   },
-  loanUpcomingPaymentDate: {
-    type: String
-  },
-  loanPreviousPayment: {
-    type: Number,
-    default: 0
-  },
-  loanPreviousPaymentDate: {
-    type: String
+  lastPayment: {
+    type: Object
   },
   currentLastFourDigits: {
     type: Number
