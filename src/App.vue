@@ -1,6 +1,6 @@
 <template>
   <AppLayout>
-    <header v-if="$route.path !== '/login'">
+    <header v-if="!isEntryPage">
       <NavbarGroup
         :username="user.firstName+' '+user.lastName"
         :overview-only=isSingleLoan
@@ -8,7 +8,7 @@
     </header>
     <main class="currentColor h-full">
       <div class="flex flex-col lg:flex-row currentColor">
-        <div  v-if="$route.path !== '/login'" class="h-20 lg:h-auto lg:flex w-full lg:w-96 2xl:w-16"/>
+        <div v-if="!isEntryPage" class="h-20 lg:h-auto lg:flex w-full lg:w-96 2xl:w-16"/>
         <div class="px-5 w-full sm:container pt-16 h-screen">
           <router-view @show="isSingleLoan = true"/>
         </div>
@@ -19,15 +19,18 @@
 
 <script setup>
 import {ref} from "vue";
-import AppLayout from './Layout/AppLayout.vue'
+import {useRouter} from "vue-router";
 
 import schemaData from '@/assets/json/schema.json'
+
+import AppLayout from './Layout/AppLayout.vue'
 import NavbarGroup from "@/Layout/NavbarGroup.vue";
 
 const user = schemaData.user
 
 const isSingleLoan = ref(false)
 
-
+const route = useRouter()
+const isEntryPage = route.path !== '/login' || route.path !== '/forgot-password'
 
 </script>
