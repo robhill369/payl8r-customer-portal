@@ -7,7 +7,7 @@
       </p>
       <RockerHandImage class="w-80 hidden md:flex"/>
     </div>
-    <div class="md:space-y-3 lg:space-y-6 h-[80vh] md:h-auto flex flex-col justify-between md:justify-normal mx-4 sm:mx-16 md:mx-0">
+    <div class="md:space-y-3 lg:space-y-6 h-[80vh] md:h-auto flex flex-col justify-between md:justify-normal sm:mx-16 md:mx-0">
         <div class="w-full relative h-12">
           <h1 class="absolute z-20 whitespace-nowrap px-2">{{ $route.path === '/login' ? 'Oh, hey there' : 'It happens.'}}</h1>
           <div class="absolute top-5 bg-purple-light h-5" :class="$route.path === '/login' ? 'w-60' : 'w-52'"/>
@@ -15,7 +15,7 @@
         <p class="md:hidden">
           {{ $route.path === '/login' ? 'Got a product with Payl8r or Upfront? Manage all your loans from here. Just login below with your shared account:' : 'Tell us your email address on file and we will send you a link to reset your password.'}}
         </p>
-      <BaseCard class="px-6 mx-auto md:px-9 pb-9 w-80 sm:w-96">
+      <BaseCard class="px-6 md:px-9 pb-9 sm:w-96">
         <BaseForm
           v-if="$route.path === '/login'"
           class="w-full -mt-4"
@@ -32,7 +32,7 @@
             class="w-full mt-10"
             title="Reset my password"
             button-name="Submit"
-            link-name="Go back to login instead"
+            link-name="Go back to login"
             link-url="/login"
             link-below-button
             is-entry-page

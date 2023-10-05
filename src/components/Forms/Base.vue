@@ -10,7 +10,7 @@
         <PrimaryButton
           :name=buttonName
         />
-        <router-link v-if="isEntryPage" :to=linkUrl class="underline text-tab cursor-pointer">{{linkName}}</router-link>
+        <router-link v-if="isEntryPage" :to=linkUrl class="underline font-montserrat text-xxs font-semibold cursor-pointer">{{linkName}}</router-link>
       </div>
     </form>
   </div>
