@@ -9,7 +9,10 @@
       <RockerHandImage class="w-80 hidden md:flex"/>
     </div>
     <div class="md:space-y-3 lg:space-y-6 h-[80vh] md:h-auto flex flex-col justify-between md:justify-normal mx-4 sm:mx-16 md:mx-0">
-        <h1>Oh, hey there</h1>
+        <div class="w-full relative h-12">
+          <h1 class="absolute z-20 whitespace-nowrap px-2">Oh, hey there</h1>
+          <div class="absolute top-5 bg-purple-light w-60 h-5"/>
+        </div>
         <p class="md:hidden">
           Got a product with Payl8r or Upfront? Manage all your loans from here.
           Just login below with your shared account:
