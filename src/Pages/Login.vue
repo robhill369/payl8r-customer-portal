@@ -57,6 +57,7 @@
 </template>
 
 <script setup>
+import {onMounted, defineEmits} from "vue";
 import BaseForm from "@/components/Forms/Base.vue";
 import FormTextInput from "@/components/Forms/FormTextInput.vue";
 import BaseCard from "@/components/Cards/Base.vue";
@@ -64,5 +65,15 @@ import SecondaryButton from "@/components/Buttons/Secondary.vue";
 import Payl8rLogo from "@/components/icons/Payl8rLogo.vue";
 import UpfrontLogo from "@/components/icons/UpfrontLogo.vue";
 import RockerHandImage from "@/components/icons/RockerHand.vue";
+import {useRoute} from "vue-router";
 
+const emit = defineEmits(['nav'])
+
+const route = useRoute()
+
+onMounted(() => {
+  if(route.path !== '/login' || route.path !== '/forgot-password') {
+    emit('nav')
+  }
+})
 </script>

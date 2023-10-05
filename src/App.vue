@@ -9,8 +9,11 @@
     <main class="currentColor h-full">
       <div class="flex flex-col lg:flex-row currentColor">
         <div v-if="!isEntryPage" class="h-20 lg:h-auto lg:flex w-full lg:w-96 2xl:w-16"/>
-        <div class="px-5 w-full sm:container pt-16 h-screen">
-          <router-view @show="isSingleLoan = true"/>
+        <div class="px-5 w-full sm:container pt-16" :class="isEntryPage ? 'h-screen' : ''">
+          <router-view
+            @show="isSingleLoan = true"
+            @nav="isEntryPage = true"
+          />
         </div>
       </div>
     </main>
@@ -19,7 +22,6 @@
 
 <script setup>
 import {ref} from "vue";
-import {useRouter} from "vue-router";
 
 import schemaData from '@/assets/json/schema.json'
 
@@ -29,8 +31,6 @@ import NavbarGroup from "@/Layout/NavbarGroup.vue";
 const user = schemaData.user
 
 const isSingleLoan = ref(false)
-
-const route = useRouter()
-const isEntryPage = route.path !== '/login' || route.path !== '/forgot-password'
+const isEntryPage = ref(false)
 
 </script>

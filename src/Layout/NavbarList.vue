@@ -34,15 +34,17 @@
         <font-awesome-icon icon="fa-solid fa-headset" size="xl"/>
         <template v-slot:title>Help centre</template>
       </NavbarItem>
-      <button
-        class="flex border rounded-md pr-2 text-xxs lg:text-sm border-gray-darker lg:border-gray mt-4 mb-3"
-        @click="$emit('closeNav')"
-      >
-        <div class="flex w-28 lg:w-32 justify-evenly my-2 lg:my-2.5 items-center">
-          <font-awesome-icon :icon="['fas', 'arrow-right-to-bracket']" size="xl"/>
-          Log out
-        </div>
-      </button>
+      <router-link to="/login">
+        <button
+          class="flex border rounded-md pr-2 text-xxs lg:text-sm border-gray-darker lg:border-gray mt-4 mb-3"
+          @click="$emit('closeNav')"
+        >
+          <div class="flex w-28 lg:w-32 justify-evenly my-2 lg:my-2.5 items-center">
+            <font-awesome-icon :icon="['fas', 'arrow-right-to-bracket']" size="xl"/>
+            Log out
+          </div>
+        </button>
+      </router-link>
     </div>
   </div>
 </template>
