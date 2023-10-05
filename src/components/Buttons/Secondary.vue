@@ -2,6 +2,7 @@
   <ButtonBase class="bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white">
       <font-awesome-icon v-if="props.icon" :icon=props.icon :size=props.size class="pr-2"/>
       <span>{{ name }}</span>
+    <slot/>
   </ButtonBase>
 
 </template>

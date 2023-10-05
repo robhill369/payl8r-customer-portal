@@ -12,7 +12,7 @@
 
 <script setup>
 
-import UpfrontLogo from "@/components/icons/UpfrontLogo.vue";
+import UpfrontLogo from "@/components/icons/UpfrontIconLogo.vue";
 
 const props = defineProps({
   icon: {

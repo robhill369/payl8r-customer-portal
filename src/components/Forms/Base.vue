@@ -6,9 +6,12 @@
       <div class="flex flex-col space-y-7">
         <slot/>
       </div>
-      <PrimaryButton
-        :name=buttonName
-      />
+      <div class="flex items-center space-x-3">
+        <PrimaryButton
+          :name=buttonName
+        />
+        <a :href=linkUrl class="underline text-tab cursor-pointer">{{linkName}}</a>
+      </div>
     </form>
   </div>
 </template>
@@ -25,6 +28,12 @@ defineProps ({
   buttonName: {
     type: String,
     required: true,
+  },
+  linkName: {
+    type: String
+  },
+  linkUrl: {
+    type: String
   }
 })
 </script>
