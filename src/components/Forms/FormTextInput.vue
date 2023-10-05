@@ -1,10 +1,10 @@
 <template>
   <div class="relative w-full flex flex-col group">
-    <label :for=id class="text-xs font-medium font-montserrat pb-3.5 group-focus-within:text-pink">{{ title }}</label>
+    <label :for=id class="text-xs font-medium font-montserrat pb-3.5" :class="hasFocusStyling ? 'group-focus-within:text-pink' : ''">{{ title }}</label>
     <input
       :id=id
       :type=inputType
-      class="bg-gray-light px-3 sm:px-5 py-3 border-b border-gray-dark text-gray-darker w-full focus:bg-pink-lighter focus:border-pink"
+      class="bg-gray-light px-3 sm:px-5 py-3 border-b border-gray-dark text-gray-darker w-full" :class="hasFocusStyling ? 'focus:bg-pink-lighter focus:border-pink' : ''"
       :disabled=disabled
       :placeholder="currentValuePlaceholder ? currentValuePlaceholder : placeholder"
       :value=currentValue
@@ -39,6 +39,10 @@ defineProps ({
   },
   currentValue: {
     type: String,
+  },
+  hasFocusStyling: {
+    type: Boolean,
+    default: true
   }
 })
 </script>

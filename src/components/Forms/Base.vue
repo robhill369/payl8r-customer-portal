@@ -2,15 +2,15 @@
   <div>
     <h4>{{ title }}</h4>
     <slot name="helper"/>
-    <form class="mt-9 space-y-11">
+    <form class="mt-9" :class="isEntryPage ? 'space-y-7' : 'space-y-11'">
       <div class="flex flex-col space-y-7">
         <slot/>
       </div>
-      <div class="flex items-center space-x-3">
+      <div class="flex" :class="linkBelowButton ? 'flex-col space-y-6' : 'flex-row items-center space-x-3'">
         <PrimaryButton
           :name=buttonName
         />
-        <a :href=linkUrl class="underline text-tab cursor-pointer">{{linkName}}</a>
+        <router-link v-if="isEntryPage" :to=linkUrl class="underline text-tab cursor-pointer">{{linkName}}</router-link>
       </div>
     </form>
   </div>
@@ -18,12 +18,10 @@
 
 <script setup>
 import PrimaryButton from "@/components/Buttons/Primary.vue";
-import FormTextInput from "@/components/Forms/FormTextInput.vue";
 
 defineProps ({
   title: {
-    type: String,
-    required: true
+    type: String
   },
   buttonName: {
     type: String,
@@ -34,6 +32,12 @@ defineProps ({
   },
   linkUrl: {
     type: String
+  },
+  linkBelowButton: {
+    type: Boolean
+  },
+  isEntryPage: {
+    type: Boolean
   }
 })
 </script>

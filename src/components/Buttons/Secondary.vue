@@ -12,8 +12,7 @@ import ButtonBase from "@/components/Buttons/Base.vue";
 
 const props = defineProps({
   name: {
-    type: String,
-    required: true
+    type: String
   },
   icon: {
     type: String
