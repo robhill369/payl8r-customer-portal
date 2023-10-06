@@ -2,7 +2,7 @@
   <div class="flex flex-col md:flex-row justify-between w-full gap-[4vh] md:gap-10 lg:mt-8 lg:px-12 xl:px-36 2xl:px-0 3xl:px-64 -translate-y-10 md:translate-y-0">
     <div class=" flex flex-col justify-between">
       <Payl8rLogo class="md:mt-4 mx-auto md:mx-0"/>
-      <p class="hidden md:block ">
+      <p class="hidden md:block">
         {{ $route.path === '/login' ? 'Got a product with Payl8r or Upfront? Manage all your loans from here. Just login below with your shared account:' : 'Tell us your email address on file and we will send you a link to reset your password.'}}
       </p>
       <RockerHandImage class="w-80 hidden md:flex"/>
@@ -12,10 +12,10 @@
           <h1 class="absolute z-20 whitespace-nowrap px-2">{{ $route.path === '/login' ? 'Oh, hey there' : 'It happens.'}}</h1>
           <div class="absolute top-5 bg-purple-light h-5" :class="$route.path === '/login' ? 'w-60' : 'w-52'"/>
         </div>
-        <p class="md:hidden">
+        <p class="md:hidden h-16">
           {{ $route.path === '/login' ? 'Got a product with Payl8r or Upfront? Manage all your loans from here. Just login below with your shared account:' : 'Tell us your email address on file and we will send you a link to reset your password.'}}
         </p>
-      <BaseCard class="px-6 md:px-9 pb-9 sm:w-96">
+      <BaseCard class="px-6 md:px-9 pb-9 sm:w-96 h-80">
         <BaseForm
           v-if="$route.path === '/login'"
           class="w-full -mt-4"
