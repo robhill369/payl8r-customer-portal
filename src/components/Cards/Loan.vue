@@ -17,7 +17,7 @@
       >
         <div :class="loanDetails ? 'w-full flex justify-between items-center' : 'lg:absolute bottom-7 right-5 xl:right-9'">
 
-          <div class="relative flex items-center gap-3" :class="!loanDetails ? ' justify-between md:justify-normal' : ''">
+          <div class="relative flex items-center gap-3" :class="!loanDetails ? 'md:flex-row-reverse justify-between md:justify-normal' : ''">
             <Tag :name="status"
                  @click="$emit('open')"
                  :class="loanDetails && (status === 'Payment overdue' || status === 'Urgent') && (instalmentsWithLateFees.length - ((status === 'Payment overdue' || status === 'Urgent') ? 1 : 0) > 0) ? 'px-1 sm:px-auto' : 'px-3 sm:px-auto'"

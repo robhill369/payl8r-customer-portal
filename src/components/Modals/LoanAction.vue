@@ -55,7 +55,7 @@
         </div>
         <div v-else class="bg-gray-light rounded-lg py-2 px-4 items-center text-gray-darker justify-between h-10">
           <select class="bg-gray-light focus:outline-none">
-            <option v-for="n in 31">{{ toOrdinalSuffix(n) }}</option>
+            <option v-for="n in 31">{{ useOrdinalSuffix(n) }}</option>
           </select>
         </div>
         <div class="flex space-x-2 sm:space-x-5">
@@ -75,6 +75,7 @@
 
 <script setup>
 import {ref} from "vue";
+import useOrdinalSuffix from "../../composables/useOrdinalSuffix";
 import BaseCard from "@/components/Cards/Base.vue";
 import ConfirmButton from "@/components/Buttons/Confirm.vue";
 import CancelButton from "@/components/Buttons/Cancel.vue";
@@ -111,16 +112,5 @@ const handleIncrement = () => {
 const handleDecrement = () => {
   quantity.value -= 1
 }
-
-const toOrdinalSuffix = num => {
-  const int = parseInt(num),
-      digits = [int % 10, int % 100],
-      ordinals = ['st', 'nd', 'rd', 'th'],
-      oPattern = [1, 2, 3, 4],
-      tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
-  return oPattern.includes(digits[0]) && !tPattern.includes(digits[1])
-      ? int + ordinals[digits[0] - 1]
-      : int + ordinals[3];
-};
 
 </script>
