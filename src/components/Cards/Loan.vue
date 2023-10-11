@@ -1,13 +1,13 @@
 <template>
 
   <BaseCard
-    class="relative lg:flex-col px-5 xl:px-9 pt-7 transition ease-in-out duration-200"
+    class="relative lg:flex-col transition ease-in-out duration-200"
     :class="loanDetails ? 'pb-2' : 'relative pb-8 hover:scale-105 hover:drop-shadow-lg cursor-pointer', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
   >
     <div
       v-if="status === 'Complete'"
       class="bg-teal  w-full h-full absolute top-0 left-0 opacity-20"
-      :class="loanDetails ? 'h-[387px] lg:h-[370px] rounded-t-lg' : 'h-full border border-teal-dark rounded-lg'"
+      :class="loanDetails ? 'h-[390px] lg:h-[373px] rounded-t-lg' : 'h-full border border-teal-dark rounded-lg'"
       @click="$emit('open')"
     />
     <div class="flex flex-col w-full space-y-5" :class="loanDetails ? 'z-10' : ''">
@@ -143,43 +143,43 @@
         >
           <template v-if="!loanRepaid">
             <template v-if="(status === 'Payment overdue' || status === 'Urgent')">
-              <LoanActionModalButtonGroup
+              <ModalButtonGroup
                 v-if="valueLeftToPay == outOfTermChargesAmount"
                 modal-title="Confirm payment for:"
-                :retailer-description="retailerDescription"
+                :subject-name=retailerDescription
                 button-name="OOT interest due - pay now"
                 button-icon="fa-solid fa-credit-card"
                 payment-type="OOT interest charge"
                 is-payment
                 :current-last-four-digits=currentLastFourDigits
-                :array="OOTCharges"
+                :amounts-array="OOTCharges"
               >
                 <p>You currently have <span class="font-bold">{{OOTCharges.length}}</span> out-of-term (OOT) interest charge<span v-if="OOTCharges.length !== 1">s</span> due.<span v-if="OOTCharges.length !== 1"><br class="hidden sm:block"> Choose how many to pay below</span>.</p>
-              </LoanActionModalButtonGroup>
-              <LoanActionModalButtonGroup
+              </ModalButtonGroup>
+              <ModalButtonGroup
                 v-else
                 modal-title="Confirm instalment payment for:"
-                :retailer-description="retailerDescription"
+                :subject-name="retailerDescription"
                 :button-name="lateInstalments.length > 1 ? 'Instalments overdue - pay now' : 'Instalment overdue - pay now'"
                 button-icon="fa-solid fa-credit-card"
                 payment-type="late instalment"
                 is-payment
                 :current-last-four-digits=currentLastFourDigits
-                :array="lateInstalments"
+                :amounts-array="lateInstalments"
               >
                 <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment !== null"> Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{useDateFormat(currentInstalment.dueDates[0])}}</span>.</span></p>
                 <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
-              </LoanActionModalButtonGroup>
-              <LoanActionModalButtonGroup
+              </ModalButtonGroup>
+              <ModalButtonGroup
                 v-if="(lateInstalmentsTotal || outOfTermChargesAmount) && lateFeesTotal && instalments[instalments.length-1].isDue"
                 modal-title="Pay remaining loan balance for:"
-                :retailer-description="retailerDescription"
+                :subject-name="retailerDescription"
                 button-name="Pay balance"
                 button-icon="fa-solid fa-credit-card"
                 payment-type="late instalment"
                 is-payment
                 :current-last-four-digits=currentLastFourDigits
-                :array="Array(1).fill(remainingBalance)"
+                :amounts-array="Array(1).fill(remainingBalance)"
               >
                 <p class="pb-5">The following payments are now due:</p>
                 <div class="grid auto-rows-auto grid-cols-5 gap-y-1">
@@ -202,48 +202,48 @@
                     <p class="text-right text-md font-bold pt-3">£</p>
                     <p class="font-bold text-md text-right pt-3">{{remainingBalance}}</p>
                 </div>
-              </LoanActionModalButtonGroup>
+              </ModalButtonGroup>
             </template>
             <template v-else>
-              <LoanActionModalButtonGroup
+              <ModalButtonGroup
                 v-if="currentInstalment.paidAmount !== currentInstalment.dueAmount"
                 modal-title="Confirm early instalment payment for:"
-                :retailer-description="retailerDescription"
+                :subject-name="retailerDescription"
                 button-name="Pay instalment early"
                 button-icon="fa-solid fa-credit-card"
                 is-payment
                 :current-last-four-digits=currentLastFourDigits
-                :array=Array(1).fill(currentInstalment.dueAmount-currentInstalment.paidAmount)
+                :amounts-array=Array(1).fill(currentInstalment.dueAmount-currentInstalment.paidAmount)
               >
                 <p>You will pay the instalment due <span class="font-bold">{{useDateFormat(currentInstalment.dueDates[currentInstalment.dueDates.length-1])}}</span> today.<span v-if="nextInstalment"><br class="hidden sm:block">
                   Your next instalment will then be collected on <span class="font-bold">{{useDateFormat(nextInstalment.dueDates[nextInstalment.dueDates.length-1])}}</span>.</span>
                 </p>
-              </LoanActionModalButtonGroup>
-              <LoanActionModalButtonGroup
+              </ModalButtonGroup>
+              <ModalButtonGroup
                 modal-title="Change payment date for:"
-                :retailer-description="retailerDescription"
+                :subject-name="retailerDescription"
                 button-name="Change payment date"
                 button-icon="fa-solid fa-arrows-rotate"
               >
                 <p>All future repayments will be changed to the newly chosen<br class="hidden sm:block">
                   day of the month. Choose a new date below:
                 </p>
-              </LoanActionModalButtonGroup>
+              </ModalButtonGroup>
             </template>
           </template>
           <template v-else>
-            <LoanActionModalButtonGroup
+            <ModalButtonGroup
               v-if="lateFeesTotal"
               modal-title="Confirm late fee payment for:"
-              :retailer-description="retailerDescription"
+              :subject-name="retailerDescription"
               button-name="Pay late fee"
               button-icon="fa-solid fa-credit-card"
               is-payment
               :current-last-four-digits=currentLastFourDigits
-              :array=lateFees
+              :amounts-array=lateFees
             >
               <p>You currently have <span class="font-bold">{{lateFees.length}}</span> late fee<span v-if="lateFees.length !== 1">s</span> worth <span class="font-bold">£{{lateFeesTotal.toFixed(2)}}.</span><span v-if="lateFees.length !== 1"><br class="hidden sm:block"> Choose how many to pay below.</span></p>
-            </LoanActionModalButtonGroup>
+            </ModalButtonGroup>
             <a
               v-if="!loanDetails"
               href="https://somo.co.uk/"
@@ -309,7 +309,7 @@
         <LoanSummary
           v-if="tab === 1"
           :provider=provider
-          :retailer-description=retailerDescription
+          :subject-name=retailerDescription
           :total-loan-value=totalLoanValue
           :original-order-amount=originalOrderAmount
           :deposit-amount=depositAmount
@@ -327,9 +327,9 @@
               <div class="space-y-4" v-if="valueLeftToPay === outOfTermChargesAmount">
                 <h5 class="text-gray">Out-of-term interest to pay</h5>
                 <div>Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
-                <LoanActionModalButtonGroup
+                <ModalButtonGroup
                 modal-title="Confirm payment for:"
-                :retailer-description="retailerDescription"
+                :subject-name="retailerDescription"
                 button-name="Make payment now"
                 button-icon="fa-solid fa-credit-card"
                 payment-type="OOT interest charge"
@@ -338,14 +338,14 @@
                 :array="OOTCharges"
               >
                 <p>You currently have <span class="font-bold">{{OOTCharges.length}}</span> out-of-term (OOT) interest charge<span v-if="OOTCharges.length !== 1">s</span> due.<span v-if="OOTCharges.length !== 1"><br class="hidden sm:block"> Choose how many to pay below</span>.</p>
-              </LoanActionModalButtonGroup>
+              </ModalButtonGroup>
               </div>
               <div class="space-y-4" v-else>
                 <h5 class="text-gray">Instalments Overdue</h5>
                 <div class="w-full">Please make a manual payment to avoid late fees and potential negative effects to your credit file.</div>
-                <LoanActionModalButtonGroup
+                <ModalButtonGroup
                   modal-title="Confirm instalment payment for:"
-                  :retailer-description="retailerDescription"
+                  :subject-name="retailerDescription"
                   button-name="Make payment now"
                   button-icon="fa-solid fa-credit-card"
                   payment-type="late instalment"
@@ -355,17 +355,17 @@
                 >
                   <p v-if="lateInstalments.length === 1">We will attempt to take payment from your card.<span v-if="nextInstalment !== null"> Your next<br class="hidden sm:block"> instalment will then be collected on <span class="font-bold">{{useDateFormat(currentInstalment.dueDates[0])}}</span>.</span></p>
                   <p v-else>You currently have <span class="font-bold">{{lateInstalments.length}}</span> instalment<span v-if="lateInstalments.length !== 1">s</span> overdue<span v-if="instalmentsWithLateFees.length !== 1">.<br class="hidden sm:block"> Choose how many to pay below</span>.</p>
-                </LoanActionModalButtonGroup>
+                </ModalButtonGroup>
               </div>
             </div>
           </template>
           <div class="lg:w-72 xl:w-80 2xl:w-64 3xl:w-[480px] space-y-4" v-else>
             <h5 class="text-gray">Late fees to pay</h5>
             <div class="w-full">Please pay the remaining balance to avoid potential negative effects to your credit file.</div>
-            <LoanActionModalButtonGroup
+            <ModalButtonGroup
               v-if="lateFeesTotal"
               modal-title="Confirm late fee payment for:"
-              :retailer-description="retailerDescription"
+              :subject-name="retailerDescription"
               button-name="Make payment now"
               button-icon="fa-solid fa-credit-card"
               is-payment
@@ -373,7 +373,7 @@
               :array=lateFees
             >
               <p>You currently have <span class="font-bold">{{lateFees.length}}</span> late fee<span v-if="lateFees.length !== 1">s</span> worth <span class="font-bold">£{{lateFeesTotal.toFixed(2)}}.</span><span v-if="lateFees.length !== 1"><br class="hidden sm:block"> Choose how many to pay below.</span></p>
-            </LoanActionModalButtonGroup>
+            </ModalButtonGroup>
           </div>
         </LoanSummary>
         <div v-else class="overflow-x-scroll table-scroll pb-7 sm:pb-0">
@@ -414,7 +414,7 @@ import Avatar from "@/components/Avatar.vue";
 import LoanSummary from "@/components/Cards/LoanSummary.vue";
 import LoanPaymentSchedule from "@/components/Cards/LoanPaymentSchedule.vue";
 import LoanStatement from "@/components/Cards/LoanStatement.vue";
-import LoanActionModalButtonGroup from "@/Layout/LoanActionModalButtonGroup.vue";
+import ModalButtonGroup from "@/Layout/ModalButtonGroup.vue";
 import LoanLateFees from "@/components/Cards/LoanLateFees.vue";
 
 const emit = defineEmits(['tally', 'status'])

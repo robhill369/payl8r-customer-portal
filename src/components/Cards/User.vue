@@ -1,5 +1,5 @@
 <template>
-  <BaseCard class="px-6 sm:px-9 py-7">
+  <BaseCard>
     <div class="flex pr-6">
       <Avatar
         class="hidden lg:block"

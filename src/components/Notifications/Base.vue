@@ -4,7 +4,7 @@
   >
     <div class="flex items-center space-x-4">
       <font-awesome-icon :icon="icon" size="xl"/>
-      <h5 class="text-gray-darker whitespace-nowrap">{{props.title}}</h5>
+      <h5 class="text-gray-darker sm:whitespace-nowrap">{{props.title}}</h5>
     </div>
     <div :class="isHelper ? 'text-gray-darker' : ''">
       <slot/>

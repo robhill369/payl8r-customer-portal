@@ -14,7 +14,7 @@
 </template>
 <script setup>
 import BaseCard from "@/components/Cards/Base.vue";
-import Figure from "@/components/Cards/Figure.vue";
+import Figure from "@/components/Cards/CardFigure.vue";
 
 defineProps({
   totalLeftToPay: {

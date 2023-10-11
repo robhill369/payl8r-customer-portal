@@ -3,7 +3,7 @@
     <header v-if="!isEntryPage">
       <NavbarGroup
         :username="user.firstName+' '+user.lastName"
-        :overview-only=isSingleLoan
+        :item-hidden=isSingleLoan
       />
     </header>
     <main class="currentColor h-full">

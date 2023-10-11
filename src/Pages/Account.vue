@@ -7,15 +7,15 @@
         :username="user.firstName+' '+user.lastName"
         :registrationDate=useDateFormat(user.createdAt)
       />
-      <BaseCard class="px-6 sm:px-9 py-12">
+      <BaseCard>
         <UpdatePaymentDetailsForm
           :current-last-four-digits=user.cardNumber
         />
       </BaseCard>
-      <BaseCard class="px-6 sm:px-9 py-12">
+      <BaseCard>
         <UpdatePasswordForm/>
       </BaseCard>
-      <BaseCard class="px-6 sm:px-9 py-12">
+      <BaseCard>
         <UpdateUserDetailsForm
           :current-legal-name=user.legalName
           :current-email=user.email

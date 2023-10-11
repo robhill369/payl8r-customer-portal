@@ -6,26 +6,26 @@
     @click="modalOpen = true"
   />
   <teleport to="body" v-if="modalOpen">
-    <LoanActionModal
-      :retailer-description="retailerDescription"
+    <ActionModal
+      :subject-name=subjectName
       :title=modalTitle
       :is-payment=isPayment
       @close="modalOpen = false"
       :current-last-four-digits=currentLastFourDigits
       :payment-type=paymentType
-      :array=array
+      :amounts-array=amountsArray
     >
       <slot/>
-    </LoanActionModal>
+    </ActionModal>
   </teleport>
 </template>
 <script setup>
 import {ref} from "vue";
-import LoanActionModal from "@/components/Modals/LoanAction.vue";
+import ActionModal from "@/components/Modals/Action.vue";
 import ButtonSecondary from "@/components/Buttons/Secondary.vue";
 
 defineProps({
-  retailerDescription: {
+  subjectName: {
     type: String,
   },
   buttonName: {
@@ -49,7 +49,7 @@ defineProps({
   currentLastFourDigits: {
     type: Number
   },
-  array: {
+  amountsArray: {
     type: Array,
   }
 })

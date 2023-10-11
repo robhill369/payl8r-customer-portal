@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col-reverse lg:flex-col text-nav" :class="overviewOnly ? 'lg:-translate-y-[69px]' : ''">
+  <div class="flex flex-col-reverse lg:flex-col text-nav" :class="itemHidden ? 'lg:-translate-y-[69px]' : ''">
     <NavbarItem path="/my-account" class="lg:text-gray lg:pointer-events-none lg:bg-white">
       <font-awesome-icon icon="fa-solid fa-user-circle" size="xl" class="-mr-1.5 lg:mr-0"/>
       <template v-slot:title>{{ username }}</template>
@@ -15,7 +15,7 @@
       <NavbarItem
         path="/my-loans"
         @click="$emit('closeNav')"
-        v-if="!overviewOnly"
+        v-if="!itemHidden"
       >
         <font-awesome-icon icon="fa-solid fa-wallet" size="xl"/>
         <template v-slot:title>My loans</template>
@@ -55,10 +55,9 @@ defineProps ({
   username: {
     type: String
   },
-  overviewOnly: {
+  itemHidden: {
     type: Boolean,
-    default: false,
-    required: true
+    default: false
   }
 })
 </script>

@@ -32,6 +32,10 @@ module.exports = {
         '3xl': '325px',
       },
     },
+    fontFamily: {
+      'lato': ['lato', 'sans-serif'],
+      'montserrat': ['montserrat', 'sans-serif']
+    },
     extend: {
       colors: {
         transparent: 'transparent',
@@ -76,9 +80,6 @@ module.exports = {
           light: '#FEF9EB'
         },
 
-        //text colors
-
-
         //button colors
         'button-primary': grayDarker,
         'button-primary-hover': '#6F6F6F',
@@ -88,10 +89,6 @@ module.exports = {
         'button-secondary-selected': grayDarker,
         'button-confirm': greenLight,
         'button-confirm-hover': '#97E8AA',
-      },
-      fontFamily: {
-        'lato': ['lato', 'sans-serif'],
-        'montserrat': ['montserrat', 'sans-serif']
       },
     },
     fontSize: {

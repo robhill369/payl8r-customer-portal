@@ -25,7 +25,7 @@
               class="pl-5"
               :NavOpened="NavOpened"
               :username=username
-              :overview-only=overviewOnly
+              :item-hidden=itemHidden
               @closeNav="NavOpened = false"
           />
         </div>
@@ -49,9 +49,8 @@ defineProps ({
     type: String,
     required: true
   },
-  overviewOnly: {
-    type: Boolean,
-    required: true
+  itemHidden: {
+    type: Boolean
   }
 })
 

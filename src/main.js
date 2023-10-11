@@ -37,6 +37,12 @@ import {
     faHand,
 } from '@fortawesome/free-solid-svg-icons'
 
+import {
+    faInstagram,
+    faLinkedin,
+    faFacebook
+} from '@fortawesome/free-brands-svg-icons'
+
 /* add icons to the library */
 library.add(
     faHouse,
@@ -63,6 +69,9 @@ library.add(
     faFile,
     faChevronLeft,
     faChevronRight,
+    faInstagram,
+    faLinkedin,
+    faFacebook
 )
 
 createApp(App)

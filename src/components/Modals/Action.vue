@@ -3,7 +3,7 @@
     <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 h-screen w-screen overflow-auto">
       <BaseCard class="flex-col w-auto sm:h-auto lg:absolute lg:-translate-x-[calc(50%-140px)] 2xl:-translate-x-[calc(50%-28px)] lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 py-10 px-10 items-center justify-between h-full sm:h-auto sm:space-y-7">
         <h5 class="text-gray">{{ title }}</h5>
-        <h3 class="font-semibold lg:w-72">{{ retailerDescription }}</h3>
+        <h3 v-if="subjectName" class="font-semibold lg:w-72">{{ subjectName }}</h3>
         <div class="text-center">
           <slot/>
         </div>
@@ -33,7 +33,7 @@
             </div>
 
             <p class="font-bold">{{paymentType}}<span v-if="quantity !== 1">s</span>, amounting to</p>
-            <h1>£{{props.array.slice(0, quantity).reduce((a, b) => a + b, 0)}}</h1>
+            <h1>£{{props.amountsArray.slice(0, quantity).reduce((a, b) => a + b, 0)}}</h1>
             <div
                 class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 items-center sm:space-x-3"
             >
@@ -45,7 +45,7 @@
             </div>
           </div>
           <div v-else class="flex flex-col sm:flex-row justify-between align-middle items-center space-y-3 sm:space-y-0 sm:space-x-2 ">
-            <div class="flex bg-gray-light rounded-lg p-2 text-nav h-10 items-center"><span>£</span>{{array[0].toFixed(2)}}</div>
+            <div class="flex bg-gray-light rounded-lg p-2 text-nav h-10 items-center"><span>£</span>{{amountsArray[0].toFixed(2)}}</div>
             <div class="text-xs font-normal">will be charged to</div>
             <div class="flex bg-gray-light rounded-lg py-2 px-4 items-center text-gray-darker justify-between h-10">
               <font-awesome-icon icon="fa-solid fa-credit-card" size="xl"/>
@@ -88,7 +88,7 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  retailerDescription: {
+  subjectName: {
     type: String,
   },
   paymentType: {
@@ -98,14 +98,14 @@ const props = defineProps({
   currentLastFourDigits: {
     type: Number
   },
-  array: {
+  amountsArray: {
     type: Array,
     default: []
   }
 })
 
-const quantity = ref(props.array.length)
-const initialQuantity = props.array.length
+const quantity = ref(props.amountsArray.length)
+const initialQuantity = props.amountsArray.length
 const handleIncrement = () => {
   quantity.value += 1
 }

@@ -36,7 +36,7 @@
           />
         </template>
       </CardSectionHeader>
-      <BaseCard class="flex-col lg:flex-row px-6 sm:px-9 py-7 pr-14 sm:pr-40 lg:pr-9 xl:pr-28 3xl:pr-72 space-y-7 lg:space-y-0 lg:space-x-24">
+      <BaseCard class="flex-col lg:flex-row pr-14 sm:pr-40 lg:pr-9 xl:pr-28 3xl:pr-72 space-y-7 lg:space-y-0 lg:space-x-24">
         <PaymentsSchedule
           :upcoming-instalment=upcomingInstalment
           :last-payment=lastPayment

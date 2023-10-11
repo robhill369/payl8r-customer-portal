@@ -2,12 +2,12 @@
   <Navbar
     class="xs:hidden lg:block capitalize"
     :username=username
-    :overview-only=overviewOnly
+    :item-hidden=itemHidden
   />
   <NavbarMobile
     class="relative lg:hidden"
     :username=username
-    :overview-only=overviewOnly
+    :item-hidden=itemHidden
   />
 </template>
 
@@ -20,10 +20,13 @@ defineProps({
     type: String,
     required: true
   },
-  overviewOnly: {
+  itemHidden: {
     type: Boolean,
     default: false,
     required: true
+  },
+  hasFooter: {
+    type: Boolean
   }
 })
 </script>
