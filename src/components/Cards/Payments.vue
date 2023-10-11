@@ -1,23 +1,20 @@
 <template>
   <BaseCard class="flex-col lg:flex-row p-8 pt-6 px-6 sm:px-9 lg:pt-6 lg:pb-[34px] lg:pr-16 xl:pr-36 3xl:pr-80 justify-between space-y-2 lg:space-y-0">
-    <div class="flex flex-col justify-between space-y-2">
-      <div class="text-figure">£{{totalLeftToPay}}</div>
-      <p class="font-bold text-gray">Left to pay</p>
-    </div>
+    <Figure
+      :value=totalLeftToPay
+      description="Left to pay"
+      is-monetary
+      class="flex-col-reverse"
+    />
     <div class="flex w-52 sm:w-64 justify-between lg:pr-6">
-      <div class="flex flex-col justify-between space-y-2">
-        <div class="text-figure">{{activeLoansCount}}</div>
-        <p class="font-bold text-gray">Active loans</p>
-      </div>
-      <div class="flex flex-col justify-between space-y-2">
-        <div class="text-figure">{{repaidLoansCount}}</div>
-        <p class="font-bold text-gray">Repaid loans</p>
-      </div>
+      <Figure description="Active loans" :value=activeLoansCount class="flex-col-reverse"/>
+      <Figure description="Repaid loans" :value=repaidLoansCount class="flex-col-reverse"/>
     </div>
   </BaseCard>
 </template>
 <script setup>
 import BaseCard from "@/components/Cards/Base.vue";
+import Figure from "@/components/Cards/Figure.vue";
 
 defineProps({
   totalLeftToPay: {
