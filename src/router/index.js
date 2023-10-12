@@ -5,12 +5,12 @@ import Help from '@/Pages/Help.vue'
 import Login from '@/Pages/Login.vue'
 
 const routes = [
-    {path: '/login', name: 'Login', component: Login},
+    {path: '/login', name: 'Login', component: Login, },
     {path: '/forgot-password', name: 'Forgotten password', component: Login},
-    {path: '/', name: 'Overview', component: Main},
-    {path: '/my-loans', name: 'My loans', component: Main},
-    {path: '/my-account', name: 'My account', component: Account},
-    {path: '/help', name: 'Help center', component: Help},
+    {path: '/', name: 'Overview', component: Main, icon:'fa-solid fa-house'},
+    {path: '/my-loans', name: 'My loans', component: Main, icon:'fa-solid fa-wallet'},
+    {path: '/my-account', name: 'My account', component: Account, icon:'fa-solid fa-gear'},
+    {path: '/help', name: 'Help center', component: Help, icon:'fa-solid fa-headset'},
 ]
 
 const router = createRouter({

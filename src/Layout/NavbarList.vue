@@ -5,35 +5,15 @@
       <template v-slot:title>{{ username }}</template>
     </NavbarItem>
     <div>
-      <NavbarItem
-        path="/"
-        @click="$emit('closeNav')"
-      >
-        <font-awesome-icon icon="fa-solid fa-house" size="xl"/>
-        <template v-slot:title>Overview</template>
-      </NavbarItem>
-      <NavbarItem
-        path="/my-loans"
-        @click="$emit('closeNav')"
-        v-if="!itemHidden"
-      >
-        <font-awesome-icon icon="fa-solid fa-wallet" size="xl"/>
-        <template v-slot:title>My loans</template>
-      </NavbarItem>
-      <NavbarItem
-        path="/my-account"
-        @click="$emit('closeNav')"
-      >
-        <font-awesome-icon icon="fa-solid fa-gear" size="xl"/>
-        <template v-slot:title>My account</template>
-      </NavbarItem>
-      <NavbarItem
-        path="/help"
-        @click="$emit('closeNav')"
-      >
-        <font-awesome-icon icon="fa-solid fa-headset" size="xl"/>
-        <template v-slot:title>Help centre</template>
-      </NavbarItem>
+      <template v-for="route in router.options.routes.slice(2)">
+        <NavbarItem
+          :path=route.path
+          @click="$emit('closeNav')"
+        >
+          <font-awesome-icon :icon="route.icon" size="xl"/>
+          <template v-slot:title>{{ route.name }}</template>
+        </NavbarItem>
+      </template>
       <router-link to="/login">
         <button
           class="flex border rounded-md pr-2 text-xxs lg:text-sm border-gray-darker lg:border-gray mt-4 mb-3"
@@ -50,6 +30,7 @@
 </template>
 <script setup>
 import NavbarItem from "@/Layout/NavbarItem.vue";
+import router from "@/router";
 
 defineProps ({
   username: {

@@ -15,10 +15,10 @@
         <p class="md:hidden h-16">
           {{ $route.path === '/login' ? 'Got a product with Payl8r or Upfront? Manage all your loans from here. Just login below with your shared account:' : 'Tell us your email address on file and we will send you a link to reset your password.'}}
         </p>
-      <BaseCard class="px-6 md:px-9 pb-9 sm:w-96 h-80">
+      <BaseCard class="sm:w-96 h-80">
         <BaseForm
           v-if="$route.path === '/login'"
-          class="w-full -mt-4"
+          class="w-full -mt-10"
           button-name="Log in"
           link-name="Forgotten your password?"
           link-url="/forgot-password"
@@ -29,7 +29,7 @@
         </BaseForm>
         <BaseForm
             v-else
-            class="w-full mt-10"
+            class="w-full mt-2"
             title="Reset my password"
             button-name="Submit"
             link-name="Go back to login"

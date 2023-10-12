@@ -3,6 +3,7 @@
     class="xs:hidden lg:block capitalize"
     :username=username
     :item-hidden=itemHidden
+    :has-footer=hasFooter
   />
   <NavbarMobile
     class="relative lg:hidden"
