@@ -6,11 +6,10 @@ let greenLight = '#B4ECC7';
 
 module.exports = {
   mode: 'jit',
-  purge: [
+  content: [
     './public/**/*.html',
     './src/**/*.{js,jsx,ts,tsx,vue}',
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
       'xs': '320px',
