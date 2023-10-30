@@ -15,7 +15,7 @@
         class="flex flex-col lg:flex-row w-full lg:justify-between space-y-7 lg:space-y-9"
         :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9 cursor-pointer'"
       >
-        <div :class="loanDetails ? 'w-full flex justify-between items-center' : 'lg:absolute bottom-7 right-5 xl:right-9'">
+        <div :class="loanDetails ? 'w-full flex justify-between items-center' : 'lg:absolute bottom-7 right-9'">
 
           <div class="relative flex items-center gap-3" :class="!loanDetails ? 'md:flex-row-reverse justify-between md:justify-normal' : ''">
             <Tag :name="status"
@@ -90,7 +90,7 @@
             <h5 v-if="!loanRepaid && lateFeesTotal" class="w-20 absolute top-3.5 lg:top-5 font-medium text-red-darker -right-1.5" :class="loanDetails ? 'lg:right-[73px]' : ''">
               + £{{lateFeesTotal}}*
             </h5>
-            <div class="flex text-gray">
+            <div class="flex text-gray justify-end whitespace-nowrap">
               <p class="font-bold">Left to pay</p>
             </div>
           </div>
