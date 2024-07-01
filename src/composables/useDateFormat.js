@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import moment from "moment/moment";
 import useOrdinalSuffix from "@/composables/useOrdinalSuffix";
-export default function usedateFormat(dateString) {
+export default function useDateFormat(dateString) {
         const date = moment(dateString, 'YYYY-MM-DD')
         const day = date.format('DD')
         const month = date.format('MM')

@@ -1,5 +1,4 @@
 <template>
-
   <BaseCard
     class="relative lg:flex-col transition ease-in-out duration-200"
     :class="loanDetails ? 'pb-2' : 'relative pb-8 hover:scale-105 hover:drop-shadow-lg cursor-pointer', status === 'Urgent' && !loanDetails ? 'border border-red-400' : ''"
@@ -16,7 +15,6 @@
         :class="loanDetails ? 'lg:flex-col' : 'lg:-mt-9 cursor-pointer'"
       >
         <div :class="loanDetails ? 'w-full flex justify-between items-center' : 'lg:absolute bottom-7 right-9'">
-
           <div class="relative flex items-center gap-3" :class="!loanDetails ? 'md:flex-row-reverse justify-between md:justify-normal' : ''">
             <Tag :name="status"
                  @click="$emit('open')"

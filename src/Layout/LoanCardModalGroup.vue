@@ -56,7 +56,7 @@
   </div>
 </template>
 <script setup>
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 
 import LoanCard from "@/components/Cards/Loan.vue";
 

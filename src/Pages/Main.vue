@@ -130,7 +130,7 @@ import PaymentSuccessfulNotification from "@/components/Notifications/PaymentSuc
 import PaymentsOverdueNotification from "@/components/Notifications/PaymentsOverdue.vue";
 
 import schemaData from '@/assets/json/schema.json'
-import usedateFormat from "@/composables/useDateFormat";
+import useDateFormat from "@/composables/useDateFormat";
 
 const emit = defineEmits(['show'])
 
