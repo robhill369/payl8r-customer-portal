@@ -55,11 +55,11 @@
             />
           </router-link>
         </template>
-        <template v-slot:tabs v-else>
-          <Tabs
-            :tabs=loanTypes
-          />
-        </template>
+<!--        <template v-slot:tabs v-else>-->
+<!--          <Tabs-->
+<!--            :tabs=loanTypes-->
+<!--          />-->
+<!--        </template>-->
       </CardSectionHeader>
         <div v-for="loan in filteredLoans(orderedLoans)" :key=loan.id>
           <LoanCardModalGroup
