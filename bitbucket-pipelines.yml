@@ -63,7 +63,7 @@ pipelines:
           artifacts:  # Define artifacts to be passed to each future step.
             - dist/**  # The `dist` directory and all its contents
       - step:
-          name: Deploy to S3 UAT
+          name: Deploy to CLOUDFRONT  UAT
           script:
             ## Download and configure the AWS CLI
             - curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
