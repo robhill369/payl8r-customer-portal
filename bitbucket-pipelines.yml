@@ -15,6 +15,7 @@ pipelines:
     '{dev}':
       - step:
           name: Deploy to development server
+          deployment: dev
           caches:
             - node
           script:
@@ -27,6 +28,7 @@ pipelines:
     '{main}':
       - step:
           name: Install and Build assets
+          deployment: main
           caches:
             - node
           script:
@@ -51,6 +53,7 @@ pipelines:
     '{uat}':
       - step:
           name: Install and Build assets
+          deployment: uat
           caches:
             - node
           script:
