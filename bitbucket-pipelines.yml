@@ -15,6 +15,7 @@ pipelines:
     '{dev}':
       - step:
           name: Deploy to development server
+          deployment: dev
           caches:
             - node
           script:
@@ -27,6 +28,7 @@ pipelines:
     '{main}':
       - step:
           name: Install and Build assets
+          deployment: main
           caches:
             - node
           script:
@@ -35,7 +37,7 @@ pipelines:
           artifacts:  # Define artifacts to be passed to each future step.
             - dist/**  # The `dist` directory and all its contents
       - step:
-          name: Deploy to S3 Production
+          name: Deploy to CLOUDFRONT Production
           trigger: manual
           script:
             ## Download and configure the AWS CLI
@@ -51,15 +53,17 @@ pipelines:
     '{uat}':
       - step:
           name: Install and Build assets
+          deployment: uat
           caches:
             - node
           script:
             - npm install
             - npm run build  # This should output the built project to a "dist" folder
+            - npm run test
           artifacts:  # Define artifacts to be passed to each future step.
             - dist/**  # The `dist` directory and all its contents
       - step:
-          name: Deploy to S3 UAT
+          name: Deploy to CLOUDFRONT  UAT
           script:
             ## Download and configure the AWS CLI
             - curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
