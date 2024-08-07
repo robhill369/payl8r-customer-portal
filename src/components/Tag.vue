@@ -1,7 +1,7 @@
 <template>
   <ButtonBase
     class="border border-gray-darker capitalize"
-    :class="name === 'paid' ? 'bg-green-light text-green-dark border-none' : '',
+    :class="name === 'paid' ? 'bg-green text-green-darker border-none' : '',
             name === 'overdue' ? 'bg-red-light text-red-darker border-none' : '',
             name === 'unpaid' || name === 'applied' ? 'bg-red-light text-red-darker border-none' : '',
             name === 'upcoming' ? 'bg-yellow text-yellow-darker border-none' : '',

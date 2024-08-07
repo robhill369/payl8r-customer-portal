@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0 left-0 w-screen bg-gray-light currentColor">
+  <div class="absolute top-0 left-0 w-screen bg-gray-lighter currentColor">
     <NavLayout
       :username="user.firstName+' '+user.lastName"
     />

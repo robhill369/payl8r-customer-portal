@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import PrimaryButton from "@/components/Buttons/Primary.vue";
+import PrimaryButton from "@/components/Buttons/Secondary.vue";
 
 defineProps ({
   title: {

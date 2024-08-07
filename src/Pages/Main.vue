@@ -119,7 +119,7 @@ import PaymentsCard from "@/components/Cards/Payments.vue";
 import CardSection from "@/Layout/CardSection.vue";
 import SimpleCard from "@/components/Cards/Simple.vue";
 import CardSectionHeader from "@/Layout/CardSectionHeader.vue";
-import PrimaryButton from "@/components/Buttons/Primary.vue";
+import PrimaryButton from "@/components/Buttons/Secondary.vue";
 import Avatar from "@/components/Avatar.vue";
 import PageBase from "@/Pages/Base.vue";
 import Tabs from "@/components/Tabs.vue";

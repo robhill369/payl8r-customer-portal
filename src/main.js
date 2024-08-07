@@ -28,8 +28,10 @@ import {
     faPhone,
     faLock,
     faFile,
+    faFileLines,
     faChevronLeft,
     faChevronRight,
+    faDownload,
 
     // FA Pro - free alternatives
     faMessage,
@@ -67,11 +69,13 @@ library.add(
     faHand,
     faLock,
     faFile,
+    faFileLines,
     faChevronLeft,
     faChevronRight,
     faInstagram,
     faLinkedin,
-    faFacebook
+    faFacebook,
+    faDownload
 )
 
 createApp(App)

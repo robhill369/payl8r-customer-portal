@@ -77,7 +77,7 @@
   </div>
 </template>
 <script setup>
-import ButtonSecondary from "@/components/Buttons/Secondary.vue";
+import ButtonSecondary from "@/components/Buttons/Tertiary.vue";
 import TitledCopy from "@/Layout/TitledCopy.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 

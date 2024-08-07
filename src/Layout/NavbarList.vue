@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col-reverse lg:flex-col text-nav" :class="itemHidden ? 'lg:-translate-y-[69px]' : ''">
+  <div class="flex flex-col-reverse lg:flex-col text-nav mt-12">
     <NavbarItem path="/my-account" class="lg:text-gray lg:pointer-events-none lg:bg-white">
       <font-awesome-icon icon="fa-solid fa-user-circle" size="xl" class="-mr-1.5 lg:mr-0"/>
       <template v-slot:title>{{ username }}</template>
@@ -10,7 +10,7 @@
           :path=route.path
           @click="$emit('closeNav')"
         >
-          <font-awesome-icon :icon="route.icon" size="xl"/>
+          <font-awesome-icon :icon="route.icon" size="xl" class="w-6"/>
           <template v-slot:title>{{ route.name }}</template>
         </NavbarItem>
       </template>

@@ -22,7 +22,7 @@
 <script setup>
 import {ref} from "vue";
 import ActionModal from "@/components/Modals/Action.vue";
-import ButtonSecondary from "@/components/Buttons/Secondary.vue";
+import ButtonSecondary from "@/components/Buttons/Tertiary.vue";
 
 defineProps({
   subjectName: {

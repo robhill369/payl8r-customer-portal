@@ -246,7 +246,7 @@
               v-if="!loanDetails"
               href="https://somo.co.uk/"
               target="_blank"
-              class="text-button text-center py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit z-10"
+              class="text-button text-center py-2.5 px-5 rounded-full bg-button-tertiary hover:bg-button-tertiary-hover active:bg-button-tertiary-selected active:text-white flex justify-center w-full md:w-fit z-10"
             >
               <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2 lg:hidden xl:block"/>
               View loan agreement
@@ -256,7 +256,7 @@
             v-if="loanDetails"
             href="https://somo.co.uk/"
             target="_blank"
-            class="text-button text-center py-2.5 px-5 rounded-full bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white flex justify-center w-full md:w-fit"
+            class="text-button text-center py-2.5 px-5 rounded-full bg-button-tertiary hover:bg-button-tertiary-hover active:bg-button-tertiary-selected active:text-white flex justify-center w-full md:w-fit"
           >
             <font-awesome-icon icon="fa-solid fa-file" size="lg" class="pr-2 lg:hidden xl:block"/>
             View loan agreement
@@ -404,7 +404,7 @@ import {ref, onMounted} from "vue";
 import useDateFormat from "@/composables/useDateFormat";
 
 import ProgressBar from "@/components/ProgressBar.vue";
-import ButtonSecondary from "@/components/Buttons/Secondary.vue";
+import ButtonSecondary from "@/components/Buttons/Tertiary.vue";
 import Tag from "@/components/Tag.vue";
 import BaseCard from "@/components/Cards/Base.vue";
 import ButtonBase from "@/components/Buttons/Base.vue";

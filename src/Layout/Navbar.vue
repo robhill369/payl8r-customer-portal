@@ -7,7 +7,7 @@
         :item-hidden=itemHidden
       />
     </div>
-    <div v-if="hasFooter" class="absolute h-[69px] w-full bg-gray-light bottom-0 left-0 px-14 flex items-center normal-case space-x-4">
+    <div v-if="hasFooter" class="absolute h-[69px] w-full bg-gray-lighter bottom-0 left-0 px-14 flex items-center normal-case space-x-4">
       <p>Find us on</p>
       <a href="https://www.instagram.com/payl8r" target="_blank">
         <font-awesome-icon icon="fa-brands fa-instagram" size="xl"/>

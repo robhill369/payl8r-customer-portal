@@ -10,7 +10,7 @@
     <div class="md:space-y-3 lg:space-y-6 h-[80vh] md:h-auto flex flex-col justify-between md:justify-normal sm:mx-16 md:mx-0">
         <div class="w-full relative h-12">
           <h1 class="absolute z-20 whitespace-nowrap px-2">{{ $route.path === '/login' ? 'Oh, hey there' : 'It happens.'}}</h1>
-          <div class="absolute top-5 bg-purple-light h-5" :class="$route.path === '/login' ? 'w-60' : 'w-52'"/>
+          <div class="absolute top-5 bg-purple-lighter h-5" :class="$route.path === '/login' ? 'w-60' : 'w-52'"/>
         </div>
         <p class="md:hidden h-16">
           {{ $route.path === '/login' ? 'Got a product with Payl8r or Upfront? Manage all your loans from here. Just login below with your shared account:' : 'Tell us your email address on file and we will send you a link to reset your password.'}}
@@ -61,7 +61,7 @@ import {onMounted, defineEmits} from "vue";
 import BaseForm from "@/components/Forms/Base.vue";
 import FormTextInput from "@/components/Forms/FormTextInput.vue";
 import BaseCard from "@/components/Cards/Base.vue";
-import SecondaryButton from "@/components/Buttons/Secondary.vue";
+import SecondaryButton from "@/components/Buttons/Tertiary.vue";
 import Payl8rLogo from "@/components/icons/Payl8rLogo.vue";
 import UpfrontLogo from "@/components/icons/UpfrontLogo.vue";
 import RockerHandImage from "@/components/icons/RockerHand.vue";

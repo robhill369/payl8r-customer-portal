@@ -31,7 +31,7 @@
           />
         </div>
       </div>
-      <div v-else class="w-full items-center bg-gray-light border-b flex align-middle justify-center text-gray h-[57px]"/>
+      <div v-else class="w-full items-center bg-gray-lighter border-b flex align-middle justify-center text-gray h-[57px]"/>
     </div>
     <div v-for="(charge, index) in outOfTermCharges">
       <div
