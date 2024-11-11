@@ -1,6 +1,6 @@
 <template>
   <ButtonBase class="bg-button-confirm hover:bg-button-confirm-hover">
-      <font-awesome-icon :icon=props.icon :size=size class="pr-2"/>
+      <font-awesome-icon v-if="props.icon" :icon=props.icon :size="props.size" class="pr-2"/>
       <span>{{ name }}</span>
   </ButtonBase>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <BaseCard class="px-9 py-7">
+  <BaseCard>
     <Avatar
       :class=avatarColors
       :icon=icon

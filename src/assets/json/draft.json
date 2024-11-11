@@ -1,0 +1,235 @@
+{
+  "id": 29,
+  "retailerDescription": "14. Out of term with instalment payments paid late, out-of-term charges paid, late fees paid",
+  "isActive": false,  // this means that amounts are due even if all instalments are paid but fees or OOT remain unpaid
+  "contractSignDate": "2022-12-02",
+  "termInMonths": 6,
+  "provider": "payl8r",
+  "originalOrderAmount": 1100,
+  "refundedAmount": 100,
+  "depositAmount": 250,
+  "totalInterestAmount": 229.50,
+  "upcomingInstalmentAmount": "",
+  "upcomingInstalmentDate": null,
+  "previousInstalmentAmount": 179.90,  // redescription to lastPaymentAmount  -- does this need to include fees or not?
+  "lastPaymentDate": "2023-07-02",  // redescription to lastPaymentDate  -- does this need to include fees or not?
+
+  "isInArrears": true, // maybe
+  "arrearsAmount": 100.00,
+  "monthsInArrears": 1,
+
+  "cardNumber": "1111",
+  "cardExpires": "0125",
+
+  "contractFilename": "blah",
+
+  "orderItems":[
+    {
+      "description": "product 1",
+      "quantity": 1,
+      "price": 500.00
+    },
+    {
+      "description": "product 2",
+      "quantity": 1,
+      "price": 600.00
+    }
+  ],
+  "instalments": [
+    {
+      "month": 1,
+      "isDue": true,   // This means that a first attempt at payment has been made, regardless of the payment's success.
+      "dueDates": [
+        "2023-02-02"
+      ],
+      "dueAmount": 179.92,
+      "paidAmount": 179.92,
+
+      "status": "" // Rob to provide list of statuses and their definitions
+
+//      ongoing - means there are still current or future instalments left to pay, and there are no previous instalments yet to be paid in full.
+//      overdue - means there are still current or future instalments left to pay, and there are previous instalments that are still not paid in full.
+//      complete - means the last instalment has been paid and there are no late fees or out-of-term interest left to pay
+//      incomplete/urgent - means the last instalment hasn't been paid after first payment attempt, or there are late fees out-of-term interst left to pay.
+
+    },
+    {
+      "month": 2,
+      "isDue": true,
+      "dueDates": [
+        "2023-03-02"
+      ],
+      "dueAmount": 179.92,
+      "paidAmount": 179.92
+    },
+    {
+      "month": 3,
+      "isDue": true,
+
+      "dueDates": [
+        "2023-04-02",
+        "2023-04-04",
+        "2023-04-07"
+      ],
+
+      "numberOfAttempts": 3,
+
+      "dueAmount": 179.92,
+      "paidAmount": 179.92,
+      "lateFee": {
+        "dateIncurred": "2023-04-03",
+        "isAutoWaivable": false,    // this means that it is within the 28 day grace period (if applicable)
+        "isWaived": false,
+        "dueAmount": 30,
+        "paidAmount": 30.00
+      }
+    },
+    {
+      "month": 4,
+      "isDue": true,
+      "dueDates": [
+        "2023-05-02",
+        "2023-05-04",
+        "2023-05-07"
+      ],
+      "dueAmount": 179.92,
+      "paidAmount": 179.92,
+      "lateFee": {
+        "dateIncurred": "2023-05-03",
+        "isAutoWaivable": false,
+        "isWaived": false,
+        "dueAmount": 30,
+        "paidAmount": 30.00
+      }
+    },
+    {
+      "month": 5,
+      "isDue": true,
+      "dueDates": [
+        "2023-06-02",
+        "2023-06-04",
+        "2023-06-07"
+      ],
+      "dueAmount": 179.92,
+      "paidAmount": 179.92,
+      "lateFee": {
+        "dateIncurred": "2023-06-03",
+        "isAutoWaivable": false,
+        "isWaived": false,
+        "dueAmount": 30,
+        "paidAmount": 30.00
+      }
+    },
+    {
+      "month": 6,
+      "isDue": true,
+      "dueDates": [
+        "2023-07-02",
+        "2023-07-04",
+        "2023-07-07"
+      ],
+      "dueAmount": 179.90,
+      "paidAmount": 179.90,
+      "lateFee": {
+        "dateIncurred": "2023-07-03",
+        "isAutoWaivable": false,
+        "isWaived": false,
+        "dueAmount": 30,
+        "paidAmount": 30.00
+      }
+    }
+  ],
+  "outOfTermCharges": [
+    {
+      "id": 1,  // remove, as not necessary
+      "dateIncurred": "2023-08-03",
+      "dueAmount": 32.38,
+      "paidAmount": 32.38
+    },
+    {
+      "id": 2,  // remove, as not necessary
+      "dateIncurred": "2023-09-03",
+      "dueAmount": 32.38,
+      "paidAmount": 32.38
+    }
+  ],
+  "transactions": [
+    {
+      "date": "2023-02-02",
+      "description": "Loan payment",
+      "debit": null,
+      "credit": 179.92,
+      "balance": 899.58
+    },
+    {
+      "date": "2023-03-02",
+      "description": "Loan payment",
+      "debit": null,
+      "credit": 179.92,
+      "balance": 719.66
+    },
+    {
+      "date": "2023-04-03",
+      "description": "Late fee applied",
+      "debit": 30.00,
+      "credit": 0.00,
+      "balance": 749.66
+    },
+    {
+      "date": "2023-05-03",
+      "description": "Late fee applied",
+      "debit": 30.00,
+      "credit": 0.00,
+      "balance": 779.66
+    },
+    {
+      "date": "2023-06-03",
+      "description": "Late fee applied",
+      "debit": 30.00,
+      "credit": 0.00,
+      "balance": 809.66
+    },
+    {
+      "date": "2023-07-03",
+      "description": "Late fee applied",
+      "debit": 30.00,
+      "credit": 0.00,
+      "balance": 839.66
+    },
+    {
+      "date": "2023-08-03",
+      "description": "Out-of-term interest applied",
+      "debit": 32.38,
+      "credit": 0.00,
+      "balance": 872.04
+    },
+    {
+      "date": "2023-09-03",
+      "description": "Out-of-term interest applied",
+      "debit": 32.38,
+      "credit": 0.00,
+      "balance": 904.42
+    },
+    {
+      "date": "2023-09-10",
+      "description": "Loan payment",
+      "debit": null,
+      "credit": 719.66,
+      "balance": 184.76
+    },
+    {
+      "date": "2023-09-12",
+      "description": "Out-of-term interest payment",
+      "debit": null,
+      "credit": 64.76,
+      "balance": 120
+    },
+    {
+      "date": "2023-09-13",
+      "description": "Late fee payment",
+      "debit": null,
+      "credit": 120.00,
+      "balance": 0
+    }
+  ]
+}

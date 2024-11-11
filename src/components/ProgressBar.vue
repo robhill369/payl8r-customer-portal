@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-3.5 w-full rounded-full bg-button-secondary">
+  <div class="relative h-3.5 w-full rounded-full bg-button-tertiary">
     <div
       :style="'width:'+progress+'%'"
       class="absolute h-full rounded-full"

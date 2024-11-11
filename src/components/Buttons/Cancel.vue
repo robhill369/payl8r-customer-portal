@@ -1,7 +1,7 @@
 <template>
   <ButtonBase class="bg-white border border-gray-darker hover:bg-button-secondary">
-      <font-awesome-icon :icon=props.icon :size=size class="pr-2"/>
-      <span>{{ name }}</span>
+      <font-awesome-icon v-if="props.icon" :icon=props.icon :size="props.size" class="pr-2"/>
+      <span>{{ props.name }}</span>
   </ButtonBase>
 </template>
 

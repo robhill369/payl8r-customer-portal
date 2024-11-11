@@ -32,7 +32,7 @@
       </CardSectionHeader>
       <div class="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10">
         <SimpleCard
-          avatar-colors="bg-pink-light text-pink -rotate-45"
+          avatar-colors="bg-pink-light text-pink rotate-45"
           icon="fa-solid fa-hand"
           icon-size="2xl"
           title="Here to support you"
@@ -51,7 +51,7 @@ import LoanCard from "@/components/Cards/Loan.vue";
 import SimpleCard from "@/components/Cards/Simple.vue";
 import PaymentsScheduleCard from "@/components/Cards/PaymentsSchedule.vue";
 import CardSectionHeader from "@/Layout/CardSectionHeader.vue";
-import PrimaryButton from "@/components/Buttons/Primary.vue";
+import PrimaryButton from "@/components/Buttons/Secondary.vue";
 import Avatar from "@/components/Avatar.vue";
 import PageBase from "@/Pages/Base.vue";
 import Tabs from "@/components/Tabs.vue";

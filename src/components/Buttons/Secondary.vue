@@ -1,9 +1,8 @@
 <template>
-  <ButtonBase class="bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected active:text-white">
-      <font-awesome-icon :icon=props.icon :size=size class="pr-2"/>
-      <span>{{ name }}</span>
+  <ButtonBase class="bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-selected focus:bg-button-secondary-selected text-white">
+    <font-awesome-icon v-if="props.icon" :icon="props.icon" :size=props.size class="pr-2"/>
+    <span>{{ props.name }}</span>
   </ButtonBase>
-
 </template>
 
 <script setup>
@@ -19,9 +18,7 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: 'lg'
-  },
+    default: 'md'
+  }
 })
-
-
 </script>

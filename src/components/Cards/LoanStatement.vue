@@ -10,23 +10,23 @@
     <div
         class="grid grid-cols-12 w-full auto-rows-auto items-center"
     >
-      <p class="flex h-14 items-center border-b col-span-3">{{purchaseDate}}</p>
+      <p class="flex h-14 items-center border-b col-span-3">{{contractSignDate}}</p>
       <p class="flex h-14 items-center border-b col-span-4 pr-3 ">Initial purchase amount</p>
-      <p class="flex h-14 items-center border-b col-span-4">£{{totalOrderValue.toFixed(2)}}</p>
-      <p class="flex h-14 items-center border-b flex justify-end">£{{totalOrderValue.toFixed(2)}}</p>
-      <p class="flex h-14 items-center border-b col-span-3">{{loanStartDate}}</p>
+      <p class="flex h-14 items-center border-b col-span-4">£{{originalOrderAmount.toFixed(2)}}</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£{{originalOrderAmount.toFixed(2)}}</p>
+      <p class="flex h-14 items-center border-b col-span-3">{{contractSignDate}}</p>
       <p class="flex h-14 items-center border-b col-span-6 pr-3 ">Deposit payment</p>
-      <p class="flex h-14 items-center border-b col-span-2">£{{depositValue.toFixed(2)}}</p>
-      <p class="flex h-14 items-center border-b flex justify-end">£{{(totalOrderValue-depositValue).toFixed(2)}}</p>
-      <p class="flex h-14 items-center border-b col-span-3">{{loanStartDate}}</p>
+      <p class="flex h-14 items-center border-b col-span-2">£{{depositAmount.toFixed(2)}}</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£{{(originalOrderAmount-depositAmount).toFixed(2)}}</p>
+      <p class="flex h-14 items-center border-b col-span-3">{{contractSignDate}}</p>
       <p class="flex h-14 items-center border-b col-span-4 pr-3 ">Interest for entire term</p>
-      <p class="flex h-14 items-center border-b col-span-4">£{{totalInterestValue.toFixed(2)}}</p>
-      <p class="flex h-14 items-center border-b flex justify-end">£{{(totalInterestValue+totalOrderValue-depositValue).toFixed(2)}}</p>
+      <p class="flex h-14 items-center border-b col-span-4">£{{totalInterestAmount.toFixed(2)}}</p>
+      <p class="flex h-14 items-center border-b flex justify-end">£{{(totalInterestAmount+originalOrderAmount-depositAmount).toFixed(2)}}</p>
       <template v-for="transaction in transactions">
-        <p class="flex h-14 items-center border-b col-span-3">{{transaction.date}}</p>
+        <p class="flex h-14 items-center border-b col-span-3">{{useDateFormat(transaction.date)}}</p>
         <p class="flex h-14 items-center border-b col-span-4 pr-3 ">{{transaction.description}}</p>
-        <p class="flex h-14 items-center border-b col-span-2">{{transaction.debit ? '£'+transaction.debit : ''}}</p>
-        <p class="flex h-14 items-center border-b col-span-2">{{transaction.credit ? '£'+transaction.credit : ''}}</p>
+        <p class="flex h-14 items-center border-b col-span-2">{{transaction.debit ? '£'+transaction.debit.toFixed(2) : ''}}</p>
+        <p class="flex h-14 items-center border-b col-span-2">{{transaction.credit ? '£'+transaction.credit.toFixed(2) : ''}}</p>
         <p class="flex h-14 items-center border-b flex justify-end">£{{transaction.balance}}</p>
       </template>
     </div>
@@ -34,22 +34,20 @@
 </template>
 
 <script setup>
+import useDateFormat from "@/composables/useDateFormat";
 
 const props = defineProps({
-    loanStartDate: {
+    contractSignDate: {
       type: String,
       required: true
     },
-    purchaseDate: {
-      type: String
-    },
-    totalOrderValue: {
+    originalOrderAmount: {
       type: Number
     },
-    totalInterestValue: {
+    totalInterestAmount: {
       type: Number
     },
-    depositValue: {
+    depositAmount: {
       type: Number
     },
     transactions: {

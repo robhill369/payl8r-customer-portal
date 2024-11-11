@@ -3,52 +3,55 @@
     <!-- Loan Modal -->
     <Teleport to="body" v-if="loanModalOpen">
       <div
-        class="bg-gray-light lg:bg-gray-dark lg:bg-opacity-40 fixed h-screen w-screen top-0 left-0 flex z-40 overflow-auto">
+        class="bg-gray-lighter lg:bg-gray-dark lg:bg-opacity-40 fixed h-screen w-screen top-0 left-0 flex z-40 overflow-auto">
         <div class=" lg:w-96 2xl:w-16"/>
         <div class="px-5 sm:container pt-32 lg:pt-16 pb-6 lg:pb-16 z-50 h-full w-screen overflow-auto"
         >
           <LoanCard
             @close="loanModalOpen = false"
             loan-details
-            :retailer-name=retailerName
+            :retailer-description=retailerDescription
             :provider="provider"
             :purchase-date=purchaseDate
-            :loan-start-date=loanStartDate
-            :term-length=termLength
-            :monthly-payback-value=monthlyPaybackValue
-            :status=loanStatus
-            :total-interest-value=totalInterestValue
-            :total-order-value=totalOrderValue
+            :contract-sign-date="contractSignDate"
+            :term-in-months=termInMonths
+            :total-interest-amount=totalInterestAmount
+            :original-order-amount=originalOrderAmount
             :total-loan-value=totalLoanValue
-            :deposit-value=depositValue
+            :deposit-amount=depositAmount
             :value-repaid="valueRepaid"
             :value-left-to-pay=valueLeftToPay
-            :loan-upcoming-payment=loanUpcomingPayment
-            :loan-upcoming-payment-date=loanUpcomingPaymentDate
-            :loan-previous-payment=loanPreviousPayment
-            :loan-previous-payment-date=loanPreviousPaymentDate
+            :last-payment=lastPayment
+            :upcoming-Instalment=upcomingInstalment
             :current-last-four-digits=currentLastFourDigits
             :transactions=transactions
             :instalments=instalments
             :order-items=orderItems
             :is-repaid=isRepaid
+            :out-of-term-charges=outOfTermCharges
+            :out-of-term-charges-amount=outOfTermChargesAmount
+            :current-instalment=currentInstalment
           />
         </div>
       </div>
     </Teleport>
     <LoanCard
-      v-else
       @open="loanModalOpen = true"
-      :retailer-name=retailerName
-      :provider="provider"
-      :status=loanStatus
+      @tally="tallyBalance"
+      @status="$emit('status', $event)"
+      :retailer-description=retailerDescription
+      :provider=provider
       :value-repaid="valueRepaid"
-      :loan-start-date=loanStartDate
-      :term-length=termLength
-      :deposit-value=depositValue
+      :contract-sign-date="contractSignDate"
+      :term-in-months=termInMonths
+      :deposit-amount=depositAmount
       :total-loan-value=totalLoanValue
       :value-left-to-pay=valueLeftToPay
+      :current-last-four-digits=currentLastFourDigits
       :instalments=instalments
+      :out-of-term-charges=outOfTermCharges
+      :out-of-term-charges-amount=outOfTermChargesAmount
+      :current-instalment=currentInstalment
     />
   </div>
 </template>
@@ -57,8 +60,12 @@ import {ref} from "vue";
 
 import LoanCard from "@/components/Cards/Loan.vue";
 
+const emit = defineEmits(['tally', 'status'])
+
+console.log()
+
 const props = defineProps({
-  retailerName: {
+  retailerDescription: {
     type: String,
     required: true
   },
@@ -68,42 +75,27 @@ const props = defineProps({
   purchaseDate: {
     type: String
   },
-  loanStatus: {
-    type: String,
-    required: true
-  },
-  termLength: {
+  termInMonths: {
     type: Number,
     required: true
   },
-  loanStartDate: {
+  contractSignDate: {
     type: String,
     required: true
   },
-  monthlyPaybackValue: {
-    type: Number,
-    required: true
-  },
-  currentInstalmentStatus: {
-    type: String,
-    required: true,
-    default: 'ongoing'
-  },
-  depositValue: {
+  depositAmount: {
     type: Number,
     required: true,
     default: 0.00
   },
-  totalInterestValue: {
+  totalInterestAmount: {
     type: Number,
   },
   totalLoanValue: {
-    type: Number,
-    required: true
+    type: Number
   },
-  totalOrderValue: {
-    type: Number,
-    required: true
+  originalOrderAmount: {
+    type: Number
   },
   valueRepaid: {
     type: Number,
@@ -113,35 +105,23 @@ const props = defineProps({
     type: Number,
     required: true
   },
-  loanUpcomingPayment: {
-    type: Number,
-    required: true,
-    default: 0
+  upcomingInstalment: {
+    type: Object
   },
-  loanUpcomingPaymentDate: {
-    type: Date,
-    required: true,
-  },
-  loanPreviousPayment: {
-    type: Number,
-    required: true,
-    default: 0
-  },
-  loanPreviousPaymentDate: {
-    type: Date,
-    required: true,
+  lastPayment: {
+    type: Object
   },
   currentLastFourDigits: {
-    type: Number,
-    required: true,
+    type: Number
   },
   transactions: {
-    type: Array,
-    required: true
+    type: Array
   },
   instalments: {
+    type: Array
+  },
+  outOfTermCharges: {
     type: Array,
-    required: true
   },
   orderItems: {
     type: Array,
@@ -149,8 +129,18 @@ const props = defineProps({
   isRepaid: {
     type: Boolean,
     default: false
+  },
+  outOfTermChargesAmount: {
+    type: Number
+  },
+  currentInstalment: {
+    type: Object
   }
 })
+
+const tallyBalance = (val) => {
+  emit('tally', val)
+}
 
 const loanModalOpen = ref(false)
 </script>

@@ -1,0 +1,3438 @@
+{
+  "user": {
+    "firstName": "rob",
+    "lastName": "hill",
+    "legalName": "Robert Hill",
+    "email": "rob.hill@payl8r.com",
+    "homeAddress": "This is my home address",
+    "phoneNumber": 111111111,
+    "cardNumber": "5678",
+    "cardExpires": "0125",
+    "createdAt": "2021-01-09"
+  },
+  "loans": [
+    {
+      "id": 1,
+      "contractFilename": "blah",
+      "retailerDescription": "1. Arranged, no payments due yet",
+      "isActive": true,
+      "contractSignDate": "2023-09-28",
+      "termInMonths": 3,
+      "provider": "payl8r",
+      "originalOrderAmount": 100,
+      "depositAmount": 0,
+      "totalInterestAmount": 9.45,
+      "upcomingInstalment": {
+        "amount": 26.48,
+        "date": "2023-09-28"
+      },
+      "lastPayment": {
+        "amount": null,
+        "date": null
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 1,
+          "price": 10.00
+        },
+        {
+          "description": "product 2",
+          "quantity": 1,
+          "price": 30.00
+        },
+        {
+          "description": "product 3",
+          "quantity": 3,
+          "price": 20.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": false,
+          "dueDates": [
+            "2023-09-28"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 26.48,
+          "paidAmount": 0
+        },
+        {
+          "month": 2,
+          "isDue": false,
+          "dueDates": [
+            "2023-10-28"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 26.48,
+          "paidAmount": 0
+        },
+        {
+          "month": 3,
+          "isDue": false,
+          "dueDates": [
+            "2023-11-28"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 26.49,
+          "paidAmount": 0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "contractFilename": "blah",
+      "retailerDescription": "2. In term, no overdue payments",
+      "isActive": true,
+      "contractSignDate": "2023-08-05",
+      "termInMonths": 3,
+      "provider": "payl8r",
+      "originalOrderAmount": 250,
+      "depositAmount": 60,
+      "totalInterestAmount": 25.65,
+      "upcomingInstalment": {
+        "amount": 71.89,
+        "date": "2023-11-05"
+      },
+      "lastPayment": {
+        "amount": 71.88,
+        "date": "2023-09-10"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 3,
+          "price": 50.00
+        },
+        {
+          "description": "product 2",
+          "quantity": 1,
+          "price": 100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-09-05"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 71.88,
+          "paidAmount": 71.88
+        },
+        {
+          "month": 2,
+          "isDue": false,
+          "dueDates": [
+            "2023-10-05"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 71.88,
+          "paidAmount": 71.88
+        },
+        {
+          "month": 3,
+          "isDue": false,
+          "dueDates": [
+            "2023-11-05"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 71.89,
+          "paidAmount": 0.00
+        }
+      ],
+      "transactions": [
+        {
+          "id": 1,
+          "date": "2023-09-05",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 71.88,
+          "balance": 143.77
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "contractFilename": "blah",
+      "retailerDescription": "2.5. In term, no overdue payments, with a last payment upcoming",
+      "isActive": true,
+      "contractSignDate": "2023-06-05",
+      "termInMonths": 3,
+      "provider": "payl8r",
+      "originalOrderAmount": 250,
+      "depositAmount": 60,
+      "totalInterestAmount": 25.65,
+      "upcomingInstalment": {
+        "amount": 71.89,
+        "date": "2023-10-05"
+      },
+      "lastPayment": {
+        "amount": 71.88,
+        "date": "2023-09-05"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 3,
+          "price": 50.00
+        },
+        {
+          "description": "product 2",
+          "quantity": 1,
+          "price": 100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-08-05"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 71.88,
+          "paidAmount": 71.88
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-09-05"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 71.88,
+          "paidAmount": 71.88
+        },
+        {
+          "month": 3,
+          "isDue": false,
+          "dueDates": [
+            "2023-10-05"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 71.89,
+          "paidAmount": 0.00
+        }
+      ],
+      "transactions": [
+        {
+          "id": 1,
+          "date": "2023-10-05",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 71.88,
+          "balance": 143.77
+        },
+        {
+          "id": 2,
+          "date": "2023-11-05",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 71.88,
+          "balance": 143.77
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "contractFilename": "blah",
+      "retailerDescription": "3. In term, with latest payment overdue",
+      "isActive": true,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 12,
+      "provider": "payl8r",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 459,
+      "upcomingInstalment": {
+        "amount": 109.08,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 109.08,
+        "date": "2023-08-02"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 1,
+          "price": 1100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
+        },
+        {
+          "month": 7,
+          "isDue": true,
+          "dueDates": [
+            "2023-08-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 109.08
+        },
+        {
+          "month": 8,
+          "isDue": true,
+          "dueDates": [
+            "2023-09-02",
+            "2023-09-04",
+            "2023-09-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0,
+          "lateFee": {
+            "dateIncurred": "2023-09-03",
+            "isAutoWaivable": true,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 9,
+          "isDue": false,
+          "dueDates": [
+            "2023-10-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0
+        },
+        {
+          "month": 10,
+          "isDue": false,
+          "dueDates": [
+            "2023-11-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0
+        },
+        {
+          "month": 11,
+          "isDue": false,
+          "dueDates": [
+            "2023-12-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0
+        },
+        {
+          "month": 12,
+          "isDue": false,
+          "dueDates": [
+            "2024-01-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 109.08,
+          "paidAmount": 0
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 109.08,
+          "balance": 1199.92
+        },
+        {
+          "date": "2023-03-05",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 109.08,
+          "balance": 1090.84
+        },
+        {
+          "date": "2023-04-07",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 109.08,
+          "balance": 981.76
+        },
+        {
+          "date": "2023-05-20",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 109.08,
+          "balance": 872.68
+        },
+        {
+          "date": "2023-06-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 109.08,
+          "balance": 763.60
+        },
+        {
+          "date": "2023-07-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 109.08,
+          "balance": 654.52
+        },
+        {
+          "date": "2023-08-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 109.08,
+          "balance": 545.44
+        },
+        {
+          "date": "2023-09-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0,
+          "balance": 575.44
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "contractFilename": "blah",
+      "retailerDescription": "4. In term, with previous payment(s) overdue but paid. Late fees unpaid",
+      "isActive": true,
+      "contractSignDate": "2023-01-13",
+      "termInMonths": 9,
+      "provider": "payl8r",
+      "originalOrderAmount": 600,
+      "depositAmount": 80,
+      "totalInterestAmount": 210.60,
+      "upcomingInstalment": {
+        "amount": 81.18,
+        "date": "2023-09-13"
+      },
+      "lastPayment": {
+        "amount": 81.18,
+        "date": "2023-08-17"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 3,
+          "price": 200.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-13",
+            "2023-03-15",
+            "2023-03-18",
+            "2023-04-18"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
+          "lateFee": {
+            "dateIncurred": "2023-03-14",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0
+          }
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-13",
+            "2023-04-15"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
+          "lateFee": {
+            "dateIncurred": "2023-04-14",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00,
+            "cardExpired": true
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-13",
+            "2023-06-15"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
+          "lateFee": {
+            "dateIncurred": "2023-06-14",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 7,
+          "isDue": true,
+          "dueDates": [
+            "2023-08-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 8,
+          "isDue": false,
+          "dueDates": [
+            "2023-09-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 0
+        },
+        {
+          "month": 9,
+          "isDue": false,
+          "dueDates": [
+            "2023-10-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.16,
+          "paidAmount": 0
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 649.42
+        },
+        {
+          "date": "2023-03-14",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 679.42
+        },
+        {
+          "date": "2023-04-14",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 709.42
+        },
+        {
+          "date": "2023-04-17",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 628.24
+        },
+        {
+          "date": "2023-04-19",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 547.06
+        },
+        {
+          "date": "2023-04-19",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 517.06
+        },
+        {
+          "date": "2023-05-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 435.88
+        },
+        {
+          "date": "2023-06-14",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 465.88
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 384.70
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 354.70
+        },
+        {
+          "date": "2023-07-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 273.52
+        },
+        {
+          "date": "2023-08-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 192.34
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "contractFilename": "blah",
+      "retailerDescription": "5. In term, with previous payment(s) overdue but paid. Late fees waived",
+      "isActive": true,
+      "contractSignDate": "2023-01-13",
+      "termInMonths": 9,
+      "provider": "payl8r",
+      "originalOrderAmount": 600,
+      "depositAmount": 80,
+      "totalInterestAmount": 210.60,
+      "upcomingInstalment": {
+        "amount": 81.18,
+        "date": "2023-09-13"
+      },
+      "lastPayment": {
+        "amount": 81.18,
+        "date": "2023-08-17"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 3,
+          "price": 200.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-13",
+            "2023-03-15"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
+          "lateFee": {
+            "dateIncurred": "2023-03-14",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0
+          }
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-13",
+            "2023-04-15"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
+          "lateFee": {
+            "dateIncurred": "2023-04-14",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-13",
+            "2023-06-15"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
+          "lateFee": {
+            "dateIncurred": "2023-06-14",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 7,
+          "isDue": true,
+          "dueDates": [
+            "2023-08-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 8,
+          "isDue": false,
+          "dueDates": [
+            "2023-09-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 0
+        },
+        {
+          "month": 9,
+          "isDue": false,
+          "dueDates": [
+            "2023-10-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.16,
+          "paidAmount": 0
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 649.42
+        },
+        {
+          "date": "2023-03-14",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 679.42
+        },
+        {
+          "date": "2023-03-24",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 598.24
+        },
+        {
+          "date": "2023-03-24",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 568.24
+        },
+        {
+          "date": "2023-04-14",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 598.24
+        },
+        {
+          "date": "2023-04-19",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 517.06
+        },
+        {
+          "date": "2023-04-19",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 487.06
+        },
+        {
+          "date": "2023-05-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 405.88
+        },
+        {
+          "date": "2023-06-14",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 435.88
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 354.70
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 324.70
+        },
+        {
+          "date": "2023-07-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 243.52
+        },
+        {
+          "date": "2023-08-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 162.34
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "contractFilename": "blah",
+      "retailerDescription": "5.5. In term, with previous payment(s) overdue but paid. Late fees waived. Early payment made",
+      "isActive": true,
+      "contractSignDate": "2023-01-13",
+      "termInMonths": 9,
+      "provider": "payl8r",
+      "originalOrderAmount": 600,
+      "depositAmount": 80,
+      "totalInterestAmount": 210.60,
+      "upcomingInstalment": {
+        "amount": 81.18,
+        "date": "2023-09-13"
+      },
+      "lastPayment": {
+        "amount": 81.18,
+        "date": "2023-08-17"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 3,
+          "price": 200.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-13",
+            "2023-03-15"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
+          "lateFee": {
+            "dateIncurred": "2023-03-14",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0
+          }
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-13",
+            "2023-04-15"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
+          "lateFee": {
+            "dateIncurred": "2023-04-14",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-13",
+            "2023-06-15"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18,
+          "lateFee": {
+            "dateIncurred": "2023-06-14",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 7,
+          "isDue": true,
+          "dueDates": [
+            "2023-08-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 8,
+          "isDue": false,
+          "dueDates": [
+            "2023-09-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.18,
+          "paidAmount": 81.18
+        },
+        {
+          "month": 9,
+          "isDue": false,
+          "dueDates": [
+            "2023-10-13"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 81.16,
+          "paidAmount": 0
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 649.42
+        },
+        {
+          "date": "2023-03-14",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 679.42
+        },
+        {
+          "date": "2023-03-24",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 598.24
+        },
+        {
+          "date": "2023-03-24",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 568.24
+        },
+        {
+          "date": "2023-04-14",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 598.24
+        },
+        {
+          "date": "2023-04-19",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 517.06
+        },
+        {
+          "date": "2023-04-19",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 487.06
+        },
+        {
+          "date": "2023-05-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 405.88
+        },
+        {
+          "date": "2023-06-14",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 435.88
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 354.70
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 324.70
+        },
+        {
+          "date": "2023-07-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 243.52
+        },
+        {
+          "date": "2023-08-13",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 162.34
+        },
+        {
+          "date": "2023-09-08",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 81.18,
+          "balance": 81.16
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "contractFilename": "blah",
+      "retailerDescription": "6. In term, with previous payment(s) overdue and unpaid",
+      "isActive": true,
+      "contractSignDate": "2023-06-23",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 300,
+      "depositAmount": 40,
+      "totalInterestAmount": 70.20,
+      "upcomingInstalment": {
+        "amount": 55.03,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 27.52,
+        "date": "2023-07-28"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 3,
+          "price": 100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-23",
+            "2023-07-25",
+            "2023-07-28",
+            "2023-08-28"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 27.52,
+          "lateFee": {
+            "dateIncurred": "2023-07-24",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-08-23",
+            "2023-08-25",
+            "2023-08-28"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 0.00,
+          "lateFee": {
+            "dateIncurred": "2023-08-24",
+            "isAutoWaivable": true,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 3,
+          "isDue": false,
+          "dueDates": [
+            "2023-09-23"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 0.00
+        },
+        {
+          "month": 4,
+          "isDue": false,
+          "dueDates": [
+            "2023-10-23"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 0.00
+        },
+        {
+          "month": 5,
+          "isDue": false,
+          "dueDates": [
+            "2023-11-23"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 0.00
+        },
+        {
+          "month": 6,
+          "isDue": false,
+          "dueDates": [
+            "2023-12-23"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.05,
+          "paidAmount": 0.00
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-07-24",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 360.20
+        },
+        {
+          "date": "2023-08-24",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 390.20
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "contractFilename": "blah",
+      "retailerDescription": "7. Out of term, with no late payments",
+      "isActive": false,
+      "contractSignDate": "2021-02-09",
+      "termInMonths": 18,
+      "originalOrderAmount": 840,
+      "provider": "payl8r",
+      "depositAmount": 100,
+      "totalInterestAmount": 599.40,
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 74.41,
+        "date": "2023-09-05"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 1,
+          "price": 250.00
+        },
+        {
+          "description": "product 2",
+          "quantity": 3,
+          "price": 100.00
+        },
+        {
+          "description": "product 3",
+          "quantity": 1,
+          "price": 145.00
+        },
+        {
+          "description": "product 4",
+          "quantity": 1,
+          "price": 145.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2021-03-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2021-04-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2021-05-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2021-06-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2021-07-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2021-08-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 7,
+          "isDue": true,
+          "dueDates": [
+            "2021-09-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 8,
+          "isDue": true,
+          "dueDates": [
+            "2021-10-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 9,
+          "isDue": true,
+          "dueDates": [
+            "2021-11-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 10,
+          "isDue": true,
+          "dueDates": [
+            "2021-12-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 11,
+          "isDue": true,
+          "dueDates": [
+            "2022-01-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 12,
+          "isDue": true,
+          "dueDates": [
+            "2022-02-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 13,
+          "isDue": true,
+          "dueDates": [
+            "2022-03-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 14,
+          "isDue": true,
+          "dueDates": [
+            "2022-04-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 15,
+          "isDue": true,
+          "dueDates": [
+            "2022-05-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 16,
+          "isDue": true,
+          "dueDates": [
+            "2022-06-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 17,
+          "isDue": true,
+          "dueDates": [
+            "2022-07-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 74.41,
+          "paidAmount": 74.41
+        },
+        {
+          "month": 18,
+          "dueDates": [
+            "2022-08-09"
+          ],
+          "numberOfAttempts": null,
+          "isDue": true,
+          "dueAmount": 74.43,
+          "paidAmount": 74.43
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2021-03-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 1264.99
+        },
+        {
+          "date": "2021-04-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 1190.58
+        },
+        {
+          "date": "2021-05-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 1116.17
+        },
+        {
+          "date": "2021-06-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 1041.76
+        },
+        {
+          "date": "2021-07-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 967.35
+        },
+        {
+          "date": "2021-08-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 892.94
+        },
+        {
+          "date": "2021-09-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 818.53
+        },
+        {
+          "date": "2021-10-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 744.12
+        },
+        {
+          "date": "2021-11-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 669.71
+        },
+        {
+          "date": "2021-12-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 595.30
+        },
+        {
+          "date": "2022-01-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 520.89
+        },
+        {
+          "date": "2022-02-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 446.48
+        },
+        {
+          "date": "2022-03-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 372.07
+        },
+        {
+          "date": "2022-04-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 297.66
+        },
+        {
+          "date": "2022-05-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 223.25
+        },
+        {
+          "date": "2022-06-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 148.84
+        },
+        {
+          "date": "2022-07-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.41,
+          "balance": 74.43
+        },
+        {
+          "date": "2022-08-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 74.43,
+          "balance": 0.00
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "contractFilename": "blah",
+      "retailerDescription": "8. Out of term, with instalments paid late. Multiple late fees unpaid",
+      "isActive": true,
+      "contractSignDate": "2023-01-09",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 300,
+      "depositAmount": 40,
+      "totalInterestAmount": 70.20,
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 74.41,
+        "date": "2023-09-05"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 3,
+          "price": 100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-09"
+          ],
+          "numberOfAttempts":  3,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-09",
+            "2023-03-11",
+            "2023-03-14",
+            "2023-04-14"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-03-10",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-09",
+            "2023-04-11",
+            "2023-04-14",
+            "2023-05-14"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-04-10",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-09",
+            "2023-05-11",
+            "2023-05-14",
+            "2023-06-14"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-05-10",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-09",
+            "2023-06-11"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-06-10",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.05,
+          "paidAmount": 55.05
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 275.17
+        },
+        {
+          "date": "2023-03-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 305.17
+        },
+        {
+          "date": "2023-04-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 335.17
+        },
+        {
+          "date": "2023-04-12",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 280.14
+        },
+        {
+          "date": "2023-05-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 310.14
+        },
+        {
+          "date": "2023-05-14",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 255.11
+        },
+        {
+          "date": "2023-05-17",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 200.08
+        },
+        {
+          "date": "2023-06-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 230.08
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 175.05
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 145.05
+        },
+        {
+          "date": "2023-07-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.05,
+          "balance": 90.00
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "contractFilename": "blah",
+      "retailerDescription": "8.5. Out of term, with instalments paid late. Single late fee unpaid",
+      "isActive": true,
+      "contractSignDate": "2023-01-09",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 300,
+      "depositAmount": 40,
+      "totalInterestAmount": 70.20,
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 74.41,
+        "date": "2023-09-09"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 3,
+          "price": 100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-09",
+            "2023-04-11",
+            "2023-04-14"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-04-10",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-09",
+            "2023-05-11"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-05-10",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-09",
+            "2023-06-11",
+            "2023-06-14"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-06-10",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.05,
+          "paidAmount": 55.05
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 275.17
+        },
+        {
+          "date": "2023-03-09",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 305.17
+        },
+        {
+          "date": "2023-04-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 335.17
+        },
+        {
+          "date": "2023-04-12",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 280.14
+        },
+        {
+          "date": "2023-05-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 310.14
+        },
+        {
+          "date": "2023-05-14",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 255.11
+        },
+        {
+          "date": "2023-05-17",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 200.08
+        },
+        {
+          "date": "2023-05-17",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 170.08
+        },
+        {
+          "date": "2023-06-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 200.08
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 145.05
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 115.05
+        },
+        {
+          "date": "2023-07-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.05,
+          "balance": 60.00
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "contractFilename": "blah",
+      "retailerDescription": "9. Out of term, with instalments paid late. Late fees waived",
+      "isActive": false,
+      "contractSignDate": "2023-01-09",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 300,
+      "depositAmount": 40,
+      "totalInterestAmount": 70.20,
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 74.41,
+        "date": "2023-09-05"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 3,
+          "price": 100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-09",
+            "2023-03-11",
+            "2023-03-14"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-03-10",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-09",
+            "2023-04-11",
+            "2023-04-14"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-04-10",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-09",
+            "2023-05-11",
+            "2023-05-14"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-05-10",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-09",
+            "2023-06-11",
+            "2023-06-14"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.03,
+          "paidAmount": 55.03,
+          "lateFee": {
+            "dateIncurred": "2023-06-10",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-09"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 55.05,
+          "paidAmount": 55.05
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-07-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 275.17
+        },
+        {
+          "date": "2023-03-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 305.17
+        },
+        {
+          "date": "2023-03-14",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 250.14
+        },
+        {
+          "date": "2023-03-14",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 220.14
+        },
+        {
+          "date": "2023-04-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 250.14
+        },
+        {
+          "date": "2023-04-12",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 195.11
+        },
+        {
+          "date": "2023-04-12",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 165.11
+        },
+        {
+          "date": "2023-05-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 195.11
+        },
+        {
+          "date": "2023-05-14",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 140.08
+        },
+        {
+          "date": "2023-05-14",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 110.08
+        },
+        {
+          "date": "2023-06-10",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 140.08
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.03,
+          "balance": 85.05
+        },
+        {
+          "date": "2023-06-16",
+          "description": "Late fee waived",
+          "debit": 0.00,
+          "credit": 30.00,
+          "balance": 55.05
+        },
+        {
+          "date": "2023-07-09",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 55.05,
+          "balance": 0.00
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "contractFilename": "blah",
+      "retailerDescription": "10. Out of term, with instalment payments outstanding",
+      "isActive": true,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalment": {
+        "amount": 179.92,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.92,
+        "date": "2023-03-02"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 1,
+          "price": 1100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-02",
+            "2023-04-04",
+            "2023-04-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 0,
+          "lateFee": {
+            "dateIncurred": "2023-04-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-02",
+            "2023-05-04",
+            "2023-05-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 0,
+          "lateFee": {
+            "dateIncurred": "2023-05-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-02",
+            "2023-06-04",
+            "2023-06-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 0,
+          "lateFee": {
+            "dateIncurred": "2023-06-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-02",
+            "2023-07-04",
+            "2023-07-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 0,
+          "lateFee": {
+            "dateIncurred": "2023-07-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        }
+      ],
+      "outOfTermCharges": [
+        {
+          "dateIncurred": "2023-08-03",
+          "dueAmount": 32.38,
+          "paidAmount": 0
+        },
+        {
+          "dateIncurred": "2023-09-03",
+          "dueAmount": 32.38,
+          "paidAmount": 0
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 899.58
+        },
+        {
+          "date": "2023-03-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 719.66
+        },
+        {
+          "date": "2023-04-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 749.66
+        },
+        {
+          "date": "2023-05-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 779.66
+        },
+        {
+          "date": "2023-06-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 809.66
+        },
+        {
+          "date": "2023-07-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 839.66
+        },
+        {
+          "date": "2023-08-03",
+          "description": "Out-of-term interest",
+          "debit": 32.38,
+          "credit": 0.00,
+          "balance": 872.04
+        },
+        {
+          "date": "2023-09-03",
+          "description": "Out-of-term interest",
+          "debit": 32.38,
+          "credit": 0.00,
+          "balance": 904.42
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "contractFilename": "blah",
+      "retailerDescription": "11. In term, with last payment overdue",
+      "isActive": true,
+      "contractSignDate": "2023-03-02",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalment": {
+        "amount": 179.92,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.92,
+        "date": "2023-08-02"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 1,
+          "price": 1100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-06-03",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-02",
+            "2023-07-04"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-07-03",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-08-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-09-02",
+            "2023-09-04",
+            "2023-09-07",
+            "2023-10-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 0,
+          "lateFee": {
+            "dateIncurred": "2023-09-03",
+            "isAutoWaivable": true,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-04-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 899.58
+        },
+        {
+          "date": "2023-05-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 719.66
+        },
+        {
+          "date": "2023-06-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 749.66
+        },
+        {
+          "date": "2023-07-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 779.66
+        },
+        {
+          "date": "2023-08-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 809.66
+        },
+        {
+          "date": "2023-09-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 839.66
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "contractFilename": "blah",
+      "retailerDescription": "11.5. In term, with last payment overdue, with previous late fees",
+      "isActive": true,
+      "contractSignDate": "2023-03-02",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalment": {
+        "amount": 179.92,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.92,
+        "date": "2023-08-02"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 1,
+          "price": 1100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-02",
+            "2023-06-04"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-06-03",
+            "isAutoWaivable": false,
+            "isWaived": true,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-02",
+            "2023-07-04",
+            "2023-07-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-07-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-08-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-09-02",
+            "2023-09-04",
+            "2023-09-07",
+            "2023-10-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 89.95,
+          "lateFee": {
+            "dateIncurred": "2023-09-03",
+            "isAutoWaivable": true,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-04-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 899.58
+        },
+        {
+          "date": "2023-05-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 719.66
+        },
+        {
+          "date": "2023-06-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 749.66
+        },
+        {
+          "date": "2023-07-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 779.66
+        },
+        {
+          "date": "2023-08-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 809.66
+        },
+        {
+          "date": "2023-09-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 839.66
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "contractFilename": "blah",
+      "retailerDescription": "12. Out of term with instalment payments paid late, with out-of-term charges unpaid",
+      "isActive": true,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.90,
+        "date": "2023-03-02"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 1,
+          "price": 1100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-02",
+            "2023-04-04",
+            "2023-04-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-04-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-02",
+            "2023-05-04",
+            "2023-05-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-05-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-02",
+            "2023-06-04",
+            "2023-06-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-06-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-02",
+            "2023-07-04",
+            "2023-07-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 179.90,
+          "lateFee": {
+            "dateIncurred": "2023-07-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        }
+      ],
+      "outOfTermCharges": [
+        {
+          "dateIncurred": "2023-08-03",
+          "dueAmount": 32.38,
+          "paidAmount": 0
+        },
+        {
+          "dateIncurred": "2023-09-03",
+          "dueAmount": 32.38,
+          "paidAmount": 0
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 899.58
+        },
+        {
+          "date": "2023-03-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 719.66
+        },
+        {
+          "date": "2023-04-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 749.66
+        },
+        {
+          "date": "2023-05-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 779.66
+        },
+        {
+          "date": "2023-06-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 809.66
+        },
+        {
+          "date": "2023-07-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 839.66
+        },
+        {
+          "date": "2023-08-03",
+          "description": "Out-of-term interest applied",
+          "debit": 32.38,
+          "credit": 0.00,
+          "balance": 872.04
+        },
+        {
+          "date": "2023-09-03",
+          "description": "Out-of-term interest applied",
+          "debit": 32.38,
+          "credit": 0.00,
+          "balance": 904.42
+        },
+        {
+          "date": "2023-10-01",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 719.66,
+          "balance": 184.76
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "contractFilename": "blah",
+      "retailerDescription": "13. Out of term with instalment payments paid late, out-of-term charges paid, late fees unpaid",
+      "isActive": true,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.90,
+        "date": "2023-03-02"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 1,
+          "price": 1100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-02",
+            "2023-04-04",
+            "2023-04-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-04-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 12
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-02",
+            "2023-05-04",
+            "2023-05-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-05-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-02",
+            "2023-06-04",
+            "2023-06-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-06-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-02",
+            "2023-07-04",
+            "2023-07-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 179.90,
+          "lateFee": {
+            "dateIncurred": "2023-07-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 0.00
+          }
+        }
+      ],
+      "outOfTermCharges": [
+        {
+          "dateIncurred": "2023-08-03",
+          "dueAmount": 32.38,
+          "paidAmount": 32.38
+        },
+        {
+          "dateIncurred": "2023-09-03",
+          "dueAmount": 32.38,
+          "paidAmount": 32.38
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 899.58
+        },
+        {
+          "date": "2023-03-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 719.66
+        },
+        {
+          "date": "2023-04-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 749.66
+        },
+        {
+          "date": "2023-05-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 779.66
+        },
+        {
+          "date": "2023-06-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 809.66
+        },
+        {
+          "date": "2023-07-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 839.66
+        },
+        {
+          "date": "2023-08-03",
+          "description": "Out-of-term interest applied",
+          "debit": 32.38,
+          "credit": 0.00,
+          "balance": 872.04
+        },
+        {
+          "date": "2023-09-03",
+          "description": "Out-of-term interest applied",
+          "debit": 32.38,
+          "credit": 0.00,
+          "balance": 904.42
+        },
+        {
+          "date": "2023-09-10",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 719.66,
+          "balance": 184.76
+        },
+        {
+          "date": "2023-09-12",
+          "description": "Out-of-term interest payment",
+          "debit": null,
+          "credit": 64.76,
+          "balance": 120
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "contractFilename": "blah",
+      "retailerDescription": "14. Out of term with instalment payments paid late, out-of-term charges paid, late fees paid",
+      "isActive": false,
+      "contractSignDate": "2023-01-02",
+      "termInMonths": 6,
+      "provider": "payl8r",
+      "originalOrderAmount": 1100,
+      "depositAmount": 250,
+      "totalInterestAmount": 229.50,
+      "upcomingInstalment": {
+        "amount": null,
+        "date": null
+      },
+      "lastPayment": {
+        "amount": 179.90,
+        "date": "2023-07-02"
+      },
+      "orderItems":[
+        {
+          "description": "product 1",
+          "quantity": 1,
+          "price": 1100.00
+        }
+      ],
+      "instalments": [
+        {
+          "month": 1,
+          "isDue": true,
+          "dueDates": [
+            "2023-02-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 2,
+          "isDue": true,
+          "dueDates": [
+            "2023-03-02"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92
+        },
+        {
+          "month": 3,
+          "isDue": true,
+          "dueDates": [
+            "2023-04-02",
+            "2023-04-04",
+            "2023-04-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-04-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 30.00
+          }
+        },
+        {
+          "month": 4,
+          "isDue": true,
+          "dueDates": [
+            "2023-05-02",
+            "2023-05-04",
+            "2023-05-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-05-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 30.00
+          }
+        },
+        {
+          "month": 5,
+          "isDue": true,
+          "dueDates": [
+            "2023-06-02",
+            "2023-06-04",
+            "2023-06-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.92,
+          "paidAmount": 179.92,
+          "lateFee": {
+            "dateIncurred": "2023-06-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 30.00
+          }
+        },
+        {
+          "month": 6,
+          "isDue": true,
+          "dueDates": [
+            "2023-07-02",
+            "2023-07-04",
+            "2023-07-07"
+          ],
+          "numberOfAttempts": null,
+          "dueAmount": 179.90,
+          "paidAmount": 179.90,
+          "lateFee": {
+            "dateIncurred": "2023-07-03",
+            "isAutoWaivable": false,
+            "isWaived": false,
+            "dueAmount": 30,
+            "paidAmount": 30.00
+          }
+        }
+      ],
+      "outOfTermCharges": [
+        {
+          "dateIncurred": "2023-08-03",
+          "dueAmount": 32.38,
+          "paidAmount": 32.38
+        },
+        {
+          "dateIncurred": "2023-09-03",
+          "dueAmount": 32.38,
+          "paidAmount": 32.38
+        }
+      ],
+      "transactions": [
+        {
+          "date": "2023-02-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 899.58
+        },
+        {
+          "date": "2023-03-02",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 179.92,
+          "balance": 719.66
+        },
+        {
+          "date": "2023-04-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 749.66
+        },
+        {
+          "date": "2023-05-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 779.66
+        },
+        {
+          "date": "2023-06-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 809.66
+        },
+        {
+          "date": "2023-07-03",
+          "description": "Late fee applied",
+          "debit": 30.00,
+          "credit": 0.00,
+          "balance": 839.66
+        },
+        {
+          "date": "2023-08-03",
+          "description": "Out-of-term interest applied",
+          "debit": 32.38,
+          "credit": 0.00,
+          "balance": 872.04
+        },
+        {
+          "date": "2023-09-03",
+          "description": "Out-of-term interest applied",
+          "debit": 32.38,
+          "credit": 0.00,
+          "balance": 904.42
+        },
+        {
+          "date": "2023-09-10",
+          "description": "Loan payment",
+          "debit": null,
+          "credit": 719.66,
+          "balance": 184.76
+        },
+        {
+          "date": "2023-09-12",
+          "description": "Out-of-term interest payment",
+          "debit": null,
+          "credit": 64.76,
+          "balance": 120
+        },
+        {
+          "date": "2023-09-13",
+          "description": "Late fee payment",
+          "debit": null,
+          "credit": 120.00,
+          "balance": 0
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": 1,
+      "name": "default notice x",
+      "type": "default notice",
+      "created_at": "2023-09-28",
+      "source": "../assets/RockerHand.png"
+    },
+    {
+      "id": 2,
+      "name": "default notice x",
+      "type": "default notice",
+      "created_at": "2023-09-28",
+      "source": "../assets/RockerHand.png"
+    },
+    {
+      "id": 3,
+      "name": "default notice x",
+      "type": "default notice",
+      "created_at": "2023-09-28",
+      "source": "../assets/RockerHand.png"
+    }
+  ]
+}
