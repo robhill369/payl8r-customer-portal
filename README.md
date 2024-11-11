@@ -1,14 +1,6 @@
 # payl8r-customer-portal#
 
-This template should help get you started developing with Vue 3 in Vite.
-
-### Recommended IDE Setup#
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+A dashboard for Payl8r customers to effectively manage the loans they have taken out with a retailer. This example details every state in which a loan could be in once agreed, with neccessary UI considered for each eventuality.
 
 ## Project Setup
 
@@ -20,10 +12,4 @@ npm install
 
 ```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
