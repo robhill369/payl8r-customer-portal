@@ -1,7 +1,7 @@
 <template>
   <div class="relative currentColor z-50">
-    <div class="fixed z-50 w-full bg-gray-light drop-shadow-md"
-         :class="NavOpened ? 'bg-teal' : 'bg-gray-light'"
+    <div class="fixed z-50 w-full bg-gray-lighter drop-shadow-md"
+         :class="NavOpened ? 'bg-teal' : 'bg-gray-lighter'"
     >
       <div class="flex flex-col pt-2 z-30">
         <div class="relative h-24 z-50">
@@ -25,6 +25,7 @@
               class="pl-5"
               :NavOpened="NavOpened"
               :username=username
+              :item-hidden=itemHidden
               @closeNav="NavOpened = false"
           />
         </div>
@@ -47,6 +48,9 @@ defineProps ({
   username: {
     type: String,
     required: true
+  },
+  itemHidden: {
+    type: Boolean
   }
 })
 

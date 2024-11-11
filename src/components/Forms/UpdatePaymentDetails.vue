@@ -32,7 +32,6 @@
 
 <script setup>
 import PaymentCardNotification from "@/components/Notifications/PaymentCard.vue";
-import VisaLogo from "@/components/icons/VisaLogo.vue";
 import BaseForm from "@/components/Forms/Base.vue";
 import FormTextInput from "@/components/Forms/FormTextInput.vue";
 import CurrentCardIndicator from "@/components/currentCardIndicator.vue";

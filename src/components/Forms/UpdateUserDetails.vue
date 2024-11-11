@@ -11,23 +11,25 @@
       </template>
       <FormTextInput
         title="Legal name"
-        id="legal-name"
+        id=1
         disabled
         :current-value-placeholder=currentLegalName
       />
       <FormTextInput
         title="Email address"
-        id="email"
+        id=2
         disabled
         :current-value-placeholder=currentEmail
       />
       <FormTextInput
-          title="Home address"
-          id="home-address"
+        title="Home address"
+        id="home-address"
+        :current-value=currentHomeAddress
       />
       <FormTextInput
-          title="Primary phone number"
-          id="primary-phone"
+        title="Primary phone number"
+        id="primary-phone"
+        :current-value=currentPhoneNumber.toString()
       />
     </BaseForm>
   </div>
@@ -46,6 +48,14 @@ defineProps ({
   currentEmail: {
     type: String,
     required: true,
+  },
+  currentHomeAddress: {
+    type: String,
+    required: true
+  },
+  currentPhoneNumber: {
+    type: Number,
+    required: true
   }
 })
 </script>

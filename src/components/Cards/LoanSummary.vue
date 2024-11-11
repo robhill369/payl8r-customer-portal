@@ -2,10 +2,8 @@
   <div>
     <PaymentsSchedule
         is-loan-card
-        :upcoming-payment=loanUpcomingPayment
-        :upcoming-payment-date=loanUpcomingPaymentDate
-        :previous-payment=loanPreviousPayment
-        :previous-payment-date=loanPreviousPaymentDate
+        :upcoming-instalment=upcomingInstalment
+        :last-payment=lastPayment
     >
       <slot/>
     </PaymentsSchedule>
@@ -18,12 +16,16 @@
         >
           <h5 class="text-gray">{{provider === 'upfront' ? 'Loan' : 'Order'}} Summary</h5>
           <div class="grid grid-cols-5">
-            <p class="col-span-4 pt-2.5">Loan total</p>
-            <p class="font-bold pt-2.5">£{{totalLoanValue}}</p>
             <p class="col-span-4 pt-2.5">{{provider === 'upfront' ? 'Amount borrowed' : 'Order total'}}</p>
-            <p class="font-bold pt-2.5">£{{totalOrderValue}}</p>
-            <p class="col-span-4 pt-2.5">Paid so far</p>
-            <p class="font-bold pt-2.5">£{{valueRepaid}}</p>
+            <p class="font-bold pt-2.5 w-16 text-right">£{{originalOrderAmount.toFixed(2)}}</p>
+            <p class="col-span-4 pt-2.5">Deposit amount</p>
+            <p class="font-bold pt-2.5 w-16 text-right">£{{depositAmount.toFixed(2)}}</p>
+            <p class="col-span-4 pt-2.5">Loan total</p>
+            <p class="font-bold pt-2.5 w-16 text-right">£{{totalLoanValue.toFixed(2)}}</p>
+            <template v-if="outOfTermChargesAmount">
+              <p class="col-span-4 pt-2.5" :class="!loanRepaid ? 'text-red-darker' : ''">Out-of-term interest</p>
+              <p class="font-bold pt-2.5 w-16 text-right" :class="!loanRepaid ? 'text-red-darker' : ''">£{{outOfTermChargesAmount.toFixed(2)}}</p>
+            </template>
           </div>
           <div class="h-3"/>
         </div>
@@ -42,16 +44,16 @@
                 class="grid grid-cols-5 auto-rows-auto"
                 v-for="item in orderItems"
             >
-              <p class="col-span-3 pt-2.5 pr-2">{{item.name}}</p>
-              <p class="font-bold pt-2.5 pr-2">{{ item.qnty }}</p>
-              <p class="font-bold pt-2.5 pr-2">£{{ (item.price * item.qnty).toFixed(2) }}</p>
+              <p class="col-span-3 pt-2.5 pr-2">{{item.description}}</p>
+              <p class="font-bold pt-2.5 pr-2">{{ item.quantity }}</p>
+              <p class="font-bold pt-2.5 pr-2">£{{ (item.price * item.quantity).toFixed(2) }}</p>
             </div>
           </div>
         </div>
       </div>
       <div
         class="flex flex-col space-y-5 flex-shrink-0 w-72 xl:w-80 3xl:w-[480px]"
-        v-if="!isRepaid"
+        v-if="!isComplete"
       >
         <h5 class="text-gray">Payment method</h5>
         <div class="flex ">
@@ -70,17 +72,17 @@
     <TitledCopy
         :title="provider === 'upfront' ? 'Issues with this loan?' : 'Issues with this order?'"
         :body="provider === 'upfront' ? 'Upfront loan copy for support channels required here' :
-          retailerName+' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"
+          retailerDescription+' is responsible for any queries around delivery, mistakes with your order, refunds and returns. Contact us at Payl8r if you need help with anything else.'"
     />
   </div>
 </template>
 <script setup>
-import ButtonSecondary from "@/components/Buttons/Secondary.vue";
+import ButtonSecondary from "@/components/Buttons/Tertiary.vue";
 import TitledCopy from "@/Layout/TitledCopy.vue";
 import PaymentsSchedule from "@/components/Cards/PaymentsSchedule.vue";
 
 defineProps({
-  retailerName: {
+  retailerDescription: {
     type: String,
     required: true,
     default: 'The retailer'
@@ -92,7 +94,11 @@ defineProps({
     type: Number,
     required: true
   },
-  totalOrderValue: {
+  originalOrderAmount: {
+    type: Number,
+    required: true
+  },
+  depositAmount: {
     type: Number,
     required: true
   },
@@ -100,27 +106,21 @@ defineProps({
     type: Number,
     required: true
   },
-  loanUpcomingPayment: {
-    type: Number,
-    required: true,
-    default: 0
+  outOfTermChargesAmount: {
+    type: Number
   },
-  loanUpcomingPaymentDate: {
-    type: Date,
-    required: true,
+  upcomingInstalment: {
+    type: Object,
   },
-  loanPreviousPayment: {
-    type: Number,
-    required: true,
-    default: 0
+  lastPayment: {
+    type: Object,
   },
-  loanPreviousPaymentDate: {
-    type: Date,
-    required: true,
-  },
-  isRepaid: {
+  loanRepaid: {
     type: Boolean,
     default: false
+  },
+  isComplete: {
+    type: Boolean,
   },
   currentLastFourDigits: {
     type: Number,
